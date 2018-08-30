@@ -15,7 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import include, url
+from django.views.generic.base import TemplateView
+
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    url(r'^admin/', admin.site.urls),
+    url(r'^$', TemplateView.as_view(template_name='index.html'), name='home'),
+    url(r'^', include('webadmin.urls', namespace="webadmin")),
+    url(r'^', include('sig.urls', namespace="sig")),
+    url(r'^', include('events.urls', namespace="events")),
 ]
