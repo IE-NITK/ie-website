@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'events.apps.EventsConfig',
     'sig.apps.SigConfig',
-    'webadmin.apps.WebadminConfig'
+    'webadmin.apps.WebadminConfig',
+    'accounts.apps.AccountsConfig'
 ]
 
 MIDDLEWARE = [
