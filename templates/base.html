@@ -69,11 +69,12 @@
 
           <div id="navbar-collapse" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-              <li class="active"><a href="/">Home</a></li>
-              <li><a href="/events">Events</a></li>
-              <li><a href="/sig">SIG</a></li>
-              <li><a href="/team">Team</a></li>
-              <!-- <li class="dropdown">
+
+              <li class="active"><a href="index.html">Home</a></li>
+              <li><a href="courses.html">Courses</a></li>
+              <li><a href="{% url 'teams:teams' %}">Teams</a></li>
+              <li><a href="{% url 'events:events' %}">Events</a></li>
+              <li class="dropdown">
                 <a href="#" data-toggle="dropdown" class="dropdown-toggle">Pages</a>
                 <ul class="dropdown-menu">
                   <li><a href="about.html">About Us</a></li>

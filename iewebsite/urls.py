@@ -25,5 +25,6 @@ urlpatterns = [
     url(r'^', include('webadmin.urls', namespace="webadmin")),
     url(r'^', include('sig.urls', namespace="sig")),
     url(r'^', include('events.urls', namespace="events")),
-    url(r'^', include('accounts.urls', namespace="accounts"))
+    url(r'^', include('accounts.urls', namespace="accounts")),
+    url(r'^', include('teams.urls', namespace="teams"))
 ]

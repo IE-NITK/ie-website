@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'events.apps.EventsConfig',
+    'teams.apps.TeamsConfig',
     'sig.apps.SigConfig',
     'webadmin.apps.WebadminConfig',
     'accounts.apps.AccountsConfig'
