@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block main %}
+<section class="probootstrap-section">
+    <div class="container">
+
+        {% for member in data%}
+
+        <div class="col-md-4 col-sm-6" >
+          <div class="probootstrap-teacher text-center probootstrap-animate" style="min-height: 150px">
+{#            <figure class="media">#}
+{#              <img src="img/person_1.jpg" alt="Free Bootstrap Template by ProBootstrap.com" class="img-responsive">#}
+{#            </figure>#}
+            <div class="text">
+                <h3>{{ member.name }}</h3>
+{#                <p>{{ member.roll_no }}</p>#}
+{#                <p>{{ member.mob_no }}</p>#}
+                <p>{{ member.email }}</p>
+{#              <ul class="probootstrap-footer-social">#}
+{#                <li class="twitter"><a href="{{ member.email }}"><i class="icon-mail"></i></a></li>#}
+{#                <li class="facebook"><a href="#"><i class="icon-facebook2"></i></a></li>#}
+{#                <li class="instagram"><a href="#"><i class="icon-instagram2"></i></a></li>#}
+{#                <li class="google-plus"><a href="#"><i class="icon-google-plus"></i></a></li>#}
+{#              </ul>#}
+            </div>
+          </div>
+        </div>
+
+        {% endfor %}
+    </div>
+  </section>
+{% endblock %}
