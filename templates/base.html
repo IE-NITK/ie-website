@@ -107,11 +107,10 @@
               <div class="probootstrap-footer-widget">
                 <h3>Links</h3>
                 <ul>
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">Courses</a></li>
-                  <li><a href="#">Teachers</a></li>
-                  <li><a href="#">News</a></li>
-                  <li><a href="#">Contact</a></li>
+                  <li><a href="{% url 'home' %}">Home</a></li>
+                  <li><a href="{% url 'events:events' %}">Events</a></li>
+                  <li><a href="{% url 'sig:sig' %}">SIGs</a></li>
+                  <li><a href="{% url 'teams:teams' %}">Team</a></li>
                 </ul>
               </div>
             </div>
@@ -134,7 +133,7 @@
           <div class="container">
             <div class="row">
               <div class="col-md-8 text-left">
-                <p>&copy; 2017 <a href="https://probootstrap.com/">ProBootstrap:Enlight</a>. All Rights Reserved. Designed &amp; Developed with <i class="icon icon-heart"></i> by <a href="https://probootstrap.com/">ProBootstrap.com</a></p>
+                <p>&copy; 2018 Built with <i class="icon icon-heart"></i> at IE NITK</p>
               </div>
               <div class="col-md-4 probootstrap-back-to-top">
                 <p><a href="#" class="js-backtotop">Back to top <i class="icon-arrow-long-up"></i></a></p>
