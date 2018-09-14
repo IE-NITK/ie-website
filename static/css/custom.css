@@ -1,1 +1,20 @@
 /* Your custom css code goes here */
+h3{
+	text-align: center;
+	size: 50px;
+	font-weight: bold;
+}
+.probootstrap-media{
+	background-color: black;
+	width: 350px;
+	height: 350px;
+	border-radius: 50%;
+}
+.probootstrap-media img{
+	width: 350px;
+	height: 350px;
+}
+.probootstrap-text{
+	z-index: 0px;
+	position: static;
+}
