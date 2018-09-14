@@ -51,19 +51,75 @@
                 </div>
                 <div class="col-md-7 col-md-push-1 probootstrap-animate team" id="code">
                   <h2>Code</h2>
-                  
+                  <section class="probootstrap-section">
+                    <div class="container">
+                      {% for member in code %}
+                      <div class="col-md-4 col-sm-6" >
+                        <div class="probootstrap-teacher text-center probootstrap-animate" style="min-height: 150px">
+                            <div class="text">
+                              <h3>{{ member.name }}</h3>
+                              <p>{{ member.email }}</p>
+                            </div>
+                        </div>
+                      </div>
+
+                      {% endfor %}
+                    </div>
+                  </section>
                 </div>
                 <div class="col-md-7 col-md-push-1 probootstrap-animate team" id="gadget">
                   <h2>Gadget</h2>
-                  
+                  <section class="probootstrap-section">
+                    <div class="container">
+                      {% for member in gadget %}
+                      <div class="col-md-4 col-sm-6" >
+                        <div class="probootstrap-teacher text-center probootstrap-animate" style="min-height: 150px">
+                            <div class="text">
+                              <h3>{{ member.name }}</h3>
+                              <p>{{ member.email }}</p>
+                            </div>
+                        </div>
+                      </div>
+
+                      {% endfor %}
+                    </div>
+                  </section>
                 </div>
                 <div class="col-md-7 col-md-push-1 probootstrap-animate team" id="garage">
                   <h2>Garage</h2>
-                  
+                  <section class="probootstrap-section">
+                    <div class="container">
+                      {% for member in garage %}
+                      <div class="col-md-4 col-sm-6" >
+                        <div class="probootstrap-teacher text-center probootstrap-animate" style="min-height: 150px">
+                            <div class="text">
+                              <h3>{{ member.name }}</h3>
+                              <p>{{ member.email }}</p>
+                            </div>
+                        </div>
+                      </div>
+
+                      {% endfor %}
+                    </div>
+                  </section>
                 </div>
                 <div class="col-md-7 col-md-push-1 probootstrap-animate team" id="website">
                   <h2>Website Team</h2>
-                  
+                  <section class="probootstrap-section">
+                    <div class="container">
+                      {% for member in website %}
+                      <div class="col-md-4 col-sm-6" >
+                        <div class="probootstrap-teacher text-center probootstrap-animate" style="min-height: 150px">
+                            <div class="text">
+                              <h3>{{ member.name }}</h3>
+                              <p>{{ member.email }}</p>
+                            </div>
+                        </div>
+                      </div>
+
+                      {% endfor %}
+                    </div>
+                  </section>
                 </div>
               </div>
             </div>
