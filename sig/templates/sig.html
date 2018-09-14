@@ -1,47 +1,66 @@
 {% extends "base.html" %}
 {% load static %}
+{% block sig %}active{% endblock %}
 {% block main %}
 
+<style>
+
+.probootstrap-text{
+    margin-top: 10%;
+}
+
+.probootstrap-media{
+    border-radius: 50%;
+    background-color: #0b0b0b
+}
+
+</style>
       
       
       <section class="probootstrap-section">
         <div class="container">
 
-          <div class="row">
+            <div class="row">
             <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 probootstrap-animate">
-              <a href="#" class="probootstrap-featured-news-box">
-                <figure class="probootstrap-media"><img src="{% static 'img/CodeSIG.png' %}" alt="Code"></figure>
-                <div class="probootstrap-text" style="top:10%;">
-                  <h3>Code</h3>
-                  <div>High bandwidth Ultra Low Latency (HULL) extends the advantages of Data Center TCP
-(DCTCP) and aims to provide lower latencies than DCTCP. DCTCP has been implemented in
-ns-3 recently as a part of GSoC 2017. In this project, it is expected to extend the DCTCP
-model in ns-3 to support HULL.</div>
-                </div>
-              </a>
+            <a href="#" class="probootstrap-featured-news-box" >
+            <figure class="probootstrap-media"><img src="{% static 'img/CodeSIG.png' %}" alt="Free Bootstrap Template by ProBootstrap.com" class="img-responsive"></figure>
+            <div class="probootstrap-text">
+              <h3>Code</h3>
+              <p>High bandwidth Ultra Low Latency (HULL) extends the advantages of Data Center TCP
+            (DCTCP) and aims to provide lower latencies than DCTCP. DCTCP has been implemented in
+            ns-3 recently as a part of GSoC 2017. In this project, it is expected to extend the DCTCP
+            model in ns-3 to support HULL.</p>
+              <!-- <span class="probootstrap-date"><i class="icon-calendar"></i>July 9, 2017</span>
+              <span class="probootstrap-location"><i class="icon-location2"></i>White Palace, Brooklyn, NYC</span> -->
             </div>
+            </a>
+            </div>
+
+
             <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 probootstrap-animate">
-              <a href="#" class="probootstrap-featured-news-box">
-                <figure class="probootstrap-media"><img src="{% static 'img/GadgetSIG.png' %}" alt="Free Bootstrap Template by ProBootstrap.com" class="img-responsive"></figure>
-                <div class="probootstrap-text" style="top:10%;">
-                  <h3>Gadget</h3>
-                  <div>High bandwidth Ultra Low Latency (HULL) extends the advantages of Data Center TCP
-(DCTCP) and aims to provide lower latencies than DCTCP. DCTCP has been implemented in
-ns-3 recently as a part of GSoC 2017. In this project, it is expected to extend the DCTCP
-model in ns-3 to support HULL.</div>
-                </div>
-              </a>
+            <a href="#" class="probootstrap-featured-news-box" >
+            <figure class="probootstrap-media"><img style="border-radius: 50%; background-color: #0b0b0b" src="{% static 'img/GadgetSIG.png' %}" alt="Free Bootstrap Template by ProBootstrap.com" class="img-responsive"></figure>
+            <div class="probootstrap-text">
+            <h3>Gadget</h3>
+            <p>High bandwidth Ultra Low Latency (HULL) extends the advantages of Data Center TCP
+            (DCTCP) and aims to provide lower latencies than DCTCP. DCTCP has been implemented in
+            ns-3 recently as a part of GSoC 2017. In this project, it is expected to extend the DCTCP
+            model in ns-3 to support HULL.</p>
             </div>
+            </a>
+            </div>
+
+
             <div class="clearfix visible-sm-block visible-xs-block"></div>
             <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 probootstrap-animate">
               <a href="#" class="probootstrap-featured-news-box">
                 <figure class="probootstrap-media"><img src="{% static 'img/GarageSIG.png' %}" alt="Free Bootstrap Template by ProBootstrap.com" class="img-responsive"></figure>
-                <div class="probootstrap-text" style="top:10%;">
+                <div class="probootstrap-text">
                   <h3>Garage</h3>
-                  <div>High bandwidth Ultra Low Latency (HULL) extends the advantages of Data Center TCP
+                  <p>High bandwidth Ultra Low Latency (HULL) extends the advantages of Data Center TCP
 (DCTCP) and aims to provide lower latencies than DCTCP. DCTCP has been implemented in
 ns-3 recently as a part of GSoC 2017. In this project, it is expected to extend the DCTCP
-model in ns-3 to support HULL.</div>
+model in ns-3 to support HULL.</p>
                 </div>
               </a>
             </div>
@@ -51,12 +70,12 @@ model in ns-3 to support HULL.</div>
             <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 probootstrap-animate">
               <a href="#" class="probootstrap-featured-news-box">
                 <figure class="probootstrap-media"><img src="{% static 'img/booksig.png' %}" alt="Free Bootstrap Template by ProBootstrap.com" class="img-responsive"></figure>
-                <div class="probootstrap-text" style="top:10%;">
+                <div class="probootstrap-text">
                   <h3>Script</h3>
-                  <div>High bandwidth Ultra Low Latency (HULL) extends the advantages of Data Center TCP
+                  <p>High bandwidth Ultra Low Latency (HULL) extends the advantages of Data Center TCP
 (DCTCP) and aims to provide lower latencies than DCTCP. DCTCP has been implemented in
 ns-3 recently as a part of GSoC 2017. In this project, it is expected to extend the DCTCP
-model in ns-3 to support HULL.</div>
+model in ns-3 to support HULL.</p>
                 </div>
               </a>
             </div>
@@ -65,24 +84,24 @@ model in ns-3 to support HULL.</div>
             <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 probootstrap-animate">
               <a href="#" class="probootstrap-featured-news-box">
                 <figure class="probootstrap-media"><img src="{% static 'img/VriddhiSIG.png' %}" alt="Free Bootstrap Template by ProBootstrap.com" class="img-responsive"></figure>
-                <div class="probootstrap-text" style="top:10%;">
+                <div class="probootstrap-text">
                   <h3>Vriddhi</h3>
-                  <div>High bandwidth Ultra Low Latency (HULL) extends the advantages of Data Center TCP
+                  <p>High bandwidth Ultra Low Latency (HULL) extends the advantages of Data Center TCP
 (DCTCP) and aims to provide lower latencies than DCTCP. DCTCP has been implemented in
 ns-3 recently as a part of GSoC 2017. In this project, it is expected to extend the DCTCP
-model in ns-3 to support HULL.</div>
+model in ns-3 to support HULL.</p>
                 </div>
               </a>
             </div>
             <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 probootstrap-animate">
               <a href="#" class="probootstrap-featured-news-box">
                 <figure class="probootstrap-media"><img src="{% static 'img/robotics.png' %}" alt="Free Bootstrap Template by ProBootstrap.com" class="img-responsive"></figure>
-                <div class="probootstrap-text" style="top:10%;">
+                <div class="probootstrap-text">
                   <h3>Robotics</h3>
-                  <div>High bandwidth Ultra Low Latency (HULL) extends the advantages of Data Center TCP
+                  <p>High bandwidth Ultra Low Latency (HULL) extends the advantages of Data Center TCP
 (DCTCP) and aims to provide lower latencies than DCTCP. DCTCP has been implemented in
 ns-3 recently as a part of GSoC 2017. In this project, it is expected to extend the DCTCP
-model in ns-3 to support HULL.</div>
+model in ns-3 to support HULL.</p>
                 </div>
               </a>
             </div>
