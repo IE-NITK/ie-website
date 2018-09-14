@@ -10,7 +10,7 @@
     
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700|Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/styles-merged.css' %}">
-    <link rel="stylesheet" href="{% static 'css/style.min.css' %}" >
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" >
     <link rel="stylesheet" href="{% static 'css/custom.css' %}">
   
     <script src="{% static 'js/scripts.min.js' %}"></script>
@@ -70,30 +70,11 @@
           <div id="navbar-collapse" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
 
-              <li class="active"><a href="index.html">Home</a></li>
-              <li><a href="courses.html">Courses</a></li>
-              <li><a href="{% url 'teams:teams' %}">Teams</a></li>
-              <li><a href="{% url 'events:events' %}">Events</a></li>
-              <li class="dropdown">
-                <a href="#" data-toggle="dropdown" class="dropdown-toggle">Pages</a>
-                <ul class="dropdown-menu">
-                  <li><a href="about.html">About Us</a></li>
-                  <li><a href="courses.html">Courses</a></li>
-                  <li><a href="course-single.html">Course Single</a></li>
-                  <li><a href="gallery.html">Gallery</a></li>
-                  <li class="dropdown-submenu dropdown">
-                    <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span>Sub Menu</span></a>
-                    <ul class="dropdown-menu">
-                      <li><a href="#">Second Level Menu</a></li>
-                      <li><a href="#">Second Level Menu</a></li>
-                      <li><a href="#">Second Level Menu</a></li>
-                      <li><a href="#">Second Level Menu</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="news.html">News</a></li>
-                </ul>
-              </li> -->
-              <li><a href="contact.html">Contact</a></li>
+              <li class="{% block index %}{% endblock %}"><a href="{% url 'home' %}">Home</a></li>
+              <li class="{% block sig %}{% endblock %}"><a href="{% url 'sig:sig' %}">SIG</a></li>
+              <li class="{% block events %}{% endblock %}"><a href="{% url 'events:events' %}">Events</a></li>
+              <li class="{% block teams %}{% endblock %}"><a href="{% url 'teams:teams' %}">Team</a></li>
+              <li class="contact"><a href="contact.html">Contact</a></li>
             </ul>
           </div>
         </div>

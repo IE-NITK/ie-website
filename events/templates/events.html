@@ -1,10 +1,12 @@
 {% extends "base.html" %}
+{% load static %}
+{% block events %}active{% endblock %}
       {% block main %}
       <section class="probootstrap-section probootstrap-section-colored">
         <div class="container">
           <div class="row">
             <div class="col-md-12 text-left section-heading probootstrap-animate">
-              <h1>School Events</h1>
+              <h1>IE Events</h1>
             </div>
           </div>
         </div>
@@ -17,13 +19,13 @@
               <div class="probootstrap-flex-block">
                 <div class="probootstrap-text probootstrap-animate">
                   <div class="text-uppercase probootstrap-uppercase">Featured Events</div>
-                  <h3>Students Math Competition for The Year 2017</h3>
-                  <p>Quis explicabo veniam labore ratione illo vero voluptate a deserunt incidunt odio aliquam commodi </p>
+                  <h3>Engineer's Day</h3>
+                  <p>An event to facilitate and encourage the top performers of each department and year</p>
                   <p>
-                    <span class="probootstrap-date"><i class="icon-calendar"></i>July 9, 2017</span>
-                    <span class="probootstrap-location"><i class="icon-location2"></i>White Palace, Brooklyn, NYC</span>
+                    <span class="probootstrap-date"><i class="icon-calendar"></i>September 17, 2018</span>
+                    <span class="probootstrap-location"><i class="icon-location2"></i>Main Seminar Hall, NITK</span>
                   </p>
-                  <p><a href="#" class="btn btn-primary">Learn More</a></p>
+                  <!-- <p><a href="#" class="btn btn-primary">Learn More</a></p> -->
                 </div>
                 <div class="probootstrap-image probootstrap-animate" style="background-image: url(img/slider_4.jpg)">
                   <a href="https://vimeo.com/45830194" class="btn-video popup-vimeo"><i class="icon-play3"></i></a>
@@ -42,33 +44,36 @@
 
           <div class="row">
             <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 probootstrap-animate">
-              <a href="#" class="probootstrap-featured-news-box">
-                <figure class="probootstrap-media"><img src="img/img_sm_1.jpg" alt="Free Bootstrap Template by ProBootstrap.com" class="img-responsive"></figure>
+              <a href="#" class="probootstrap-featured-news-box" >
+                <figure class="probootstrap-media"><img style="border-radius: 50%; background-color: #0b0b0b" src="http://ie.nitk.ac.in/static/img/CodeSIG.png" alt="Free Bootstrap Template by ProBootstrap.com" class="img-responsive"></figure>
                 <div class="probootstrap-text">
-                  <h3>Tempora consectetur unde nisi</h3>
-                  <span class="probootstrap-date"><i class="icon-calendar"></i>July 9, 2017</span>
-                  <span class="probootstrap-location"><i class="icon-location2"></i>White Palace, Brooklyn, NYC</span>
+                  <h3>RTFM</h3>
+                  <p>Read the F@#cking Manual, event by Code under Enigma</p>
+                  <!-- <span class="probootstrap-date"><i class="icon-calendar"></i>July 9, 2017</span>
+                  <span class="probootstrap-location"><i class="icon-location2"></i>White Palace, Brooklyn, NYC</span> -->
                 </div>
               </a>
             </div>
             <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 probootstrap-animate">
               <a href="#" class="probootstrap-featured-news-box">
-                <figure class="probootstrap-media"><img src="img/img_sm_2.jpg" alt="Free Bootstrap Template by ProBootstrap.com" class="img-responsive"></figure>
+                <figure class="probootstrap-media"><img style="border-radius: 50%; background-color: #0b0b0b" src="http://ie.nitk.ac.in/static/img/GadgetSIG.png" alt="Free Bootstrap Template by ProBootstrap.com" class="img-responsive"></figure>
                 <div class="probootstrap-text">
-                  <h3>Tempora consectetur unde nisi</h3>
-                  <span class="probootstrap-date"><i class="icon-calendar"></i>July 9, 2017</span>
-                  <span class="probootstrap-location"><i class="icon-location2"></i>White Palace, Brooklyn, NYC</span>
+                  <h3>Sync</h3>
+                  <p>Sync is an event by Garage under Enigma</p>
+                  <!-- <span class="probootstrap-date"><i class="icon-calendar"></i>July 9, 2017</span>
+                  <span class="probootstrap-location"><i class="icon-location2"></i>White Palace, Brooklyn, NYC</span> -->
                 </div>
               </a>
             </div>
             <div class="clearfix visible-sm-block visible-xs-block"></div>
             <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 probootstrap-animate">
               <a href="#" class="probootstrap-featured-news-box">
-                <figure class="probootstrap-media"><img src="img/img_sm_3.jpg" alt="Free Bootstrap Template by ProBootstrap.com" class="img-responsive"></figure>
+                <figure class="probootstrap-media"><img style="border-radius: 50%; background-color: #0b0b0b" src="http://ie.nitk.ac.in/static/img/GarageSIG.png" alt="Free Bootstrap Template by ProBootstrap.com" class="img-responsive"></figure>
                 <div class="probootstrap-text">
-                  <h3>Tempora consectetur unde nisi</h3>
-                  <span class="probootstrap-date"><i class="icon-calendar"></i>July 9, 2017</span>
-                  <span class="probootstrap-location"><i class="icon-location2"></i>White Palace, Brooklyn, NYC</span>
+                  <h3>Logician</h3>
+                  <p>Logician is an event by Gadget under Enigma</p>
+                  <!-- <span class="probootstrap-date"><i class="icon-calendar"></i>July 9, 2017</span>
+                  <span class="probootstrap-location"><i class="icon-location2"></i>White Palace, Brooklyn, NYC</span> -->
                 </div>
               </a>
             </div>
@@ -77,11 +82,12 @@
             
             <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 probootstrap-animate">
               <a href="#" class="probootstrap-featured-news-box">
-                <figure class="probootstrap-media"><img src="img/img_sm_1.jpg" alt="Free Bootstrap Template by ProBootstrap.com" class="img-responsive"></figure>
+                <figure class="probootstrap-media"><img style="border-radius: 50%; background-color: #0b0b0b" src="http://ie.nitk.ac.in/static/img/VriddhiSIG.png" alt="Free Bootstrap Template by ProBootstrap.com" class="img-responsive"></figure>
                 <div class="probootstrap-text">
-                  <h3>Tempora consectetur unde nisi</h3>
-                  <span class="probootstrap-date"><i class="icon-calendar"></i>July 9, 2017</span>
-                  <span class="probootstrap-location"><i class="icon-location2"></i>White Palace, Brooklyn, NYC</span>
+                  <h3>Spark</h3>
+                  <p>Mini Ted of IE </p>
+                  <!-- <span class="probootstrap-date"><i class="icon-calendar"></i>July 9, 2017</span>
+                  <span class="probootstrap-location"><i class="icon-location2"></i>White Palace, Brooklyn, NYC</span> -->
                 </div>
               </a>
             </div>
@@ -89,21 +95,23 @@
             
             <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 probootstrap-animate">
               <a href="#" class="probootstrap-featured-news-box">
-                <figure class="probootstrap-media"><img src="img/img_sm_2.jpg" alt="Free Bootstrap Template by ProBootstrap.com" class="img-responsive"></figure>
+                <figure class="probootstrap-media"><img style="border-radius: 50%; background-color: #0b0b0b" src="http://ie.nitk.ac.in/static/img/booksig.png" alt="Free Bootstrap Template by ProBootstrap.com" class="img-responsive"></figure>
                 <div class="probootstrap-text">
-                  <h3>Tempora consectetur unde nisi</h3>
-                  <span class="probootstrap-date"><i class="icon-calendar"></i>July 9, 2017</span>
-                  <span class="probootstrap-location"><i class="icon-location2"></i>White Palace, Brooklyn, NYC</span>
+                  <h3>KOTH</h3>
+                  <p>King of the Hills</p>
+                  <!-- <span class="probootstrap-date"><i class="icon-calendar"></i>July 9, 2017</span>
+                  <span class="probootstrap-location"><i class="icon-location2"></i>White Palace, Brooklyn, NYC</span> -->
                 </div>
               </a>
             </div>
             <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 probootstrap-animate">
               <a href="#" class="probootstrap-featured-news-box">
-                <figure class="probootstrap-media"><img src="img/img_sm_3.jpg" alt="Free Bootstrap Template by ProBootstrap.com" class="img-responsive"></figure>
+                <figure class="probootstrap-media"><img style="border-radius: 50%; background-color: #0b0b0b" src="http://ie.nitk.ac.in/static/img/robotics.png" alt="Free Bootstrap Template by ProBootstrap.com" class="img-responsive"></figure>
                 <div class="probootstrap-text">
-                  <h3>Tempora consectetur unde nisi</h3>
-                  <span class="probootstrap-date"><i class="icon-calendar"></i>July 9, 2017</span>
-                  <span class="probootstrap-location"><i class="icon-location2"></i>White Palace, Brooklyn, NYC</span>
+                  <h3>Engineer's Day</h3>
+                  <p>Top performers of each department</p>
+                  <!-- <span class="probootstrap-date"><i class="icon-calendar"></i>July 9, 2017</span>
+                  <span class="probootstrap-location"><i class="icon-location2"></i>White Palace, Brooklyn, NYC</span> -->
                 </div>
               </a>
             </div>
@@ -113,14 +121,4 @@
         </div>
       </section>
       
-      <section class="probootstrap-cta">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <h2 class="probootstrap-animate" data-animate-effect="fadeInRight">Get your admission now!</h2>
-              <a href="#" role="button" class="btn btn-primary btn-lg btn-ghost probootstrap-animate" data-animate-effect="fadeInLeft">Enroll</a>
-            </div>
-          </div>
-        </div>
-      </section>
 {% endblock %}
