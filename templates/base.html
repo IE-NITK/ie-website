@@ -70,12 +70,11 @@
           <div id="navbar-collapse" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
 
-              <li class="active"><a href="index.html">Home</a></li>
-              <!-- <li><a href="courses.html">Courses</a></li> -->
-              <li><a href="{% url 'sig:sig' %}">SIG</a></li>
-              <li><a href="{% url 'events:events' %}">Events</a></li>
-              <li><a href="{% url 'teams:teams' %}">Team</a></li>
-              <li><a href="contact.html">Contact</a></li>
+              <li class="home"><a href="{% url 'home' %}">Home</a></li>
+              <li class="sig"><a href="{% url 'sig:sig' %}">SIG</a></li>
+              <li class="events"><a href="{% url 'events:events' %}">Events</a></li>
+              <li class="team"><a href="{% url 'teams:teams' %}">Team</a></li>
+              <li class="contact"><a href="contact.html">Contact</a></li>
             </ul>
           </div>
         </div>

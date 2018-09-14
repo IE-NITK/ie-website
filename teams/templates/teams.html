@@ -23,15 +23,15 @@
                   <div class="probootstrap-sidebar-inner probootstrap-overlap probootstrap-animate">
                     <h3></h3>
                     <ul class="probootstrap-side-menu">
-                      <li class="tablinks active"><a onclick="return navigate('core')">Core</a></li>
-                      <li class="tablinks"><a onclick="return navigate('code')">Code</a></li>
-                      <li class="tablinks"><a onclick="return navigate('gadget')">Gadget</a></li>
-                      <li class="tablinks"><a onclick="return navigate('garage')">Garage</a></li>
-                      <li class="tablinks"><a onclick="return navigate('website')">Website</a></li>
+                      <li class="tablinks active core"><a onclick="return navigate('core')">Core</a></li>
+                      <li class="tablinks code"><a onclick="return navigate('code')">Code</a></li>
+                      <li class="tablinks gadget"><a onclick="return navigate('gadget')">Gadget</a></li>
+                      <li class="tablinks garage"><a onclick="return navigate('garage')">Garage</a></li>
+                      <li class="tablinks website"><a onclick="return navigate('website')">Website</a></li>
                     </ul>
                   </div>
                 </div>
-                <div class="col-md-7 col-md-push-1 probootstrap-animate team" id="core">
+                <div class="col-md-7 col-md-push-1 probootstrap-animate teams" id="core">
                   <h2>Core</h2>
                   <section class="probootstrap-section">
                     <div class="container" style="width: 100%;">
@@ -50,7 +50,7 @@
                     </div>
                   </section>
                 </div>
-                <div class="col-md-7 col-md-push-1 probootstrap-animate team" id="code">
+                <div class="col-md-7 col-md-push-1 probootstrap-animate teams" id="code">
                   <h2>Code</h2>
                   <section class="probootstrap-section">
                     <div class="container" style="width: 100%;">
@@ -68,7 +68,7 @@
                     </div>
                   </section>
                 </div>
-                <div class="col-md-7 col-md-push-1 probootstrap-animate team" id="gadget">
+                <div class="col-md-7 col-md-push-1 probootstrap-animate teams" id="gadget">
                   <h2>Gadget</h2>
                   <section class="probootstrap-section">
                     <div class="container" style="width: 100%;">
@@ -86,7 +86,7 @@
                     </div>
                   </section>
                 </div>
-                <div class="col-md-7 col-md-push-1 probootstrap-animate team" id="garage">
+                <div class="col-md-7 col-md-push-1 probootstrap-animate teams" id="garage">
                   <h2>Garage</h2>
                   <section class="probootstrap-section">
                     <div class="container" style="width: 100%;">
@@ -104,7 +104,7 @@
                     </div>
                   </section>
                 </div>
-                <div class="col-md-7 col-md-push-1 probootstrap-animate team" id="website">
+                <div class="col-md-7 col-md-push-1 probootstrap-animate teams" id="website">
                   <h2>Website Team</h2>
                   <section class="probootstrap-section">
                     <div class="container" style="width: 100%;">
@@ -139,13 +139,13 @@
         </div>
       </section>
       <script type="text/javascript">
-        var tabcontent = document.getElementsByClassName('team');
+        $(".team").addClass("active");
+        var tabcontent = document.getElementsByClassName('teams');
         for (i = 1; i < tabcontent.length; i++) {
             tabcontent[i].style.display = "none";
           }
         function navigate(signame) {
-          var tabcontent = document.getElementsByClassName('team');
-          console.log(tabcontent);
+          var tabcontent = document.getElementsByClassName('teams');
           for (i = 0; i < tabcontent.length; i++) {
             tabcontent[i].style.display = "none";
           }
@@ -154,6 +154,7 @@
             tablinks[i].className = tablinks[i].className.replace(" active", "");
           }
           document.getElementById(signame).style.display = "block";
+          $("."+signame).addClass("active");
         }
       </script>
 {% endblock %}
