@@ -6,15 +6,10 @@ h3{
 }
 .probootstrap-media{
 	background-color: black;
-	width: 350px;
-	height: 350px;
+	position: relative;
 	border-radius: 50%;
 }
 .probootstrap-media img{
-	width: 350px;
-	height: 350px;
-}
-.probootstrap-text{
-	z-index: 0px;
-	position: static;
+	width: 100%;
+	height: 100%;
 }
