@@ -38,9 +38,10 @@
                       {% for member in core %}
 
                       <div class="col-sm-6">
-                        <div class="probootstrap-teacher text-center probootstrap-animate" style="min-height: 150px">
-                            <div class="text">
+                        <div class="probootstrap-teacher text-center probootstrap-animate" style="min-height: 220px">
+                            <div class="text" style="word-wrap: break-word;">
                               <h3>{{ member.name }}</h3>
+                                <h6>{{ member.post }}</h6>
                               <p>{{ member.email }}</p>
                             </div>
                         </div>
