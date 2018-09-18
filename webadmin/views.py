@@ -133,9 +133,9 @@ def add_user(request):
                 form.cleaned_data['firstname'],
                 form.cleaned_data['lastname'],
                 False,
-                form.cleaned_data['employee']
+                form.cleaned_data['member_type']
             )
-            request.session['alert_success'] = "Successfully created new employee account"
+            request.session['alert_success'] = "Successfully created new member account. Please ask them to change the password first"
             return HttpResponseRedirect('/admin/users/')
     else:
         form = AddUserForm()
