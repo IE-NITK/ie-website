@@ -8,6 +8,7 @@ h3{
 	background-color: black;
 	position: relative;
 	border-radius: 50%;
+	padding: 2%;
 }
 .probootstrap-media img{
 	width: 100%;
@@ -15,6 +16,6 @@ h3{
 }
 .probootstrap-text{
 	position: relative;
-	height: 400px;
-	font-size: 1.2em;
+	height: 350px;
+	/*font-size: 1.2em;*/
 }
