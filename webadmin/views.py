@@ -18,6 +18,9 @@ def error_404_view(request, exception):
 def view_team(request):
 	return render(request, 'events.html')
 
+def sitemap(request):
+    return render(request, 'sitemap.xml', content_type="application/xhtml+xml")
+
 
 def view_archived_users(request):
     # Authentication check.

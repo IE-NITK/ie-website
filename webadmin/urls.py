@@ -6,6 +6,7 @@ from webadmin import views
 app_name = 'webadmin'
 
 urlpatterns = [
+	url(r'^sitemap/$', views.sitemap, name='sitemap'),
 	url(r'^team/$', views.view_team, name='team'),
 	url(r'^admin/users/$', views.users_view, name='admin/users'),
     url(r'^admin/archive_user', views.user_archive, name='admin/archive_user'),
