@@ -13,6 +13,7 @@ app_name = 'accounts'
 urlpatterns = [
     url(r'^login/$', views_home.login_view, name='index'),
     url(r'^setup/$', views_home.setup_view, name='setup'),
+    url(r'^register/$', views_home.register_view, name='register'),
     url(r'^logout/$', views_home.logout_view, name='logout'),
     url(r'^profile/$', views_profile.profile_view, name='profile'),
     url(r'^profile/update/$', views_profile.profile_update, name='profile/update'),

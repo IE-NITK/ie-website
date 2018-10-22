@@ -56,6 +56,9 @@
                             <p class="nav navbar-text" style="color: #FFF">Not signed in</p>
                         </li>
                     {% endif %}
+		    <li>
+                        {% block nav_button %}{% endblock %}			
+		    </li>
                     <li><a data-toggle="modal" data-target="#aboutus-modal">About us</a></li>
                 </ul>
             </div>

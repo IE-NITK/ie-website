@@ -17,16 +17,14 @@
    "mob_no": 8951166110,
    "email": "shrey920@gmail.com"
  },
- {
-   "name": "Mishal Shah",
-   "roll_no": "16CO125",
-   "mob_no": 9739868121,
-   "email": "shahmishal1998@gmail.com"
- },
   {
    "name": "Dev Shankar N",
    "roll_no": "16CV111",
    "mob_no": 9740204560,
    "email": "dev.shankar1@gmail.com"
+ },
+ {
+   "name": "Mishal Shah",
+  "email": "shahmishal1998@gmail.com"
  }
 ]
