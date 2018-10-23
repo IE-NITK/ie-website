@@ -115,10 +115,11 @@ def delete_user(request):
             pk = request.POST['pk']
             try:
                 user = Account.objects.get(pk=pk)
+                USER = user.user
             except Exception:
                 template_data['alert_danger'] = "Unable to delete the user. Please try again later"
                 return
-            user.delete()
+            USER.delete()
             template_data['alert_success'] = "The user has been deleted."
             return HttpResponseRedirect('/admin/users')
 
