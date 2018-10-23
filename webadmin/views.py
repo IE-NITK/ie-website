@@ -1,3 +1,4 @@
+
 from django.shortcuts import render
 from django.shortcuts import render
 import sys
@@ -6,10 +7,12 @@ from django.core import serializers
 from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect, HttpResponse
 from django.db.utils import IntegrityError
+from django.contrib.auth import get_user_model
 
 from accounts import views
 from accounts.models import Account
 from webadmin.forms import AddUserForm
+User = get_user_model()
 
 
 def error_404_view(request, exception):
