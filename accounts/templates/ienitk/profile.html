@@ -1,9 +1,10 @@
 {% extends "admin-base.html" %}
 {% load app_filters %}
+{% load static %}
 {% block title %}Overview{% endblock %}
 {% block sidebar_profile %}active{% endblock %}
 {% block body_header %}Welcome {{ user.account }}{% endblock %}
 {% block body %}
     <p class="lead">Navigate through the portal using the bar on the left-hand side of the browser.</p>
-    
+    <img src="{% static '/img/freshers-poster.jpg' %}">
 {% endblock %}
