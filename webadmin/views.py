@@ -1,3 +1,4 @@
+
 from django.shortcuts import render
 from django.shortcuts import render
 import sys
@@ -6,10 +7,12 @@ from django.core import serializers
 from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect, HttpResponse
 from django.db.utils import IntegrityError
+from django.contrib.auth import get_user_model
 
 from accounts import views
 from accounts.models import Account
 from webadmin.forms import AddUserForm
+User = get_user_model()
 
 
 def error_404_view(request, exception):
@@ -112,10 +115,11 @@ def delete_user(request):
             pk = request.POST['pk']
             try:
                 user = Account.objects.get(pk=pk)
+                USER = user.user
             except Exception:
                 template_data['alert_danger'] = "Unable to delete the user. Please try again later"
                 return
-            user.delete()
+            USER.delete()
             template_data['alert_success'] = "The user has been deleted."
             return HttpResponseRedirect('/admin/users')
 
