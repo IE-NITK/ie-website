@@ -18,4 +18,4 @@ urlpatterns = [
     url(r'^profile/$', views_profile.profile_view, name='profile'),
     url(r'^profile/update/$', views_profile.profile_update, name='profile/update'),
     url(r'^profile/password/$', views_profile.password_view, name='profile/password'),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

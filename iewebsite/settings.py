@@ -25,7 +25,7 @@ SECRET_KEY = '!th-(6rochf+vi!$e(o84^-)3+&oj7osgrztitz5p#8_mtq5t%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ie.nitk.ac.in','10.4.0.67','*']
+ALLOWED_HOSTS = ['ie.nitk.ac.in','10.4.0.67', '*']
 
 
 # Application definition
@@ -137,3 +137,10 @@ STATICFILES_DIRS = (
 )
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# List of finder classes that know how to find static files in
+# various locations.
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+)

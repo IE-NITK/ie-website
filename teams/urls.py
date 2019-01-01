@@ -7,4 +7,4 @@ app_name = 'teams'
 
 urlpatterns = [
 	url(r'^teams/$', views.view_teams, name='teams')
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

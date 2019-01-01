@@ -17,7 +17,8 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include, url
 from django.views.generic.base import TemplateView
-
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -27,4 +28,4 @@ urlpatterns = [
     url(r'^', include('events.urls', namespace="events")),
     url(r'^', include('accounts.urls', namespace="accounts")),
     url(r'^', include('teams.urls', namespace="teams"))
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
