@@ -23,6 +23,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', TemplateView.as_view(template_name='index.html'), name='home'),
+    url(r'^workshop/$', TemplateView.as_view(template_name='sixth-sense-workshop.html'), name='workshop'),
     url(r'^', include('webadmin.urls', namespace="webadmin")),
     url(r'^', include('sig.urls', namespace="sig")),
     url(r'^', include('events.urls', namespace="events")),
