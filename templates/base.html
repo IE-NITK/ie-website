@@ -78,13 +78,15 @@
               <li class="{% block index %}{% endblock %}"><a href="{% url 'home' %}">Home</a></li>
               <li class="{% block sig %}{% endblock %}"><a href="{% url 'sig:sig' %}">SIG</a></li>
               <li class="{% block events %}{% endblock %}"><a href="{% url 'events:events' %}">Events</a></li>
+              <li class="{% block blog %}{% endblock %}"><a href="/blog">Blog</a></li>
               <li class="{% block teams %}{% endblock %}"><a href="{% url 'teams:teams' %}">Team</a></li>
+              <li class="{% block flappy %}{% endblock %}"><a href="{% url 'flappy' %}">Bored?</a></li>
               <!-- <li class="contact"><a href="contact.html">Contact</a></li> -->
             </ul>
           </div>
         </div>
       </nav>
-  <main>
+  <main>  
     {% block main %}
     {% endblock %}
   </main>
@@ -113,7 +115,9 @@
                   <li><a href="{% url 'home' %}">Home</a></li>
                   <li><a href="{% url 'events:events' %}">Events</a></li>
                   <li><a href="{% url 'sig:sig' %}">SIGs</a></li>
+                  <li><a href="/blog">Blog</a></li>
                   <li><a href="{% url 'teams:teams' %}">Team</a></li>
+                  <li><a href="{% url 'flappy' %}">Bored?</a></li>
                 </ul>
               </div>
             </div>
@@ -156,9 +160,6 @@
 
       gtag('config', 'UA-126629212-1');
     </script>
-
-
-
   </body>
 
 </html>
