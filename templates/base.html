@@ -56,7 +56,7 @@
         </div>
       </div>
       <marquee>
-        <strong>Sixth Sense Robotics Workshop in collaboration with SkyFi Labs, March 17, 2019 <a href="https://goo.gl/forms/cmFk6JKPAJF66bsH3">Register here</a></strong>
+        <strong>Summer Mentorship Programme 2019 forms are out.  <a href="{% url 'events:smp' %}">Check here</a></strong>
       </marquee>
       <nav class="navbar navbar-default probootstrap-navbar">
         <div class="container">
@@ -79,6 +79,7 @@
               <li class="{% block events %}{% endblock %}"><a href="{% url 'events:events' %}">Events</a></li>
               <li class="{% block blog %}{% endblock %}"><a href="/blog">Blog</a></li>
               <li class="{% block teams %}{% endblock %}"><a href="{% url 'teams:teams' %}">Team</a></li>
+              <li class="{% block smp %}{% endblock %}"><a href="{% url 'events:smp' %}">SMP</a></li>
               <li class="{% block flappy %}{% endblock %}"><a href="{% url 'flappy' %}">Bored?</a></li>
               <!-- <li class="contact"><a href="contact.html">Contact</a></li> -->
             </ul>
