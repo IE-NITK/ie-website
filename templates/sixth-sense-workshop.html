@@ -80,18 +80,21 @@
               <li class="{% block index %}{% endblock %}"><a href="{% url 'home' %}">Home</a></li>
               <li class="{% block sig %}{% endblock %}"><a href="{% url 'sig:sig' %}">SIG</a></li>
               <li class="{% block events %}{% endblock %}"><a href="{% url 'events:events' %}">Events</a></li>
+              <li class="{% block blog %}{% endblock %}"><a href="/blog">Blog</a></li>
               <li class="{% block teams %}{% endblock %}"><a href="{% url 'teams:teams' %}">Team</a></li>
+              <li class="{% block flappy %}{% endblock %}"><a href="{% url 'flappy' %}">Bored?</a></li>
               <!-- <li class="contact"><a href="contact.html">Contact</a></li> -->
             </ul>
           </div>
         </div>
       </nav>
   <main>
+<section class="probootstrap-section">
     <div class="container" style="margin: auto;">
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc6O_mmEyl3KT7L6i19F_p98_cWiidVvaGnaU7IxyYIUuOtbw/viewform?embedded=true" width="700" height="520" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc6O_mmEyl3KT7L6i19F_p98_cWiidVvaGnaU7IxyYIUuOtbw/viewform?embedded=true" width="700" height="1520" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
     </div>
   </main>
-  
+  </section>
   <footer class="probootstrap-footer probootstrap-bg">
         <div class="container">
           <div class="row">
@@ -116,7 +119,9 @@
                   <li><a href="{% url 'home' %}">Home</a></li>
                   <li><a href="{% url 'events:events' %}">Events</a></li>
                   <li><a href="{% url 'sig:sig' %}">SIGs</a></li>
+                  <li><a href="/blog">Blog</a></li>
                   <li><a href="{% url 'teams:teams' %}">Team</a></li>
+                  <li><a href="{% url 'flappy' %}">Bored?</a></li>
                 </ul>
               </div>
             </div>
@@ -125,7 +130,7 @@
                 <h3>Contact Info</h3>
                 <ul class="probootstrap-contact-info">
                   <li><i class="icon-location2"></i> <span>National Institute of Technology Karnataka, Surathkal</span></li>
-                  <li><i class="icon-mail"></i><span>ie@nitk.ac.in</span></li>
+                  <li><i class="icon-mail"></i><span>ie@nitk.edu.in</span></li>
                   <!-- <li><i class="icon-phone2"></i><span>+123 456 7890</span></li> -->
                 </ul>
               </div>
@@ -139,7 +144,7 @@
           <div class="container">
             <div class="row">
               <div class="col-md-8 text-left">
-                <p>&copy; 2018 Built with <i class="icon icon-heart"></i> at IE NITK</p>
+                <p>&copy; 2019 Built with <i class="icon icon-heart"></i> at IE NITK</p>
               </div>
               <div class="col-md-4 probootstrap-back-to-top">
                 <p><a href="#" class="js-backtotop">Back to top <i class="icon-arrow-long-up"></i></a></p>
