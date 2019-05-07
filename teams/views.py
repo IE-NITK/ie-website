@@ -10,5 +10,6 @@ def view_teams(request):
     gadget = json.loads(open(os.path.join(settings.STATICFILES_DIRS[0], 'gadget.json')).read())
     garage = json.loads(open(os.path.join(settings.STATICFILES_DIRS[0], 'garage.json')).read())
     website = json.loads(open(os.path.join(settings.STATICFILES_DIRS[0], 'website.json')).read())
-    context={'core': core,'code': code, 'gadget': gadget, 'garage': garage, 'website': website}
+    spark = json.loads(open(os.path.join(settings.STATICFILES_DIRS[0], 'spark.json')).read())
+    context={'core': core,'code': code, 'gadget': gadget, 'garage': garage, 'website': website ,'spark' :spark}
     return render(request, 'teams.html',context)

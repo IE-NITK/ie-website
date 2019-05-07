@@ -13,7 +13,7 @@
         </div>
       </section>
 
-      
+
 
       <section class="probootstrap-section probootstrap-section-sm">
         <div class="container">
@@ -29,6 +29,7 @@
                       <li class="tablinks gadget"><a onclick="return navigate('gadget')">Gadget</a></li>
                       <li class="tablinks garage"><a onclick="return navigate('garage')">Garage</a></li>
                       <li class="tablinks website"><a onclick="return navigate('website')">Website</a></li>
+                      <li class="tablinks spark"><a onclick="return navigate('spark')">Spark</a></li>
                     </ul>
                   </div>
                 </div>
@@ -125,12 +126,31 @@
                     </div>
                   </section>
                 </div>
+                <div class="col-md-7 col-md-push-1 probootstrap-animate teams" id="spark">
+                  <h2>Spark</h2>
+                  <section class="probootstrap-section">
+                    <div class="container" style="width: 100%;">
+                      {% for member in spark %}
+                      <div class="col-sm-6">
+                        <div class="probootstrap-teacher text-center probootstrap-animate" style="min-height: 220px">
+                            <div class="text" style="word-wrap: break-word;">
+                              <h3>{{ member.name }}</h3>
+                              <a  href="mailto:{{ member.email }}"><i class='fas fa-envelope' style='font-size:35px;margin-right: 10px;margin-top: 20px;'></i></a>
+                              <a  href="{{ member.linkedinProfileLink }}"><i class='fab fa-linkedin' style='font-size:35px;margin-left: 10px;margin-top: 20px;'></i></a>
+                            </div>
+                        </div>
+                      </div>
+
+                      {% endfor %}
+                    </div>
+                  </section>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-      
+
       <script type="text/javascript">
         $(".team").addClass("active");
         var tabcontent = document.getElementsByClassName('teams');
