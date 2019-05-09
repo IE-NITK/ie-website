@@ -1,14 +1,174 @@
 [
- {
-   "name": "Chayanika Das",
-   "roll_no": "15CH11",
-   "mob_no": 9577819744,
-   "email": "chayanika7das@gmail.com"
- },
- {
-   "name": "Nithya Sarah Thomas",
-   "roll_no": "15CH28",
-   "mob_no": 9880604031,
-   "email": "nithyaneethu281997@gmail.com"
- }
+    {
+        "name": "Harikrishnan Suresh",
+        "post": "Convener "
+    },
+    {
+        "name": "Jaidev Anoop",
+        "post": "President "
+    },
+    {
+        "name": "Krishna Priya",
+        "post": "Joint Convener "
+    },
+    {
+        "name": "Vidit Bhargava",
+        "post": "Vice President"
+    },
+    {
+        "name": "Santhanu Panicker",
+        "post": "Garage SIG Head"
+    },
+    {
+        "name": "Abhijith Anilkumar",
+        "post": "Code SIG Head "
+    },
+    {
+        "name": "Anoop Mohan",
+        "post": "Gadget SIG Head"
+    },
+    {
+        "name": "Anurag Verma",
+        "post": "Auxiliary SIG Coordinator"
+    },
+    {
+        "name": "Nihar P Patel",
+        "post": "Event Coordinator"
+    },
+    {
+        "name": "Tejaswi Ravu",
+        "post": "Event Coordinator"
+    },
+    {
+        "name": "Almas Parveen",
+        "post": "Engineer Joint Convener"
+    },
+    {
+        "name": "Alex Biswas",
+        "post": "Executive Member"
+    },
+    {
+        "name": "Amal John",
+        "post": "Executive Member"
+    },
+    {
+        "name": "Varsha Raj",
+        "post": "Executive Member"
+    },
+    {
+        "name": "Anjana K N Janani",
+        "post": "Executive Member"
+    },
+    {
+        "name": "Anoop Mohan",
+        "post": "Executive Member"
+    },
+    {
+        "name": "Pavani Sravya",
+        "post": "Executive Member"
+    },
+    {
+        "name": "Gaurav M Kumar",
+        "post": "Executive Member"
+    },
+    {
+        "name": "Nihar Patel",
+        "post": "Executive Member"
+    },
+    {
+        "name": "Pratheek Rajan",
+        "post": "Executive Member"
+    },
+    {
+        "name": "Prathik Murthy",
+        "post": "Executive Member"
+    },
+    {
+        "name": "Sukesh Peruri",
+        "post": "Executive Member"
+    },
+    {
+        "name": "R Santhanu Panikar",
+        "post": "Executive Member"
+    },
+    {
+        "name": "Almas Parveen",
+        "post": "Executive Member"
+    },
+    {
+        "name": "Arjun Radhakrishnan",
+        "post": "Executive Member"
+    },
+    {
+        "name": "K A Althaf",
+        "post": "Executive Member"
+    },
+    {
+        "name": "Ameya P Koushik",
+        "post": "Executive Member"
+    },
+    {
+        "name": "Abhijith Anilkumar",
+        "post": "Executive Member"
+    },
+    {
+        "name": "Akshay sharma",
+        "post": "Executive Member"
+    },
+    {
+        "name": "Ankit Deepak",
+        "post": "Executive Member"
+    },
+    {
+        "name": "Ashish Kumar Singh",
+        "post": "Executive Member"
+    },
+    {
+        "name": "George CM",
+        "post": "Executive Member"
+    },
+    {
+        "name": "Jaidev Anoop",
+        "post": "Executive Member"
+    },
+    {
+        "name": "Vishnubothula Krishna Priya",
+        "post": "Executive Member"
+    },
+    {
+        "name": "Meenakshy Balachandran",
+        "post": "Executive Member"
+    },
+    {
+        "name": "M Prem Kumar",
+        "post": "Executive Member"
+    },
+    {
+        "name": "Purama Snehasri",
+        "post": "Executive Member"
+    },
+    {
+        "name": "Shashank S",
+        "post": "Executive Member"
+    },
+    {
+        "name": "Tejaswi Ravu",
+        "post": "Executive Member"
+    },
+    {
+        "name": "Vidit Vineet Bhargava",
+        "post": "Executive Member"
+    },
+    {
+        "name": "Sowbhagya Suresh",
+        "post": "Executive Member"
+    },
+    {
+        "name": "Akshay Jacob Thomas",
+        "post": "Executive Member"
+    },
+    {
+        "name": "Abhilash Krishnan",
+        "post": "Executive Member"
+    }
 ]
