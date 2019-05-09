@@ -29,5 +29,7 @@ urlpatterns = [
     url(r'^', include('sig.urls', namespace="sig")),
     url(r'^', include('events.urls', namespace="events")),
     url(r'^', include('accounts.urls', namespace="accounts")),
-    url(r'^', include('teams.urls', namespace="teams"))
+    url(r'^', include('teams.urls', namespace="teams")),
+    url(r'^', include('alumni.urls', namespace="alumni"))
+
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
