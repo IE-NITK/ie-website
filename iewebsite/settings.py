@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'events.apps.EventsConfig',
     'teams.apps.TeamsConfig',
     'sig.apps.SigConfig',
+    'alumni.apps.AlumniConfig',
     'webadmin.apps.WebadminConfig',
     'accounts.apps.AccountsConfig'
 ]

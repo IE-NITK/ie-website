@@ -1,0 +1,153 @@
+{% extends "base.html" %}
+{% block alumni %}active{% endblock %}
+{% block main %}
+
+
+<section class="probootstrap-section probootstrap-section-colored">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 text-left section-heading probootstrap-animate">
+              <h1>IE NITK <strike>Alumni</strike> Ancestors</h1>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      <section class="probootstrap-section probootstrap-section-sm">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="row probootstrap-gutter0">
+                <div class="col-md-4" id="probootstrap-sidebar">
+                  <div class="probootstrap-sidebar-inner probootstrap-overlap probootstrap-animate">
+                    <h3></h3>
+                    <ul class="probootstrap-side-menu">
+                      <li class="tablinks active 2019"><a onclick="return navigate('2019')">2019</a></li>
+                      <li class="tablinks 2018"><a onclick="return navigate('2018')">2018</a></li>
+                      <li class="tablinks 2017"><a onclick="return navigate('2017')">2017</a></li>
+                      <li class="tablinks 2016"><a onclick="return navigate('2016')">2016</a></li>
+                      <li class="tablinks 2015"><a onclick="return navigate('2015')">2015</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-md-7 col-md-push-1 probootstrap-animate teams" id="2019">
+                  <h2> Batch of 2019</h2>
+                  <section class="probootstrap-section">
+                    <div class="container" style="width: 100%;">
+                      {% for member in alumni2019 %}
+
+                      <div class="col-sm-6">
+                        <div class="probootstrap-teacher text-center probootstrap-animate" style="min-height: 220px">
+                            <div class="text" style="word-wrap: break-word;">
+                              <h3>{{ member.name }}</h3>
+                                <h6>{{ member.email }}</h6>
+                            </div>
+                        </div>
+                      </div>
+
+                      {% endfor %}
+                    </div>
+                  </section>
+                </div>
+                <div class="col-md-7 col-md-push-1 probootstrap-animate teams" id="2018">
+                  <h2>Batch of 2018</h2>
+                  <section class="probootstrap-section">
+                    <div class="container" style="width: 100%;">
+                      {% for member in alumni2018 %}
+                      <div class="col-sm-6">
+                        <div class="probootstrap-teacher text-center probootstrap-animate" style="min-height: 170px">
+                            <div class="text" style="word-wrap: break-word;">
+                              <h3>{{ member.name }}</h3>
+                              <p>{{ member.email }}</p>
+                            </div>
+                        </div>
+                      </div>
+
+                      {% endfor %}
+                    </div>
+                  </section>
+                </div>
+                <div class="col-md-7 col-md-push-1 probootstrap-animate teams" id="2017">
+                  <h2>Batch of 2017</h2>
+                  <section class="probootstrap-section">
+                    <div class="container" style="width: 100%;">
+                      {% for member in alumni2017 %}
+                      <div class="col-sm-6" >
+                        <div class="probootstrap-teacher text-center probootstrap-animate" style="min-height: 170px">
+                            <div class="text" style="word-wrap: break-word;">
+                              <h3>{{ member.name }}</h3>
+                              <p>{{ member.email }}</p>
+                            </div>
+                        </div>
+                      </div>
+
+                      {% endfor %}
+                    </div>
+                  </section>
+                </div>
+                <div class="col-md-7 col-md-push-1 probootstrap-animate teams" id="2016">
+                  <h2>Batch of 2016</h2>
+                  <section class="probootstrap-section">
+                    <div class="container" style="width: 100%;">
+                      {% for member in alumni2016 %}
+                      <div class="col-sm-6" >
+                        <div class="probootstrap-teacher text-center probootstrap-animate" style="min-height: 170px">
+                            <div class="text" style="word-wrap: break-word;">
+                              <h3>{{ member.name }}</h3>
+                              <p>{{ member.email }}</p>
+                            </div>
+                        </div>
+                      </div>
+
+                      {% endfor %}
+                    </div>
+                  </section>
+                </div>
+                <div class="col-md-7 col-md-push-1 probootstrap-animate teams" id="2015">
+                  <h2>Batch of 2015</h2>
+                  <section class="probootstrap-section">
+                    <div class="container" style="width: 100%;">
+                      {% for member in alumni2015 %}
+                      <div class="col-sm-6" >
+                        <div class="probootstrap-teacher text-center probootstrap-animate" style="min-height: 170px">
+                            <div class="text" style="word-wrap: break-word;">
+                              <h3>{{ member.name }}</h3>
+                              <p>{{ member.email }}</p>
+                            </div>
+                        </div>
+                      </div>
+
+                      {% endfor %}
+                    </div>
+                  </section>
+                </div>
+                  </section>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <script type="text/javascript">
+        $(".team").addClass("active");
+        var tabcontent = document.getElementsByClassName('teams');
+        for (i = 1; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+        function navigate(signame) {
+          var tabcontent = document.getElementsByClassName('teams');
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+          tablinks = document.getElementsByClassName("tablinks");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+          }
+          document.getElementById(signame).style.display = "block";
+          $("."+signame).addClass("active");
+        }
+      </script>
+{% endblock %}
