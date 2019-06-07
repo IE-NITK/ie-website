@@ -24,7 +24,8 @@ SECRET_KEY = '!th-(6rochf+vi!$e(o84^-)3+&oj7osgrztitz5p#8_mtq5t%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
+EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
+EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
 ALLOWED_HOSTS = ['ie.nitk.ac.in','10.4.0.67', '*']
 
 
@@ -40,6 +41,7 @@ INSTALLED_APPS = [
     'events.apps.EventsConfig',
     'teams.apps.TeamsConfig',
     'sig.apps.SigConfig',
+    'alumni.apps.AlumniConfig',
     'webadmin.apps.WebadminConfig',
     'accounts.apps.AccountsConfig'
 ]
@@ -79,18 +81,18 @@ WSGI_APPLICATION = 'iewebsite.wsgi.application'
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    #     'NAME': 'iewebsite',
-    #     'USER': 'iewebsite',
-    #     'PASSWORD': 'mnsm',
-    #     'HOST': 'localhost',
-    #     'PORT': '',
-    #     }
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'iewebsite',
+        'USER': 'iewebsite',
+        'PASSWORD': 'mnsm',
+        'HOST': 'localhost',
+        'PORT': '',
+       }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+     #}
 }
 
 
@@ -144,3 +146,6 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
+#Email configuration
+EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
+EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
