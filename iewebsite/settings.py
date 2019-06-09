@@ -88,7 +88,7 @@ DATABASES = {
         'PASSWORD': 'mnsm',
         'HOST': 'localhost',
         'PORT': '',
-       }
+        }
     # 'default': {
     #     'ENGINE': 'django.db.backends.sqlite3',
     #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
@@ -146,6 +146,11 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
-#Email configuration
-EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
-EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' #For Development only
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'your email here'
+EMAIL_HOST_PASSWORD = 'your password here'

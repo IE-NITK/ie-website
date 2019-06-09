@@ -80,7 +80,7 @@ class Account(models.Model):
     def __str__(self):
         return self.profile.__str__()
 
-class status(models.Model):
+class Status(models.Model):
     STATUS_TYPES = (
     ("WR","Written Round"),
     ("TE","Technical"),
@@ -100,7 +100,7 @@ class status(models.Model):
     @staticmethod
     def to_status(key):
         key = key.lower()
-        for item in status.STATUS_TYPES:
+        for item in Status.STATUS_TYPES:
             if item[1].lower() == key:
                 return item[0]
         return "None"
@@ -108,7 +108,7 @@ class status(models.Model):
     @staticmethod
     def to_sig(key):
         key = key.lower()
-        for item in status.SIG_TYPES:
+        for item in Status.SIG_TYPES:
             if item[1].lower() == key:
                 return item[0]
         return "None"
@@ -116,7 +116,7 @@ class status(models.Model):
 
     user = models.ForeignKey(Account, on_delete=models.CASCADE)
     SIG = models.CharField(null=True,max_length=2,choices=SIG_TYPES)
-    Status = models.CharField(max_length=2,choices=STATUS_TYPES)
+    status = models.CharField(max_length=2,choices=STATUS_TYPES)
     updated_at = models.DateTimeField(auto_now_add=True)
     #this will ensure updates_at show up in admin change page
     updated_at.editable = True
