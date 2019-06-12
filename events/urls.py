@@ -9,6 +9,6 @@ from django.conf.urls.static import static
 app_name = 'events'
 
 urlpatterns = [
-    url(r'^events/$', views.view_events, name='events'),
+    path('events/', views.view_events, name='events'),
     path('smp2019/', views.smp, name='smp'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

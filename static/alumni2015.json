@@ -1,14 +1,58 @@
 [
- {
-   "name": "Chayanika Das",
-   "roll_no": "15CH11",
-   "mob_no": 9577819744,
-   "email": "chayanika7das@gmail.com"
- },
- {
-   "name": "Nithya Sarah Thomas",
-   "roll_no": "15CH28",
-   "mob_no": 9880604031,
-   "email": "nithyaneethu281997@gmail.com"
- }
+    {
+        "name": "Ruban Periyasamy",
+        "post": "Convener"
+    },
+    {
+        "name": "Abhishek Arora",
+        "post": "President"
+    },
+    {
+        "name": "Hiba Ahsan",
+        "post": "Joint Convener"
+    },
+    {
+        "name": "Pramati Kalwad",
+        "post": "Vice president and Vriddhi Coordinator"
+    },
+    {
+        "name": "Blessen George",
+        "post": "Secretary"
+    },
+    {
+        "name": "Lingam Bharadwaj",
+        "post": "Gadget Head"
+    },
+    {
+        "name": "Aditya Srinivasan",
+        "post": "Event Coordinator"
+    },
+    {
+        "name": "Manaswini Muppalla",
+        "post": "Treasurer"
+    },
+    {
+        "name": "Adit Biswas",
+        "post": "Code head"
+    },
+    {
+        "name": "Sourav Sudhir",
+        "post": "Gadget Coordinator"
+    },
+    {
+        "name": "Prasidh Naik",
+        "post": "Garage head"
+    },
+    {
+        "name": "Robin Singh",
+        "post": "Garage Coordinator"
+    },
+    {
+        "name": "Keshav Ramaswamy",
+        "post": "Finance Head"
+    },
+    {
+        "name": "Samar kenkre",
+        "post": "Finance coordinator"
+    }
 ]

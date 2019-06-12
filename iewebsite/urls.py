@@ -19,17 +19,22 @@ from django.conf.urls import include, url
 from django.views.generic.base import TemplateView
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib.auth import views as auth_views
+
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^$', TemplateView.as_view(template_name='index.html'), name='home'),
-    url(r'^workshop/$', TemplateView.as_view(template_name='sixth-sense-workshop.html'), name='workshop'),
-    url(r'^flappy/$', TemplateView.as_view(template_name='flappy.html'), name='flappy'),
-    url(r'^', include('webadmin.urls', namespace="webadmin")),
-    url(r'^', include('sig.urls', namespace="sig")),
-    url(r'^', include('events.urls', namespace="events")),
-    url(r'^', include('accounts.urls', namespace="accounts")),
-    url(r'^', include('teams.urls', namespace="teams")),
-    url(r'^', include('alumni.urls', namespace="alumni"))
-
+    path('admin/', admin.site.urls),
+    path('', TemplateView.as_view(template_name='index.html'), name='home'),
+    path('workshop/', TemplateView.as_view(template_name='sixth-sense-workshop.html'), name='workshop'),
+    path('flappy/', TemplateView.as_view(template_name='flappy.html'), name='flappy'),
+    path('', include('webadmin.urls', namespace="webadmin")),
+    path('', include('sig.urls', namespace="sig")),
+    path('', include('events.urls', namespace="events")),
+    path('', include('accounts.urls', namespace="accounts")),
+    path('', include('teams.urls', namespace="teams")),
+    path('', include('alumni.urls', namespace="alumni")),
+    path('password-reset-confirm/<uidb64>/<token>/',auth_views.PasswordResetConfirmView.as_view(),name='password_reset_confirm'),
+    path('password_reset/',auth_views.PasswordResetView.as_view(),name='password_reset'),
+    path('password_reset_done/',auth_views.PasswordResetDoneView.as_view(),name='password_reset_done'),
+    path('password_reset_complete/',auth_views.PasswordResetCompleteView.as_view(),name='password_reset_complete')
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

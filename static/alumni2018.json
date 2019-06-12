@@ -1,14 +1,122 @@
 [
- {
-   "name": "Chayanika Das",
-   "roll_no": "15CH11",
-   "mob_no": 9577819744,
-   "email": "chayanika7das@gmail.com"
- },
- {
-   "name": "Nithya Sarah Thomas",
-   "roll_no": "15CH28",
-   "mob_no": 9880604031,
-   "email": "nithyaneethu281997@gmail.com"
- }
+    {
+        "name": "Nitya C Kamala",
+        "post": "Convener"
+    },
+    {
+        "name": "Rahul T R",
+        "post": "President "
+    },
+    {
+        "name": "Yogitha A N",
+        "post": "Joint Convener "
+    },
+    {
+        "name": "Thivani Senathiraja",
+        "post": "Vice president, Garage SIG Head"
+    },
+    {
+        "name": "Vinay Mundada",
+        "post": "Code SIG Head "
+    },
+    {
+        "name": "Rishab Ranga",
+        "post": "Events Head, Code SIG Head "
+    },
+    {
+        "name": "Samyak Jain ",
+        "post": "Media and Publicity Head "
+    },
+    {
+        "name": "Akshay Dev ",
+        "post": "Engineer Joint Convener "
+    },
+    {
+        "name": "Vignesh K",
+        "post": "Executive Member "
+    },
+    {
+        "name": "T. Guru pradeep Reddy ",
+        "post": "Executive Member "
+    },
+    {
+        "name": "Anirudh Sriram",
+        "post": "Executive Member"
+    },
+    {
+        "name": "V B Vineeth Redfy",
+        "post": "Executive Member "
+    },
+    {
+        "name": "Jeeveeka Kamble ",
+        "post": "Executive Member "
+    },
+    {
+        "name": "Samanvita Sastry",
+        "post": "Executive Member"
+    },
+    {
+        "name": "Shivani Reddy ",
+        "post": "Executive Member "
+    },
+    {
+        "name": "Mukhta S Kulkarni ",
+        "post": "Executive Member "
+    },
+    {
+        "name": "Madhusmita Ghadei",
+        "post": "Executive Member"
+    },
+    {
+        "name": "Dilip Menon",
+        "post": "Executive Member "
+    },
+    {
+        "name": "Abel Paul Joseph ",
+        "post": "Executive Member "
+    },
+    {
+        "name": "Mrunal Narkar ",
+        "post": "Executive Member"
+    },
+    {
+        "name": "M.S. Bharani Raja ",
+        "post": "Executive Member "
+    },
+    {
+        "name": "Vikram Hanji ",
+        "post": "Executive Member "
+    },
+    {
+        "name": "Akhil E",
+        "post": "Executive Member"
+    },
+    {
+        "name": "Mohammed Najvan",
+        "post": "Executive Member "
+    },
+    {
+        "name": "P. Sridhar Sashank ",
+        "post": "Executive Member "
+    },
+    {
+        "name": "Giriraj Heda ",
+        "post": "Executive Member"
+    },
+    {
+        "name": "Jishnu C K",
+        "post": "Executive Member"
+    },
+    {
+        "name": "Rekha Raani R",
+        "post": "Executive Member "
+    },
+    {
+        "name": "Utkarsha S Pathe ",
+        "post": "Executive Member "
+    },
+    {
+        "name": "M Pradeep Kumar ",
+        "post": "Executive Member"
+    }
 ]
