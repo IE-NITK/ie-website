@@ -1,3 +1,7 @@
 from django.contrib import admin
+from accounts.models import Profile, Account, Status
 
-# Register your models here.
+
+admin.site.register(Profile)
+admin.site.register(Account)
+admin.site.register(Status)
