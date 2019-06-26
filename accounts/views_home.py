@@ -121,7 +121,7 @@ def register_view(request):
         #    email.send()
             login(request, user)
             request.session['alert_success'] = "Successfully registered with the portal."
-            return HttpResponseRedirect('/profile/')
+            return HttpResponseRedirect('/profile/apply/')
     else:
         form = AccountRegisterForm()
     template_data['form'] = form

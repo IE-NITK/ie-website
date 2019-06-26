@@ -20,5 +20,5 @@ urlpatterns = [
     path('profile/', views_profile.profile_view, name='profile'),
     path('profile/update/', views_profile.profile_update, name='profile/update'),
     path('profile/password/', views_profile.password_view, name='profile/password'),
-
+    path('profile/apply/',views_profile.apply,name='profile/apply'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

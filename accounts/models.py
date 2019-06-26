@@ -2,11 +2,13 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
+
 class Profile(models.Model):
     GENDER = (
         ('M', "Male"),
         ('F', "Female"),
     )
+
 
     @staticmethod
     def to_gender(key):
@@ -80,7 +82,14 @@ class Status(models.Model):
         ("TE","Technical"),
         ("HR","HR")
     )
-
+    SIG_TYPES_MAIN = (("--","NONE"),("CO","Code"),
+        ("GD","Gadget"),
+        ("GR","Garage"),)
+    SIG_TYPES_AUX = (("--","NONE"),("SR","Script"),
+        ("VR","Vriddhi"),
+        ("RO","Robotics"),
+        ("CA","Capital"),
+        ("ME","Media"))
     SIG_TYPES = (
         ("CO","Code"),
         ("GD","Gadget"),
@@ -112,3 +121,4 @@ class Status(models.Model):
     SIG = models.CharField(null=True, max_length=2, choices=SIG_TYPES)
     status = models.CharField(max_length=2, choices=STATUS_TYPES)
     updated_at = models.DateTimeField(auto_now_add=True, editable=True)
+

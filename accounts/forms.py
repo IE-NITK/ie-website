@@ -2,7 +2,7 @@ from datetime import date
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
-from .models import Account, Profile
+from .models import Account, Profile,Status
 
 
 def validate_username_available(username):
@@ -88,7 +88,7 @@ class AccountRegisterForm(BasicForm):
     lastname = forms.CharField(label='Last Name', max_length=50)
     setup_field(lastname, 'Enter last name here')
     email = forms.EmailField(max_length=50, validators=[validate_username_available])
-    setup_field(email, 'Enter email here')
+    setup_field(email, 'Enter em    ail here')
     password_first = forms.CharField(label='Password', min_length=1, max_length=50, widget=forms.PasswordInput())
     setup_field(password_first, "Enter password here")
     password_second = forms.CharField(label='', min_length=1, max_length=50, widget=forms.PasswordInput())
@@ -150,3 +150,10 @@ class ProfileForm(BasicForm):
         profile.lastname = self.cleaned_data['lastname']
         profile.sex = self.cleaned_data['sex']
         profile.phone = self.cleaned_data['phone']
+
+class SIGForm(BasicForm):
+    SigMain1 = forms.ChoiceField(choices=Status.SIG_TYPES_MAIN)
+    SigMain2 = forms.ChoiceField(choices=Status.SIG_TYPES_MAIN)
+    SigAux1 = forms.ChoiceField(choices=Status.SIG_TYPES_AUX)
+    SigAux2 = forms.ChoiceField(choices=Status.SIG_TYPES_AUX)
+

@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from django.contrib.auth import authenticate
-
-from .forms import PasswordForm, ProfileForm
+from django.http import HttpResponseRedirect
+from django.contrib.auth.models import User
+import datetime
+from .forms import PasswordForm, ProfileForm, SIGForm
 from .models import Account
 from . import views
 
@@ -66,3 +68,52 @@ def profile_update(request):
             form = ProfileForm(profile.get_populated_fields())
     template_data['form'] = form
     return render(request, 'ienitk/profile/update.html', template_data)
+
+
+def apply(request):
+    authentication_result = views.authentication_check(request)
+    if authentication_result is not None: return authentication_result
+    template_data = views.parse_session(request, {'form_button': "Submit"})
+
+    if request.method == 'POST':
+        form = SIGForm(request.POST)
+        if form.is_valid():
+            i = 0
+            if i == 0:
+                views.register_SIG(
+                    form.cleaned_data['SigMain1'],
+                    Account.profile,
+                    datetime.datetime.now(),
+                    "WR"
+                )
+                i = i + 1
+            if i == 1:
+                views.register_SIG(
+                    form.cleaned_data['SigMain2'],
+                    Account.profile,
+                    datetime.datetime.now(),
+                    "WR"
+                )
+                i = i + 1
+            if i == 2:
+                views.register_SIG(
+                    form.cleaned_data['SigAux1'],
+                    Account.profile,
+                    datetime.datetime.now(),
+                    "WR"
+                )
+                i = i + 1
+            if i == 3:
+                views.register_SIG(
+                    form.cleaned_data['SigAux2'],
+                    Account.profile,
+                    datetime.datetime.now(),
+                    "WR"
+                )
+                i = i + 1
+        request.session['alert_success'] = "Successfully registered SIGS with the portal."
+        return HttpResponseRedirect('/profile/')
+    else:
+        form = SIGForm()
+    template_data['form'] = form
+    return render(request, 'ienitk/apply.html', template_data)
