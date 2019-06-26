@@ -74,7 +74,9 @@ def apply(request):
     authentication_result = views.authentication_check(request)
     if authentication_result is not None: return authentication_result
     template_data = views.parse_session(request, {'form_button': "Submit"})
-    account = request.user.id
+
+    account = Account.objects.get(pk=request.user.id)
+
     if request.method == 'POST':
         form = SIGForm(request.POST)
         if form.is_valid():

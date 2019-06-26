@@ -151,6 +151,7 @@ class ProfileForm(BasicForm):
         profile.sex = self.cleaned_data['sex']
         profile.phone = self.cleaned_data['phone']
 
+
 class SIGForm(BasicForm):
     SigMain1 = forms.ChoiceField(choices=Status.SIG_TYPES_MAIN)
     SigMain2 = forms.ChoiceField(choices=Status.SIG_TYPES_MAIN)

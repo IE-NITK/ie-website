@@ -77,7 +77,9 @@ def register_user(email, password, firstname, lastname, active ,role):
 
     return user
 
+
 def register_SIG(SIG,user,updated_at,status):
+    print(SIG)
     if SIG is not "--":
         status = Status(
             user=user,

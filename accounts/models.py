@@ -76,11 +76,12 @@ class Account(models.Model):
     def __str__(self):
         return self.profile.__str__()
 
+
 class Status(models.Model):
     STATUS_TYPES = (
-        ("WR","Written Round"),
-        ("TE","Technical"),
-        ("HR","HR")
+        ("WR", "Written Round"),
+        ("TE", "Technical"),
+        ("HR", "HR")
     )
     SIG_TYPES_MAIN = (("--","NONE"),("CO","Code"),
         ("GD","Gadget"),
@@ -118,7 +119,7 @@ class Status(models.Model):
         return "None"
 
     user = models.ForeignKey(Account, on_delete=models.CASCADE)
-    SIG = models.CharField(null=True, max_length=2, choices=SIG_TYPES)
+    SIG = models.CharField(null=True, max_length=2)
     status = models.CharField(max_length=2, choices=STATUS_TYPES)
     updated_at = models.DateTimeField(auto_now_add=True, editable=True)
 
