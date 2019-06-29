@@ -14,4 +14,5 @@ urlpatterns = [
     url(r'^admin/restore_users', views.restore_user, name='admin/restore_users'),
     url(r'^admin/delete_user', views.delete_user, name='admin/delete_user'),
     url(r'^admin/adduser/$', views.add_user, name='admin/adduser'),
+    url(r'^admin/candidates/$', views.candidates_view, name='admin/candidates'),
 ]

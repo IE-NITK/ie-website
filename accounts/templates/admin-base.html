@@ -78,7 +78,11 @@
                 <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                             <li class="{% block sidebar_profile %}{% endblock %}"><a href="/profile/">Profile<i class="pull-right fa fa-user"></i></a></li>
-                            {% if user.account.role == 2 %}
+                            {% comment %} {% if user.account.role == 2 %}
+                            {% endif %} {% endcomment %}
+
+                            {% if user.account.role == 1 or user.account.role == 2 %}
+                                <li class="{% block sidebar_admin_candidates %}{% endblock %}"><a href="/admin/candidates">Candidates<i class="pull-right fa fa-users"></i></a></li>
                             {% endif %}
 
                             {% if user.account.role == 1 %}

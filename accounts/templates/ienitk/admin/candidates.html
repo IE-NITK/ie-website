@@ -1,0 +1,30 @@
+{% extends "admin-base.html" %}
+{% load app_filters %}
+{% block title %}Candidates{% endblock %}
+{% block sidebar_admin_candidates %}active{% endblock %}
+{% block body_header %}
+    Candidates
+    <br>
+{% endblock %}
+{% block body %}
+    <table id="datatable" class="table table-hover table-striped table-bordered">
+        <thead>
+            <th>Username</th>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Status</th>
+        </thead>
+        <tbody>
+            {% for candidate in query %}
+                <tr>
+                    {% comment %}{% if user.username != account.user.username %}{% endcomment %}
+                        <td>{{ candidate.user.user.username }}</td>
+                        <td>{{ candidate.user.profile.firstname }}</td>
+                        <td>{{ candidate.user.profile.lastname }}</td>
+                        <td>{{ candidate.status }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

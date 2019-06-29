@@ -10,7 +10,7 @@ from django.db.utils import IntegrityError
 from django.contrib.auth import get_user_model
 
 from accounts import views
-from accounts.models import Account
+from accounts.models import Account, Status
 from webadmin.forms import AddUserForm
 User = get_user_model()
 
@@ -148,3 +148,15 @@ def add_user(request):
         form = AddUserForm()
     template_data['form'] = form
     return render(request, 'ienitk/admin/createuser.html', template_data)
+
+#View all candidates and their status
+def candidates_view(request):
+    # Authentication check
+    authentication_result = views.authentication_check(request, [Account.ACCOUNT_ADMIN])
+    if authentication_result is not None: return authentication_result
+
+    template_data = views.parse_session(request)
+
+    template_data['query'] = Status.objects.all()
+
+    return render(request, 'ienitk/admin/candidates.html', template_data)
