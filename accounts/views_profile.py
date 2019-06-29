@@ -118,7 +118,18 @@ def apply(request):
                     i = i + 1
             request.session['alert_success'] = "Successfully registered SIGS with the portal."
             data = Status.objects.filter(user=account)
-            return render(request, 'ienitk/status.html', {'entries': data})
+            data1 = []
+            DB_Status = Status.STATUS_TYPES
+            DB_SIG = Status.SIG_TYPES
+            for entry in data:
+                for type in DB_SIG:
+                    if entry.SIG == type[0]:
+                        sig_name = type[1]
+                for status in DB_Status:
+                    if entry.status == status[0]:
+                        sig_status = status[1]
+                data1.append([sig_name, sig_status])
+            return render(request, 'ienitk/status.html', {'entries': data1})
         else:
             form = SIGForm()
         template_data['form'] = form
@@ -130,5 +141,16 @@ def apply(request):
 
 def status(request):
     account = Account.objects.get(pk=request.user.id)
-    data = Status.Status.objects.filter(user=account)
-    return render(request, 'ienitk/status.html', {'entries': data})
+    data = Status.objects.filter(user=account)
+    data1 = []
+    DB_Status = Status.STATUS_TYPES
+    DB_SIG = Status.SIG_TYPES
+    for entry in data:
+        for type in DB_SIG:
+            if entry.SIG == type[0]:
+                sig_name = type[1]
+        for status in DB_Status:
+            if entry.status == status[0]:
+                sig_status = status[1]
+        data1.append([sig_name, sig_status])
+    return render(request, 'ienitk/status.html', {'entries': data1})
