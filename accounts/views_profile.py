@@ -117,7 +117,8 @@ def apply(request):
                     )
                     i = i + 1
             request.session['alert_success'] = "Successfully registered SIGS with the portal."
-            return HttpResponseRedirect('/profile/')
+            data = Status.objects.filter(user=account)
+            return render(request, 'ienitk/status.html', {'entries': data})
         else:
             form = SIGForm()
         template_data['form'] = form
@@ -125,3 +126,9 @@ def apply(request):
     else:
         request.session['alert_success'] = "Already registered."
         return HttpResponseRedirect('/profile/')
+
+
+def status(request):
+    account = Account.objects.get(pk=request.user.id)
+    data = Status.Status.objects.filter(user=account)
+    return render(request, 'ienitk/status.html', {'entries': data})
