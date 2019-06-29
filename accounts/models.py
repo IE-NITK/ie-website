@@ -2,18 +2,16 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
-
 class Profile(models.Model):
     GENDER = (
         ('M', "Male"),
         ('F', "Female"),
     )
 
-
     @staticmethod
     def to_gender(key):
         for item in Profile.GENDER:
-            if item[0]==key:
+            if item[0] == key:
                 return item[1]
         return "None"
 
@@ -22,13 +20,12 @@ class Profile(models.Model):
     sex = models.CharField(blank=True, max_length=1, choices=GENDER)
     phone = models.CharField(blank=True, max_length=10)
 
-
     def get_populated_fields(self):
         """
         To collect form data
         :return:
         """
-        fields= {}
+        fields = {}
         if self.firstname is not None:
             fields['firstname'] = self.firstname
         if self.lastname is not None:
@@ -83,23 +80,23 @@ class Status(models.Model):
         ("TE", "Technical"),
         ("HR", "HR")
     )
-    SIG_TYPES_MAIN = (("--","NONE"),("CO","Code"),
-        ("GD","Gadget"),
-        ("GR","Garage"),)
-    SIG_TYPES_AUX = (("--","NONE"),("SR","Script"),
-        ("VR","Vriddhi"),
-        ("RO","Robotics"),
-        ("CA","Capital"),
-        ("ME","Media"))
+    SIG_TYPES_MAIN = (("--", "NONE"), ("CO", "Code"),
+                      ("GD", "Gadget"),
+                      ("GR", "Garage"),)
+    SIG_TYPES_AUX = (("--", "NONE"), ("SR", "Script"),
+                     ("VR", "Vriddhi"),
+                     ("RO", "Robotics"),
+                     ("CA", "Capital"),
+                     ("ME", "Media"))
     SIG_TYPES = (
-        ("CO","Code"),
-        ("GD","Gadget"),
-        ("GR","Garage"),
-        ("SR","Script"),
-        ("VR","Vriddhi"),
-        ("RO","Robotics"),
-        ("CA","Capital"),
-        ("ME","Media")
+        ("CO", "Code"),
+        ("GD", "Gadget"),
+        ("GR", "Garage"),
+        ("SR", "Script"),
+        ("VR", "Vriddhi"),
+        ("RO", "Robotics"),
+        ("CA", "Capital"),
+        ("ME", "Media")
     )
 
     @staticmethod
@@ -122,4 +119,3 @@ class Status(models.Model):
     SIG = models.CharField(null=True, max_length=2)
     status = models.CharField(max_length=2, choices=STATUS_TYPES)
     updated_at = models.DateTimeField(auto_now_add=True, editable=True)
-

@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.core.exceptions import ObjectDoesNotExist
 import datetime
-from .models import Account, Profile,Status
+from .models import Account, Profile, Status
 from django.views.generic import View
 from django.template.loader import get_template
 from django.shortcuts import render
@@ -56,7 +56,7 @@ def parse_session(request, template_data=None):
     return template_data
 
 
-def register_user(email, password, firstname, lastname, active ,role):
+def register_user(email, password, firstname, lastname, active, role):
     user = User.objects.create_user(
         email.lower(),
         email.lower(),
@@ -71,24 +71,23 @@ def register_user(email, password, firstname, lastname, active ,role):
         role=role,
         profile=profile,
         user=user,
-        is_active = active
+        is_active=active
     )
     account.save()
 
     return user
 
 
-def register_SIG(SIG,user,updated_at,status):
-    print(SIG)
+def register_SIG(SIG, user, updated_at, status):
     if SIG is not "--":
         status = Status(
             user=user,
             updated_at=updated_at,
             status=status,
-            SIG = SIG
+            SIG=SIG
         )
     status.save()
 
 
 def sanitize_js(string):
-    return string.replace("\\","\\\\").replace("'","\\'")
+    return string.replace("\\", "\\\\").replace("'", "\\'")

@@ -4,7 +4,7 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
 import datetime
 from .forms import PasswordForm, ProfileForm, SIGForm
-from .models import Account
+from .models import Account, Status
 from . import views
 
 
@@ -77,45 +77,51 @@ def apply(request):
 
     account = Account.objects.get(pk=request.user.id)
 
-    if request.method == 'POST':
-        form = SIGForm(request.POST)
-        if form.is_valid():
-            i = 0
-            if i == 0:
-                views.register_SIG(
-                    form.cleaned_data['SigMain1'],
-                    account,
-                    datetime.datetime.now(),
-                    "WR"
-                )
-                i = i + 1
-            if i == 1:
-                views.register_SIG(
-                    form.cleaned_data['SigMain2'],
-                    account,
-                    datetime.datetime.now(),
-                    "WR"
-                )
-                i = i + 1
-            if i == 2:
-                views.register_SIG(
-                    form.cleaned_data['SigAux1'],
-                    account,
-                    datetime.datetime.now(),
-                    "WR"
-                )
-                i = i + 1
-            if i == 3:
-                views.register_SIG(
-                    form.cleaned_data['SigAux2'],
-                    account,
-                    datetime.datetime.now(),
-                    "WR"
-                )
-                i = i + 1
-        request.session['alert_success'] = "Successfully registered SIGS with the portal."
-        return HttpResponseRedirect('/profile/')
+    stat = Status.objects.filter(user=account).first()
+
+    if stat is None:
+        if request.method == 'POST':
+            form = SIGForm(request.POST)
+            if form.is_valid():
+                i = 0
+                if i == 0:
+                    views.register_SIG(
+                        form.cleaned_data['SigMain1'],
+                        account,
+                        datetime.datetime.now(),
+                        "WR"
+                    )
+                    i = i + 1
+                if i == 1:
+                    views.register_SIG(
+                        form.cleaned_data['SigMain2'],
+                        account,
+                        datetime.datetime.now(),
+                        "WR"
+                    )
+                    i = i + 1
+                if i == 2:
+                    views.register_SIG(
+                        form.cleaned_data['SigAux1'],
+                        account,
+                        datetime.datetime.now(),
+                        "WR"
+                    )
+                    i = i + 1
+                if i == 3:
+                    views.register_SIG(
+                        form.cleaned_data['SigAux2'],
+                        account,
+                        datetime.datetime.now(),
+                        "WR"
+                    )
+                    i = i + 1
+            request.session['alert_success'] = "Successfully registered SIGS with the portal."
+            return HttpResponseRedirect('/profile/')
+        else:
+            form = SIGForm()
+        template_data['form'] = form
+        return render(request, 'ienitk/apply.html', template_data)
     else:
-        form = SIGForm()
-    template_data['form'] = form
-    return render(request, 'ienitk/apply.html', template_data)
+        request.session['alert_success'] = "Already registered."
+        return HttpResponseRedirect('/profile/')
