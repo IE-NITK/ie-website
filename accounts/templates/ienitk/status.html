@@ -1,12 +1,23 @@
 {% extends "admin-base.html" %}
 {% load app_filters %}
-
+{% block body_header %}
+    <div align="center">Recruitment Status</div> {% endblock %}
 {% block body %}
-    <p class="lead" align="center">Status for each SIG registered</p>
-    {% for entry in entries %}
-        <div align="center">
-
-            <h4>{{ entry.0 }} : {{ entry.1 }}</h4>
-        </div>
-    {% endfor %}
+<div align="center">
+    <table width="50%" class="table table-hover table-striped table-bordered">
+        <thead>
+        <th width="30%">SIG</th>
+        <th width="70%">Status</th>
+        </thead>
+        <tbody>
+        {% for entry in entries %}
+            <tr>
+                {% comment %}{% if user.username != account.user.username %}{% endcomment %}
+                <td>{{ entry.0 }}</td>
+                <td>{{ entry.1 }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
 {% endblock %}

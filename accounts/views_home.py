@@ -75,7 +75,7 @@ def login_view(request):
             )
             login(request, user)
             request.session['alert_success'] = "Successfully logged in."
-            return HttpResponseRedirect('/profile/')
+            return HttpResponseRedirect('/profile/status/')
     else:
         form = LoginForm()
     template_data['form'] = form
