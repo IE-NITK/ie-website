@@ -140,7 +140,10 @@ def apply(request):
 
 
 def status(request):
-    account = Account.objects.get(pk=request.user.id)
+
+    current_user = request.user
+    account = current_user.account
+    #account = Account.objects.get(pk=request.user.id)
     data = Status.objects.filter(user=account)
     data1 = []
     DB_Status = Status.STATUS_TYPES
@@ -154,3 +157,5 @@ def status(request):
                 sig_status = status[1]
         data1.append([sig_name, sig_status])
     return render(request, 'ienitk/status.html', {'entries': data1})
+
+

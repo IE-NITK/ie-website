@@ -15,6 +15,7 @@
             <th>First name</th>
             <th>Last name</th>
             <th>Role</th>
+            <th>SIG</th>
             <th>Action</th>
         </thead>
         <tbody>
@@ -30,6 +31,7 @@
                                 <select class="form-control" name="role">
                                     <option value="1" {% if account.role == 1 %}selected="selected"{% endif %}>Admin</option>
                                     <option value="2" {% if account.role == 2 %}selected="selected"{% endif %}>Member</option>
+                                    <option value="3" {% if account.role == 3 %}selected="selected"{% endif %}>Candidate</option>
                                 </select>
                                 <input class="btn btn-primary" type="submit" value="Save"/>
                             </form>
@@ -52,6 +54,7 @@
                                                         )
                                                 };
                                             </script>
+                        <td>{{ account.SIG }} </td>
                         <td><button onclick="proxy{{ account.pk }}()" type="button" class="btn btn-warning" data-toggle="modal" data-target="#archive-modal">Archive</button>
                         <button onclick="delete{{ account.pk }}()" type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">Delete</button></td>
                     {% comment %}{% endif %}{% endcomment %}

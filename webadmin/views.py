@@ -151,12 +151,16 @@ def add_user(request):
 
 #View all candidates and their status
 def candidates_view(request):
+
     # Authentication check
-    authentication_result = views.authentication_check(request, [Account.ACCOUNT_ADMIN])
+    authentication_result = views.authentication_check(request, [Account.ACCOUNT_ADMIN, Account.ACCOUNT_MEMBER])
     if authentication_result is not None: return authentication_result
-
+    # Get the template data from the session
     template_data = views.parse_session(request)
-
-    template_data['query'] = Status.objects.all()
+    #Get the SIG information of the user
+    current_user = request.user
+    SIG_User = current_user.account.SIG
+    # Parse search sorting
+    template_data['query'] = Status.objects.filter(SIG=SIG_User)
 
     return render(request, 'ienitk/admin/candidates.html', template_data)

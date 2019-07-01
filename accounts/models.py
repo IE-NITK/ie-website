@@ -50,6 +50,10 @@ class Account(models.Model):
         (ACCOUNT_MEMBER, "Member"),
         (ACCOUNT_CANDIDATE, "Candidate")
     )
+    SIG_CHOICES = (("--", "NONE"), ("CO", "Code"),
+                 ("GD", "Gadget"),
+                 ("GR", "Garage"),)
+    #TODO: AUX SIGS
 
     @staticmethod
     def to_name(key):
@@ -64,11 +68,20 @@ class Account(models.Model):
                 return item[0]
         return 0
 
+    @staticmethod
+    def to_sig(key):
+        key = key.lower()
+        for item in Account.SIG_CHOICES:
+            if item[1].lower() == key:
+                return item[0]
+        return "None"
+
     role = models.IntegerField(default=0, choices=ACCOUNT_TYPES)
     profile = models.OneToOneField(Profile, on_delete=models.CASCADE)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     archive = models.BooleanField(default=False)
     is_active = models.BooleanField(default=False)
+    SIG = models.CharField(null=True, max_length=2)
 
     def __str__(self):
         return self.profile.__str__()

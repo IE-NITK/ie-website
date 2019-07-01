@@ -2,6 +2,7 @@ from django.conf.urls import url
 from django.conf.urls.static import static
 from django.conf import settings
 from webadmin import views
+from django.urls import path
 
 app_name = 'webadmin'
 
@@ -14,5 +15,6 @@ urlpatterns = [
     url(r'^admin/restore_users', views.restore_user, name='admin/restore_users'),
     url(r'^admin/delete_user', views.delete_user, name='admin/delete_user'),
     url(r'^admin/adduser/$', views.add_user, name='admin/adduser'),
-    url(r'^admin/candidates/$', views.candidates_view, name='admin/candidates'),
+    path('candidates/', views.candidates_view, name='candidates')
+    
 ]
