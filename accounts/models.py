@@ -89,6 +89,7 @@ class Account(models.Model):
 
 class Status(models.Model):
     STATUS_TYPES = (
+        ("RE", "Resume Evaluation Pending"),
         ("WR", "Written Round"),
         ("TE", "Technical"),
         ("HR", "HR")
