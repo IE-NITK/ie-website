@@ -89,7 +89,8 @@
                                 <li class="{% block sidebar_admin_users %}{% endblock %}"><a href="/admin/users">Manage Users<i class="pull-right fa fa-users"></i></a></li>
                             {% endif %}
                             {% if user.account.role == 3 %}
-                                <li class="{% block sidebar_status %}{% endblock %}"><a href="/profile/status">Status<i class="pull-right fa fa-users"></i></a></li>
+                                <li class="{% block sidebar_status %}{% endblock %}"><a href="/profile/apply/">Apply<i class="pull-right fa fa-users"></i></a></li>
+			    	<li class="{% block sidebar_status %}{% endblock %}"><a href="/profile/status/">Status<i class="pull-right fa fa-users"></i></a></li>
                             {% endif %}
                     </ul>
                 </div>
