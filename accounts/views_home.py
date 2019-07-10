@@ -92,6 +92,7 @@ def register_view(request):
     # Get template data from session
     template_data = views.parse_session(request, {'form_button': "Register"})
     # Proceed with rest of the view
+    account = Account.objects.get(pk=request.user.id) 
     if request.method == 'POST':
         form = AccountRegisterForm(request.POST)
         if form.is_valid():
@@ -122,7 +123,13 @@ def register_view(request):
             #    email.send()
             login(request, user)
             request.session['alert_success'] = "Successfully registered with the portal."
-            return HttpResponseRedirect('/profile/apply/')
+
+            if account.role == 3:
+                return HttpResponseRedirect('/profile/apply/')
+            else:
+                return HttpResponseRedirect('/profile/')
+
+
     else:
         form = AccountRegisterForm()
     template_data['form'] = form
