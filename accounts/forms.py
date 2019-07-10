@@ -154,10 +154,10 @@ class ProfileForm(BasicForm):
 
 class SIGForm(BasicForm):
     SigMain1 = forms.ChoiceField(choices=Status.SIG_TYPES_MAIN)
-    setup_field(SigMain1, 'Select first Core SIG')
+    setup_field(Core SIG First Priority, 'Select first Core SIG')
     SigMain2 = forms.ChoiceField(choices=Status.SIG_TYPES_MAIN)
-    setup_field(SigMain2, 'Select second Core SIG')
+    setup_field(Core SIG Second Priority, 'Select second Core SIG')
     SigAux1 = forms.ChoiceField(choices=Status.SIG_TYPES_AUX)
-    setup_field(SigAux1, 'Select first Auxiliary SIG')
+    setup_field(Auxiliary SIG First Priority, 'Select first Auxiliary SIG')
     SigAux2 = forms.ChoiceField(choices=Status.SIG_TYPES_AUX)
-    setup_field(SigAux2, 'Select second Auxiliary SIG')
+    setup_field(Auxiliary SIG Second Priority, 'Select second Auxiliary SIG')
