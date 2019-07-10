@@ -130,7 +130,7 @@ def apply(request):
                     if entry.status == status[0]:
                         sig_status = status[1]
                 final_cleaned_data.append([sig_name, sig_status])
-            return render(request, 'ienitk/status.html', {'entries': final_cleaned_data})
+            return render(request, 'ienitk/status.html', {'query': final_cleaned_data})
         else:
             form = SIGForm()
         template_data['form'] = form
