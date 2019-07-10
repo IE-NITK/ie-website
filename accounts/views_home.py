@@ -103,7 +103,7 @@ def register_view(request):
                 form.cleaned_data['firstname'],
                 form.cleaned_data['lastname'],
                 False,
-                Account.ACCOUNT_MEMBER
+                Account.ACCOUNT_CANDIDATE
             )
             #    current_site = get_current_site(request)
             #    mail_subject = 'Activate your account'
