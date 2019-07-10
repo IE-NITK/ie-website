@@ -90,7 +90,7 @@ def apply(request):
                         form.cleaned_data['SigMain1'],
                         account,
                         datetime.datetime.now(),
-                        "WR"
+                        "RE"
                     )
                     i = i + 1
                 if i == 1:
@@ -98,7 +98,7 @@ def apply(request):
                         form.cleaned_data['SigMain2'],
                         account,
                         datetime.datetime.now(),
-                        "WR"
+                        "RE"
                     )
                     i = i + 1
                 if i == 2:
@@ -106,7 +106,7 @@ def apply(request):
                         form.cleaned_data['SigAux1'],
                         account,
                         datetime.datetime.now(),
-                        "WR"
+                        "RE"
                     )
                     i = i + 1
                 if i == 3:
@@ -114,7 +114,7 @@ def apply(request):
                         form.cleaned_data['SigAux2'],
                         account,
                         datetime.datetime.now(),
-                        "WR"
+                        "RE"
                     )
                     i = i + 1
             request.session['alert_success'] = "Successfully registered SIGS with the portal."
