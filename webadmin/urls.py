@@ -7,14 +7,14 @@ from django.urls import path
 app_name = 'webadmin'
 
 urlpatterns = [
-	url(r'^sitemap/$', views.sitemap, name='sitemap'),
-	url(r'^team/$', views.view_team, name='team'),
-	url(r'^admin/users/$', views.users_view, name='admin/users'),
-    url(r'^admin/archive_user', views.user_archive, name='admin/archive_user'),
-    url(r'^admin/archived_users', views.view_archived_users, name='admin/archived_users'),
-    url(r'^admin/restore_users', views.restore_user, name='admin/restore_users'),
-    url(r'^admin/delete_user', views.delete_user, name='admin/delete_user'),
-    url(r'^admin/adduser/$', views.add_user, name='admin/adduser'),
+	path('sitemap/', views.sitemap, name='sitemap'),
+	path('team/', views.view_team, name='team'),
+	path('admin/users/', views.users_view, name='admin/users'),
+    path('admin/archive_user', views.user_archive, name='admin/archive_user'),
+    path('admin/archived_users', views.view_archived_users, name='admin/archived_users'),
+    path('admin/restore_users', views.restore_user, name='admin/restore_users'),
+    path('admin/delete_user', views.delete_user, name='admin/delete_user'),
+    path('admin/adduser/', views.add_user, name='admin/adduser'),
     path('candidates/', views.candidates_view, name='candidates')
     
 ]
