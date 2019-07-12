@@ -8,6 +8,7 @@ from .models import Account, Status
 from . import views
 from django.http import Http404
 
+
 def profile_view(request):
     # Authentication check
     authentication_result = views.authentication_check(request)
@@ -71,7 +72,7 @@ def profile_update(request):
 
 
 def apply(request):
-    authentication_result = views.authentication_check(request,[Account.ACCOUNT_ADMIN, Account.ACCOUNT_CANDIDATE])
+    authentication_result = views.authentication_check(request, [Account.ACCOUNT_ADMIN, Account.ACCOUNT_CANDIDATE])
     if authentication_result is not None: return authentication_result
     template_data = views.parse_session(request, {'form_button': "Submit"})
 
@@ -79,44 +80,38 @@ def apply(request):
 
     stat = Status.objects.filter(user=account).first()
 
-    
     if stat is None:
         if request.method == 'POST':
             form = SIGForm(request.POST)
             if form.is_valid():
-                i = 0
-                if i == 0:
-                    views.register_SIG(
-                        form.cleaned_data['SigMain1'],
-                        account,
-                        datetime.datetime.now(),
-                        "RE"
-                    )
-                    i = i + 1
-                if i == 1:
-                    views.register_SIG(
-                        form.cleaned_data['SigMain2'],
-                        account,
-                        datetime.datetime.now(),
-                        "RE"
-                    )
-                    i = i + 1
-                if i == 2:
-                    views.register_SIG(
-                        form.cleaned_data['SigAux1'],
-                        account,
-                        datetime.datetime.now(),
-                        "RE"
-                    )
-                    i = i + 1
-                if i == 3:
-                    views.register_SIG(
-                        form.cleaned_data['SigAux2'],
-                        account,
-                        datetime.datetime.now(),
-                        "RE"
-                    )
-                    i = i + 1
+                views.register_SIG(
+                    form.cleaned_data['SigMain1'],
+                    account,
+                    datetime.datetime.now(),
+                    "RE"
+                )
+
+                views.register_SIG(
+                    form.cleaned_data['SigMain2'],
+                    account,
+                    datetime.datetime.now(),
+                    "RE"
+                )
+
+                views.register_SIG(
+                    form.cleaned_data['SigAux1'],
+                    account,
+                    datetime.datetime.now(),
+                    "RE"
+                )
+
+                views.register_SIG(
+                    form.cleaned_data['SigAux2'],
+                    account,
+                    datetime.datetime.now(),
+                    "RE"
+                )
+
             request.session['alert_success'] = "Successfully registered SIGS with the portal."
             registered_sigs = Status.objects.filter(user=account)
             final_cleaned_data = []
@@ -138,6 +133,7 @@ def apply(request):
     else:
         request.session['alert_success'] = "Already registered."
         return HttpResponseRedirect('/profile/')
+
 
 def status(request):
     current_user = request.user
