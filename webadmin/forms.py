@@ -21,7 +21,7 @@ class AddUserForm(BasicForm):
     setup_field(password_first, "Enter password here")
     password_second = forms.CharField(label='', min_length=1, max_length=50, widget=forms.PasswordInput())
     setup_field(password_second, "Enter password again")
-    member_type = forms.ChoiceField(required=False, choices=Account.USER_TYPES)
+    member_type = forms.ChoiceField(required=False, choices=Account.ACCOUNT_TYPES)
     setup_field(member_type)
 
     def clean(self):

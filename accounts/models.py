@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-# Create your models here.
 
 
 class Profile(models.Model):
@@ -44,18 +43,13 @@ class Profile(models.Model):
 
 
 class Account(models.Model):
-    ACCOUNT_UNKNOWN = 0
     ACCOUNT_ADMIN = 1
     ACCOUNT_MEMBER = 2
+    ACCOUNT_CANDIDATE = 3
     ACCOUNT_TYPES = (
-        (ACCOUNT_UNKNOWN, "Unknown"),
         (ACCOUNT_ADMIN, "Admin"),
-        (ACCOUNT_MEMBER, "Member")
-    )
-
-    USER_TYPES = (
         (ACCOUNT_MEMBER, "Member"),
-        (ACCOUNT_ADMIN, "Admin")
+        (ACCOUNT_CANDIDATE, "Candidate")
     )
 
     @staticmethod
@@ -79,3 +73,42 @@ class Account(models.Model):
 
     def __str__(self):
         return self.profile.__str__()
+
+class Status(models.Model):
+    STATUS_TYPES = (
+        ("WR","Written Round"),
+        ("TE","Technical"),
+        ("HR","HR")
+    )
+
+    SIG_TYPES = (
+        ("CO","Code"),
+        ("GD","Gadget"),
+        ("GR","Garage"),
+        ("SR","Script"),
+        ("VR","Vriddhi"),
+        ("RO","Robotics"),
+        ("CA","Capital"),
+        ("ME","Media")
+    )
+
+    @staticmethod
+    def to_status(key):
+        key = key.lower()
+        for item in Status.STATUS_TYPES:
+            if item[1].lower() == key:
+                return item[0]
+        return "None"
+
+    @staticmethod
+    def to_sig(key):
+        key = key.lower()
+        for item in Status.SIG_TYPES:
+            if item[1].lower() == key:
+                return item[0]
+        return "None"
+
+    user = models.ForeignKey(Account, on_delete=models.CASCADE)
+    SIG = models.CharField(null=True, max_length=2, choices=SIG_TYPES)
+    status = models.CharField(max_length=2, choices=STATUS_TYPES)
+    updated_at = models.DateTimeField(auto_now_add=True, editable=True)
