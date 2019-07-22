@@ -869,10 +869,31 @@
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
-  <script src="js/bootstrap/bootstrap.min.js"></script>
-  <script src="js/script.js"></script>
+  <!-- <script src="js/bootstrap/bootstrap.min.js"></script> -->
+  <!-- <script src="js/script.js"></script> -->
 
   <script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        for(var j = 0; j < coll.length; j++){
+            if(coll[j] != this){
+                var content = coll[j].nextElementSibling;
+                content.style.maxHeight = null;
+                coll[j].classList.remove("active");
+            }
+        }
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight){
+          content.style.maxHeight = null;
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+        } 
+      });
+    }
     document.addEventListener('DOMContentLoaded', function () {
         let devfolioOptions = {
             buttonSelector: '#hint-apply-now',
