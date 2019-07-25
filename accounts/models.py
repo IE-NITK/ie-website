@@ -94,10 +94,10 @@ class Status(models.Model):
         ("TE", "Technical"),
         ("HR", "HR")
     )
-    SIG_TYPES_MAIN = (("--", "NONE"), ("CO", "Code"),
+    SIG_TYPES_MAIN = (("", "None"), ("CO", "Code"),
                       ("GD", "Gadget"),
                       ("GR", "Garage"),)
-    SIG_TYPES_AUX = (("--", "NONE"), ("SR", "Script"),
+    SIG_TYPES_AUX = (("", "None"), ("SR", "Script"),
                      ("VR", "Vriddhi"),
                      ("RO", "Robotics"),
                      ("CA", "Capital"),

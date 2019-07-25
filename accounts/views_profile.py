@@ -76,7 +76,7 @@ def apply(request):
     if authentication_result is not None: return authentication_result
     template_data = views.parse_session(request, {'form_button': "Submit"})
 
-    account = Account.objects.get(pk=request.user.id)
+    account = Account.objects.get(user=request.user)
 
     stat = Status.objects.filter(user=account).first()
 
@@ -84,6 +84,7 @@ def apply(request):
         if request.method == 'POST':
             form = SIGForm(request.POST)
             if form.is_valid():
+                print("valid")
                 views.register_SIG(
                     form.cleaned_data['SigMain1'],
                     account,
@@ -112,20 +113,22 @@ def apply(request):
                     "RE"
                 )
 
-            request.session['alert_success'] = "Successfully registered SIGS with the portal."
-            registered_sigs = Status.objects.filter(user=account)
-            final_cleaned_data = []
-            DB_Status = Status.STATUS_TYPES
-            DB_SIG = Status.SIG_TYPES
-            for entry in registered_sigs:
-                for type in DB_SIG:
-                    if entry.SIG == type[0]:
-                        sig_name = type[1]
-                for status in DB_Status:
-                    if entry.status == status[0]:
-                        sig_status = status[1]
-                final_cleaned_data.append([sig_name, sig_status])
-            return render(request, 'ienitk/status.html', {'query': final_cleaned_data})
+                request.session['alert_success'] = "Successfully registered SIGS with the portal."
+                registered_sigs = Status.objects.filter(user=account)
+                final_cleaned_data = []
+                DB_Status = Status.STATUS_TYPES
+                DB_SIG = Status.SIG_TYPES
+                for entry in registered_sigs:
+                    for type in DB_SIG:
+                        if entry.SIG == type[0]:
+                            sig_name = type[1]
+                    for status in DB_Status:
+                        if entry.status == status[0]:
+                            sig_status = status[1]
+                    final_cleaned_data.append([sig_name, sig_status])
+                return render(request, 'ienitk/status.html', {'query': final_cleaned_data})
+            else:
+                return render(request, 'ienitk/apply.html', template_data)
         else:
             form = SIGForm()
         template_data['form'] = form
