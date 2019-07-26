@@ -221,7 +221,7 @@
                   <style>
                     @font-face {
                       font-family: CircularStd-Medium;
-                      src: url("../../static/fonts/hackverse/CircularStd-Medium.otf") format("opentype");
+                      src: url("../../static/css/fonts/CircularStd-Medium.otf") format("opentype");
                     }
 
                     .cls-1 {
@@ -869,7 +869,7 @@
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
-  <!-- <script src="js/bootstrap/bootstrap.min.js"></script> -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <!-- <script src="js/script.js"></script> -->
 
   <script>
@@ -894,26 +894,38 @@
         } 
       });
     }
-    document.addEventListener('DOMContentLoaded', function () {
-        let devfolioOptions = {
-            buttonSelector: '#hint-apply-now',
-            key: 'hint',
-        }
+    window.onscroll = function() {scrollFunction()};
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          document.getElementById("mainNav").style.paddingTop = "1%";
+          document.getElementById("mainNav").style.paddingBottom = "1%";
+          document.getElementById("mainNav").classList.add("shadowFix");
+      } else {
+        document.getElementById("mainNav").style.paddingTop = "4%";
+        document.getElementById("mainNav").style.paddingBottom = "0%";
+        document.getElementById("mainNav").classList.remove("shadowFix");
+      }
+    }
+    // document.addEventListener('DOMContentLoaded', function () {
+    //     let devfolioOptions = {
+    //         buttonSelector: '#hint-apply-now',
+    //         key: 'hint',
+    //     }
 
-        let script = document.createElement('script');
-        script.src = "https://apply.devfolio.co";
-        document.head.append(script);
+    //     let script = document.createElement('script');
+    //     script.src = "https://apply.devfolio.co";
+    //     document.head.append(script);
 
-        script.onload = function () {
-            new Devfolio(devfolioOptions);
-        }
+    //     script.onload = function () {
+    //         new Devfolio(devfolioOptions);
+    //     }
 
-        script.onerror = function () {
-            document.querySelector(devfolioOptions.buttonSelector).addEventListener('click', function () {
-                window.location.href = 'https://devfolio.co/external-apply/' + devfolioOptions.key;
-            });
-        }
-    });
+    //     script.onerror = function () {
+    //         document.querySelector(devfolioOptions.buttonSelector).addEventListener('click', function () {
+    //             window.location.href = 'https://devfolio.co/external-apply/' + devfolioOptions.key;
+    //         });
+    //     }
+    // });
   </script>
 
 
