@@ -1,3 +1,5 @@
+import csv
+from django.http import HttpResponse
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.contrib.auth import get_user_model
@@ -148,7 +150,8 @@ def add_user(request):
 def candidates_view(request):
     # Authentication check
     authentication_result = views.authentication_check(request, [Account.ACCOUNT_ADMIN, Account.ACCOUNT_MEMBER])
-    if authentication_result is not None: return authentication_result
+    if authentication_result is not None:
+        return authentication_result
     # Get the template data from the session
     template_data = views.parse_session(request)
     # Get the SIG information of the user
@@ -166,3 +169,20 @@ def candidates_view(request):
     # Parse search sorting
     template_data['query'] = Status.objects.filter(SIG=SIG_User)
     return render(request, 'ienitk/admin/candidates.html', template_data)
+
+
+# def download_csv(request):
+#     authentication_result = views.authentication_check(request, [Account.ACCOUNT_ADMIN, Account.ACCOUNT_MEMBER])
+#     if authentication_result is not None:
+#         return authentication_result
+#
+#     candidates = sorted(Status.objects.all())
+#
+#     response = HttpResponse(content_type='text/csv')
+#     response['Content-Disposition'] = 'attachment; filename="candidates.csv"'
+#
+#     writer = csv.writer(response)
+#     writer.writerow(['First row', 'Foo', 'Bar', 'Baz'])
+#     writer.writerow(['Second row', 'A', 'B', 'C', '"Testing"', "Here's a quote"])
+
+

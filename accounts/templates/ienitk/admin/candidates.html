@@ -9,40 +9,51 @@
 {% block body %}
     <table id="datatable" class="table table-hover table-striped table-bordered">
         <thead>
-            <th>Username</th>
-            <th>First name</th>
-            <th>Last name</th>
-            <th>Status</th>
+        <th>Username</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Status</th>
         </thead>
         <tbody>
-            {% for candidate in query %}
-                <tr>
-                    {% comment %}{% if user.username != candidate.user.user.username %}{% endcomment %}
-                        <td>{{ candidate.user.user.username }}</td>
-                        <td>{{ candidate.user.profile.firstname }}</td>
-                        <td>{{ candidate.user.profile.lastname }}</td>
+        {% for candidate in query %}
+            <tr>
+                {% comment %}{% if user.username != candidate.user.user.username %}{% endcomment %}
+                <td>{{ candidate.user.user.username }}</td>
+                <td>{{ candidate.user.profile.firstname }}</td>
+                <td>{{ candidate.user.profile.lastname }}</td>
 
-                       <td data-value="{{ candidate.status }}">
-                            <form action="./" method="post" class="form-inline">{% csrf_token %}
-                                <input type="hidden" name="pk" value="{{ candidate.pk }}">
-                                <select class="form-control" name="status">
-                                    <option value="WR" {% if candidate.status == "WR" %}selected="selected"{% endif %}>Written Round</option>
-                                    <option value="TE" {% if candidate.status == "TE" %}selected="selected"{% endif %}>Technical</option>
-                                    <option value="HR" {% if candidate.status == "HR" %}selected="selected"{% endif %}>HR</option>
-                                </select>
-                                <input class="btn btn-primary" type="submit" value="Save"/>
-                            </form>
-                        </td>
-                    {% comment %}{% endif %}{% endcomment %}
+                <td data-value="{{ candidate.status }}">
+                    <form action="./" method="post" class="form-inline">{% csrf_token %}
+                        <input type="hidden" name="pk" value="{{ candidate.pk }}">
+                        <select class="form-control" name="status">
+                            <option value="WR" {% if candidate.status == "WR" %}selected="selected"{% endif %}>Written
+                                Round
+                            </option>
+                            <option value="TE" {% if candidate.status == "TE" %}selected="selected"{% endif %}>
+                                Technical
+                            </option>
+                            <option value="HR" {% if candidate.status == "HR" %}selected="selected"{% endif %}>HR
+                            </option>
+                        </select>
+                        <input class="btn btn-primary" type="submit" value="Save"/>
+                    </form>
+                </td>
+                {% comment %}{% endif %}{% endcomment %}
 
-                </tr>
-            {% endfor %}
+            </tr>
+        {% endfor %}
         </tbody>
-      </table>
-      <script type="text/javascript">
-        $(document).ready(function() {
-            $('#datatable').DataTable();
+    </table>
+    
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#datatable').DataTable({
+                "dom": 'lBfrtip',
+                buttons: [
+                    'csv'
+                ]
+            });
         });
-      </script>
+    </script>
 
 {% endblock %}

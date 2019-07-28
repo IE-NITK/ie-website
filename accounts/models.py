@@ -133,3 +133,6 @@ class Status(models.Model):
     SIG = models.CharField(null=True, max_length=2)
     status = models.CharField(max_length=2, choices=STATUS_TYPES)
     updated_at = models.DateTimeField(auto_now_add=True, editable=True)
+
+    def __str__(self):
+        return self.SIG + ": " + self.user.__str__()
