@@ -102,6 +102,7 @@ def register_view(request):
                 form.cleaned_data['password_first'],
                 form.cleaned_data['firstname'],
                 form.cleaned_data['lastname'],
+                form.cleaned_data['phone'],
                 False,
                 Account.ACCOUNT_CANDIDATE
             )

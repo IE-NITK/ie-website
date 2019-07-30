@@ -56,7 +56,7 @@ def parse_session(request, template_data=None):
     return template_data
 
 
-def register_user(email, password, firstname, lastname, active, role):
+def register_user(email, password, firstname, lastname, phone, active, role):
     user = User.objects.create_user(
         email.lower(),
         email.lower(),
@@ -65,6 +65,7 @@ def register_user(email, password, firstname, lastname, active, role):
     profile = Profile(
         firstname=firstname,
         lastname=lastname,
+        phone=phone
     )
     profile.save()
     account = Account(

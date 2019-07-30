@@ -72,7 +72,7 @@ def users_view(request):
             account.save()
             template_data['alert_success'] = "Updated " + account.user.username + "'s role!"
 
-    elif request.method == 'POST' and 'SIG' in request.POST:
+    if request.method == 'POST' and 'SIG' in request.POST:
         pk = request.POST['pk']
         SIG = request.POST['SIG']
         account = Account.objects.get(pk=pk)
@@ -179,20 +179,3 @@ def candidates_view(request):
     # Parse search sorting
     template_data['query'] = Status.objects.filter(SIG=SIG_User)
     return render(request, 'ienitk/admin/candidates.html', template_data)
-
-
-# def download_csv(request):
-#     authentication_result = views.authentication_check(request, [Account.ACCOUNT_ADMIN, Account.ACCOUNT_MEMBER])
-#     if authentication_result is not None:
-#         return authentication_result
-#
-#     candidates = sorted(Status.objects.all())
-#
-#     response = HttpResponse(content_type='text/csv')
-#     response['Content-Disposition'] = 'attachment; filename="candidates.csv"'
-#
-#     writer = csv.writer(response)
-#     writer.writerow(['First row', 'Foo', 'Bar', 'Baz'])
-#     writer.writerow(['Second row', 'A', 'B', 'C', '"Testing"', "Here's a quote"])
-
-
