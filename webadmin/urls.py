@@ -15,7 +15,5 @@ urlpatterns = [
     path('admin/restore_users', views.restore_user, name='admin/restore_users'),
     path('admin/delete_user', views.delete_user, name='admin/delete_user'),
     path('admin/adduser/', views.add_user, name='admin/adduser'),
-    path('candidates/', views.candidates_view, name='candidates')
-    # path('download_csv/', views.download_csv, name='download_csv')
-    
+    path('candidates/', views.candidates_view, name='candidates')    
 ]

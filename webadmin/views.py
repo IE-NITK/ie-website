@@ -63,7 +63,7 @@ def users_view(request):
     # Get the template data from the session
     template_data = views.parse_session(request)
     # Proceed with the rest of the view
-    if request.method == 'POST':
+    if request.method == 'POST' and 'role' in request.POST:
         pk = request.POST['pk']
         role = request.POST['role']
         account = Account.objects.get(pk=pk)
@@ -71,6 +71,16 @@ def users_view(request):
             account.role = role
             account.save()
             template_data['alert_success'] = "Updated " + account.user.username + "'s role!"
+
+    elif request.method == 'POST' and 'SIG' in request.POST:
+        pk = request.POST['pk']
+        SIG = request.POST['SIG']
+        account = Account.objects.get(pk=pk)
+        if account is not None:
+            account.SIG = SIG
+            account.save()
+            template_data['alert_success'] = "Updated " + account.user.username + "'s SIG!"
+
     # Parse search sorting
     template_data['query'] = Account.objects.filter(archive=False).order_by('-role')
     return render(request, 'ienitk/admin/users.html', template_data)
