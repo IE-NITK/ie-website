@@ -35,7 +35,7 @@
   <link href="https://fonts.googleapis.com/css?family=K2D" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
     crossorigin="anonymous">
-  <link rel="shortcut icon" href="../../static/img/hackverse/LOGO.png">
+  <link rel="shortcut icon" href="{% static 'img/hackverse/LOGO.png' %}">
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-72748005-1"></script>
   <script>
@@ -122,10 +122,10 @@
           Applications are closed!
         </div> -->
         <div class="col-6 col-md-6 landing-info" style="display:inline-block">
-          <img src="../../static/img/hackverse/Group 34.svg" class="pointer-svg"> &nbsp NITK, Surathkal
+          <img src="{% static 'img/hackverse/Group 34.svg' %}" class="pointer-svg"> &nbsp NITK, Surathkal
         </div>
         <div class="col-6 col-md-6 landing-info">
-          <img src="../../static/img/hackverse/calendar.svg" class="calendar-svg"> &nbsp 26th - 27th October, 2019
+          <img src="{% static 'img/hackverse/calendar.svg' %}" class="calendar-svg"> &nbsp 26th - 27th October, 2019
         </div>
       </div>
     </div>
@@ -158,6 +158,87 @@
         </div>
       </div> -->
     </div>
+
+    <br/>
+    <br/>
+    <br/>
+    <div class="about-fluid">
+      <div class="row about-row">
+        <div class="col-md-6 col-lg-8 order-2 order-md-1">
+          <div class="row about-text">
+            <div class="col-12 about-title">
+              About NITK
+            </div>
+
+            <div class="col-12 about-contents">
+              National Institute of Technology Karnataka or NITK is
+              one of the premier engineering institutions of the
+              country. Situated near Mangalore along the coast of
+              the Arabian Sea, NITK is home to some of the brightest young minds of the country engaged in a wide
+              array of disciplines. With a vibrant and robust student
+              body, NITK has been the launchpad for people with
+              great ideas that have grown to be very successful ventures including Practo, Purpule, SaveMonk among
+              others. This year, we celebrate our Diamond Jubilee.
+              To commemorate 60 years of NITK, IE NITK aims to
+              provide students
+              throughout the country an opportunity to do the same
+              with Hackverse’19.
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 order-1 order-md-2">
+          <img src="{% static 'img/hackverse/nitk.png' %}" class="about-img">
+        </div>
+
+      </div>
+
+     <!--  <div class="row">
+        <div class="col-12">
+          <video src="videos/after movie hint_x264.mp4" controls class="about-video">Cannot Play Video</video>
+        </div>
+      </div> -->
+    </div>
+
+    <br/>
+    <br/>
+    <br/>
+    <div class="about-fluid">
+      <div class="row about-row">
+        <div class="col-md-6 col-lg-8 order-2 order-md-1">
+          <div class="row about-text">
+            <div class="col-12 about-title">
+              About IE NITK
+            </div>
+
+            <div class="col-12 about-contents">
+                IE NITK is one of the 6 exclusive
+                clubs in NITK, aiming to increase
+                technical exposure to all its
+                members. Our previous
+                Hackathon, Digital Hackathon which was
+                conducted last year, sparked
+                our ingenious students to
+                transpire cutting edge solutions
+                to various problem statements. Other events
+                like SPARK, a small scale version of Ted talks
+                and KOTH, a challenge filled series, sought to
+                bring out the interest within our freshman.
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 order-1 order-md-2">
+          <img src="{% static 'img/hackverse/ie_logo.png' %}" class="about-img">
+        </div>
+
+      </div>
+
+     <!--  <div class="row">
+        <div class="col-12">
+          <video src="videos/after movie hint_x264.mp4" controls class="about-video">Cannot Play Video</video>
+        </div>
+      </div> -->
+    </div>
+     
   </div>
 
 
