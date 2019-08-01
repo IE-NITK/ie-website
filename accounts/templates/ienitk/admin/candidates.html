@@ -15,6 +15,9 @@
         <th>Phone Number</th>
         <th>Status</th>
         <th>Last Updated</th>
+        {% if logged_in_user.account.role == 4 %}
+        <th>SIG</th>
+        {% endif %}
         </thead>
         <tbody>
         {% for candidate in query %}
@@ -25,7 +28,7 @@
                 <td>{{ candidate.user.profile.lastname }}</td>
                 <td>{{ candidate.user.profile.phone }}</td>
 
-                {% if logged_in_user.account.role == 1 %}
+                {% if logged_in_user.account.role == 1 or logged_in_user.account.role == 4 %}
                     <td data-value="{{ candidate.status }}">
                         <form action="./" method="post" class="form-inline">{% csrf_token %}
                             <input type="hidden" name="pk" value="{{ candidate.pk }}">
@@ -49,14 +52,31 @@
                         Written Round
                     {% elif  candidate.status == "TE" %}
                         Technical
+                    {% elif  candidate.status == "RE" %}
+                        Application Accepted
                     {% else %}
                         HR
                     {% endif %}
                     </td>
                 {% endif %}
-                {% comment %}{% endif %}{% endcomment %}
 
                 <td>{{ candidate.updated_at }}</td>
+
+                {% if logged_in_user.account.role == 4 %}
+                    <td>
+                    {% if candidate.SIG == "SR" %}
+                        Script
+                    {% elif  candidate.SIG == "VR" %}
+                        Vridhhi
+                    {% elif  candidate.SIG == "CA" %}
+                        Capital
+                    {% elif  candidate.SIG == "RO" %}
+                        Robotics
+                    {% elif  candidate.SIG == "ME" %}
+                        Media
+                    {% endif %}
+                    </td>
+                {% endif %}
 
             </tr>
         {% endfor %}

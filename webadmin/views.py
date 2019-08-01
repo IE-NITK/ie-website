@@ -146,11 +146,11 @@ def add_user(request):
                 form.cleaned_data['password_first'],
                 form.cleaned_data['firstname'],
                 form.cleaned_data['lastname'],
+                0,
                 False,
                 form.cleaned_data['member_type']
             )
-            request.session[
-                'alert_success'] = "Successfully created new member account. Please ask them to change the password first"
+            request.session['alert_success'] = "Successfully created new member account. Please ask them to change the password first"
             return HttpResponseRedirect('/admin/users/')
     else:
         form = AddUserForm()
@@ -161,7 +161,7 @@ def add_user(request):
 # View all candidates and their status
 def candidates_view(request):
     # Authentication check
-    authentication_result = views.authentication_check(request, [Account.ACCOUNT_ADMIN, Account.ACCOUNT_MEMBER])
+    authentication_result = views.authentication_check(request, [Account.ACCOUNT_ADMIN, Account.ACCOUNT_MEMBER, Account.ACCOUNT_AUX_ADMIN])
     if authentication_result is not None:
         return authentication_result
     # Get the template data from the session
@@ -180,5 +180,7 @@ def candidates_view(request):
             template_data['alert_success'] = "Updated" + candidate.user.user.username + "'s status!"
     # Parse search sorting
     template_data['query'] = Status.objects.filter(SIG=SIG_User)
+    if current_user.account.role == 4:
+        template_data['query'] = Status.objects.filter(SIG__in=["SR", "VR", "RO", "CA", "ME"])
     template_data['logged_in_user'] = current_user
     return render(request, 'ienitk/admin/candidates.html', template_data)

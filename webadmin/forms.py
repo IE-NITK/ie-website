@@ -27,7 +27,7 @@ class AddUserForm(BasicForm):
     def clean(self):
         """
         This is to make sure both passwords fields have the same values in them. If they don't mark
-        them as errous.
+        them as errors.
         :return:
         """
         cleaned_data = super(AddUserForm, self).clean()

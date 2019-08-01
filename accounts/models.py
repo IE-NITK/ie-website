@@ -45,10 +45,12 @@ class Account(models.Model):
     ACCOUNT_ADMIN = 1
     ACCOUNT_MEMBER = 2
     ACCOUNT_CANDIDATE = 3
+    ACCOUNT_AUX_ADMIN = 4
     ACCOUNT_TYPES = (
         (ACCOUNT_ADMIN, "Admin"),
         (ACCOUNT_MEMBER, "Member"),
-        (ACCOUNT_CANDIDATE, "Candidate")
+        (ACCOUNT_CANDIDATE, "Candidate"),
+        (ACCOUNT_AUX_ADMIN, "Aux SIG Admin")
     )
     SIG_CHOICES = (("--", "NONE"), ("CO", "Code"),
                  ("GD", "Gadget"),
@@ -89,7 +91,7 @@ class Account(models.Model):
 
 class Status(models.Model):
     STATUS_TYPES = (
-        ("RE", "Resume Evaluation Pending"),
+        ("RE", "Application Accepted"),
         ("WR", "Written Round"),
         ("TE", "Technical"),
         ("HR", "HR")

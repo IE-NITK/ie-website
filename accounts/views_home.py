@@ -26,6 +26,7 @@ def setup_view(request):
                 form.cleaned_data['password_first'],
                 form.cleaned_data['firstname'],
                 form.cleaned_data['lastname'],
+                0,
                 False,
                 Account.ACCOUNT_ADMIN
             )
