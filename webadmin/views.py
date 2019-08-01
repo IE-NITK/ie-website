@@ -6,6 +6,7 @@ from django.contrib.auth import get_user_model
 from accounts import views
 from accounts.models import Account, Status
 from webadmin.forms import AddUserForm
+
 User = get_user_model()
 
 
@@ -148,7 +149,8 @@ def add_user(request):
                 False,
                 form.cleaned_data['member_type']
             )
-            request.session['alert_success'] = "Successfully created new member account. Please ask them to change the password first"
+            request.session[
+                'alert_success'] = "Successfully created new member account. Please ask them to change the password first"
             return HttpResponseRedirect('/admin/users/')
     else:
         form = AddUserForm()
@@ -178,4 +180,5 @@ def candidates_view(request):
             template_data['alert_success'] = "Updated" + candidate.user.user.username + "'s status!"
     # Parse search sorting
     template_data['query'] = Status.objects.filter(SIG=SIG_User)
+    template_data['logged_in_user'] = current_user
     return render(request, 'ienitk/admin/candidates.html', template_data)

@@ -14,6 +14,7 @@
         <th>Last name</th>
         <th>Phone Number</th>
         <th>Status</th>
+        <th>Last Updated</th>
         </thead>
         <tbody>
         {% for candidate in query %}
@@ -24,23 +25,38 @@
                 <td>{{ candidate.user.profile.lastname }}</td>
                 <td>{{ candidate.user.profile.phone }}</td>
 
-                <td data-value="{{ candidate.status }}">
-                    <form action="./" method="post" class="form-inline">{% csrf_token %}
-                        <input type="hidden" name="pk" value="{{ candidate.pk }}">
-                        <select class="form-control" name="status">
-                            <option value="WR" {% if candidate.status == "WR" %}selected="selected"{% endif %}>Written
-                                Round
-                            </option>
-                            <option value="TE" {% if candidate.status == "TE" %}selected="selected"{% endif %}>
-                                Technical
-                            </option>
-                            <option value="HR" {% if candidate.status == "HR" %}selected="selected"{% endif %}>HR
-                            </option>
-                        </select>
-                        <input class="btn btn-primary" type="submit" value="Save"/>
-                    </form>
-                </td>
+                {% if logged_in_user.account.role == 1 %}
+                    <td data-value="{{ candidate.status }}">
+                        <form action="./" method="post" class="form-inline">{% csrf_token %}
+                            <input type="hidden" name="pk" value="{{ candidate.pk }}">
+                            <select class="form-control" name="status">
+                                <option value="WR" {% if candidate.status == "WR" %}selected="selected"{% endif %}>Written
+                                    Round
+                                </option>
+                                <option value="TE" {% if candidate.status == "TE" %}selected="selected"{% endif %}>
+                                    Technical
+                                </option>
+                                <option value="HR" {% if candidate.status == "HR" %}selected="selected"{% endif %}>HR
+                                </option>
+                            </select>
+                            <input class="btn btn-primary" type="submit" value="Save"/>
+                        </form>
+                    </td>
+
+                {% else %}
+                    <td>
+                    {% if candidate.status == "WR" %}
+                        Written Round
+                    {% elif  candidate.status == "TE" %}
+                        Technical
+                    {% else %}
+                        HR
+                    {% endif %}
+                    </td>
+                {% endif %}
                 {% comment %}{% endif %}{% endcomment %}
+
+                <td>{{ candidate.updated_at }}</td>
 
             </tr>
         {% endfor %}
