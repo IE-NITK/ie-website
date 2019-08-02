@@ -64,17 +64,7 @@
 
                 {% if logged_in_user.account.role == 4 %}
                     <td>
-                    {% if candidate.SIG == "SR" %}
-                        Script
-                    {% elif  candidate.SIG == "VR" %}
-                        Vridhhi
-                    {% elif  candidate.SIG == "CA" %}
-                        Capital
-                    {% elif  candidate.SIG == "RO" %}
-                        Robotics
-                    {% elif  candidate.SIG == "ME" %}
-                        Media
-                    {% endif %}
+                        {{ candidate.to_sig(candidate.SIG) }}
                     </td>
                 {% endif %}
 

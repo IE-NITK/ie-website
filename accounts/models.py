@@ -132,7 +132,7 @@ class Status(models.Model):
     user = models.ForeignKey(Account, on_delete=models.CASCADE)
     SIG = models.CharField(null=True, max_length=2)
     status = models.CharField(max_length=2, choices=STATUS_TYPES)
-    updated_at = models.DateTimeField(auto_now_add=True, editable=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.SIG + ": " + self.user.__str__()

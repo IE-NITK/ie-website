@@ -7,3 +7,7 @@ def view_events(request):
 
 def smp(request):
     return render(request, 'smp.html')
+
+
+def hackverse(request):
+    return render(request, 'hackverse.html')
