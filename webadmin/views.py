@@ -1,25 +1,22 @@
-
+import csv
+from django.http import HttpResponse
 from django.shortcuts import render
-from django.shortcuts import render
-import sys
-from django.core.management import call_command
-from django.core import serializers
-from django.shortcuts import render, redirect
-from django.http import HttpResponseRedirect, HttpResponse
-from django.db.utils import IntegrityError
+from django.http import HttpResponseRedirect
 from django.contrib.auth import get_user_model
-
 from accounts import views
-from accounts.models import Account
+from accounts.models import Account, Status
 from webadmin.forms import AddUserForm
+
 User = get_user_model()
 
 
 def error_404_view(request, exception):
-	return render(request, '404.html', locals())
+    return render(request, '404.html', locals())
+
 
 def view_team(request):
-	return render(request, 'events.html')
+    return render(request, 'events.html')
+
 
 def sitemap(request):
     return render(request, 'sitemap.xml', content_type="application/xhtml+xml")
@@ -67,14 +64,24 @@ def users_view(request):
     # Get the template data from the session
     template_data = views.parse_session(request)
     # Proceed with the rest of the view
-    if request.method == 'POST':
+    if request.method == 'POST' and 'role' in request.POST:
         pk = request.POST['pk']
         role = request.POST['role']
         account = Account.objects.get(pk=pk)
         if account is not None:
             account.role = role
             account.save()
-            template_data['alert_success'] = "Updated" + account.user.username + "'s role!"
+            template_data['alert_success'] = "Updated " + account.user.username + "'s role!"
+
+    if request.method == 'POST' and 'SIG' in request.POST:
+        pk = request.POST['pk']
+        SIG = request.POST['SIG']
+        account = Account.objects.get(pk=pk)
+        if account is not None:
+            account.SIG = SIG
+            account.save()
+            template_data['alert_success'] = "Updated " + account.user.username + "'s SIG!"
+
     # Parse search sorting
     template_data['query'] = Account.objects.filter(archive=False).order_by('-role')
     return render(request, 'ienitk/admin/users.html', template_data)
@@ -139,6 +146,7 @@ def add_user(request):
                 form.cleaned_data['password_first'],
                 form.cleaned_data['firstname'],
                 form.cleaned_data['lastname'],
+                0,
                 False,
                 form.cleaned_data['member_type']
             )
@@ -148,3 +156,31 @@ def add_user(request):
         form = AddUserForm()
     template_data['form'] = form
     return render(request, 'ienitk/admin/createuser.html', template_data)
+
+
+# View all candidates and their status
+def candidates_view(request):
+    # Authentication check
+    authentication_result = views.authentication_check(request, [Account.ACCOUNT_ADMIN, Account.ACCOUNT_MEMBER, Account.ACCOUNT_AUX_ADMIN])
+    if authentication_result is not None:
+        return authentication_result
+    # Get the template data from the session
+    template_data = views.parse_session(request)
+    # Get the SIG information of the user
+    current_user = request.user
+    SIG_User = current_user.account.SIG
+    # update status of candidates
+    if request.method == 'POST':
+        pk = request.POST['pk']
+        status = request.POST['status']
+        candidate = Status.objects.get(pk=pk)
+        if candidate is not None:
+            candidate.status = status
+            candidate.save()
+            template_data['alert_success'] = "Updated" + candidate.user.user.username + "'s status!"
+    # Parse search sorting
+    template_data['query'] = Status.objects.filter(SIG=SIG_User)
+    if current_user.account.role == 4:
+        template_data['query'] = Status.objects.filter(SIG__in=["SR", "VR", "RO", "CA", "ME"])
+    template_data['logged_in_user'] = current_user
+    return render(request, 'ienitk/admin/candidates.html', template_data)

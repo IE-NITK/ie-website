@@ -15,6 +15,7 @@
             <th>First name</th>
             <th>Last name</th>
             <th>Role</th>
+            <th>SIG</th>
             <th>Action</th>
         </thead>
         <tbody>
@@ -30,6 +31,19 @@
                                 <select class="form-control" name="role">
                                     <option value="1" {% if account.role == 1 %}selected="selected"{% endif %}>Admin</option>
                                     <option value="2" {% if account.role == 2 %}selected="selected"{% endif %}>Member</option>
+                                    <option value="3" {% if account.role == 3 %}selected="selected"{% endif %}>Candidate</option>
+                                    <option value="4" {% if account.role == 4 %}selected="selected"{% endif %}>Aux SIG Admin</option>
+                                </select>
+                                <input class="btn btn-primary" type="submit" value="Save"/>
+                            </form>
+                        </td>
+                        <td data-value="{{ account.SIG }}">
+                            <form action="./" method="post" class="form-inline">{% csrf_token %}
+                                <input type="hidden" name="pk" value="{{ account.pk }}">
+                                <select class="form-control" name="SIG">
+                                    <option value="CO" {% if account.SIG == "CO" %}selected="selected"{% endif %}>Code</option>
+                                    <option value="GD" {% if account.SIG == "GD" %}selected="selected"{% endif %}>Gadget</option>
+                                    <option value="GR" {% if account.SIG == "GR" %}selected="selected"{% endif %}>Garage</option>
                                 </select>
                                 <input class="btn btn-primary" type="submit" value="Save"/>
                             </form>

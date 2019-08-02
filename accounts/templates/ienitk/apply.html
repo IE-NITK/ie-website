@@ -1,0 +1,7 @@
+{% extends "admin-base.html" %}
+{% load app_filters %}
+{% block sidebar_apply %}active{% endblock %}
+{% block body %}
+    <p class="lead">Select at most two Core SIGS and two Auxiliary SIGs. Once you submit, your choices cannot be changed.</p>
+    {% include "singleform.html" %}
+{% endblock %}

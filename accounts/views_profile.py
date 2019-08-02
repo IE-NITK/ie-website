@@ -1,9 +1,12 @@
 from django.shortcuts import render
 from django.contrib.auth import authenticate
-
-from .forms import PasswordForm, ProfileForm
-from .models import Account
+from django.http import HttpResponseRedirect
+from django.contrib.auth.models import User
+import datetime
+from .forms import PasswordForm, ProfileForm, SIGForm
+from .models import Account, Status
 from . import views
+from django.http import Http404
 
 
 def profile_view(request):
@@ -66,3 +69,89 @@ def profile_update(request):
             form = ProfileForm(profile.get_populated_fields())
     template_data['form'] = form
     return render(request, 'ienitk/profile/update.html', template_data)
+
+
+def apply(request):
+    authentication_result = views.authentication_check(request, [Account.ACCOUNT_ADMIN, Account.ACCOUNT_CANDIDATE])
+    if authentication_result is not None: return authentication_result
+    template_data = views.parse_session(request, {'form_button': "Submit"})
+
+    account = Account.objects.get(user=request.user)
+
+    stat = Status.objects.filter(user=account).first()
+
+    if stat is None:
+        if request.method == 'POST':
+            form = SIGForm(request.POST)
+            if form.is_valid():
+                print("valid")
+                views.register_SIG(
+                    form.cleaned_data['SigMain1'],
+                    account,
+                    datetime.datetime.now(),
+                    "RE"
+                )
+
+                views.register_SIG(
+                    form.cleaned_data['SigMain2'],
+                    account,
+                    datetime.datetime.now(),
+                    "RE"
+                )
+
+                views.register_SIG(
+                    form.cleaned_data['SigAux1'],
+                    account,
+                    datetime.datetime.now(),
+                    "RE"
+                )
+
+                views.register_SIG(
+                    form.cleaned_data['SigAux2'],
+                    account,
+                    datetime.datetime.now(),
+                    "RE"
+                )
+
+                request.session['alert_success'] = "Successfully registered SIGS with the portal."
+                registered_sigs = Status.objects.filter(user=account)
+                final_cleaned_data = []
+                DB_Status = Status.STATUS_TYPES
+                DB_SIG = Status.SIG_TYPES
+                for entry in registered_sigs:
+                    for type in DB_SIG:
+                        if entry.SIG == type[0]:
+                            sig_name = type[1]
+                    for status in DB_Status:
+                        if entry.status == status[0]:
+                            sig_status = status[1]
+                    final_cleaned_data.append([sig_name, sig_status])
+                return render(request, 'ienitk/status.html', {'query': final_cleaned_data})
+            else:
+                return render(request, 'ienitk/apply.html', template_data)
+        else:
+            form = SIGForm()
+        template_data['form'] = form
+        return render(request, 'ienitk/apply.html', template_data)
+    else:
+        request.session['alert_success'] = "Already registered."
+        return HttpResponseRedirect('/profile/')
+
+
+def status(request):
+    current_user = request.user
+    account = current_user.account
+    # account = Account.objects.get(pk=request.user.id)
+    registered_sigs = Status.objects.filter(user=account)
+    final_cleaned_data = []
+    DB_Status = Status.STATUS_TYPES
+    DB_SIG = Status.SIG_TYPES
+    for entry in registered_sigs:
+        for type in DB_SIG:
+            if entry.SIG == type[0]:
+                sig_name = type[1]
+        for status in DB_Status:
+            if entry.status == status[0]:
+                sig_status = status[1]
+        final_cleaned_data.append([sig_name, sig_status])
+    return render(request, 'ienitk/status.html', {'query': final_cleaned_data})

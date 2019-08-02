@@ -2,7 +2,7 @@ from datetime import date
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
-from .models import Account, Profile
+from .models import Account, Profile, Status
 
 
 def validate_username_available(username):
@@ -93,6 +93,8 @@ class AccountRegisterForm(BasicForm):
     setup_field(password_first, "Enter password here")
     password_second = forms.CharField(label='', min_length=1, max_length=50, widget=forms.PasswordInput())
     setup_field(password_second, "Enter password again")
+    phone = forms.CharField(label='Phone Number', min_length=1, max_length=10)
+    setup_field(phone, "Enter phone number")
 
     def clean(self):
         """
@@ -150,3 +152,14 @@ class ProfileForm(BasicForm):
         profile.lastname = self.cleaned_data['lastname']
         profile.sex = self.cleaned_data['sex']
         profile.phone = self.cleaned_data['phone']
+
+
+class SIGForm(BasicForm):
+    SigMain1 = forms.ChoiceField(label='Core SIG First Priority', choices=Status.SIG_TYPES_MAIN, required=True)
+    setup_field(SigMain1, 'Select first Core SIG')
+    SigMain2 = forms.ChoiceField(label='Core SIG Second Priority', choices=Status.SIG_TYPES_MAIN, required=False)
+    setup_field(SigMain2, 'Select second Core SIG')
+    SigAux1 = forms.ChoiceField(label='Auxiliary SIG First Priority', choices=Status.SIG_TYPES_AUX, required=False)
+    setup_field(SigAux1, 'Select first Auxiliary SIG')
+    SigAux2 = forms.ChoiceField(label='Auxiliary SIG Second Priority', choices=Status.SIG_TYPES_AUX, required=False)
+    setup_field(SigAux2, 'Select second Auxiliary SIG')

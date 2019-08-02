@@ -1,0 +1,23 @@
+{% extends "admin-base.html" %}
+{% load app_filters %}
+{% block sidebar_status %}active{% endblock %}
+{% block body_header %}
+    <div align="center">Recruitment Status</div> {% endblock %}
+{% block body %}
+<div align="center">
+    <table width="50%" class="table table-hover table-striped table-bordered">
+        <thead>
+        <th width="30%">SIG</th>
+        <th width="70%">Status</th>
+        </thead>
+        <tbody>
+        {% for entry in query %}
+            <tr>
+                <td>{{ entry.0 }}</td>
+                <td>{{ entry.1 }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

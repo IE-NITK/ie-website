@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
+from django.contrib.auth.models import User
 from django.template.loader import render_to_string
 from django.core.mail import EmailMessage
 
@@ -25,6 +26,7 @@ def setup_view(request):
                 form.cleaned_data['password_first'],
                 form.cleaned_data['firstname'],
                 form.cleaned_data['lastname'],
+                0,
                 False,
                 Account.ACCOUNT_ADMIN
             )
@@ -81,6 +83,7 @@ def login_view(request):
     template_data['form'] = form
     return render(request, 'ienitk/login.html', template_data)
 
+
 ## For allowing registration
 def register_view(request):
     # Authentication check. Users logged in cannot view this page.
@@ -91,6 +94,7 @@ def register_view(request):
     # Get template data from session
     template_data = views.parse_session(request, {'form_button': "Register"})
     # Proceed with rest of the view
+    
     if request.method == 'POST':
         form = AccountRegisterForm(request.POST)
         if form.is_valid():
@@ -99,29 +103,33 @@ def register_view(request):
                 form.cleaned_data['password_first'],
                 form.cleaned_data['firstname'],
                 form.cleaned_data['lastname'],
+                form.cleaned_data['phone'],
                 False,
-                Account.ACCOUNT_MEMBER
+                Account.ACCOUNT_CANDIDATE
             )
-        #    current_site = get_current_site(request)
-        #    mail_subject = 'Activate your account'
+            #    current_site = get_current_site(request)
+            #    mail_subject = 'Activate your account'
             user = authenticate(
                 username=form.cleaned_data['email'].lower(),
                 password=form.cleaned_data['password_first']
             )
-        #    message = render_to_string('acc_active_email.html', {
-        #        'user': user,
-        #        'domain': current_site.domain,
-        #        'uid': urlsafe_base64_encode(force_bytes(user.pk)).decode(),
-        #        'token': account_activation_token.make_token(user),
-        #    })
-        #    to_email = form.cleaned_data['email']
-        #    email = EmailMessage(
-        #        mail_subject, message, to=[to_email]
-        #    )
-        #    email.send()
+            #    message = render_to_string('acc_active_email.html', {
+            #        'user': user,
+            #        'domain': current_site.domain,
+            #        'uid': urlsafe_base64_encode(force_bytes(user.pk)).decode(),
+            #        'token': account_activation_token.make_token(user),
+            #    })
+            #    to_email = form.cleaned_data['email']
+            #    email = EmailMessage(
+            #        mail_subject, message, to=[to_email]
+            #    )
+            #    email.send()
             login(request, user)
             request.session['alert_success'] = "Successfully registered with the portal."
+
             return HttpResponseRedirect('/profile/')
+
+
     else:
         form = AccountRegisterForm()
     template_data['form'] = form
