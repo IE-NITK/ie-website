@@ -41,6 +41,7 @@ class Profile(models.Model):
         return self.firstname + " " + self.lastname
 
 
+
 class Account(models.Model):
     ACCOUNT_ADMIN = 1
     ACCOUNT_MEMBER = 2
@@ -132,3 +133,23 @@ class Status(models.Model):
 
     def __str__(self):
         return self.SIG + ": " + self.user.__str__()
+
+class RoundOneSubmission(models.Model):
+    
+    user = models.ForeignKey(Account, on_delete=models.CASCADE)
+    rollno = models.CharField(default="NONAME",max_length=10)
+    ans1 = models.TextField(default="NONAME")
+    ans2 = models.TextField(default="NONAME")
+    ans3 = models.TextField(default="NONAME")
+    ans4 = models.TextField(default="NONAME")
+    ans5 = models.TextField(default="NONAME")
+    essayans = models.TextField(default="NONAME")
+    created_at = models.DateTimeField(auto_now=True)
+
+    @classmethod
+    def create(cls, user, rollno, ans1, ans2, ans3, ans4, ans5, essayans, created):
+        submission = cls(user=user,rollno=rollno, ans1 = ans1, ans2 = ans2, ans3 = ans3, ans4 = ans4, ans5 = ans5, essayans = essayans, created_at = created)
+        return submission
+
+    def __str__(self):
+        return self.user.__str__() + " " + self.rollno + " " + str(self.created_at)

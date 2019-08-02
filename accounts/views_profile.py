@@ -4,7 +4,7 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
 import datetime
 from .forms import PasswordForm, ProfileForm, SIGForm
-from .models import Account, Status
+from .models import Account, Status, RoundOneSubmission
 from . import views
 from django.http import Http404
 
@@ -16,6 +16,15 @@ def profile_view(request):
         return authentication_result
     # Get template data from session
     template_data = views.parse_session(request)
+    # Checking if the candidate applied for Script (online test link to be provided)
+    current_user = request.user
+    account = current_user.account
+    registered_sigs = Status.objects.filter(user=account)
+    applied_for_script = False
+    for entry in registered_sigs:
+        if entry.SIG == "SR":
+            applied_for_script = True
+    template_data["applied_for_script"] = applied_for_script
     # Proceed with rest of the view
     return render(request, 'ienitk/profile.html', template_data)
 
@@ -155,3 +164,26 @@ def status(request):
                 sig_status = status[1]
         final_cleaned_data.append([sig_name, sig_status])
     return render(request, 'ienitk/status.html', {'query': final_cleaned_data})
+
+
+def scriptroundone(request):
+    return render(request, 'ienitk/scriptroundone.html')
+
+def submission_scriptroundone(request):
+    if request.method == 'POST':
+        rollno = request.POST.get('rollno', None)
+        ans1 = request.POST.get('ans1', None)
+        ans2 = request.POST.get('ans2', None)
+        ans3 = request.POST.get('ans3', None)
+        ans4 = request.POST.get('ans4', None)
+        ans5 = request.POST.get('ans5', None)
+        essayans = request.POST.get('essayans', None)
+        created = datetime.datetime.now()
+        current_user = request.user
+        account = current_user.account
+        submission = RoundOneSubmission.create(account,rollno, ans1, ans2,ans3,ans4,ans5,essayans,created)
+        submission.save()
+    return HttpResponseRedirect('/profile/')
+
+
+

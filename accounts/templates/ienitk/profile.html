@@ -6,4 +6,10 @@
 {% block body_header %}Welcome {{ user.account }}{% endblock %}
 {% block body %}
     <p class="lead">Navigate through the left hand sidebar to access different pages.</p>
+    {% if applied_for_script == True %}
+        <p>First Round for Script will be an online round. Please click here to participate!</p>
+        <a href="/scriptroundone">Participate in Round One</a>
+
+    {% endif %}
+
 {% endblock %}

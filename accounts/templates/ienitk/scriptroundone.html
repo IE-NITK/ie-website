@@ -1,0 +1,44 @@
+{% extends "admin-base.html" %}
+{% load app_filters %}
+{% block body %}
+    
+    <p class="lead">You may submit as many times as you like before the deadline. Only the latest submission will be considered.</p>
+    <form method="POST" action="submission_scriptroundone/">
+    {% csrf_token %}
+    <label for="rollno">Roll number </label>
+    <input id="rollno" type="text" name="rollno">
+
+    <h3> Answer the following questions in 50 words or less</h3>
+    <br/>
+
+    <p> Our older generation is baffled by cell phones and the Internet. What do you think our generation will be baffled by?</p>
+    <textarea rows="5" cols="100" id="ans1" type="text" name="ans1"></textarea>
+    <br/><br/>
+
+    <p> If you could go back in time (only once), which historic event would you want to witness? </p>
+    <textarea rows="5" cols="100" id="ans2" type="text" name="ans2"></textarea>
+    <br/><br/>
+
+    <p> If you had the opportunity to rule a country, which country would it be and why? </p>
+    <textarea rows="5" cols="100" id="ans3" type="text" name="ans3"></textarea>
+    <br/><br/>
+
+    <p> The most unusual and hapzard dream you had and how it could have ended had you not woken up. </p>
+    <textarea rows="5" cols="100" id="ans4" type="text" name="ans4"></textarea>
+    <br/><br/>
+
+    <p> Avengers: Endgame vs. Avatar. Thoughts?  </p>
+    <textarea rows="5" cols="100" id="ans5" type="text" name="ans5"></textarea>
+    <br/><br/>
+
+    <br/>
+
+    <h3> Write on any <b>one</b> theme: Yellow, Coming of Age, Individual vs. Society, Loss, The Thing About Soulmates<h3>
+    <p> Answer in 200 words or less</p>
+    <textarea rows="25" cols="100" id="essayans" type="text" name="essayans">     </textarea> 
+    <br/><br/>
+        
+    <input type="submit" class="btn btn-success btn-sm" value="Submit!">
+    </form>
+    
+{% endblock %}
