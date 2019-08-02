@@ -113,20 +113,16 @@ class Status(models.Model):
         ("ME", "Media")
     )
 
-    @staticmethod
-    def to_status(key):
-        key = key.lower()
+    def to_status(self):
         for item in Status.STATUS_TYPES:
-            if item[1].lower() == key:
-                return item[0]
+            if item[0].lower() == self.status.lower():
+                return item[1]
         return "None"
 
-    @staticmethod
-    def to_sig(key):
-        key = key.lower()
+    def to_sig(self):
         for item in Status.SIG_TYPES:
-            if item[1].lower() == key:
-                return item[0]
+            if item[0].lower() == self.SIG.lower():
+                return item[1]
         return "None"
 
     user = models.ForeignKey(Account, on_delete=models.CASCADE)

@@ -47,25 +47,13 @@
                     </td>
 
                 {% else %}
-                    <td>
-                    {% if candidate.status == "WR" %}
-                        Written Round
-                    {% elif  candidate.status == "TE" %}
-                        Technical
-                    {% elif  candidate.status == "RE" %}
-                        Application Accepted
-                    {% else %}
-                        HR
-                    {% endif %}
-                    </td>
+                    <td> {{ candidate.to_status }} </td>
                 {% endif %}
 
                 <td>{{ candidate.updated_at }}</td>
 
                 {% if logged_in_user.account.role == 4 %}
-                    <td>
-                        {{ candidate.to_sig(candidate.SIG) }}
-                    </td>
+                    <td>{{ candidate.to_sig }}</td>
                 {% endif %}
 
             </tr>
