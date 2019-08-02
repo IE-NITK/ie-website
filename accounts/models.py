@@ -100,7 +100,6 @@ class Status(models.Model):
                       ("GD", "Gadget"),
                       ("GR", "Garage"),)
     SIG_TYPES_AUX = (("", "None"), ("SR", "Script"),
-                     ("VR", "Vriddhi"),
                      ("RO", "Robotics"),
                      ("CA", "Capital"),
                      ("ME", "Media"))
@@ -109,7 +108,6 @@ class Status(models.Model):
         ("GD", "Gadget"),
         ("GR", "Garage"),
         ("SR", "Script"),
-        ("VR", "Vriddhi"),
         ("RO", "Robotics"),
         ("CA", "Capital"),
         ("ME", "Media")

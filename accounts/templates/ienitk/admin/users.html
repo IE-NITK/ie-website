@@ -50,8 +50,7 @@
                         </td>
                                 <script type="text/javascript">
                                                 function proxy{{ account.pk }}() {
-                                                    configureModal(
-                                                            {{ account.pk }},
+                                                    configureModal({{ account.pk }},
                                                             '{{ account.user.username }}',
                                                             '{{ account.role }}'
                                                         )
@@ -59,8 +58,7 @@
                                             </script>
                                 <script type="text/javascript">
                                                 function delete{{ account.pk }}() {
-                                                    configureModalDelete(
-                                                            {{ account.pk }},
+                                                    configureModalDelete({{ account.pk }},
                                                             '{{ account.user.username }}',
                                                             '{{ account.role }}'
                                                         )
