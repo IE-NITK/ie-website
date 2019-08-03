@@ -41,7 +41,6 @@ class Profile(models.Model):
         return self.firstname + " " + self.lastname
 
 
-
 class Account(models.Model):
     ACCOUNT_ADMIN = 1
     ACCOUNT_MEMBER = 2
@@ -54,9 +53,10 @@ class Account(models.Model):
         (ACCOUNT_AUX_ADMIN, "Aux SIG Admin")
     )
     SIG_CHOICES = (("--", "NONE"), ("CO", "Code"),
-                 ("GD", "Gadget"),
-                 ("GR", "Garage"),)
-    #TODO: AUX SIGS
+                   ("GD", "Gadget"),
+                   ("GR", "Garage"),)
+
+    # TODO: AUX SIGS
 
     @staticmethod
     def to_name(key):
@@ -148,8 +148,9 @@ class RoundOneSubmission(models.Model):
     created_at = models.DateTimeField(auto_now=True)
 
     @classmethod
-    def create(cls, user, rollno, ans1, ans2, ans3, ans4, ans5, essayans, created):
-        submission = cls(user=user,rollno=rollno, ans1 = ans1, ans2 = ans2, ans3 = ans3, ans4 = ans4, ans5 = ans5, essayans = essayans, created_at = created)
+    def create(cls, user, ans1, ans2, ans3, ans4, ans5, essayans, created):
+        submission = cls(user=user, ans1=ans1, ans2=ans2, ans3=ans3, ans4=ans4, ans5=ans5, essayans=essayans,
+                         created_at=created)
         return submission
 
     def __str__(self):

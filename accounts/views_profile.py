@@ -156,7 +156,7 @@ def apply(request):
         template_data['form'] = form
         return render(request, 'ienitk/apply.html', template_data)
     else:
-        request.session['alert_danger'] = "You have already registered for the SIGs!"
+        request.session['alert_danger'] = "You have already registered!"
         return HttpResponseRedirect('/profile/')
 
 
@@ -214,9 +214,9 @@ def scriptroundone(request):
         request.session['alert_danger'] = "You haven't registered for the Script SIG to be part of the round!"
         return HttpResponseRedirect('/profile/')
 
+
 def submission_scriptroundone(request):
     if request.method == 'POST':
-        rollno = request.POST.get('rollno', None)
         ans1 = request.POST.get('ans1', None)
         ans2 = request.POST.get('ans2', None)
         ans3 = request.POST.get('ans3', None)
@@ -226,6 +226,6 @@ def submission_scriptroundone(request):
         created = datetime.datetime.now()
         current_user = request.user
         account = current_user.account
-        submission = RoundOneSubmission.create(account, rollno, ans1, ans2, ans3, ans4, ans5, essayans, created)
+        submission = RoundOneSubmission.create(account, ans1, ans2, ans3, ans4, ans5, essayans, created)
         submission.save()
     return HttpResponseRedirect('/profile/')
