@@ -94,7 +94,6 @@ def apply(request):
         if request.method == 'POST':
             form = SIGForm(request.POST)
             if form.is_valid():
-                print("valid")
                 views.register_SIG(
                     form.cleaned_data['SigMain1'],
                     account,
@@ -122,6 +121,14 @@ def apply(request):
                     datetime.datetime.now(),
                     "RE"
                 )
+
+                if form.cleaned_data['media']:
+                    views.register_SIG(
+                        "ME",
+                        account,
+                        datetime.datetime.now(),
+                        "RE"
+                    )
 
                 request.session['alert_success'] = "Successfully registered SIGS with the portal."
                 registered_sigs = Status.objects.filter(user=account)
