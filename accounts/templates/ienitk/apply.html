@@ -2,7 +2,7 @@
 {% load app_filters %}
 {% block sidebar_apply %}active{% endblock %}
 {% block body %}
-    <p class="lead">Select at least one Core SIG and at most two Core SIGs and two Auxiliary SIGs. Once you submit, your choices cannot be changed.</p>
+    <p class="lead">Select at least one Core SIG. Once you submit, your choices cannot be changed.</p>
     <p class="lead">Visit <a href="{% url 'sig:sig' %}">our website </a>to learn more about our Special Interest Groups!</p>
 
     {% include "singleform.html" %}

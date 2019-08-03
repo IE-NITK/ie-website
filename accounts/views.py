@@ -88,7 +88,9 @@ def register_SIG(SIG, user, updated_at, status):
             status=status,
             SIG=SIG
         )
-        status.save()
+        existing_status = Status.objects.filter(user=user)
+        if status.SIG not in existing_status.values_list('SIG', flat=True):
+            status.save()
 
 
 def sanitize_js(string):
