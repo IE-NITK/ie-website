@@ -130,7 +130,7 @@ def apply(request):
                         "RE"
                     )
 
-                request.session['alert_success'] = "Successfully registered SIGS with the portal."
+                request.session['alert_success'] = "Successfully registered the SIGs with the portal."
                 registered_sigs = Status.objects.filter(user=account)
                 final_cleaned_data = []
                 DB_Status = Status.STATUS_TYPES
@@ -156,7 +156,7 @@ def apply(request):
         template_data['form'] = form
         return render(request, 'ienitk/apply.html', template_data)
     else:
-        request.session['alert_success'] = "Already registered."
+        request.session['alert_danger'] = "You have already registered for the SIGs!"
         return HttpResponseRedirect('/profile/')
 
 
@@ -187,8 +187,32 @@ def status(request):
 
 
 def scriptroundone(request):
-    return render(request, 'ienitk/scriptroundone.html')
+    authentication_result = views.authentication_check(request, [Account.ACCOUNT_CANDIDATE])
+    if authentication_result is not None: return authentication_result
+    account = Account.objects.get(user=request.user)
+    registered_sigs = Status.objects.filter(user=account)
+    final_cleaned_data = []
+    DB_Status = Status.STATUS_TYPES
+    DB_SIG = Status.SIG_TYPES
+    for entry in registered_sigs:
+        for type in DB_SIG:
+            if entry.SIG == type[0]:
+                sig_name = type[1]
+        for status in DB_Status:
+            if entry.status == status[0]:
+                sig_status = status[1]
+        final_cleaned_data.append([sig_name, sig_status])
 
+    applied_for_script = False
+    for entry in registered_sigs:
+        if entry.SIG == "SR":
+            applied_for_script = True
+
+    if applied_for_script is True:
+        return render(request, 'ienitk/scriptroundone.html')
+    else:
+        request.session['alert_danger'] = "You haven't registered for the Script SIG to be part of the round!"
+        return HttpResponseRedirect('/profile/')
 
 def submission_scriptroundone(request):
     if request.method == 'POST':
