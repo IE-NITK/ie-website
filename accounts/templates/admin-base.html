@@ -44,7 +44,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/{% block brand_link %}profile/{% endblock %}">IE NITK</a>
+                <a class="navbar-brand" href="{% url 'home' %}">IE NITK</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -87,7 +87,7 @@
                 </div>
                 <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                            <li class="{% block sidebar_profile %}{% endblock %}"><a href="/profile/">Profile<i class="pull-right fa fa-user"></i></a></li>
+                            <li class="{% block sidebar_profile %}{% endblock %}"><a href="/profile/">Home<i class="pull-right fa fa-user"></i></a></li>
                             {% comment %} {% if user.account.role == 2 %}
                             {% endif %} {% endcomment %}
 

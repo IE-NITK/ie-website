@@ -147,6 +147,7 @@ def add_user(request):
                 form.cleaned_data['firstname'],
                 form.cleaned_data['lastname'],
                 0,
+                "",
                 False,
                 form.cleaned_data['member_type']
             )

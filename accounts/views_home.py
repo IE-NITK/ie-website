@@ -27,6 +27,7 @@ def setup_view(request):
                 form.cleaned_data['firstname'],
                 form.cleaned_data['lastname'],
                 0,
+                "",
                 False,
                 Account.ACCOUNT_ADMIN
             )
@@ -84,7 +85,7 @@ def login_view(request):
     return render(request, 'ienitk/login.html', template_data)
 
 
-## For allowing registration
+# For allowing registration
 def register_view(request):
     # Authentication check. Users logged in cannot view this page.
     if request.user.is_authenticated:
@@ -104,6 +105,7 @@ def register_view(request):
                 form.cleaned_data['firstname'],
                 form.cleaned_data['lastname'],
                 form.cleaned_data['phone'],
+                form.cleaned_data['roll_no'],
                 False,
                 Account.ACCOUNT_CANDIDATE
             )

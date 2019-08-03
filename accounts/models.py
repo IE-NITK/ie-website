@@ -85,6 +85,7 @@ class Account(models.Model):
     archive = models.BooleanField(default=False)
     is_active = models.BooleanField(default=False)
     SIG = models.CharField(null=True, max_length=2)
+    roll_no = models.CharField(null=True, max_length=10)
 
     def __str__(self):
         return self.profile.__str__()
@@ -134,10 +135,10 @@ class Status(models.Model):
     def __str__(self):
         return self.SIG + ": " + self.user.__str__()
 
+
 class RoundOneSubmission(models.Model):
-    
     user = models.ForeignKey(Account, on_delete=models.CASCADE)
-    rollno = models.CharField(default="NONAME",max_length=10)
+    rollno = models.CharField(default="NONAME", max_length=10)
     ans1 = models.TextField(default="NONAME")
     ans2 = models.TextField(default="NONAME")
     ans3 = models.TextField(default="NONAME")

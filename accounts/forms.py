@@ -95,6 +95,8 @@ class AccountRegisterForm(BasicForm):
     setup_field(password_second, "Enter password again")
     phone = forms.CharField(label='Phone Number', min_length=1, max_length=10)
     setup_field(phone, "Enter phone number")
+    roll_no = forms.CharField(label='Roll Number', min_length=1, max_length=10)
+    setup_field(roll_no, "Enter phone number")
 
     def clean(self):
         """

@@ -16,6 +16,7 @@ def profile_view(request):
         return authentication_result
     # Get template data from session
     template_data = views.parse_session(request)
+
     # Checking if the candidate applied for Script (online test link to be provided)
     current_user = request.user
     account = current_user.account
@@ -135,7 +136,12 @@ def apply(request):
                         if entry.status == status[0]:
                             sig_status = status[1]
                     final_cleaned_data.append([sig_name, sig_status])
-                return render(request, 'ienitk/status.html', {'query': final_cleaned_data})
+
+                applied_for_script = False
+                for entry in registered_sigs:
+                    if entry.SIG == "SR":
+                        applied_for_script = True
+                return render(request, 'ienitk/status.html', {'query': final_cleaned_data, 'applied_for_script': applied_for_script})
             else:
                 return render(request, 'ienitk/apply.html', template_data)
         else:
@@ -163,11 +169,19 @@ def status(request):
             if entry.status == status[0]:
                 sig_status = status[1]
         final_cleaned_data.append([sig_name, sig_status])
-    return render(request, 'ienitk/status.html', {'query': final_cleaned_data})
+
+    applied_for_script = False
+    for entry in registered_sigs:
+        if entry.SIG == "SR":
+            applied_for_script = True
+
+    return render(request, 'ienitk/status.html',
+                  {'query': final_cleaned_data, 'applied_for_script': applied_for_script})
 
 
 def scriptroundone(request):
     return render(request, 'ienitk/scriptroundone.html')
+
 
 def submission_scriptroundone(request):
     if request.method == 'POST':
@@ -181,9 +195,6 @@ def submission_scriptroundone(request):
         created = datetime.datetime.now()
         current_user = request.user
         account = current_user.account
-        submission = RoundOneSubmission.create(account,rollno, ans1, ans2,ans3,ans4,ans5,essayans,created)
+        submission = RoundOneSubmission.create(account, rollno, ans1, ans2, ans3, ans4, ans5, essayans, created)
         submission.save()
     return HttpResponseRedirect('/profile/')
-
-
-

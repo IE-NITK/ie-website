@@ -13,6 +13,7 @@
         <th>First name</th>
         <th>Last name</th>
         <th>Phone Number</th>
+        <th>Roll No.</th>
         <th>Status</th>
         <th>Last Updated</th>
         {% if logged_in_user.account.role == 4 %}
@@ -27,6 +28,7 @@
                 <td>{{ candidate.user.profile.firstname }}</td>
                 <td>{{ candidate.user.profile.lastname }}</td>
                 <td>{{ candidate.user.profile.phone }}</td>
+                <td>{{ candidate.user.roll_no }}</td>
 
                 {% if logged_in_user.account.role == 1 or logged_in_user.account.role == 4 %}
                     <td data-value="{{ candidate.status }}">
