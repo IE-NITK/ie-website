@@ -95,6 +95,8 @@ class AccountRegisterForm(BasicForm):
     setup_field(password_second, "Enter password again")
     phone = forms.CharField(label='Phone Number', min_length=1, max_length=10)
     setup_field(phone, "Enter phone number")
+    roll_no = forms.CharField(label='Roll Number', min_length=1, max_length=10)
+    setup_field(roll_no, "Enter phone number")
 
     def clean(self):
         """
@@ -163,3 +165,5 @@ class SIGForm(BasicForm):
     setup_field(SigAux1, 'Select first Auxiliary SIG')
     SigAux2 = forms.ChoiceField(label='Auxiliary SIG Second Priority', choices=Status.SIG_TYPES_AUX, required=False)
     setup_field(SigAux2, 'Select second Auxiliary SIG')
+    media = forms.BooleanField(label='Select to apply for Media SIG', required=False)
+

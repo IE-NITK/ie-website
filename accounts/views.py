@@ -50,21 +50,21 @@ def parse_session(request, template_data=None):
     if request.session.has_key('alert_success'):
         template_data['alert_success'] = request.session.get('alert_success')
         del request.session['alert_success']
-    if request.session.has_key('alert_success'):
+    if request.session.has_key('alert_danger'):
         template_data['alert_danger'] = request.session.get('alert_danger')
         del request.session['alert_danger']
     return template_data
 
 
-def register_user(email, password, firstname, lastname, phone, active, role):
+def register_user(email, password, first_name, last_name, phone, roll_no, active, role):
     user = User.objects.create_user(
         email.lower(),
         email.lower(),
         password
     )
     profile = Profile(
-        firstname=firstname,
-        lastname=lastname,
+        firstname=first_name,
+        lastname=last_name,
         phone=phone
     )
     profile.save()
@@ -72,7 +72,8 @@ def register_user(email, password, firstname, lastname, phone, active, role):
         role=role,
         profile=profile,
         user=user,
-        is_active=active
+        is_active=active,
+        roll_no=roll_no
     )
     account.save()
 
@@ -87,7 +88,9 @@ def register_SIG(SIG, user, updated_at, status):
             status=status,
             SIG=SIG
         )
-        status.save()
+        existing_status = Status.objects.filter(user=user)
+        if status.SIG not in existing_status.values_list('SIG', flat=True):
+            status.save()
 
 
 def sanitize_js(string):

@@ -53,9 +53,10 @@ class Account(models.Model):
         (ACCOUNT_AUX_ADMIN, "Aux SIG Admin")
     )
     SIG_CHOICES = (("--", "NONE"), ("CO", "Code"),
-                 ("GD", "Gadget"),
-                 ("GR", "Garage"),)
-    #TODO: AUX SIGS
+                   ("GD", "Gadget"),
+                   ("GR", "Garage"),)
+
+    # TODO: AUX SIGS
 
     @staticmethod
     def to_name(key):
@@ -84,6 +85,7 @@ class Account(models.Model):
     archive = models.BooleanField(default=False)
     is_active = models.BooleanField(default=False)
     SIG = models.CharField(null=True, max_length=2)
+    roll_no = models.CharField(null=True, max_length=10)
 
     def __str__(self):
         return self.profile.__str__()
@@ -132,3 +134,24 @@ class Status(models.Model):
 
     def __str__(self):
         return self.SIG + ": " + self.user.__str__()
+
+
+class RoundOneSubmission(models.Model):
+    user = models.ForeignKey(Account, on_delete=models.CASCADE)
+    rollno = models.CharField(default="NONAME", max_length=10)
+    ans1 = models.TextField(default="NONAME")
+    ans2 = models.TextField(default="NONAME")
+    ans3 = models.TextField(default="NONAME")
+    ans4 = models.TextField(default="NONAME")
+    ans5 = models.TextField(default="NONAME")
+    essayans = models.TextField(default="NONAME")
+    created_at = models.DateTimeField(auto_now=True)
+
+    @classmethod
+    def create(cls, user, ans1, ans2, ans3, ans4, ans5, essayans, created):
+        submission = cls(user=user, ans1=ans1, ans2=ans2, ans3=ans3, ans4=ans4, ans5=ans5, essayans=essayans,
+                         created_at=created)
+        return submission
+
+    def __str__(self):
+        return self.user.__str__() + " " + self.rollno + " " + str(self.created_at)

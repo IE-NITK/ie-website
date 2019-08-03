@@ -3,7 +3,18 @@
 {% load app_filters %}
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IE NITK</title>
+    <meta name="description" content="IE NITK">
+    <meta name="keywords" content="IE NITK, exclusive technical club, ie nitk, ie-nitk, NITK, Institution of Engineers, NITK Chapter, Institution of Engineers">
+    
+    <meta property="og:title" content="IE NITK" />
+    <meta property="og:description" content="IE NITK aims to enhance the technical expertise of its members and the student community, while acknowledging the importance of fine arts and social work." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ie.nitk.ac.in" />
+    <meta property="og:image" content="{% static 'img/favicon.ico' %}">
+    
     <link rel="shortcut icon" type="image/x-icon" href="{% static '/img/favicon.ico' %}"/>
     <title>IE NITK {% block title %}{% endblock %}</title>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.2/flatly/bootstrap.css"/>
@@ -44,7 +55,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/{% block brand_link %}profile/{% endblock %}">IE NITK</a>
+                <a class="navbar-brand" href="{% url 'home' %}">IE NITK</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -87,7 +98,7 @@
                 </div>
                 <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                            <li class="{% block sidebar_profile %}{% endblock %}"><a href="/profile/">Profile<i class="pull-right fa fa-user"></i></a></li>
+                            <li class="{% block sidebar_profile %}{% endblock %}"><a href="/profile/">Home<i class="pull-right fa fa-user"></i></a></li>
                             {% comment %} {% if user.account.role == 2 %}
                             {% endif %} {% endcomment %}
 
@@ -100,7 +111,7 @@
                             {% endif %}
                             {% if user.account.role == 3 %}
                                 <li class="{% block sidebar_apply %}{% endblock %}"><a href="/profile/apply">Apply<i class="pull-right fa fa-users"></i></a></li>
-			    	<li class="{% block sidebar_status %}{% endblock %}"><a href="/profile/status">Status<i class="pull-right fa fa-users"></i></a></li>
+			    	            <li class="{% block sidebar_status %}{% endblock %}"><a href="/profile/status">Status<i class="pull-right fa fa-users"></i></a></li>
                             {% endif %}
                     </ul>
                 </div>

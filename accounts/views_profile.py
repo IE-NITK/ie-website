@@ -4,7 +4,7 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
 import datetime
 from .forms import PasswordForm, ProfileForm, SIGForm
-from .models import Account, Status
+from .models import Account, Status, RoundOneSubmission
 from . import views
 from django.http import Http404
 
@@ -16,6 +16,16 @@ def profile_view(request):
         return authentication_result
     # Get template data from session
     template_data = views.parse_session(request)
+
+    # Checking if the candidate applied for Script (online test link to be provided)
+    current_user = request.user
+    account = current_user.account
+    registered_sigs = Status.objects.filter(user=account)
+    applied_for_script = False
+    for entry in registered_sigs:
+        if entry.SIG == "SR":
+            applied_for_script = True
+    template_data["applied_for_script"] = applied_for_script
     # Proceed with rest of the view
     return render(request, 'ienitk/profile.html', template_data)
 
@@ -84,7 +94,6 @@ def apply(request):
         if request.method == 'POST':
             form = SIGForm(request.POST)
             if form.is_valid():
-                print("valid")
                 views.register_SIG(
                     form.cleaned_data['SigMain1'],
                     account,
@@ -113,7 +122,15 @@ def apply(request):
                     "RE"
                 )
 
-                request.session['alert_success'] = "Successfully registered SIGS with the portal."
+                if form.cleaned_data['media']:
+                    views.register_SIG(
+                        "ME",
+                        account,
+                        datetime.datetime.now(),
+                        "RE"
+                    )
+
+                request.session['alert_success'] = "Successfully registered the SIGs with the portal."
                 registered_sigs = Status.objects.filter(user=account)
                 final_cleaned_data = []
                 DB_Status = Status.STATUS_TYPES
@@ -126,7 +143,12 @@ def apply(request):
                         if entry.status == status[0]:
                             sig_status = status[1]
                     final_cleaned_data.append([sig_name, sig_status])
-                return render(request, 'ienitk/status.html', {'query': final_cleaned_data})
+
+                applied_for_script = False
+                for entry in registered_sigs:
+                    if entry.SIG == "SR":
+                        applied_for_script = True
+                return render(request, 'ienitk/status.html', {'query': final_cleaned_data, 'applied_for_script': applied_for_script})
             else:
                 return render(request, 'ienitk/apply.html', template_data)
         else:
@@ -134,7 +156,7 @@ def apply(request):
         template_data['form'] = form
         return render(request, 'ienitk/apply.html', template_data)
     else:
-        request.session['alert_success'] = "Already registered."
+        request.session['alert_danger'] = "You have already registered!"
         return HttpResponseRedirect('/profile/')
 
 
@@ -154,4 +176,56 @@ def status(request):
             if entry.status == status[0]:
                 sig_status = status[1]
         final_cleaned_data.append([sig_name, sig_status])
-    return render(request, 'ienitk/status.html', {'query': final_cleaned_data})
+
+    applied_for_script = False
+    for entry in registered_sigs:
+        if entry.SIG == "SR":
+            applied_for_script = True
+
+    return render(request, 'ienitk/status.html',
+                  {'query': final_cleaned_data, 'applied_for_script': applied_for_script})
+
+
+def scriptroundone(request):
+    authentication_result = views.authentication_check(request, [Account.ACCOUNT_CANDIDATE])
+    if authentication_result is not None: return authentication_result
+    account = Account.objects.get(user=request.user)
+    registered_sigs = Status.objects.filter(user=account)
+    final_cleaned_data = []
+    DB_Status = Status.STATUS_TYPES
+    DB_SIG = Status.SIG_TYPES
+    for entry in registered_sigs:
+        for type in DB_SIG:
+            if entry.SIG == type[0]:
+                sig_name = type[1]
+        for status in DB_Status:
+            if entry.status == status[0]:
+                sig_status = status[1]
+        final_cleaned_data.append([sig_name, sig_status])
+
+    applied_for_script = False
+    for entry in registered_sigs:
+        if entry.SIG == "SR":
+            applied_for_script = True
+
+    if applied_for_script is True:
+        return render(request, 'ienitk/scriptroundone.html')
+    else:
+        request.session['alert_danger'] = "You haven't registered for the Script SIG to be part of the round!"
+        return HttpResponseRedirect('/profile/')
+
+
+def submission_scriptroundone(request):
+    if request.method == 'POST':
+        ans1 = request.POST.get('ans1', None)
+        ans2 = request.POST.get('ans2', None)
+        ans3 = request.POST.get('ans3', None)
+        ans4 = request.POST.get('ans4', None)
+        ans5 = request.POST.get('ans5', None)
+        essayans = request.POST.get('essayans', None)
+        created = datetime.datetime.now()
+        current_user = request.user
+        account = current_user.account
+        submission = RoundOneSubmission.create(account, ans1, ans2, ans3, ans4, ans5, essayans, created)
+        submission.save()
+    return HttpResponseRedirect('/profile/')
