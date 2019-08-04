@@ -83,7 +83,7 @@ def users_view(request):
             template_data['alert_success'] = "Updated " + account.user.username + "'s SIG!"
 
     # Parse search sorting
-    template_data['query'] = Account.objects.filter(archive=False).order_by('-role')
+    template_data['query'] = Account.objects.filter(archive=False, role__in=[1, 2, 4]).order_by('-role')
     return render(request, 'ienitk/admin/users.html', template_data)
 
 
