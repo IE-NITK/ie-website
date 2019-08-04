@@ -15,5 +15,6 @@ urlpatterns = [
     path('admin/restore_users', views.restore_user, name='admin/restore_users'),
     path('admin/delete_user', views.delete_user, name='admin/delete_user'),
     path('admin/adduser/', views.add_user, name='admin/adduser'),
-    path('candidates/', views.candidates_view, name='candidates')    
+    path('candidates/', views.candidates_view, name='candidates'),
+    path('all_candidates/', views.all_candidates_view, name='all_candidates')
 ]
