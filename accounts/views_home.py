@@ -78,7 +78,7 @@ def login_view(request):
             )
             login(request, user)
             request.session['alert_success'] = "Successfully logged in."
-            return HttpResponseRedirect('/profile/')
+            return HttpResponseRedirect('/profile')
     else:
         form = LoginForm()
     template_data['form'] = form
@@ -129,7 +129,7 @@ def register_view(request):
             login(request, user)
             request.session['alert_success'] = "Successfully registered with the portal."
 
-            return HttpResponseRedirect('/profile/')
+            return HttpResponseRedirect('/profile/apply')
 
 
     else:
