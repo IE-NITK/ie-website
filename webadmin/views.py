@@ -95,9 +95,11 @@ def user_archive(request):
     # Get the template data from the session
     template_data = views.parse_session(request)
     # Proceed with the rest of the view
+
     if request.method == 'POST':
         if 'delete' in request.POST and 'pk' in request.POST:
             pk = request.POST['pk']
+            print("hi", pk)
             try:
                 user = Account.objects.get(pk=pk)
             except Exception:

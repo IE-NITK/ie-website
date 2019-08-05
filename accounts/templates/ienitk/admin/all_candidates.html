@@ -9,6 +9,7 @@
 {% block body %}
     <table id="datatable" class="table table-hover table-striped table-bordered">
         <thead>
+        <th>Action</th>
         <th>Username</th>
         <th>First name</th>
         <th>Last name</th>
@@ -24,6 +25,28 @@
         {% for candidate in query %}
             <tr>
                 {% comment %}{% if user.username != candidate.user.user.username %}{% endcomment %}
+
+                <script type="text/javascript">
+                    function proxy{{ candidate.pk }}() {
+                        configureModal({{ candidate.pk }},
+                                '{{ candidate.user.username }}',
+                                '{{ candidate.role }}'
+                            )
+                    };
+                </script>
+                <script type="text/javascript">
+                    function delete{{ candidate.pk }}() {
+                        configureModalDelete({{ candidate.pk }},
+                                '{{ candidate.user.username }}',
+                                '{{ candidate.role }}'
+                            )
+                    };
+                </script>
+                <td>
+                    {{ candidate.pk }}
+                    <button onclick="proxy{{ candidate.pk }}()" type="button" class="btn btn-warning" data-toggle="modal" data-target="#archive-modal">Archive</button>
+                    <button onclick="delete{{ candidate.pk }}()" type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">Delete</button>
+                </td>
 
                 <td>{{ candidate.user.username }}</td>
                 <td>{{ candidate.profile.firstname }}</td>
@@ -43,6 +66,8 @@
         {% endfor %}
         </tbody>
     </table>
+    {% include "ienitk/admin/user_modal.html" %}
+    {% include "ienitk/admin/delete_user_modal.html" %}
     
     <script type="text/javascript">
         $(document).ready(function () {
@@ -57,6 +82,16 @@
                 ]
             });
         });
+
+        function configureModal(pk, username) {
+            document.getElementById('archive-modal-body').innerHTML = 'Are you sure you want to archive the user '.concat(username, '?');
+            document.getElementById('archive-modal-hidden').value = pk;
+            console.log("hi"+ pk);
+        }
+        function configureModalDelete(pk, username) {
+                document.getElementById('delete-modal-body').innerHTML = 'Are you sure you want to delete the user '.concat(username, '?');
+                document.getElementById('delete-modal-hidden').value = pk;
+        }
     </script>
 
 {% endblock %}
