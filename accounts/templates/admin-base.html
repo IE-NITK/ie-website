@@ -103,11 +103,12 @@
                             {% endif %} {% endcomment %}
 
                             {% if user.account.role == 1 or user.account.role == 2 or user.account.role == 4 %}
-                                <li class="{% block sidebar_candidates %}{% endblock %}"><a href="/candidates">Candidates<i class="pull-right fa fa-users"></i></a></li>
+                                <li class="{% block sidebar_candidates %}{% endblock %}"><a href="/candidates">SIG Candidates<i class="pull-right fa fa-users"></i></a></li>
                             {% endif %}
 
                             {% if user.account.role == 1 %}
-                                <li class="{% block sidebar_admin_users %}{% endblock %}"><a href="/admin/users">Manage Users<i class="pull-right fa fa-users"></i></a></li>
+                                <li class="{% block sidebar_admin_users %}{% endblock %}"><a href="/admin/users">Manage IE Members<i class="pull-right fa fa-users"></i></a></li>
+                                <li class="{% block sidebar_all_candidates %}{% endblock %}"><a href="/all_candidates">All Candidates<i class="pull-right fa fa-users"></i></a></li>
                             {% endif %}
                             {% if user.account.role == 3 %}
                                 <li class="{% block sidebar_apply %}{% endblock %}"><a href="/profile/apply">Apply<i class="pull-right fa fa-users"></i></a></li>
