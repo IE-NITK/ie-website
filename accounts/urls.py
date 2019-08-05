@@ -11,15 +11,15 @@ from django.contrib.auth import views as auth_views
 app_name = 'accounts'
 
 urlpatterns = [
-                  path('login/', views_home.login_view, name='index'),
-                  path('setup/', views_home.setup_view, name='setup'),
-                  path('register/', views_home.register_view, name='register'),
-                  path('logout/', views_home.logout_view, name='logout'),
-                  path('profile/', views_profile.profile_view, name='profile'),
-                  path('profile/update/', views_profile.profile_update, name='profile/update'),
-                  path('profile/password/', views_profile.password_view, name='profile/password'),
-                  path('profile/apply/', views_profile.apply, name='profile/apply'),
-                  path('profile/status/', views_profile.status, name='status'),
-                  path('scriptroundone/', views_profile.scriptroundone, name='scriptroundone' ),
-                  path('scriptroundone/submission_scriptroundone/',views_profile.submission_scriptroundone,name="submission_scriptroundone")
-              ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+  path('login/', views_home.login_view, name='index'),
+  path('setup/', views_home.setup_view, name='setup'),
+  path('register/', views_home.register_view, name='register'),
+  path('logout/', views_home.logout_view, name='logout'),
+  path('profile/', views_profile.profile_view, name='profile'),
+  path('profile/update/', views_profile.profile_update, name='profile/update'),
+  path('profile/password/', views_profile.password_view, name='profile/password'),
+  path('profile/apply/', views_profile.apply, name='profile/apply'),
+  path('profile/status/', views_profile.status, name='status'),
+  path('scriptroundone/', views_profile.scriptroundone, name='scriptroundone' ),
+  path('scriptroundone/submission_scriptroundone/',views_profile.submission_scriptroundone,name="submission_scriptroundone")
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

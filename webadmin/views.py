@@ -165,10 +165,15 @@ def all_candidates_view(request):
     authentication_result = views.authentication_check(request, [Account.ACCOUNT_ADMIN, Account.ACCOUNT_MEMBER, Account.ACCOUNT_AUX_ADMIN])
     if authentication_result is not None:
         return authentication_result
+
     # Get the template data from the session
     template_data = views.parse_session(request)
     # Get the SIG information of the user
     current_user = request.user
+
+    if current_user.account.role != 1:
+        return
+
     # update status of candidates
     if request.method == 'POST':
         pk = request.POST['pk']
@@ -179,9 +184,8 @@ def all_candidates_view(request):
             candidate.save()
             template_data['alert_success'] = "Updated" + candidate.user.user.username + "'s status!"
     # Parse search sorting
-    template_data['query'] = Status.objects.all()
-    if current_user.account.role == 4:
-        template_data['query'] = Status.objects.filter(SIG__in=["SR", "VR", "RO", "CA", "ME"])
+    template_data['query'] = Account.objects.filter(role=3)
+
     template_data['logged_in_user'] = current_user
     return render(request, 'ienitk/admin/all_candidates.html', template_data)
 
