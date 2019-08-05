@@ -2,6 +2,16 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
+class ActivationRecord(models.Model):
+
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    firstname = models.CharField(blank=True, max_length=50)
+    lastname = models.CharField(blank=True, max_length=50)
+    phone = models.CharField(blank=True, max_length=10)
+    roll_no = models.CharField(null=True, max_length=10)
+
+
+
 class Profile(models.Model):
     GENDER = (
         ('M', "Male"),
@@ -89,6 +99,8 @@ class Account(models.Model):
 
     def __str__(self):
         return self.profile.__str__()
+
+
 
 
 class Status(models.Model):

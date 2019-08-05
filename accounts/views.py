@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.core.exceptions import ObjectDoesNotExist
 import datetime
-from .models import Account, Profile, Status
+from .models import Account, Profile, Status, ActivationRecord
 from django.views.generic import View
 from django.template.loader import get_template
 from django.shortcuts import render
@@ -60,22 +60,61 @@ def register_user(email, password, first_name, last_name, phone, roll_no, active
     user = User.objects.create_user(
         email.lower(),
         email.lower(),
-        password
+        password,
+        is_active=False
     )
     profile = Profile(
         firstname=first_name,
         lastname=last_name,
-        phone=phone
+        phone=phone,
     )
     profile.save()
     account = Account(
         role=role,
         profile=profile,
         user=user,
-        is_active=active,
-        roll_no=roll_no
+        roll_no=roll_no,
     )
     account.save()
+
+    return user
+
+def activate_candidate(user):
+    record = user.activationrecord
+    profile = Profile(
+        firstname=record.firstname,
+        lastname=record.lastname,
+        phone=record.phone,
+    )
+    profile.save()
+    account = Account(
+        role=Account.ACCOUNT_CANDIDATE,
+        profile=profile,
+        user=user,
+        roll_no=record.roll_no,
+    )
+    account.save()
+    record.delete()
+
+    return
+
+def register_candidate(email, password, first_name, last_name, phone, roll_no):
+    user = User.objects.create_user(
+        email.lower(),
+        email.lower(),
+        password,
+        is_active=False
+    )
+
+    record = ActivationRecord(
+        user=user,
+        firstname=first_name,
+        lastname=last_name,
+        phone=phone,
+        roll_no=roll_no,
+    )
+    record.save()
+
 
     return user
 
