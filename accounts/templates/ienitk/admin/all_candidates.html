@@ -3,7 +3,7 @@
 {% block title %}All Candidates{% endblock %}
 {% block sidebar_all_candidates %}active{% endblock %}
 {% block body_header %}
-    Candidates
+    All Candidates
     <br>
 {% endblock %}
 {% block body %}
@@ -43,7 +43,6 @@
                     };
                 </script>
                 <td>
-                    {{ candidate.pk }}
                     <button onclick="proxy{{ candidate.pk }}()" type="button" class="btn btn-warning" data-toggle="modal" data-target="#archive-modal">Archive</button>
                     <button onclick="delete{{ candidate.pk }}()" type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">Delete</button>
                 </td>
