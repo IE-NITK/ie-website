@@ -145,10 +145,13 @@ def apply(request):
                     final_cleaned_data.append([sig_name, sig_status])
 
                 applied_for_script = False
+                applied_for_media = False
                 for entry in registered_sigs:
                     if entry.SIG == "SR":
                         applied_for_script = True
-                return render(request, 'ienitk/status.html', {'query': final_cleaned_data, 'applied_for_script': applied_for_script})
+                    if entry.SIG == "ME":
+                        applied_for_media = True
+                return render(request, 'ienitk/status.html', {'query': final_cleaned_data, 'applied_for_script': applied_for_script, 'applied_for_media': applied_for_media})
             else:
                 return render(request, 'ienitk/apply.html', template_data)
         else:
@@ -178,12 +181,15 @@ def status(request):
         final_cleaned_data.append([sig_name, sig_status])
 
     applied_for_script = False
+    applied_for_media = False
     for entry in registered_sigs:
         if entry.SIG == "SR":
             applied_for_script = True
+        if entry.SIG == "ME":
+            applied_for_media = True
 
     return render(request, 'ienitk/status.html',
-                  {'query': final_cleaned_data, 'applied_for_script': applied_for_script})
+                  {'query': final_cleaned_data, 'applied_for_script': applied_for_script, 'applied_for_media':applied_for_media})
 
 
 def scriptroundone(request):
