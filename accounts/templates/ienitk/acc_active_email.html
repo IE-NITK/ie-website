@@ -7,7 +7,7 @@
 <body>
 
 {% autoescape off %}
-Hi {{ user.username }},
+Hi {{ user.username }},<br>
 Please click on the link to confirm your registration,
 http://{{ domain }}{% url 'accounts:activate' uidb64=uid token=token %}
 {% endautoescape %}

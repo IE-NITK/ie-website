@@ -95,6 +95,7 @@ def login_view(request):
 # For allowing registration
 def register_view(request):
     # Authentication check. Users logged in cannot view this page.
+
     if request.user.is_authenticated:
         return HttpResponseRedirect('/profile/')
     elif Account.objects.all().count() == 0:
@@ -133,9 +134,10 @@ def register_view(request):
             email = EmailMessage(
                mail_subject, message, to=[to_email]
             )
+            email.content_subtype = "html"
             email.send()
 
-            return HttpResponse('Please confirm your email address to complete the registration.')
+            return render(request, 'ienitk/activation_requested.html')
 
 
     else:
