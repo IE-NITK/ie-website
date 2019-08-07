@@ -144,7 +144,6 @@ STATICFILES_FINDERS = (
 )
 
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' #For Development only
-
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
