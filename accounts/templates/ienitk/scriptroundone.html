@@ -1,52 +1,6 @@
 {% extends "admin-base.html" %}
 {% load app_filters %}
 {% block body %}
-    
-    <p class="lead">You may submit as many times as you like before the deadline, 8 August 2019. Only the latest submission will be considered. Please make a local copy of your responses before you submit, just in case.</p>
-    <form method="POST" action="submission_scriptroundone/">
-    {% csrf_token %}
-{#    <label for="rollno">Roll number </label>#}
-{#    <input id="rollno" type="text" name="rollno" required maxlength="10">#}
-
-    <h3> Answer the following questions in 50 words or less</h3>
-    <br/>
-
-    <p> Our older generation is baffled by cell phones and the Internet. What do you think our generation will be baffled by?</p>
-    <textarea rows="5" cols="100" id="ans1" type="text" name="ans1" maxlength="500"></textarea>
-    <br/><br/>
-
-    <p> If you could go back in time (only once), which historic event would you want to witness? </p>
-    <textarea rows="5" cols="100" id="ans2" type="text" name="ans2" maxlength="500"></textarea>
-    <br/><br/>
-
-    <p> If you had the opportunity to rule a country, which country would it be and why? </p>
-    <textarea rows="5" cols="100" id="ans3" type="text" name="ans3" maxlength="500"></textarea>
-    <br/><br/>
-
-    <p> The most unusual and hapzard dream you had and how it could have ended had you not woken up. </p>
-    <textarea rows="5" cols="100" id="ans4" type="text" name="ans4" maxlength="500"></textarea>
-    <br/><br/>
-
-    <p> Avengers: Endgame vs. Avatar. Thoughts?  </p>
-    <textarea rows="5" cols="100" id="ans5" type="text" name="ans5" maxlength="500"></textarea>
-    <br/><br/>
-
-    <br/>
-
-    <h3> Write on any <b>one</b> of the following themes: </h3>
-{#            : Yellow <b>or</b>  Coming of Age <b>or</b> Individual vs. Society <b>or</b> Loss <b>or</b> The Thing About Soulmates<h4>#}
-    <p> Answer in 200 words or less</p>
-        <ul>
-            <li>Yellow</li>
-            <li> Coming of Age</li>
-            <li> Individual vs. Society</li>
-            <li>Loss</li>
-            <li>The Thing About Soulmates</li>
-        </ul>
-    <textarea rows="25" cols="100" id="essayans" type="text" name="essayans" maxlength="2000"></textarea>
-    <br/><br/>
-        
-    <input type="submit" class="btn btn-success btn-sm" value="Submit!">
-    </form>
-    
+    <h2>Submissions for Round One are now closed. You will be hearing from us shortly!</h2>
+    <p>Meanwhile, why don't you check out our <a href="http://ie.nitk.ac.in/blog/" target="_blank">blog</a>?</p>    
 {% endblock %}
