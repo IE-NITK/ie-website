@@ -61,7 +61,7 @@ def register_user(email, password, first_name, last_name, phone, roll_no, active
         email.lower(),
         email.lower(),
         password,
-        is_active=False
+        is_active=active
     )
     profile = Profile(
         firstname=first_name,

@@ -35,7 +35,7 @@ def setup_view(request):
                 form.cleaned_data['lastname'],
                 0,
                 "",
-                False,
+                True,
                 Account.ACCOUNT_ADMIN
             )
             user = authenticate(
@@ -125,11 +125,6 @@ def register_view(request):
                'uid': urlsafe_base64_encode(force_bytes(user.pk)).decode(),
                'token': account_activation_token.make_token(user),
             })
-
-            print(message)
-
-
-
             to_email = form.cleaned_data['email']
             email = EmailMessage(
                mail_subject, message, to=[to_email]
@@ -138,8 +133,6 @@ def register_view(request):
             email.send()
 
             return render(request, 'ienitk/activation_requested.html')
-
-
     else:
         form = AccountRegisterForm()
     template_data['form'] = form
