@@ -96,7 +96,8 @@ class Status(models.Model):
         ("RE", "Application Accepted"),
         ("WR", "Written Round"),
         ("TE", "Technical"),
-        ("HR", "HR")
+        ("HR", "HR"),
+        ("SL", "Selected")
     )
     SIG_TYPES_MAIN = (("", "None"), ("CO", "Code"),
                       ("GD", "Gadget"),
