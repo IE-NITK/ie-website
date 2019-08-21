@@ -1,7 +1,49 @@
 body,html{
     height: 100%;
 }
+@import url(https://fonts.googleapis.com/css?family=Sigmar+One);
 
+body {
+	background: #3da1d1;
+	color: #fff;
+	overflow: hidden;
+}
+
+.congrats {
+	position: absolute;
+	top: 140px;
+	width: 550px;
+	height: 100px;
+	padding: 20px 10px;
+	text-align: center;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+}
+
+h1 {
+	transform-origin: 50% 50%;
+	font-size: 50px;
+	font-family: 'Sigmar One', cursive;
+	cursor: pointer;
+	z-index: 2;
+	position: absolute;
+	top: 0;
+	text-align: center;
+	width: 100%;
+}
+
+.blob {
+	height: 50px;
+	width: 50px;
+	color: #ffcc00;
+	position: absolute;
+	top: 45%;
+	left: 45%;
+	z-index: 1;
+	font-size: 30px;
+	display: none;
+}
 nav.sidebar, .main{
     -webkit-transition: margin 200ms ease-out;
     -moz-transition: margin 200ms ease-out;
