@@ -26,6 +26,14 @@ def profile_view(request):
         if entry.SIG == "SR":
             applied_for_script = True
     template_data["applied_for_script"] = applied_for_script
+    #passing status of the user to html
+    status = Status.objects.filter(user=account)
+    #flag = 0 means not selected
+    flag = 0
+    for entry in status:
+        if entry.status == 'SL':
+            flag = 1
+    template_data["selected"] = flag
     # Proceed with rest of the view
     return render(request, 'ienitk/profile.html', template_data)
 

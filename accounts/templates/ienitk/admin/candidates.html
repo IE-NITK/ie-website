@@ -43,6 +43,8 @@
                                 </option>
                                 <option value="HR" {% if candidate.status == "HR" %}selected="selected"{% endif %}>HR
                                 </option>
+                                <option value="SL" {% if candidate.status == "SL" %}selected="selected"{% endif %}>Selected
+                                </option>
                             </select>
                             <input class="btn btn-primary" type="submit" value="Save"/>
                         </form>
