@@ -11,3 +11,6 @@ def smp(request):
 
 def hackverse(request):
     return render(request, 'hackverse.html')
+
+def enigma19(request):
+    return render(request, 'enigma19.html')
