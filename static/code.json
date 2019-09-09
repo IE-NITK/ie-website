@@ -310,5 +310,99 @@
     "Year": "Second",
     "Sig": "Code",
     "email": "navadiyadhruvik2@gmail.com"
-  }
+  },
+  {
+      "email": "asisrout7@gmail.com",
+      "name": "Asis Kumar Rout",
+      "Phone number": "181IT108",
+      "rollno": 8249247838,
+      "linkedin": "http://www.linkedin.com/in/asis-kumar-rout-079325192"
+   },
+   {
+      "email": "awanitranjan00512@gmail.com",
+      "name": "Awanit Ranjan",
+      "Phone number": "181CO161",
+      "rollno": 7091631093,
+      "linkedin": "https://www.linkedin.com/in/awanit-ranjan-583b7518a/"
+   },
+   {
+      "email": "chinmaygupta61@gmail.com",
+      "name": "Chinmay Gupta",
+      "Phone number": "181CO215",
+      "rollno": 6265245551,
+      "linkedin": "https://www.linkedin.com/in/chinmay-gupta-a3135a17b"
+   },
+   {
+      "email": "dhanwinrao18@gmail.com",
+      "name": "Dhanwin Rao",
+      "Phone number": "181CO217",
+      "rollno": 9972327613
+   },
+   {
+      "email": "manasdtrivedi@gmail.com",
+      "name": "Manas Trivedi",
+      "Phone number": "181CO231",
+      "rollno": 8197112777,
+      "linkedin": "https://www.linkedin.com/in/manas-trivedi-701324192"
+   },
+   {
+      "email": "paranjayasaxena@gmail.com",
+      "name": "Paranjaya Saxena",
+      "Phone number": "181CO138",
+      "rollno": 8840919002,
+      "linkedin": "https://www.linkedin.com/in/paranjaya-saxena-470b76170"
+   },
+   {
+      "email": "ingalepiyush459@gmail.com",
+      "name": "Piyush Ingale",
+      "Phone number": "181IT232",
+      "rollno": 7387237959
+   },
+   {
+      "email": "rajathcaralikatti@gmail.com",
+      "name": "Rajath C Aralikatti",
+      "Phone number": "181CO241",
+      "rollno": 7829158425
+   },
+   {
+      "email": "ritik.rjt@gmail.com",
+      "name": "Ritik Pansuriya",
+      "Phone number": "181IT237",
+      "rollno": 9727859172,
+      "linkedin": "www.linkedin.com/in/ritik-pansuriya-84856a176"
+   },
+   {
+      "email": "gorutwik@gmail.com",
+      "name": "Rutwik Mulay",
+      "Phone number": "181CO144",
+      "rollno": 7057109183
+   },
+   {
+      "email": "swinser2ssd@gmail.com",
+      "name": "Sasidhar Swarangi",
+      "Phone number": "181CO245",
+      "rollno": 8500613930,
+      "linkedin": "https://www.linkedin.com/in/sasidhar-swarangi-872428192"
+   },
+   {
+      "email": "kshonalis72@gmail.com",
+      "name": "Shonali KS",
+      "Phone number": "181IT244",
+      "rollno": 9483852115,
+      "linkedin": "https://www.linkedin.com/in/shonali-k-s-b30340192/"
+   },
+   {
+      "email": "shraddhagole10sg@gmail.com",
+      "name": "Shraddha gole",
+      "Phone number": "181IT145",
+      "rollno": 9901752628,
+      "linkedin": "https://www.linkedin.com/in/shraddha-gole-b90325192/"
+   },
+   {
+      "email": "bharadwajshreesha@gmail.com",
+      "name": "Shreesha bharadwaj",
+      "Phone number": "181CO249",
+      "rollno": 9740714752,
+      "linkedin": "https://www.linkedin.com/in/shreesha-bharadwaj-053325192"
+   }
 ]
