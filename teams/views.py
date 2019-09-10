@@ -19,3 +19,4 @@ def view_teams(request):
 
     context={'core': core,'code': code, 'gadget': gadget, 'garage': garage, 'website': website ,'spark' :spark,'publicity':publicity,'robotics':robotics,'script':script,'media':media,'capital':capital}
     return render(request, 'teams.html',context)
+

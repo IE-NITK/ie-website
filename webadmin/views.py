@@ -150,7 +150,7 @@ def add_user(request):
                 form.cleaned_data['lastname'],
                 0,
                 "",
-                False,
+                True,
                 form.cleaned_data['member_type']
             )
             request.session['alert_success'] = "Successfully created new member account. Please ask them to change the password first"
