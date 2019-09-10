@@ -12,7 +12,11 @@ def view_teams(request):
     website = json.loads(open(os.path.join(settings.STATICFILES_DIRS[0], 'website.json')).read())
     spark = json.loads(open(os.path.join(settings.STATICFILES_DIRS[0], 'spark.json')).read())
     publicity = json.loads(open(os.path.join(settings.STATICFILES_DIRS[0], 'publicity.json')).read())
+    robotics = json.loads(open(os.path.join(settings.STATICFILES_DIRS[0], 'robotics.json')).read())
+    script = json.loads(open(os.path.join(settings.STATICFILES_DIRS[0], 'script.json')).read())
+    media = json.loads(open(os.path.join(settings.STATICFILES_DIRS[0], 'media.json')).read())
+    capital = json.loads(open(os.path.join(settings.STATICFILES_DIRS[0], 'capital.json')).read())
 
-    context = {'core': core, 'code': code, 'gadget': gadget, 'garage': garage, 'website': website, 'spark': spark,
-               'publicity': publicity}
-    return render(request, 'teams.html', context)
+    context={'core': core,'code': code, 'gadget': gadget, 'garage': garage, 'website': website ,'spark' :spark,'publicity':publicity,'robotics':robotics,'script':script,'media':media,'capital':capital}
+    return render(request, 'teams.html',context)
+

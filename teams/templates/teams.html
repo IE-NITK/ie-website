@@ -30,6 +30,10 @@
                       <li class="tablinks garage"><a onclick="return navigate('garage')">Garage</a></li>
                       <li class="tablinks website"><a onclick="return navigate('website')">Website</a></li>
                       <li class="tablinks spark"><a onclick="return navigate('spark')">Spark</a></li>
+                      <li class="tablinks publicity"><a onclick="return navigate('robotics')">Robotics</a></li>
+                      <li class="tablinks publicity"><a onclick="return navigate('script')">Script</a></li>
+                      <li class="tablinks publicity"><a onclick="return navigate('media')">Media</a></li>
+                      <li class="tablinks publicity"><a onclick="return navigate('capital')">Capital</a></li>
                       <li class="tablinks publicity"><a onclick="return navigate('publicity')">Publicity</a></li>
                     </ul>
                   </div>
@@ -64,7 +68,9 @@
                         <div class="probootstrap-teacher text-center probootstrap-animate" style="min-height: 170px">
                             <div class="text" style="word-wrap: break-word;">
                               <h3>{{ member.name }}</h3>
-                              <p>{{ member.email }}</p>
+                              <p></p>
+                              <a href="mailto:{{ member.email }}"><i class='fas fa-envelope' style='font-size:35px;margin-right: 10px;'></i></a>
+                              <a href="{{ member.linkedin }}" target="_blank"><i class='fab fa-linkedin' style='font-size:35px;margin-left: 10px;'></i></a>
                             </div>
                         </div>
                       </div>
@@ -82,7 +88,9 @@
                         <div class="probootstrap-teacher text-center probootstrap-animate" style="min-height: 170px">
                             <div class="text" style="word-wrap: break-word;">
                               <h3>{{ member.name }}</h3>
-                              <p>{{ member.email }}</p>
+                              <p></p>
+                              <a href="mailto:{{ member.email }}"><i class='fas fa-envelope' style='font-size:35px;margin-right: 10px;'></i></a>
+                              <a href="{{ member.linkedin }}" target="_blank"><i class='fab fa-linkedin' style='font-size:35px;margin-left: 10px;'></i></a>
                             </div>
                         </div>
                       </div>
@@ -100,7 +108,9 @@
                         <div class="probootstrap-teacher text-center probootstrap-animate" style="min-height: 170px">
                             <div class="text" style="word-wrap: break-word;">
                               <h3>{{ member.name }}</h3>
-                              <p>{{ member.email }}</p>
+                              <p></p>
+                              <a href="mailto:{{ member.email }}"><i class='fas fa-envelope' style='font-size:35px;margin-right: 10px;'></i></a>
+                              <a href="{{ member.linkedin }}" target="_blank"><i class='fab fa-linkedin' style='font-size:35px;margin-left: 10px;'></i></a>
                             </div>
                         </div>
                       </div>
@@ -118,7 +128,9 @@
                         <div class="probootstrap-teacher text-center probootstrap-animate" style="min-height: 170px">
                             <div class="text" style="word-wrap: break-word;">
                               <h3>{{ member.name }}</h3>
-                              <p>{{ member.email }}</p>
+                              <p></p>
+                              <a href="mailto:{{ member.email }}"><i class='fas fa-envelope' style='font-size:35px;margin-right: 10px;'></i></a>
+                              <a href="{{ member.linkedin }}" target="_blank"><i class='fab fa-linkedin' style='font-size:35px;margin-left: 10px;'></i></a>
                             </div>
                         </div>
                       </div>
@@ -157,6 +169,90 @@
                               <h3>{{ member.name }}</h3>
                               <a  href="mailto:{{ member.email }}"><i class='fas fa-envelope' style='font-size:35px;margin-right: 10px;margin-top: 20px;'></i></a>
                               <a  href="{{ member.linkedinProfileLink }}"><i class='fab fa-linkedin' style='font-size:35px;margin-left: 10px;margin-top: 20px;'></i></a>
+                            </div>
+                        </div>
+                      </div>
+
+                      {% endfor %}
+                    </div>
+                  </section>
+                </div>
+                <div class="col-md-7 col-md-push-1 probootstrap-animate teams" id="robotics">
+                  <h2>Robotics</h2>
+                  <section class="probootstrap-section">
+                    <div class="container" style="width: 100%;">
+                      {% for member in robotics %}
+
+                      <div class="col-sm-6">
+                        <div class="probootstrap-teacher text-center probootstrap-animate" style="min-height: 220px">
+                            <div class="text" style="word-wrap: break-word;">
+                              <h3>{{ member.name }}</h3>
+                                <h6>{{ member.post }}</h6>
+                              <a href="mailto:{{ member.email }}"><i class='fas fa-envelope' style='font-size:35px;margin-right: 10px;'></i></a>
+                              <a href="{{ member.linkedin }}" target="_blank"><i class='fab fa-linkedin' style='font-size:35px;margin-left: 10px;'></i></a>
+                            </div>
+                        </div>
+                      </div>
+
+                      {% endfor %}
+                    </div>
+                  </section>
+                </div>
+                <div class="col-md-7 col-md-push-1 probootstrap-animate teams" id="script">
+                  <h2>Script</h2>
+                  <section class="probootstrap-section">
+                    <div class="container" style="width: 100%;">
+                      {% for member in script %}
+
+                      <div class="col-sm-6">
+                        <div class="probootstrap-teacher text-center probootstrap-animate" style="min-height: 220px">
+                            <div class="text" style="word-wrap: break-word;">
+                              <h3>{{ member.name }}</h3>
+                                <h6>{{ member.post }}</h6>
+                              <a href="mailto:{{ member.email }}"><i class='fas fa-envelope' style='font-size:35px;margin-right: 10px;'></i></a>
+                              <a href="{{ member.linkedin }}" target="_blank"><i class='fab fa-linkedin' style='font-size:35px;margin-left: 10px;'></i></a>
+                            </div>
+                        </div>
+                      </div>
+
+                      {% endfor %}
+                    </div>
+                  </section>
+                </div>
+                <div class="col-md-7 col-md-push-1 probootstrap-animate teams" id="media">
+                  <h2>Media</h2>
+                  <section class="probootstrap-section">
+                    <div class="container" style="width: 100%;">
+                      {% for member in media %}
+
+                      <div class="col-sm-6">
+                        <div class="probootstrap-teacher text-center probootstrap-animate" style="min-height: 220px">
+                            <div class="text" style="word-wrap: break-word;">
+                              <h3>{{ member.name }}</h3>
+                                <h6>{{ member.post }}</h6>
+                              <a href="mailto:{{ member.email }}"><i class='fas fa-envelope' style='font-size:35px;margin-right: 10px;'></i></a>
+                              <a href="{{ member.linkedin }}" target="_blank"><i class='fab fa-linkedin' style='font-size:35px;margin-left: 10px;'></i></a>
+                            </div>
+                        </div>
+                      </div>
+
+                      {% endfor %}
+                    </div>
+                  </section>
+                </div>
+                <div class="col-md-7 col-md-push-1 probootstrap-animate teams" id="capital">
+                  <h2>Capital</h2>
+                  <section class="probootstrap-section">
+                    <div class="container" style="width: 100%;">
+                      {% for member in capital %}
+
+                      <div class="col-sm-6">
+                        <div class="probootstrap-teacher text-center probootstrap-animate" style="min-height: 220px">
+                            <div class="text" style="word-wrap: break-word;">
+                              <h3>{{ member.name }}</h3>
+                                <h6>{{ member.post }}</h6>
+                              <a href="mailto:{{ member.email }}"><i class='fas fa-envelope' style='font-size:35px;margin-right: 10px;'></i></a>
+                              <a href="{{ member.linkedin }}" target="_blank"><i class='fab fa-linkedin' style='font-size:35px;margin-left: 10px;'></i></a>
                             </div>
                         </div>
                       </div>

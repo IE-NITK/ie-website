@@ -1,10 +1,27 @@
 [
+  {
+    "Timestamp": "9/16/2018 13:02:00",
 
+    "name": "Shreyas Seshadri",
+    "Year": "Third",
+    "Sig": "Code",
+    "Tower/hostel block, room number": "MT-2 A311",
+    "email": "shreyasseshadri@gmail.com",
+    "Aux sig you are a part of": "Vriddhi"
+  },
+  {
+    "Timestamp": "9/16/2018 23:18:59",
 
-
+    "name": "Shreyas Shankar",
+    "Year": "Third",
+    "Sig": "Code",
+    "Tower/hostel block, room number": "MT-1, B217",
+    "email": "shreyas.shankar920@gmail.com",
+    "Aux sig you are a part of": "Vriddhi"
+  },
   {
     "Timestamp": "9/16/2018 12:06:10",
-    "Phone number": 9611592296,
+
     "name": "Pavan Vachhani",
     "Year": "Third",
     "Sig": "Code",
@@ -14,7 +31,7 @@
   },
   {
     "Timestamp": "9/16/2018 12:42:50",
-    "Phone number": 8050359370,
+
     "name": "Archana Priyadarshani Sahoo",
     "Year": "Third",
     "Sig": "Code",
@@ -23,28 +40,8 @@
     "Aux sig you are a part of": "Vriddhi"
   },
   {
-    "Timestamp": "9/16/2018 13:02:00",
-    "Phone number": 8548950201,
-    "name": "S.Shreyas",
-    "Year": "Third",
-    "Sig": "Code",
-    "Tower/hostel block, room number": "MT-2 A311",
-    "email": "shreyasseshadri@gmail.com",
-    "Aux sig you are a part of": "Vriddhi"
-  },
-  {
-    "Timestamp": "9/16/2018 13:37:27",
-    "Phone number": 9945699001,
-    "name": "Arpith Potti",
-    "Year": "Third",
-    "Sig": "Code",
-    "Tower/hostel block, room number": "MT1-B114",
-    "email": "therealarpith@gmail.com",
-    "Aux sig you are a part of": "Business - Capital"
-  },
-  {
     "Timestamp": "9/16/2018 14:16:20",
-    "Phone number": 8152939719,
+
     "name": "Soham",
     "Year": "Third",
     "Sig": "Code",
@@ -70,7 +67,7 @@
  },
   {
     "Timestamp": "9/16/2018 21:58:11",
-    "Phone number": 9980445062,
+
     "name": "Darshan V",
     "Year": "Third",
     "Sig": "Code",
@@ -80,7 +77,7 @@
   },
   {
     "Timestamp": "9/16/2018 23:14:00",
-    "Phone number": 9901053788,
+
     "name": "Shreyas Pandith",
     "Year": "Third",
     "Sig": "Code",
@@ -90,7 +87,7 @@
   },
   {
     "Timestamp": "9/16/2018 23:14:19",
-    "Phone number": 9902488769,
+
     "name": "harshavardhan",
     "Year": "Third",
     "Sig": "Code",
@@ -100,7 +97,7 @@
   },
   {
     "Timestamp": "9/16/2018 23:16:02",
-    "Phone number": 9591115064,
+
     "name": "Akash L",
     "Year": "Third",
     "Sig": "Code",
@@ -109,18 +106,8 @@
     "Aux sig you are a part of": "Vriddhi"
   },
   {
-    "Timestamp": "9/16/2018 23:18:59",
-    "Phone number": 8970321138,
-    "name": "Shreyas Shankar",
-    "Year": "Third",
-    "Sig": "Code",
-    "Tower/hostel block, room number": "MT-1, B217",
-    "email": "shreyas.shankar920@gmail.com",
-    "Aux sig you are a part of": "Vriddhi"
-  },
-  {
     "Timestamp": "9/16/2018 23:25:49",
-    "Phone number": 8249121016,
+
     "name": "Bidyadhar Mohanty",
     "Year": "Third",
     "Sig": "Code",
@@ -130,7 +117,7 @@
   },
   {
     "Timestamp": "9/17/2018 0:50:15",
-    "Phone number": 7996803369,
+
     "name": "sriram sharath",
     "Year": "Third",
     "Sig": "Code",
@@ -140,7 +127,7 @@
   },
   {
     "Timestamp": "9/17/2018 8:33:56",
-    "Phone number": 9611590838,
+
     "name": "Polkampally keerthana",
     "Year": "Third",
     "Sig": "Code",
@@ -150,7 +137,7 @@
   },
   {
     "Timestamp": "9/16/2018 12:08:09",
-    "Phone number": 7981819450,
+
     "name": "Madhumitha Nara",
     "Year": "Second",
     "Sig": "Code",
@@ -160,7 +147,7 @@
   },
   {
     "Timestamp": "9/16/2018 12:20:24",
-    "Phone number": 9741935867,
+
     "name": "Anish Patil",
     "Year": "Second",
     "Sig": "Code",
@@ -170,7 +157,7 @@
   },
   {
     "Timestamp": "9/16/2018 12:25:18",
-    "Phone number": 9975938084,
+
     "name": "Chaitany Pandiya",
     "Year": "Second",
     "Sig": "Code",
@@ -180,7 +167,7 @@
   },
   {
     "Timestamp": "9/16/2018 12:29:48",
-    "Phone number": 8970016595,
+
     "name": "Niwedita",
     "Year": "Second",
     "Sig": "Code",
@@ -190,7 +177,7 @@
   },
   {
     "Timestamp": "9/16/2018 12:31:45",
-    "Phone number": 8130901111,
+
     "name": "Souhard Kataria",
     "Year": "Second",
     "Sig": "Code",
@@ -200,7 +187,7 @@
   },
   {
     "Timestamp": "9/16/2018 12:32:20",
-    "Phone number": 9632848068,
+
     "name": "Shubham Agrawal",
     "Year": "Second",
     "Sig": "Code",
@@ -210,7 +197,7 @@
   },
   {
     "Timestamp": "9/16/2018 12:33:20",
-    "Phone number": 8310496354,
+
     "name": "K Rahul Reddy",
     "Year": "Second",
     "Sig": "Code",
@@ -220,7 +207,7 @@
   },
   {
     "Timestamp": "9/16/2018 12:35:16",
-    "Phone number": 7974484874,
+
     "name": "Shreyansh Shrivastava",
     "Year": "Second",
     "Sig": "Code",
@@ -230,7 +217,7 @@
   },
   {
     "Timestamp": "9/16/2018 12:39:32",
-    "Phone number": 7359595950,
+
     "name": "Dodiya Parth Hiteshbhai",
     "Year": "Second",
     "Sig": "Code",
@@ -240,7 +227,7 @@
   },
   {
     "Timestamp": "9/16/2018 12:51:23",
-    "Phone number": 7019032045,
+
     "name": "Shrinidhi Anil Varna",
     "Year": "Second",
     "Sig": "Code",
@@ -250,7 +237,7 @@
   },
   {
     "Timestamp": "9/16/2018 15:43:32",
-    "Phone number": 8317378378,
+
     "name": "Devishi",
     "Year": "Second",
     "Sig": "Code",
@@ -260,7 +247,7 @@
   },
   {
     "Timestamp": "9/16/2018 20:06:05",
-    "Phone number": 9406975290,
+
     "name": "Aashay Maheshwarkar",
     "Year": "Second",
     "Sig": "Code",
@@ -270,7 +257,7 @@
   },
   {
     "Timestamp": "9/16/2018 23:31:16",
-    "Phone number": 9617390555,
+
     "name": "Raghav Raghuwanshi",
     "Year": "Second",
     "Sig": "Code",
@@ -280,7 +267,7 @@
   },
   {
     "Timestamp": "9/17/2018 0:46:24",
-    "Phone number": 9926616502,
+
     "name": "Tushar Dubey",
     "Year": "Second",
     "Sig": "Code",
@@ -290,7 +277,6 @@
   },
   {
     "Timestamp": "9/17/2018 10:43:26",
-    "Phone number": 9479761593,
     "name": "Avdhesh Yadav",
     "Year": "Second",
     "Sig": "Code",
@@ -310,5 +296,87 @@
     "Year": "Second",
     "Sig": "Code",
     "email": "navadiyadhruvik2@gmail.com"
-  }
+  },
+  {
+      "email": "asisrout7@gmail.com",
+      "name": "Asis Kumar Rout",
+      "rollno": "181IT108",
+      "linkedin": "http://www.linkedin.com/in/asis-kumar-rout-079325192"
+   },
+   {
+      "email": "awanitranjan00512@gmail.com",
+      "name": "Awanit Ranjan",
+      "rollno": "181CO161",
+      "linkedin": "https://www.linkedin.com/in/awanit-ranjan-583b7518a/"
+   },
+   {
+      "email": "chinmaygupta61@gmail.com",
+      "name": "Chinmay Gupta",
+      "rollno": "181CO215",
+      "linkedin": "https://www.linkedin.com/in/chinmay-gupta-a3135a17b"
+   },
+   {
+      "email": "dhanwinrao18@gmail.com",
+      "name": "Dhanwin Rao",
+      "rollno": "181CO217",
+      "linkedin": "www.linkedin.com/in/dhanwin-rao-4a8395176"
+   },
+   {
+      "email": "manasdtrivedi@gmail.com",
+      "name": "Manas Trivedi",
+      "rollno": "181CO231",
+      "linkedin": "https://www.linkedin.com/in/manas-trivedi-701324192"
+   },
+   {
+      "email": "paranjayasaxena@gmail.com",
+      "name": "Paranjaya Saxena",
+      "rollno": "181CO138",
+      "linkedin": "https://www.linkedin.com/in/paranjaya-saxena-470b76170"
+   },
+   {
+      "email": "ingalepiyush459@gmail.com",
+      "name": "Piyush Ingale",
+      "rollno": "181IT232",
+      "linkedin": "https://www.linkedin.com/in/piyush-ingale-65541416a"
+   },
+   {
+      "email": "rajathcaralikatti@gmail.com",
+      "name": "Rajath C Aralikatti",
+      "rollno": "181CO241"
+   },
+   {
+      "email": "ritik.rjt@gmail.com",
+      "name": "Ritik Pansuriya",
+      "rollno": "181IT237",
+      "linkedin": "www.linkedin.com/in/ritik-pansuriya-84856a176"
+   },
+   {
+      "email": "gorutwik@gmail.com",
+      "name": "Rutwik Mulay",
+      "rollno": "181CO144"
+   },
+   {
+      "email": "swinser2ssd@gmail.com",
+      "name": "Sasidhar Swarangi",
+      "rollno": "181CO245",
+      "linkedin": "https://www.linkedin.com/in/sasidhar-swarangi-872428192"
+   },
+   {
+      "email": "kshonalis72@gmail.com",
+      "name": "Shonali KS op",
+      "rollno": "181IT244",
+      "linkedin": "https://www.linkedin.com/in/shonali-k-s-b30340192/"
+   },
+   {
+      "email": "shraddhagole10sg@gmail.com",
+      "name": "Shraddha gole",
+      "rollno": "181IT145",
+      "linkedin": "https://www.linkedin.com/in/shraddha-gole-b90325192/"
+   },
+   {
+      "email": "bharadwajshreesha@gmail.com",
+      "name": "Shreesha bharadwaj",
+      "rollno": "181CO249",
+      "linkedin": "https://www.linkedin.com/in/shreesha-bharadwaj-053325192"
+   }
 ]
