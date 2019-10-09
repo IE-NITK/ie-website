@@ -3,36 +3,9 @@
 {% load static %}
 {% block title %}Overview{% endblock %}
 {% block sidebar_profile %}active{% endblock %}
-{% block body_header %}Welcome {{ user.account }}{% endblock %}
+{% block body_header %}Yo, dawg{% endblock %}
 
 
 {% block body %}
-    {% if user.account.role == 3 and selected == 1 %}
-        <p class="lead">
-        Congratulations!<br> A huge whopping congratulations are in order! After a painstakingly difficult selection process, we are happy to say that <br>YOU ARE IN<br> We thank you for your sincere interest in us and for sticking with us till the end.
-		<br>
-        
-        We extend you a hearty welcome. Welcome to the IE Fam! Check out the rest of your new family <a href="https://www.facebook.com/ienitk/">here!</a>
-        </p>
-            
-     
-
-    {% endif %}
-    {% if user.account.role == 3 and selected == 0 %}
-        <p class="lead">
-        Thank you for applying to IE, we really appreciate your interest. We've had the opportunity to get to
-        know you better the past few weeks and it is with regret that we inform you that we could not pick you.<br>
-        This was an extremely tough decision for us, especially with it being such a competitive recruitment
-        drive.
-        <br>We wish you luck for all your future endeavours.<br><br>
-        <br>Sincerely,<br>
-        The IE Family
-        
-        </p>
-        
-
-    {% endif %}
-    <img src="https://bit.ly/20qKWK0" style="display:none">
-
-
+    <img src = "{% static 'img/FreshersPoster2019.png' %}" alt="Freshers Poster">
 {% endblock %}
