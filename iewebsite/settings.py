@@ -21,9 +21,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '!th-(6rochf+vi!$e(o84^-)3+&oj7osgrztitz5p#8_mtq5t%'
+RECAPTCHA_PUBLIC_KEY='6LfGZ8YUAAAAAEBMdytejv22tlwtcayqKLEgA2Mp'
+RECAPTCHA_PRIVATE_KEY='6LfGZ8YUAAAAAKdClBUpz6MXXLZPJ3Kkw-aC8u73'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # DEBUG = True	#for localhost
 
@@ -43,7 +45,8 @@ INSTALLED_APPS = [
     'sig.apps.SigConfig',
     'alumni.apps.AlumniConfig',
     'webadmin.apps.WebadminConfig',
-    'accounts.apps.AccountsConfig'
+    'accounts.apps.AccountsConfig',
+    'captcha'
 ]
 
 MIDDLEWARE = [
@@ -80,18 +83,18 @@ WSGI_APPLICATION = 'iewebsite.wsgi.application'
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'iewebsite',
-        'USER': 'iewebsite',
-        'PASSWORD': 'mnsm',
-        'HOST': 'localhost',
-        'PORT': '',
-        }
     # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    # }
+    #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    #     'NAME': 'iewebsite',
+    #     'USER': 'iewebsite',
+    #     'PASSWORD': 'mnsm',
+    #     'HOST': 'localhost',
+    #     'PORT': '',
+    #     }
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
 }
 
 # Password validation
