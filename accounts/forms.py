@@ -4,7 +4,8 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 from .models import Account, Profile, Status
 from captcha.fields import ReCaptchaField
-from django.conf import settings
+from iewebsite import constants
+
 
 def validate_username_available(username):
     """
@@ -68,8 +69,8 @@ class LoginForm(BasicForm):
     password = forms.CharField(max_length=50, widget=forms.PasswordInput())
     setup_field(password, 'Enter password here')
     captcha_box = ReCaptchaField(
-                            public_key=settings.RECAPTCHA_PUBLIC_KEY,
-                            private_key=settings.RECAPTCHA_PRIVATE_KEY
+                            public_key=constants.PUBLIC_KEY,
+                            private_key=constants.PRIVATE_KEY
                         )
     def clean(self):
         """
