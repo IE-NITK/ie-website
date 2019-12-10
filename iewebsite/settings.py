@@ -25,7 +25,7 @@ RECAPTCHA_PUBLIC_KEY= constants.PUBLIC_KEY
 RECAPTCHA_PRIVATE_KEY= constants.PRIVATE_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # DEBUG = True	#for localhost
 
