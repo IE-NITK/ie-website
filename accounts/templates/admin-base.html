@@ -44,12 +44,6 @@
 
 </head>
 
-<style>
-        .text{
-            margin-top: -60px;
-            margin-left: 55px;
-        }
-</style>        
 
 <body>
     <nav class="navbar navbar-default navbar-static-top">
@@ -61,13 +55,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <div>
-                        <img src="{% static 'img/ielogo.png' %}" width="60" height="60">
-                </div>
-            <div class="text">
                 <a class="navbar-brand" href="{% url 'home' %}">IE NITK</a>
             </div>
-        </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
                     {% if user|isAuthenticated %}
