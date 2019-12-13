@@ -21,8 +21,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '!th-(6rochf+vi!$e(o84^-)3+&oj7osgrztitz5p#8_mtq5t%'
-RECAPTCHA_PUBLIC_KEY= constants.PUBLIC_KEY
-RECAPTCHA_PRIVATE_KEY= constants.PRIVATE_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -46,7 +44,15 @@ INSTALLED_APPS = [
     'alumni.apps.AlumniConfig',
     'webadmin.apps.WebadminConfig',
     'accounts.apps.AccountsConfig',
-    'captcha'
+    'django.contrib.sites',
+
+    #allauth
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    
+    #providers
+    'allauth.socialaccount.providers.google'
 ]
 
 MIDDLEWARE = [
@@ -91,10 +97,10 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT': '',
         }
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    # }
 }
 
 # Password validation
@@ -153,3 +159,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = constants.EMAIL
 EMAIL_HOST_PASSWORD = constants.PASSWORD
+
+LOGIN_REDIRECT_URL = '/admin/'
+
+SITE_ID=1
