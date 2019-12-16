@@ -66,7 +66,7 @@ class LoginForm(BasicForm):
     setup_field(email, 'Enter Email here')
     password = forms.CharField(max_length=50, widget=forms.PasswordInput())
     setup_field(password, 'Enter password here')
-
+    
     def clean(self):
         """
         To make sure the password is valid for given email
@@ -97,7 +97,6 @@ class AccountRegisterForm(BasicForm):
     setup_field(phone, "Enter phone number")
     roll_no = forms.CharField(label='Roll Number', min_length=1, max_length=10)
     setup_field(roll_no, "Enter Roll number")
-
     def clean(self):
         """
         To make sure both passwords fields have the same values in them. If they don't mark
