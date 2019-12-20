@@ -1,0 +1,223 @@
+{% extends "base.html" %}
+{% load static %}
+{% block index %}active{% endblock %}
+{% block main %}
+
+      <section class="flexslider">
+        <ul class="slides">
+{#          <a href="/workshop">#}
+{#          <li style="background-image: url({% static 'img/sixth-sense-workshop.jpg' %})" class="overlay">#}
+{#            <div class="container">#}
+{#              <div class="row">#}
+{#                <div class="col-md-8 col-md-offset-2">#}
+{#                  <div class="probootstrap-slider-text text-center">#}
+{#                    <h1 class="probootstrap-heading probootstrap-animate">Sixth Sense Robotics Workshop in collaboration with SkyFi Labs</h1>#}
+{#                  </div>#}
+{#                </div>#}
+{#              </div>#}
+{#            </div>#}
+{#          </a>#}
+{#            #}
+{#          </li>#}
+          <li style="background-image: url({% static 'img/ie2019.JPG' %})" class="overlay">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                  <div class="probootstrap-slider-text text-center">
+{#                    <h1 class="probootstrap-heading probootstrap-animate">IE NITK 2017-18</h1>#}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li style="background-image: url({% static 'img/expo_gadget.jpg' %})" class="overlay">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                  <div class="probootstrap-slider-text text-center">
+{#                    <h1 class="probootstrap-heading probootstrap-animate">Education is Life</h1>#}
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </li>
+          <li style="background-image: url({% static 'img/event_crowd.jpg' %})" class="overlay">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                  <div class="probootstrap-slider-text text-center">
+{#                    <h1 class="probootstrap-heading probootstrap-animate">Helping Each of Our Students Fulfill the Potential</h1>#}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </section>
+      
+      <section class="probootstrap-section probootstrap-section-colored">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 text-left section-heading probootstrap-animate">
+              <h2>Welcome to The Institution of Engineers, NITK</h2>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="probootstrap-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="probootstrap-flex-block">
+                <div class="probootstrap-text probootstrap-animate">
+                  <h3>About IE NITK</h3>
+                  <p>When you bring together people from different backgrounds, you'll be surprised how diverse their lines of thought are, and yet, you'll find them supporting your revolutionary ideas. This is IE NITK. </p>
+{#                  <p><a href="#" class="btn btn-primary">Learn More</a></p>#}
+                </div>
+                <div class="probootstrap-image probootstrap-animate" style="background-image: {% static 'img/slider_3.jpg' %}">
+{#                  <a href="https://vimeo.com/45830194" class="btn-video popup-vimeo"><i class="icon-play3"></i></a>#}
+                    <img src="{% static 'img/aerial_2019.jpg' %}" alt="Spark" class="img-responsive">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="probootstrap-section probootstrap-section-colored probootstrap-bg probootstrap-custom-heading probootstrap-tab-section" style="background-image: url({% static 'img/slider_2.jpg' %})">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 text-center section-heading probootstrap-animate">
+              <h2 class="mb0">Highlights</h2>
+            </div>
+          </div>
+        </div>
+        <div class="probootstrap-tab-style-1">
+          <ul class="nav nav-tabs probootstrap-center probootstrap-tabs no-border">
+            <li class="active"><a data-toggle="tab" href="#upcoming-events">Major Events</a></li>
+{#            <li ><a data-toggle="tab" href="#featured-news">Featured News</a></li>#}
+          </ul>
+        </div>
+
+      </section>
+
+      <section class="probootstrap-section probootstrap-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              
+              <div class="tab-content">
+
+                <div id="upcoming-events" class="tab-pane fade in active">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="owl-carousel" id="owl1">
+                        <div class="item">
+                          <a href="#" class="probootstrap-featured-events-box">
+                            <figure class="probootstrap-media"><img src="{% static 'img/sparkcrop.jpg' %}" alt="Spark" class="img-responsive"></figure>
+                            <div class="probootstrap-text">
+                              <h3>Spark</h3>
+                              <p>Spark is NITK's own mini TED talk series, where we invite achievers mostly from our own college to come up and give talks on their areas of interest.</p>
+{#                              <span class="probootstrap-date"><i class="icon-calendar"></i>October 2018</span>#}
+
+                            </div>
+                          </a>
+                        </div>
+                        <!-- END item -->
+                        <div class="item">
+                          <a href="#" class="probootstrap-featured-events-box">
+                            <figure class="probootstrap-media"><img src="{% static 'img/koth1crop.jpg' %}" alt="KOTH" class="img-responsive"></figure>
+                            <div class="probootstrap-text">
+                              <h3>KOTH</h3>
+                              <p>King of the Hills, is IE's collaborative SIG event, where first years battle their way through the challenges set by each of our SIGs at each ‘hill’ to finally become ‘The King’!</p>
+{#                              <span class="probootstrap-date"><i class="icon-calendar"></i>January 2019</span>#}
+
+                            </div>
+                          </a>
+                        </div>
+                        <!-- END item -->
+                        <div class="item">
+                          <a href="#" class="probootstrap-featured-events-box">
+                            <figure class="probootstrap-media"><img src="{% static 'img/vriddhicrop.jpg' %}" alt="Vriddhi" class="img-responsive"></figure>
+                            <div class="probootstrap-text">
+                              <h3>Vriddhi Visit</h3>
+                              <p>Under our social initiative, Vriddhi, we organise regular trips to nearby care homes and orphanages to contribute our part to the less priveleged.</p>
+{#                              <span class="probootstrap-date"><i class="icon-calendar"></i>February 2019</span>#}
+
+                            </div>
+                          </a>
+                        </div>
+                        <!-- END item -->
+                      </div>
+                    </div>
+                  </div>
+                  <!-- END row -->
+                  <div class="row">
+                    <div class="col-md-12 text-center">
+                      <p><a href="{% url 'events:events' %}" class="btn btn-primary">View all events</a></p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section class="probootstrap-section probootstrap-bg probootstrap-section-colored probootstrap-testimonial" style="background-image: url({% static 'img/slider_4.jpg' %});">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center section-heading probootstrap-animate">
+              <h2>From the Convener's Desk</h2>
+            </div>
+          </div>
+          <!-- END row -->
+          <div class="row">
+            <div class="col-lg-12 probootstrap-animate">
+              <div class="owl-carousel owl-carousel-testimony owl-carousel-fullwidth">
+                <div class="item">
+                  <div class="probootstrap-testimony-wrap text-center">
+                    <figure>
+                      <img src="{% static 'img/mishal.jpg' %}" alt="Mishal Shah">
+                    </figure>
+                    <blockquote class="quote">
+                      &ldquo;  &rdquo; 
+                      <cite class="author"> &mdash; <span>Mishal Shah (Convener 2019-20)</span></cite>
+                    </blockquote>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="probootstrap-testimony-wrap text-center">
+                    <figure>
+                      <img src="{% static 'img/tarunya.jpeg' %}" alt="Tarunya Rao">
+                    </figure>
+                    <blockquote class="quote">&ldquo;If there is one thing IE has taught me, it is that trust can lead to wonders. In this fast-paced environment of ever-increasing competition, trust, faith and hope have helped IE rise to where we are today. IE has done for me, more than I have for IE.&rdquo; <cite class="author"> &mdash; <span>Tarunya Rao (Convener 2018-19)</span></cite></blockquote>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- END row -->
+        </div>
+      </section>
+      
+      <section>
+          <div class="container ietweetcss">
+            <div class="row">
+              <div class="col-md-6 col-md-offset-3 text-center section-heading probootstrap-animate">
+                <h2>IE Tweets</h2>
+              </div>
+            </div>
+            <div class="row tweetcss">
+                <a class="twitter-timeline" data-height="700" href="https://twitter.com/ienitk?ref_src=twsrc%5Etfw">Tweets by IEnitk</a>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div> 
+          </div>
+        </section>
+    
+    <!-- END wrapper -->
+    {% endblock %}
