@@ -59,7 +59,13 @@
                                 class="icon-linkedin"></i></a></li>
                           <li><a href="https://twitter.com/ienitk"><i class="icon-twitter"></i></a></li>
                         <li><a href="/blog"><i class="icon-blog"></i></a></li>
-                        <li><a href="/login"><i class="icon-login"></i></a></li>
+
+                        {% if user.is_authenticated %}
+                            <li><a href="/logout"><i class="fas fa-sign-out-alt"></i></a></li>
+                        {% else %}
+                            <li><a href="/login"><i class="icon-login"></i></a></li>
+                        {% endif %}
+
                     </ul>
                 </div>
             </div>
@@ -95,7 +101,13 @@
 {#                    <li ><a href="{% url 'events:hackverse' %}">Hackverse</a></li>#}
                     <li class="{% block flappy %}{% endblock %}"><a href="{% url 'flappy' %}">Bored?</a></li>
                     <!-- <li ><a href="{% url 'accounts:register' %}"><b>Apply</b></a></li> -->
+
+                    {% if user.is_authenticated %}
+                        <li ><a href="{% url 'accounts:profile' %}">Profile</a></li>
+                        <li ><a href="{% url 'accounts:logout' %}">Logout</a></li>
+                    {% else %}
                     <li ><a href="{% url 'accounts:index' %}">Login</a></li>
+                    {% endif %}
                     <!-- <li class="contact"><a href="contact.html">Contact</a></li> -->
                 </ul>
             </div>
