@@ -11,3 +11,6 @@ def smp(request):
 
 def hackverse(request):
     return render(request, 'hackverse.html')
+
+def idp20(request):
+    return render(request, 'idp20.html')

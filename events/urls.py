@@ -11,5 +11,6 @@ app_name = 'events'
 urlpatterns = [
     path('events/', views.view_events, name='events'),
     path('smp2019/', views.smp, name='smp'),
-    path('hackverse/', views.hackverse, name='hackverse')
+    path('hackverse/', views.hackverse, name='hackverse'),
+    path('idp20/', views.idp20,name='idp20')
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
