@@ -62,7 +62,9 @@
                     <span class="icon-bar"></span>
                 </button>
                 <div>
-                    <img src="{% static 'img/ielogo-transparent.png' %}" width="60" height="60">
+                    <a href="{% url 'home' %}">
+                        <img src="{% static 'img/ielogo-transparent.png' %}" width="60" height="60">
+                    </a>
                 </div>
                 <div class="text">
                     <a class="navbar-brand" href="{% url 'home' %}">IE NITK</a>
