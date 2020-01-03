@@ -1,60 +1,1507 @@
-{% extends "base.html" %}
-{% block main %}
 
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
 
-    <section class="probootstrap-section probootstrap-section-colored">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="HackVerse - 24 Hour Nation-Wide Hackathon at NITK, Surathkal as a part of the Diamond Jubilee Celebrations">
+    <meta name="keywords" content="HackVerse, Hackathon, Nation-Wide, NITK Surathkal, Diamond Jubilee Celebrations, IE NITK, Prizes">
+
+    <meta property="og:title" content="HackVerse - One of South India's Biggest Student Hackathons"/>
+    <meta property="og:description" content="HackVerse - 24 Hour Nation-Wide Hackathon at NITK, Surathkal as a part of the Diamond Jubilee Celebrations" />
+    <meta property="og:image" content="https://raw.githubusercontent.com/HackVerse/hackverse.github.io/master/img/LOGO.png"/>
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://hackverse.nitk.ac.in/" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="ienitk">
+    <meta name="twitter:site" content="https://hackverse.nitk.ac.in/">
+    <meta name="twitter:title" content="HackVerse - One of South India's Biggest Student Hackathon">
+    <meta name="twitter:description" content="HackVerse - 24 Hour Nation-Wide Hackathon at NITK, Surathkal as a part of the Diamond Jubilee Celebrations">
+    <meta name="twitter:image:src" content="{% static 'img/idpimg/LOGO.png' %}">
+
+    <!-- Title -->
+    <title>HackVerse | January 25-26, 2020</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="{% static 'img/idpimg/LOGO.png' %}">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="{% static 'css/idp.css' %}">
+    
+    <!-- <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "Event",
+            "name": "HackVerse",
+            "email": "hackverse@nitk.edu.in",
+            "image": "https://raw.githubusercontent.com/HackVerse/hackverse.github.io/master/img/LOGO.png",
+            "url": "https://hackverse.nitk.ac.in",
+            "sameAs": ["https://www.facebook.com/hackverse", "https://twitter.com/hackversenitk", "https://www.linkedin.com/company/hackverse", "https://www.instagram.com/hackversenitk"],
+            "description": "HackVerse - 24 Hour Nation-Wide Hackathon at NITK, Surathkal as a part of the Diamond Jubilee Celebrations",
+            "startDate": "25/01/2020 08:00AM",
+            "endDate": "26/01/2020 09:00PM",
+            "location": {
+                "@type": "Place",
+                "name": "NITK Surathkal",
+                "sameAs": "http://www.nitk.ac.in/",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "NITK Surathkal",
+                  "addressLocality": "Surathkal",
+                  "postalCode": "575025",
+                  "addressCountry": "IND"
+                }
+            }
+        }
+    </script>
+ --></head>
+    
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-149404272-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-149404272-1');
+</script>
+
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+    <!-- /Preloader -->
+
+    <!-- Header Area Start -->
+    <header class="header-area">
+        <div class="classy-nav-container breakpoint-off">
+            <div class="container">
+                <!-- Classy Menu -->
+                <nav class="classy-navbar justify-content-between" id="conferNav">
+
+                    <!-- Logo -->
+                    <a class="nav-brand" href=""><img style="height: auto;width: auto;max-height: 72px;max-width: 250px;" src="{% static 'img/idpimg/Text-Logo.png' %}"></a>
+
+                    <!-- Navbar Toggler -->
+                    <div class="classy-navbar-toggler">
+                        <span class="navbarToggler"><span></span><span></span><span></span></span>
+                    </div>
+
+                    <!-- Menu -->
+                    <div class="classy-menu">
+                        <!-- Menu Close Button -->
+                        <div class="classycloseIcon">
+                            <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                        </div>
+                        <!-- Nav Start -->
+                        <div class="classynav">
+                            <ul class="ml-auto" id="nav">
+                                <!-- <li class="active"><a href="">Home</a></li> -->
+                                <li><a href="#about">About</a></li>
+                                <li><a href="#tracks">Tracks</a></li>
+                                <li><a href="#sponsors">Sponsors</a></li>
+                                <li><a href="#faq">FAQ</a></li>
+                                <li><a href="#footer">Contact</a></li>
+                                
+                                <!-- <li><a href="">Prizes</a></li> -->
+                                <li><a href="#">Links</a>
+                                    <ul class="dropdown">
+                                        <li><a target="_blank" rel="noopener noreferrer" href="//dj.nitk.ac.in/">NITK  💎 Jubilee</a></li>
+                                        <li><a target="_blank" rel="noopener noreferrer" href="//www.nitk.ac.in/">NITK, Surathkal</a></li>
+                                        <li><a target="_blank" rel="noopener noreferrer" href="/blog/">HackVerse Blog</a></li>
+                                        <!-- <li><a target="_blank" rel="noopener noreferrer" href="http://ie.nitk.ac.in/">IE NITK</a></li> -->
+                                        <!-- <li><a target="_blank" rel="noopener noreferrer" href="#">Our Team </a></li>                                         -->
+
+                                        <!-- <li><a href="schedule.html">- Schedule</a></li>
+                                        <li><a href="./faq/">- Tickets</a></li>
+                                        <li><a href="blog.html">- Blog</a></li>
+                                        <li><a href="single-blog.html">- Single Blog</a></li>
+                                        <li><a href="contact.html">- Contact</a></li>
+                                        <li><a href="#">- Dropdown</a>
+                                            <ul class="dropdown">
+                                                <li><a href="#">- Dropdown Item</a></li>
+                                                <li><a href="#">- Dropdown Item</a></li>
+                                                <li><a href="#">- Dropdown Item</a></li>
+                                                <li><a href="#">- Dropdown Item</a></li>
+                                            </ul>
+                                        </li> -->
+                                    </ul>
+                                </li>
+                            </ul>
+
+                            <img id="logo-pc" src="{% static 'img/idpimg/emblem.png' %}" style="max-width: 7%;cursor: pointer;" >     
+
+                            <div id="logo-mob">
+                                <img  src="{% static 'img/idpimg/emblem.png' %}" style="max-width: 25%;display:block;margin:auto;padding-top: 55%;cursor: pointer;">     
+                            </div>
+                            <!-- <a href="#" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Register! <i class="zmdi zmdi-long-arrow-right"></i></a> -->
+                        </div>
+                        <!-- Nav End -->
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- Header Area End -->
+
+    <!-- Welcome Area Start -->
+    <section class="welcome-area">
+        <!-- <div class="welcome-slides owl-carousel"> -->
+            <!-- Single Slide -->
+            <div class="single-welcome-slide bg-img bg-overlay jarallax" style="background-image: url(/img/bg-img/nitk/banner2.jpg);">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <!-- Welcome Text -->
+                        <div class="col-12">
+                            <div class="welcome-text text-right">
+                                <h2 data-animation="fadeInUp" data-delay="300ms">HackVerse <br>24-Hour Nation Wide Hackathon</h2>
+                                <h6 data-animation="fadeInUp" data-delay="500ms">National Institute of Technology Karnataka, Surathkal</h6>
+                                <h3 data-animation="fadeInUp" data-delay="500ms" style="color: gold" >Jan 25th - 26th, 2020</h6>
+                                <div style="display:flex;justify-content: center;">
+                                    <button id="devfolio-apply-now"><svg class="logo" xmlns="http://www.w3.org/2000/svg" fill="#fff"
+                                        viewBox="0 0 115.46 123.46" style="height:24px;width:24px;margin-right:8px">
+                                        <path d="M115.46 68a55.43 55.43 0 0 1-50.85 55.11S28.12 124 16 123a12.6 12.6 0 0 1-10.09-7.5 15.85 15.85 0 0 0 5.36 1.5c4 .34 10.72.51 20.13.51 13.82 0 28.84-.38 29-.38h.26a60.14 60.14 0 0 0 54.72-52.47c.05 1.05.08 2.18.08 3.34z" />
+                                        <path d="M110.93 55.87A55.43 55.43 0 0 1 60.08 111s-36.48.92-48.58-.12C5 110.29.15 104.22 0 97.52l.2-83.84C.38 7 5.26.94 11.76.41c12.11-1 48.59.12 48.59.12a55.41 55.41 0 0 1 50.58 55.34z" />
+                                        </svg>Apply with Devfolio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Single Slide -->
+            <!-- <div class="single-welcome-slide bg-img bg-overlay jarallax" style="background-image: url(img/bg-img/45.jpg);">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <!- Welcome Text -->
+                        <!-- <div class="col-12">
+                            <div class="welcome-text-two text-center">
+                                <h5 data-animation="fadeInUp" data-delay="100ms">The event consistently</h5>
+                                <h2 data-animation="fadeInUp" data-delay="300ms">OSHA Compliance</h2> -->
+                                <!-- Event Meta -->
+                                <!-- <div class="event-meta" data-animation="fadeInUp" data-delay="500ms">
+                                    <a class="event-date" href="#"><i class="zmdi zmdi-account"></i> January 14, 2019</a>
+                                    <a class="event-author" href="#"><i class="zmdi zmdi-alarm-check"></i> Laura Green</a>
+                                </div>
+                                <div class="hero-btn-group" data-animation="fadeInUp" data-delay="700ms">
+                                    <a href="#" class="btn confer-btn m-2">View more <i class="zmdi zmdi-long-arrow-right"></i></a>
+                                    <a href="#" class="btn confer-btn m-2">Get Tickets <i class="zmdi zmdi-long-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> --> 
+        <!-- </div> -->
+
+        <!-- Scroll Icon -->
+        <div class="icon-scroll" id="scrollDown"></div>
+    </section>
+    <!-- Welcome Area End -->
+
+    <!-- About Us And Countdown Area Start -->
+    <section class="about-us-countdown-area section-padding-100-0" id="about">
         <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-left section-heading probootstrap-animate">
-                    <h1>Industrial Defined Problem</h1>
+            <div class="row align-items-center">
+                <!-- About Content -->
+                <div class="col-12 col-md-6 order-2 order-lg-1">
+                    <div class="about-content-text mb-80">
+                        <!-- <h6 class="wow fadeInUp" data-wow-delay="300ms">About</h6> -->
+                        <h3 class="wow fadeInUp" data-wow-delay="300ms">What is HackVerse ?</h3>
+                        <p class="wow fadeInUp" data-wow-delay="300ms">HackVerse serves as a platform to encourage
+                            enthusiastic minds to brainstorm on
+                            solutions for challenging
+                            issues from all over India. The unified
+                            motive of gathering all like-minded
+                            hackers to our alma mater, is
+                            what led to the creation of the idea in
+                            NITK Surathkal, the first of its kind.
+                            We’ll provide a platform for
+                            innovations, where developers can
+                            test and showcase their potential to
+                            the best of their abilities. The hackathon will also have keynotes & workshops from executives from the industry.</p>
+                        <!-- <a href="#" class="btn confer-btn mt-50 wow fadeInUp" data-wow-delay="300ms">Interested <i class="zmdi zmdi-long-arrow-right"></i></a> -->
+                    </div>
+                </div>
+
+                <!-- About Thumb -->
+                <div class="col-6 col-md-6 order-1 order-lg-2">
+                    <div class="about-thumb mb-80 wow fadeInUp" data-wow-delay="300ms">
+                        <img src="{% static 'img/idpimg/LOGO.png' %}" alt="HackVerse Logo">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row align-items-center">
+                
+                <div class="col-12 col-md-12">
+                    <div class="about-content-text mb-80">
+                        <h3 class="wow fadeInUp" data-wow-delay="300ms">Why Attend HackVerse?</h3>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-4">
+                    <div class="single-blog-area wow fadeInUp" data-wow-delay="300ms">
+                        <div class="single-blog-thumb">
+                            <img src="{% static 'img/idpimg/why-attend/learn-build.png' %}" alt="Learn & Build">
+                        </div>
+                        <div class="single-blog-text text-center">
+                            <h4>Learn &amp; Build</h4>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-4">
+                    <div class="single-blog-area wow fadeInUp" data-wow-delay="300ms">
+                        <div class="single-blog-thumb">
+                            <img src="{% static 'img/idpimg/why-attend/talks.png' %}" alt="Workshops & Talks">
+                        </div>
+                        <div class="single-blog-text text-center">
+                            <h4>Workshops &amp; Talks</h4>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-4">
+                    <div class="single-blog-area wow fadeInUp" data-wow-delay="300ms">
+                        <div class="single-blog-thumb">
+                            <img src="{% static 'img/idpimg/why-attend/networking.png' %}" alt="Networking">
+                        </div>
+                        <div class="single-blog-text text-center">
+                            <h4>Network &amp; Network</h4>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-4">
+                    <div class="single-blog-area wow fadeInUp" data-wow-delay="300ms">
+                        <div class="single-blog-thumb">
+                            <img src="{% static 'img/idpimg/why-attend/prizes.png' %}" alt="Swags & Prizes">
+                        </div>
+                        <div class="single-blog-text text-center">
+                            <h4>Schwags &amp; Prizes</h4>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-4">
+                    <div class="single-blog-area wow fadeInUp" data-wow-delay="300ms">
+                        <div class="single-blog-thumb">
+                            <img src="{% static 'img/idpimg/why-attend/travel.png' %}" alt="Travel Allowance">
+                        </div>
+                        <div class="single-blog-text text-center">
+                            <h4>Travel Allowance</h4>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-4">
+                    <div class="single-blog-area wow fadeInUp" data-wow-delay="300ms">
+                        <div class="single-blog-thumb">
+                            <img src="{% static 'img/idpimg/why-attend/beach.png' %}" alt="NITK Beach">
+                        </div>
+                        <div class="single-blog-text text-center">
+                            <h4>Beach</h4>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <section style="padding-top: 0%;" class="what-we-offer-area section-padding-100-70" id="tracks">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="section-heading-3 text-center wow fadeInUp" data-wow-delay="300ms">
+                                <h4>Tracks</h4>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="row">
+        
+                        <div class="col-12 col-md-6 col-xl-3">
+                            <div class="single-we-offer-content text-center wow fadeInUp" data-wow-delay="0.3s">
+                                <div style="background-image: none;background: none;" class="offer-icon">
+                                    <img src="{% static 'img/idpimg/tracks/blockchain.png' %}" alt="Blockchain">
+                                </div>
+                                <h5>Blockchain</h5>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-xl-3">
+                            <div class="single-we-offer-content text-center wow fadeInUp" data-wow-delay="0.3s">
+                                <div style="background-image: none;background: none;" class="offer-icon">
+                                    <img src="{% static 'img/idpimg/tracks/ai.png' %}" alt="AI - ML">
+                                </div>
+                                <h5>AI - ML</h5>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-xl-3">
+                            <div class="single-we-offer-content text-center wow fadeInUp" data-wow-delay="0.3s">
+                                <div style="background-image: none;background: none;" class="offer-icon">
+                                    <img src="{% static 'img/idpimg/tracks/algorithm.png' %}" alt="Algorithms">
+                                </div>
+                                <h5>Algorithms</h5>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-xl-3">
+                            <div class="single-we-offer-content text-center wow fadeInUp" data-wow-delay="0.3s">
+                                <div style="background-image: none;background: none;" class="offer-icon">
+                                    <img src="{% static 'img/idpimg/tracks/fintech.png' %}" alt="FinTech">
+                                </div>
+                                <h5>FinTech</h5>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-xl-3">
+                            <div class="single-we-offer-content text-center wow fadeInUp" data-wow-delay="0.3s">
+                                <div style="background-image: none;background: none;" class="offer-icon">
+                                    <img src="{% static 'img/idpimg/tracks/future-mobility.png' %}" alt="Future Mobility">
+                                </div>
+                                <h5>Future Mobility</h5>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-xl-3">
+                            <div class="single-we-offer-content text-center wow fadeInUp" data-wow-delay="0.3s">
+                                <div style="background-image: none;background: none;" class="offer-icon">
+                                    <img src="{% static 'img/idpimg/tracks/ar-vr.png' %}" alt="AR - VR">
+                                </div>
+                                <h5>AR - VR</h5>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-xl-3">
+                            <div class="single-we-offer-content text-center wow fadeInUp" data-wow-delay="0.3s">
+                                <div style="background-image: none;background: none;" class="offer-icon">
+                                    <img src="{% static 'img/idpimg/tracks/computer-vision.png' %}" alt="Computer Vision">
+                                </div>
+                                <h5>Computer Vision</h5>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-xl-3">
+                            <div class="single-we-offer-content text-center wow fadeInUp" data-wow-delay="0.3s">
+                                <div style="background-image: none;background: none;" class="offer-icon">
+                                    <img src="{% static 'img/idpimg/tracks/open-innovation.png' %}" alt="Open Innovation">
+                                </div>
+                                <h5>Open Innovation</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section> 
+
+            <!-- Prizes section -->
+            <section class="our-ticket-pricing-table-area bg-img bg-gradient-overlay section-padding-100-0 jarallax" style="">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-md-12">
+                            <div class="about-content-text mb-80">
+                                <h3 class="text-center wow fadeInUp" data-wow-delay="300ms" style="visibility: visible; animation-delay: 300ms; animation-name: fadeInUp;">Prizes</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-lg-4">
+                            <div class="single-ticket-pricing-table text-center mb-100 wow fadeInUp" data-wow-delay="300ms" style="visibility: visible; animation-delay: 300ms; animation-name: fadeInUp;">
+                                <h6 class="ticket-plan" style="background-color: #55c1aa !important">1st Prize</h6>
+                                <div class="ticket-icon">
+                                    <img src="img/core-img/p1.png' %}" alt="">
+                                </div>
+                                <h2 class="ticket-price"><span>₹</span>75,000</h2>
+        <!--                         <a href="#" class="btn confer-btn w-100 mb-30">Get Tickets <i class="zmdi zmdi-long-arrow-right"></i></a>
+                                <div class="ticket-pricing-table-details">
+                                    <p><i class="zmdi zmdi-check"></i> One Day Conference Ticket</p>
+                                    <p><i class="zmdi zmdi-check"></i> Coffee-break</p>
+                                    <p><i class="zmdi zmdi-check"></i> Lunch and Networking</p>
+                                    <p><i class="zmdi zmdi-check"></i> Keynote talk</p>
+                                    <p><i class="zmdi zmdi-check"></i> Talk to the Editors Session</p>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <div class="single-ticket-pricing-table text-center mb-100 wow fadeInUp" data-wow-delay="300ms" style="visibility: visible; animation-delay: 300ms; animation-name: fadeInUp;">
+                                <h6 class="ticket-plan" style="background-color: #55c1aa !important">2nd Prize</h6>
+                                <div class="ticket-icon">
+                                    <img src="img/core-img/p1.png' %}" alt="">
+                                </div>
+                                <h2 class="ticket-price"><span>₹</span>60,000</h2>
+        <!--                         <a href="#" class="btn confer-btn w-100 mb-30">Get Tickets <i class="zmdi zmdi-long-arrow-right"></i></a>
+                                <div class="ticket-pricing-table-details">
+                                    <p><i class="zmdi zmdi-check"></i> One Day Conference Ticket</p>
+                                    <p><i class="zmdi zmdi-check"></i> Coffee-break</p>
+                                    <p><i class="zmdi zmdi-check"></i> Lunch and Networking</p>
+                                    <p><i class="zmdi zmdi-check"></i> Keynote talk</p>
+                                    <p><i class="zmdi zmdi-check"></i> Talk to the Editors Session</p>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <div class="single-ticket-pricing-table text-center mb-100 wow fadeInUp" data-wow-delay="300ms" style="visibility: visible; animation-delay: 300ms; animation-name: fadeInUp;">
+                                <h6 class="ticket-plan" style="background-color: #55c1aa !important">3rd Prize</h6>
+                                <div class="ticket-icon">
+                                    <img src="img/core-img/p1.png' %}" alt="">
+                                </div>
+                                <h2 class="ticket-price"><span>₹</span>40,000</h2>
+        <!--                         <a href="#" class="btn confer-btn w-100 mb-30">Get Tickets <i class="zmdi zmdi-long-arrow-right"></i></a>
+                                <div class="ticket-pricing-table-details">
+                                    <p><i class="zmdi zmdi-check"></i> One Day Conference Ticket</p>
+                                    <p><i class="zmdi zmdi-check"></i> Coffee-break</p>
+                                    <p><i class="zmdi zmdi-check"></i> Lunch and Networking</p>
+                                    <p><i class="zmdi zmdi-check"></i> Keynote talk</p>
+                                    <p><i class="zmdi zmdi-check"></i> Talk to the Editors Session</p>
+                                </div> -->
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            
+            <div class="row align-items-center">
+                    <!-- About Content -->
+                    <div class="col-12 col-md-6 order-2 order-lg-1">
+                        <div class="about-content-text mb-80">
+                            <!-- <h6 class="wow fadeInUp" data-wow-delay="300ms">About</h6> -->
+                            <h3 class="wow fadeInUp" data-wow-delay="300ms">The Institution</h3>
+                            <p class="wow fadeInUp" data-wow-delay="300ms">National Institute of Technology Karnataka (NITK) is one of the premier engineering institutions in the country. Situated near Mangalore along the coast of the Arabian Sea, NITK is home to some of the brightest young minds of the country engaged in a wide array of disciplines. With a vibrant and robust student body, NITK has been the launchpad for people with great ideas that have grown to be very successful ventures including Practo, Perpule, SaveMonk among others. This year, we celebrate our Diamond Jubilee. To commemorate 60 years of NITK, we aim to gather all like minded hackers to our own institute.</p>
+                            <!-- <a href="#" class="btn confer-btn mt-50 wow fadeInUp" data-wow-delay="300ms">Interested <i class="zmdi zmdi-long-arrow-right"></i></a> -->
+                        </div>
+                    </div>
+    
+                    <!-- About Thumb -->
+                    <div class="col-6 col-md-6 order-1 order-lg-2">
+                        <div class="about-thumb mb-80 wow fadeInUp" data-wow-delay="300ms">
+                            <img src="{% static 'img/idpimg/nitk.png' %}" alt="NITK, Surathkal">
+                        </div>
+                    </div>
+            </div>
+
+            <div class="row align-items-center">
+                    <!-- About Content -->
+                    <div class="col-12 col-md-6 order-2 order-lg-1">
+                        <div class="about-content-text mb-80">
+                            <!-- <h6 class="wow fadeInUp" data-wow-delay="300ms">About</h6> -->
+                            <h3 class="wow fadeInUp" data-wow-delay="300ms">Innovation Partner</h3>
+                            <p class="wow fadeInUp" data-wow-delay="300ms">
+                             Ministry of Human Resource Development (MHRD), Govt. of India has established ‘MHRD’s Innovation Cell (MIC)’ to systematically foster the culture of Innovation amongst all Higher Education Institutions (HEIs). The primary mandate of MIC is to encourage, inspire and nurture young students by supporting them to work with new ideas and transform them into prototypes while they are informative years.
+                            
+                            HackVerse with this hackathon aims to fulfill the same vision of MHRD's Innovation Cell.</p>
+                            <!-- <a href="#" class="btn confer-btn mt-50 wow fadeInUp" data-wow-delay="300ms">Interested <i class="zmdi zmdi-long-arrow-right"></i></a> -->
+                        </div>
+                    </div>
+    
+                    <!-- About Thumb -->
+                    <div class="col-6 col-md-6 order-1 order-lg-2">
+                        <div class="about-thumb mb-80 wow fadeInUp" data-wow-delay="300ms">
+                            <img src="{% static 'img/idpimg/mhrd-iic.jpg" alt="Institution’s Innovation Council">
+                        </div>
+                    </div>
+            </div>
+
+        <!-- Counter Up Area -->
+       <div class="countdown-up-area">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-2">
+                         
+                        <div class="countdown-content-text mb-100 wow fadeInUp" data-wow-delay="300ms">
+                            <!-- <h6>26th Janaury 2020</h6> -->
+                            <h4>Countdown</h4>
+                        </div>
+                    </div>  
+
+                    <div class="col-12 col-md-8">
+                        <div class="countdown-timer mb-100 wow fadeInUp" data-wow-delay="300ms">
+                            <div id="clock"></div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-2">
+                         
+                        <div class="countdown-content-text mb-100 wow fadeInUp" data-wow-delay="300ms">
+                            <!-- <h6>26th Janaury 2020</h6>  -->
+                          <h4>To <span style="color: #55C1AA;">Hack</span><span style="color: #111343;">Verse</span></h4>
+                        </div>
+                    </div>  
                 </div>
             </div>
         </div>
     </section>
-    <section class="probootstrap-section probootstrap-section-sm">
-        <div class="row" style="text-align: center; font-size: large;">
-            <strong>TIMELINE</strong> 
-        </div>
-    <table id="datatable" class="table table-hover table-striped table-bordered ">
-        <tbody>
+    <!-- About Us And Countdown Area End -->
 
-                <tr>
-                        <td>Mid - February</td>
-                        <td>Launching prelims problem statements</td>
-                </tr>
+    <!-- Our Speakings Area Start -->
 
-                <tr>
-                        <td>February end</td>
-                        <td>Prelims Results</td>
-                </tr>
-                <tr>
-                        <td>March 1</td>
-                        <td>Finals Problem Statements</td>
-                </tr>
-                <tr>
-                        <td>Mid - March</td>
-                        <td>Companies come for presentation</td>
-                </tr>
-
-        </tbody>
-    </table>
-    </section>
-    <section class="probootstrap-section probootstrap-section-sm">
+    <!-- Minimized here -->
+    <!-- <section class="our-speaker-area bg-img bg-gradient-overlay section-padding-100-60" style="background-image: url(img/bg-img/3.jpg);">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
-                    <div class="row probootstrap-gutter0">
-                        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdOKWm65plEdfhLnn_vi_2zEP72eymxM3j9dkpeDxoVQmlm6g/viewform?embedded=true"
-                                width="400" height="2500" frameborder="0" marginheight="0" marginwidth="0">Loading…
-                        </iframe>
+                <div class="col-12">
+                    <div class="section-heading text-center wow fadeInUp" data-wow-delay="300ms">
+                        <p>Our Speakings</p>
+                        <h4>Who’s speaking</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp" data-wow-delay="300ms">
+                        <div class="speaker-single-thumb">
+                            <img src="img/bg-img/4.jpg" alt="">
+                        </div>
+                        <div class="social-info">
+                            <a href="#"><i class="zmdi zmdi-facebook"></i></a>
+                            <a href="#"><i class="zmdi zmdi-instagram"></i></a>
+                            <a href="#"><i class="zmdi zmdi-twitter"></i></a>
+                            <a href="#"><i class="zmdi zmdi-linkedin"></i></a>
+                        </div>
+                        <div class="speaker-info">
+                            <h5>Albert Barnes</h5>
+                            <p>Founder</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp" data-wow-delay="300ms">
+                        <div class="speaker-single-thumb">
+                            <img src="img/bg-img/5.jpg" alt="">
+                        </div>
+                        <div class="social-info">
+                            <a href="#"><i class="zmdi zmdi-facebook"></i></a>
+                            <a href="#"><i class="zmdi zmdi-instagram"></i></a>
+                            <a href="#"><i class="zmdi zmdi-twitter"></i></a>
+                            <a href="#"><i class="zmdi zmdi-linkedin"></i></a>
+                        </div>
+                        <div class="speaker-info">
+                            <h5>Patricia Stanley</h5>
+                            <p>Product Lead</p>
+                        </div>
+                    </div>
+                </div>
+               
+                <div class="col-12">
+                    <div class="more-speaker-btn text-center mt-20 mb-40 wow fadeInUp" data-wow-delay="300ms">
+                        <a class="btn confer-btn-white" href="#">view all Speaker <i class="zmdi zmdi-long-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    <!-- </section>  -->
+    
+    <!-- Our Speakings Area End -->
+
+    <!-- Our Schedule Area Start -->
 
 
+    
+    <!-- Our Schedule Area End -->
+
+
+    <section id="sponsors" style="background-color: white" class="our-sponsor-client-area section-padding-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading-2 text-center wow fadeInUp" data-wow-delay="300ms">
+                        <!-- <p>Partners &amp; Sponsors</p> -->
+                        <h4 style="color:navy">OFFICIAL SPONSORS</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div style="display:flex;justify-content: center;" class="our-sponsor-area d-flex flex-wrap">
+                        <div class="single-sponsor wow fadeInUp" data-wow-delay="300ms">
+                            <a target="_blank" rel="noopener noreferrer" href="https://devfolio.co/"><img src="{% static 'img/idpimg/sponsors-img/devfolio.png' %}" alt="Devfolio"></a>
+                        </div>
+                        <div class="single-sponsor wow fadeInUp" data-wow-delay="300ms">
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.digitalocean.com/"><img src="{% static 'img/idpimg/sponsors-img/digital-ocean.png' %}" alt="Digital Ocean"></a>
+                        </div>
+                        <div class="single-sponsor wow fadeInUp" data-wow-delay="300ms">
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.bseipf.com/"><img src="{% static 'img/idpimg/sponsors-img/IPF Logo.jpg" alt="BSEIPF"></a>
+                        </div>
+                        <div class="single-sponsor wow fadeInUp" data-wow-delay="300ms">
+                            <a target="_blank" rel="noopener noreferrer" href="https://matic.network"><img src="{% static 'img/idpimg/sponsors-img/matic.png' %}" alt="Matic"></a>
+                        </div>
+                        <div class="single-sponsor wow fadeInUp" data-wow-delay="300ms">
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.elastic.co/"><img src="{% static 'img/idpimg/sponsors-img/logo-elastic.svg" alt="Elastic"></a>
+                        </div>
+                        <div class="single-sponsor wow fadeInUp" data-wow-delay="300ms">
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.gatsbyjs.org/"><img src="{% static 'img/idpimg/sponsors-img/Gatsby-Logo.svg" alt="Gatsby"></a>
+                        </div>
+                        <div class="single-sponsor wow fadeInUp" data-wow-delay="300ms">
+                            <a target="_blank" rel="noopener noreferrer" href=""><img style="padding-bottom: 10%;" src="{% static 'img/idpimg/sponsors-img/unnathiIBM.png' %}" alt="Unnathi Career Academy Pvt. Ltd."></a>
+                        </div>
+                        <div class="single-sponsor wow fadeInUp" data-wow-delay="300ms">
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.codechef.com/"><img src="{% static 'img/idpimg/sponsors-img/codechef.png' %}" alt="Codechef"></a>
+                        </div> 
+                        <div class="single-sponsor wow fadeInUp" data-wow-delay="300ms">
+                            <a target="_blank" rel="noopener noreferrer" href="https://zulipchat.com/"><img style="width: auto;" src="{% static 'img/idpimg/sponsors-img/zulip.png' %}" alt="Zulip"></a>
+                        </div> 
+                        <div class="single-sponsor wow fadeInUp" data-wow-delay="300ms">
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.creative-tim.com/"><img src="{% static 'img/idpimg/sponsors-img/tim-horizontal-logo-transparent-bg.png' %}" alt="Creative Tim"></a>
+                        </div>
+                        <div class="single-sponsor wow fadeInUp" data-wow-delay="300ms">
+                            <a target="_blank" rel="noopener noreferrer" href="https://cloudsploit.com/"><img src="{% static 'img/idpimg/sponsors-img/cloudsploit.png' %}" alt="CloudSploit"></a>
+                        </div>
+                        <div class="single-sponsor wow fadeInUp" data-wow-delay="300ms">
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.stickermule.com/"><img src="{% static 'img/idpimg/sponsors-img/sticker-mule-logo-light.png' %}" alt="StickerMule"></a>
+                        </div>
+                        <div class="single-sponsor wow fadeInUp" data-wow-delay="300ms">
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.bugsee.com/"><img src="{% static 'img/idpimg/sponsors-img/bugsee.png' %}" alt="Bugsee"></a>
+                        </div>
+                        <div class="single-sponsor wow fadeInUp" data-wow-delay="300ms">
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.wolfram.com/language/"><img src="{% static 'img/idpimg/sponsors-img/wolfram.png' %}" alt="Wolfram Language"></a>
+                        </div>
+                        <div class="single-sponsor wow fadeInUp" data-wow-delay="300ms">
+                            <a target="_blank" rel="noopener noreferrer" href="https://balsamiq.com/"><img src="{% static 'img/idpimg/sponsors-img/balsamiq-logo-screen.png' %}" alt="Balsamiq"></a>
+                        </div>
+                        <div class="single-sponsor wow fadeInUp" data-wow-delay="300ms">
+                            <a target="_blank" rel="noopener noreferrer" href="https://codingblocks.com/"><img src="{% static 'img/idpimg/sponsors-img/Logo_DarkGrey_ NoShadow.png' %}" alt="Coding Blocks"></a>
+                        </div>
+                        <div class="single-sponsor wow fadeInUp" data-wow-delay="300ms">
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.sketch.com/"><img src="{% static 'img/idpimg/sponsors-img/sketch-logo-light-transparent@2x.png' %}" alt="Sketch"></a>
+                        </div>
+                        <div class="single-sponsor wow fadeInUp" data-wow-delay="300ms">
+                            <a target="_blank" rel="noopener noreferrer" href="https://restdb.io/"><img style="padding-bottom: 10%;" src="{% static 'img/idpimg/sponsors-img/restdb-logo-white.png' %}" alt="restdb.io"></a>
+                        </div>
+                        <div class="single-sponsor wow fadeInUp" data-wow-delay="300ms">
+                            <a target="_blank" rel="noopener noreferrer" href="https://progate.com/"><img style="padding-bottom: 10%;" src="{% static 'img/idpimg/sponsors-img/progate.png' %}" alt="Progate"></a>
+                        </div>
+                        <div class="single-sponsor wow fadeInUp" data-wow-delay="300ms">
+                            <a target="_blank" rel="noopener noreferrer" href=""><img style="padding-bottom: 10%;" src="{% static 'img/idpimg/sponsors-img/av8.png' %}" alt="AV8 Juice"></a>
+                        </div>
+                        <div class="single-sponsor wow fadeInUp" data-wow-delay="300ms">
+                            <a target="_blank" rel="noopener noreferrer" href="https://zubi.io/"><img style="width:30%;margin-left: 25%;" src="{% static 'img/idpimg/sponsors-img/zubi.jpeg" alt="Zubi.io"></a>
+                        </div>
+                        <div class="single-sponsor wow fadeInUp" data-wow-delay="300ms">
+                            <a target="_blank" rel="noopener noreferrer" href="https://rosenfeldmedia.com/"><img src="{% static 'img/idpimg/sponsors-img/rosenfeld.png' %}" alt="Zubi.io"></a>
+                        </div>
+                        <div class="single-sponsor wow fadeInUp" data-wow-delay="300ms">
+                            <a target="_blank" rel="noopener noreferrer" href="https://dev.to/"><img src="{% static 'img/idpimg/sponsors-img/dev.png' %}" alt="DEV"></a>
+                        </div>
+                        <div class="single-sponsor wow fadeInUp" data-wow-delay="300ms">
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.stickeryou.com/"><img src="{% static 'img/idpimg/sponsors-img/stickeryou.png' %}" alt="StickerYou"></a>
+                        </div>
+                    </div>
+                    <div id="desktop">
+                        <p style="display:flex;justify-content: center;">Interested in sponsoring HackVerse? Shoot us an email at <a style="color:#9293bc; font-weight: normal; text-indent: 0.2em;" href="mailto:hackverse@nitk.edu.in" target="_blank">hackverse@nitk.edu.in</a></p>
+                    </div>
+                    <div id="mobile">
+                        <p style="display:flex;justify-content: center;font-size: 15px">Interested in sponsoring HackVerse?</p>
+                        <p style="display:flex;justify-content: center;font-size: 15px">Shoot us an email at <a style="color:#9293bc; font-weight: normal; text-indent: 0.2em;" href="mailto:hackverse@nitk.edu.in" target="_blank">hackverse@nitk.edu.in</a></p>
+                    </div>
+                </div>
+
+                <!-- <div class="col-12">
+                    <div class="our-client-area mt-100 wow fadeInUp" data-wow-delay="300ms">
+                        <div class="client-area owl-carousel">
+                            <div class="single-client-content">
+                                <div class="single-client-text">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                                    <div class="single-client-thumb-info d-flex align-items-center">
+                                        <div class="single-client-thumb">
+                                            <img src="img/bg-img/15.jpg" alt="">
+                                        </div>
+                                        <div class="client-info">
+                                            <h6>Maria Hernandez</h6>
+                                            <p>UX Manager</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="client-icon">
+                                    <i class="zmdi zmdi-quote"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- <section class="our-schedule-area section-padding-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading-2 text-center wow fadeInUp" data-wow-delay="300ms">
+                        <p>Our Timetable</p>
+                        <h4>Schedule Plan</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="schedule-tab">
+                        <ul class="nav nav-tabs wow fadeInUp" data-wow-delay="300ms" id="conferScheduleTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="monday-tab" data-toggle="tab" href="#step-one" role="tab" aria-controls="step-one" aria-expanded="true">Sunday <br> <span>January 26, 2020</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="tuesday-tab" data-toggle="tab" href="#step-two" role="tab" aria-controls="step-two" aria-expanded="true">Monday <br> <span>January 27, 2020</span></a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-content" id="conferScheduleTabContent">
+                        <div class="tab-pane fade show active" id="step-one" role="tabpanel" aria-labelledby="monday-tab">
+                            <div class="single-tab-content">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="single-schedule-area d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
+                                            <div class="single-schedule-tumb-info d-flex align-items-center">
+                                                <div class="single-schedule-tumb">
+                                                    <img src="img/bg-img/10.jpg" alt="">
+                                                </div>
+                                                <div class="single-schedule-info">
+                                                    <h6>Registration</h6>
+                                                </div>
+                                            </div>
+
+                                            <div class="schedule-time-place">
+                                                <p><i class="zmdi zmdi-time"></i> 8:00 AM, January 26 </p>
+                                                <p><i class="zmdi zmdi-map"></i>Central Computer Centre, NITK</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="single-schedule-area d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
+                                            <div class="single-schedule-tumb-info d-flex align-items-center">
+                                                <div class="single-schedule-tumb">
+                                                    <img src="img/bg-img/11.jpg" alt="">
+                                                </div>
+                                                <div class="single-schedule-info">
+                                                    <h6>Inauguration</h6>
+                                                </div>
+                                            </div>
+                                            <div class="schedule-time-place">
+                                                <p><i class="zmdi zmdi-time"></i> 9:00 AM, January 26</p>
+                                                <p><i class="zmdi zmdi-map"></i> Central Computer Centre, NITK</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="single-schedule-area d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
+                                            <div class="single-schedule-tumb-info d-flex align-items-center">
+                                                <div class="single-schedule-tumb">
+                                                    <img src="img/bg-img/12.jpg" alt="">
+                                                </div>
+                                                <div class="single-schedule-info">
+                                                    <h6>Hackathon Begins</h6>
+                                                </div>
+                                            </div>
+                                            <div class="schedule-time-place">
+                                                <p><i class="zmdi zmdi-time"></i> 10:00 AM, January 26</p>
+                                                <p><i class="zmdi zmdi-map"></i> Central Computer Centre, NITK</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="single-schedule-area d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
+                                            <div class="single-schedule-tumb-info d-flex align-items-center">
+                                                <div class="single-schedule-tumb">
+                                                    <img src="img/bg-img/13.jpg" alt="">
+                                                </div>
+                                                <div class="single-schedule-info">
+                                                    <h6>Lunch</h6>
+                                                </div>
+                                            </div>
+                                            <div class="schedule-time-place">
+                                                <p><i class="zmdi zmdi-time"></i>1:00 PM, January 26</p>
+                                                <p><i class="zmdi zmdi-map"></i> Central Computer Centre, NITK</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="single-schedule-area d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
+                                            <div class="single-schedule-tumb-info d-flex align-items-center">
+                                                <div class="single-schedule-tumb">
+                                                    <img src="img/bg-img/13.jpg" alt="">
+                                                </div>
+                                                <div class="single-schedule-info">
+                                                    <h6>Phase 1 Evaluation</h6>
+                                                </div>
+                                            </div>
+                                            <div class="schedule-time-place">
+                                                <p><i class="zmdi zmdi-time"></i>4:00 PM, January 26</p>
+                                                <p><i class="zmdi zmdi-map"></i> Central Computer Centre, NITK</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="single-schedule-area d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
+                                            <div class="single-schedule-tumb-info d-flex align-items-center">
+                                                <div class="single-schedule-tumb">
+                                                    <img src="img/bg-img/13.jpg" alt="">
+                                                </div>
+                                                <div class="single-schedule-info">
+                                                    <h6>Dinner</h6>
+                                                </div>
+                                            </div>
+                                            <div class="schedule-time-place">
+                                                <p><i class="zmdi zmdi-time"></i>9:00 PM, January 26</p>
+                                                <p><i class="zmdi zmdi-map"></i> Central Computer Centre, NITK</p>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+                                    <div class="col-12">
+                                        <div class="more-schedule-btn text-center mt-50 wow fadeInUp" data-wow-delay="300ms">
+                                            <a href="#" class="btn confer-gb-btn">Download schedule</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="step-two" role="tabpanel" aria-labelledby="tuesday-tab">
+                            <div class="single-tab-content">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="single-schedule-area d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
+                                            <div class="single-schedule-tumb-info d-flex align-items-center">
+                                                <div class="single-schedule-tumb">
+                                                    <img src="img/bg-img/11.jpg" alt="">
+                                                </div>
+                                                <div class="single-schedule-info">
+                                                    <h6>Phase 2 Evaluation</h6>
+                                                </div>
+                                            </div>
+                                            <div class="schedule-time-place">
+                                                <p><i class="zmdi zmdi-time"></i> 12:00 AM, Janaury 27</p>
+                                                <p><i class="zmdi zmdi-map"></i> Central Computer Centre, NITK</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="single-schedule-area d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
+                                            <div class="single-schedule-tumb-info d-flex align-items-center">
+                                                <div class="single-schedule-tumb">
+                                                    <img src="img/bg-img/12.jpg" alt="">
+                                                </div>
+                                                <div class="single-schedule-info">
+                                                    <h6>Presentation & Prize Distribution</h6>
+                                                </div>
+                                            </div>
+                                            <div class="schedule-time-place">
+                                                <p><i class="zmdi zmdi-time"></i> 10:30 AM, Janaury 27</p>
+                                                <p><i class="zmdi zmdi-map"></i>  Central Computer Centre, NITK</p>
+                                            </div>
+                                        </div>
+
+                                        
+                                    </div>
+
+                                    <div class="col-12">
+                                        <div class="more-schedule-btn text-center mt-50 wow fadeInUp" data-wow-delay="300ms">
+                                            <a href="#" class="btn confer-gb-btn">Download schedule </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="step-three" role="tabpanel" aria-labelledby="wednesday-tab">
+                            <div class="single-tab-content">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="single-schedule-area d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
+                                            <div class="single-schedule-tumb-info d-flex align-items-center">
+                                                <div class="single-schedule-tumb">
+                                                    <img src="img/bg-img/10.jpg" alt="">
+                                                </div>
+                                                <div class="single-schedule-info">
+                                                    <h6>Dealing with Difficult People</h6>
+                                                    <p>by <span>Gary Armstrong</span> / Ceo of Confer</p>
+                                                </div>
+                                            </div>
+                                            <div class="schedule-time-place">
+                                                <p><i class="zmdi zmdi-time"></i> 12-14 Jan 2019</p>
+                                                <p><i class="zmdi zmdi-map"></i> Mountain Resort, Phoenix, USA</p>
+                                            </div>
+                                            <a href="#" class="btn confer-btn">View More <i class="zmdi zmdi-long-arrow-right"></i></a>
+                                        </div>
+
+                                        <div class="single-schedule-area d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
+                                            <div class="single-schedule-tumb-info d-flex align-items-center">
+                                                <div class="single-schedule-tumb">
+                                                    <img src="img/bg-img/13.jpg" alt="">
+                                                </div>
+                                                <div class="single-schedule-info">
+                                                    <h6>Street Food Convention</h6>
+                                                    <p>by <span>Jeffrey Morales</span> / Ceo of Confer</p>
+                                                </div>
+                                            </div>
+                                            <div class="schedule-time-place">
+                                                <p><i class="zmdi zmdi-time"></i> 12-14 Jan 2019</p>
+                                                <p><i class="zmdi zmdi-map"></i> Mountain Resort, Phoenix, USA</p>
+                                            </div>
+                                            <a href="#" class="btn confer-btn">View More <i class="zmdi zmdi-long-arrow-right"></i></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <div class="more-schedule-btn text-center mt-50 wow fadeInUp" data-wow-delay="300ms">
+                                            <a href="#" class="btn confer-gb-btn">Dowload schedule (Pdf)</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </section> -->
+
+    <section id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>FAQs </h2>
+                <br />
+            </div>
+            <!-- <div class="row justify-content-center align-items-center"> -->
+            <div class="row">
+            <div class="col-lg-6">
+                <ul id="faq-list">
+                    <li>
+                        <a data-toggle="collapse" class="collapsed" href="#faq1">Is this hackathon an online event or offline? <i class="fa fa-minus-circle"></i></a>
+                        <div id="faq1" class="collapse" data-parent="#faq-list">
+                            <p>
+                                HackVerse is an offline event and as a participant you will need to be present at NITK campus.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a data-toggle="collapse" class="collapsed" href="#faq2">Who is eligible to apply?<i class="fa fa-minus-circle"></i></a>
+                        <div id="faq2" class="collapse" data-parent="#faq-list">
+                            <p>
+                                Students enrolled in any college in India can apply for the hackathon.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a data-toggle="collapse" href="#faq3" class="collapsed">Is there any registration
+                            fee? <i class="fa fa-minus-circle"></i></a>
+                        <div id="faq3" class="collapse" data-parent="#faq-list">
+                            <p>
+                                No. Registrations are completely free of cost.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a data-toggle="collapse" href="#faq4" class="collapsed">Will accommodation and
+                            food be provided? <i class="fa fa-minus-circle"></i></a>
+                        <div id="faq4" class="collapse" data-parent="#faq-list">
+                            <p>
+                               Yes. Sure. Sí. हाँ. Absolutely, accomodation will be provided in the college itself for 24-26th January, we'll make sure you don't go back empty stomach.
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <a data-toggle="collapse" href="#faq5" class="collapsed">What is the selection criteria? <i class="fa fa-minus-circle"></i></a>
+                        <div id="faq5" class="collapse" data-parent="#faq-list">
+                            <p>
+                                We are looking for people who innovate and can build crazy, unique solutions to real-world problems. Tell us why you want to be a part of HackVerse, any accomplishments you are proud of and anything else which could strengthen your application.
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <a data-toggle="collapse" href="#faq6" class="collapsed">How big can a team be? <i class="fa fa-minus-circle"></i></a>
+                        <div id="faq6" class="collapse" data-parent="#faq-list">
+                            <p>
+                                You can form teams of up to 3 people. Most teams aim to have a mix of people with both design and developer skills.
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <a data-toggle="collapse" href="#faq7" class="collapsed">Will travel reimbursements be provided?<i class="fa fa-minus-circle"></i></a>
+                        <div id="faq7" class="collapse" data-parent="#faq-list">
+                            <p>
+                                Yes! Travel allowance will be given in the form of reimbursements. For details please read the Terms &amp; Condtions carefully.
+                            </p>
+                        </div>
+                    </li> 
+                </ul>
+            </div>
+
+            <div class="col-lg-6">
+                <ul id="faq2-list">
+                    <li>
+                        <a data-toggle="collapse" href="#faq8" class="collapsed">What should I do if I do not have any team yet? <i class="fa fa-minus-circle"></i></a>
+                        <div id="faq8" class="collapse" data-parent="#faq-list">
+                            <p>
+                                Just fill out the application form and we will match you with the best team possible on site. You could also join our Telegram group to find potential teammates.
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <a data-toggle="collapse" href="#faq9" class="collapsed">What are the perks of participating in this hackathon? <i class="fa fa-minus-circle"></i></a>
+                        <div id="faq9" class="collapse" data-parent="#faq-list">
+                            <p>
+                                The hackathon will instantly increase your knowledge and skill level and will serve as a platform to socialize with the tech community. Cash prizes and other perks are in store for the winners and cool swag for all participants. 
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <a data-toggle="collapse" href="#faq10" class="collapsed">Once accepted, what should I bring? <i class="fa fa-minus-circle"></i></a>
+                        <div id="faq10" class="collapse" data-parent="#faq2-list">
+                            <p>
+                                Bring your student ID, laptop and chargers. A pillow and sleeping bag may be useful as well. Please leave anything illegal at home.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a data-toggle="collapse" href="#faq11" class="collapsed">Can I participate without a computer science
+                            background?<i class="fa fa-minus-circle"></i></a>
+                        <div id="faq11" class="collapse" data-parent="#faq2-list">
+                            <p>
+                                Yes. Creativity is independent of your technical skills. You can learn the tools and
+                                technologies anytime.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a data-toggle="collapse" href="#faq12" class="collapsed">Are there any problem statements for the hackathon? <i class="fa fa-minus-circle"></i></a>
+                        <div id="faq12" class="collapse" data-parent="#faq2-list">
+                            <p>We believe being forced to build on problem statements limits creativity and participants should have the freedom to express their creativity. Near the hackathon, we'll release the APIs you could build on and some sample problem statements in case needed.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a data-toggle="collapse" href="#faq13" class="collapsed">Can I start working on my hack before the event? <i class="fa fa-minus-circle"></i></a>
+                        <div id="faq13" class="collapse" data-parent="#faq2-list">
+                            <p>
+                                No. In the interest of fairness, students should not be working on their projects before the hackathon begins and we do not allow participants to work on pre-existing projects. However, you can familiarize yourself with all the tools and technologies you intend to use beforehand.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a data-toggle="collapse" href="#faq14" class="collapsed">Still got questions?<i class="fa fa-minus-circle"></i></a>
+                        <div id="faq14" class="collapse" data-parent="#faq2-list">
+                            <p>
+                                Please join our Telegram Channel: @hackverse, and ask your question, one of the organizers will get in touch with you.
+                            </p>
+                        </div>
+                    </li> 
+                                     
+                </ul>
+            </div>
+            <!-- </div> -->
+
+        </div>
+
     </section>
 
+    <!-- Our Ticket Pricing Table Area Start -->
+    <!-- <section class="our-ticket-pricing-table-area bg-img bg-gradient-overlay section-padding-100-0 jarallax" style="">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading text-center wow fadeInUp" data-wow-delay="300ms">
+                        <h4>Prizes</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-lg-4">
+                    <div class="single-ticket-pricing-table text-center mb-100 wow fadeInUp" data-wow-delay="300ms">
+                        <h6 class="ticket-plan">1st Prize</h6>
+                        <div class="ticket-icon">
+                            <img src="img/core-img/p1.png' %}" alt="">
+                        </div>
+                        <h2 class="ticket-price"><span>₹</span>1 Lakh</h2>
+                        <a href="#" class="btn confer-btn w-100 mb-30">Get Tickets <i class="zmdi zmdi-long-arrow-right"></i></a>
+                        <div class="ticket-pricing-table-details">
+                            <p><i class="zmdi zmdi-check"></i> One Day Conference Ticket</p>
+                            <p><i class="zmdi zmdi-check"></i> Coffee-break</p>
+                            <p><i class="zmdi zmdi-check"></i> Lunch and Networking</p>
+                            <p><i class="zmdi zmdi-check"></i> Keynote talk</p>
+                            <p><i class="zmdi zmdi-check"></i> Talk to the Editors Session</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-4">
+                    <div class="single-ticket-pricing-table text-center mb-100 wow fadeInUp" data-wow-delay="300ms">
+                        <h6 class="ticket-plan">2nd Prize</h6>
+                        <div class="ticket-icon">
+                            <img src="img/core-img/p1.png' %}" alt="">
+                        </div>
+                        <h2 class="ticket-price"><span>₹</span>60,000</h2>
+                        <a href="#" class="btn confer-btn w-100 mb-30">Get Tickets <i class="zmdi zmdi-long-arrow-right"></i></a>
+                        <div class="ticket-pricing-table-details">
+                            <p><i class="zmdi zmdi-check"></i> One Day Conference Ticket</p>
+                            <p><i class="zmdi zmdi-check"></i> Coffee-break</p>
+                            <p><i class="zmdi zmdi-check"></i> Lunch and Networking</p>
+                            <p><i class="zmdi zmdi-check"></i> Keynote talk</p>
+                            <p><i class="zmdi zmdi-check"></i> Talk to the Editors Session</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-4">
+                    <div class="single-ticket-pricing-table text-center mb-100 wow fadeInUp" data-wow-delay="300ms">
+                        <h6 class="ticket-plan">3rd Prize</h6>
+                        <div class="ticket-icon">
+                            <img src="img/core-img/p1.png' %}" alt="">
+                        </div>
+                        <h2 class="ticket-price"><span>₹</span>40,000</h2>
+                        <a href="#" class="btn confer-btn w-100 mb-30">Get Tickets <i class="zmdi zmdi-long-arrow-right"></i></a>
+                        <div class="ticket-pricing-table-details">
+                            <p><i class="zmdi zmdi-check"></i> One Day Conference Ticket</p>
+                            <p><i class="zmdi zmdi-check"></i> Coffee-break</p>
+                            <p><i class="zmdi zmdi-check"></i> Lunch and Networking</p>
+                            <p><i class="zmdi zmdi-check"></i> Keynote talk</p>
+                            <p><i class="zmdi zmdi-check"></i> Talk to the Editors Session</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+        </div>
+    </section>   -->
 
 
-{% endblock %}
+    
+    <!-- Our Sponsor And Client Area End -->
+
+    <!-- Our Blog Area Start -->
+    <!-- <section class="our-blog-area bg-img bg-gradient-overlay section-padding-100-60" >
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading text-center wow fadeInUp" data-wow-delay="300ms">
+                        <h2>Why should I attend ?</h2>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="single-blog-area wow fadeInUp" data-wow-delay="300ms">
+                        <div class="single-blog-thumb">
+                            <img src="img/bg-img/18.jpg" alt="">
+                        </div>
+                        <div class="single-blog-text text-center">
+                            <h4 style="color: slateblue;">To make new Friends</h4>
+
+                            <p>Hackathons provide an excellent opportunity for you to build professional contacts and make new friends. With over 100 developers and designers gathering from all over the country, grab your chance of connecting with people to discuss ideas and opportunities.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                        <div class="single-blog-area wow fadeInUp" data-wow-delay="300ms">
+                            <div class="single-blog-thumb">
+                                <img src="img/bg-img/18.jpg" alt="">
+                            </div>
+                            <div class="single-blog-text text-center">
+                                <h4 style="color: slateblue;">To Learn</h4>
+
+                                <p>Hackathons help you learn new skills. If you’re newer to programming, you’ll learn how to create a project from scratch, buff out the problems, and present to a panel of judges. Even if you’re already a coding pro, you have an opportunity to enhance your team collaboration and presentation skills.
+    
+                                    </p>
+                            </div>
+
+                        </div>
+                    </div>
+            </div>
+
+        </div>
+    </section> -->
+    <!-- Our Blog Area End -->
+
+    <!-- Contact Area Start -->
+    <!-- <section class="contact-our-area section-padding-100-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading-2 text-center wow fadeInUp" data-wow-delay="300ms">
+                        <p>Have Question?</p>
+                        <h4>Contact us</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-between">
+                <div class="col-12 col-sm-3">
+                    <div class="contact-information mb-100">
+                        <div class="single-contact-info wow fadeInUp" data-wow-delay="300ms">
+                            <p>Address:</p>
+                            <h6>184 Main Collins Street</h6>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-8">
+                    <div class="contact_from_area mb-100 clearfix wow fadeInUp" data-wow-delay="300ms">
+                        <div class="contact_form">
+                            <form action="mail.php" method="post" id="main_contact_form">
+                                <div class="contact_input_area">
+                                    <div id="success_fail_info"></div>
+                                    <div class="row">
+                                        <div class="col-12 col-lg-6">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control mb-30" name="name" id="name" placeholder="Your Name">
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-lg-6">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control mb-30" name="name" id="name2" placeholder="Last Name">
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-lg-6">
+                                            <div class="form-group">
+                                                <input type="email" class="form-control mb-30" name="email" id="email" placeholder="E-mail">
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-lg-6">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control mb-30" name="subject" id="subject" placeholder="Your Number">
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-group">
+                                                <textarea name="message" class="form-control mb-30" id="message" cols="30" rows="6" placeholder="Your Message *"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <button type="submit" class="btn confer-btn">Send Message <i class="zmdi zmdi-long-arrow-right"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <!-- Contact Area End -->
+
+    <!-- Footer Area Start -->
+    <footer id="footer" class="footer-area bg-img bg-overlay-2 section-padding-100-0">
+        <div class="main-footer-area">
+            <div class="container">
+                <div class="row">
+                    <!-- Single Footer Widget Area -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget mb-60 wow fadeInUp" data-wow-delay="300ms">
+                            <!-- Footer Logo -->
+                            <a href="#" class="footer-logo"><img style="height: auto;width: auto;max-height: 72px;max-width: 200px;" src="img/Text-Logo.png' %}" alt="HackVerse"></a>
+                            <p>Hack it till you crack it!</p>
+
+                            <!-- Social Info -->
+                            <div class="social-info">
+                                <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/hackverse/"><i class="zmdi zmdi-facebook"></i></a>
+                                <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/hackversenitk/"><i class="zmdi zmdi-instagram"></i></a>
+                                <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/hackversenitk/"><i class="zmdi zmdi-twitter"></i></a>
+                                <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/hackverse/"><i class="zmdi zmdi-linkedin"></i></a>
+                                <a target="_blank" rel="noopener noreferrer" href="https://t.me/hackverse"><i class="fa fa-telegram" aria-hidden="true"></i></a>                            
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Single Footer Widget Area -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget mb-60 wow fadeInUp" data-wow-delay="300ms">
+                            <!-- Widget Title -->
+                            <h5 class="widget-title">Contact</h5>
+
+                            <!-- Contact Area -->
+                            <div class="footer-contact-info">
+                                <p><i class="zmdi zmdi-pin"></i><a style="color:#9293bc" href="https://goo.gl/maps/86DJCMqtYdhVFNgA8" target="_blank">National Institute of Technology Karnataka, Surathkal</a></p>
+                                <p><i class="zmdi zmdi-email"></i><a style="color:#9293bc" href="mailto:hackverse@nitk.edu.in" target="_blank">hackverse@nitk.edu.in</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Single Footer Widget Area -->
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="single-footer-widget mb-60 wow fadeInUp" data-wow-delay="300ms">
+                            
+                            <h5 class="widget-title">Campus</h5>
+
+                            
+                            <div class="footer-gallery">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <a href="{% static 'img/idpimg/nitk/01.jpg" class="single-gallery-item"><img src="{% static 'img/idpimg/nitk/01.jpg" alt="NITK, Surathkal"></a>
+                                    </div>
+                                    <div class="col-4">
+                                        <a href="{% static 'img/idpimg/nitk/02.jpg" class="single-gallery-item"><img src="{% static 'img/idpimg/nitk/02.jpg" alt="NITK, Surathkal"></a>
+                                    </div>
+                                    <div class="col-4">
+                                        <a href="{% static 'img/idpimg/nitk/03.jpg" class="single-gallery-item"><img src="{% static 'img/idpimg/nitk/03.jpg" alt="NITK, Surathkal"></a>
+                                    </div>
+                                    <div class="col-4">
+                                        <a href="{% static 'img/idpimg/nitk/04.jpg" class="single-gallery-item"><img src="{% static 'img/idpimg/nitk/04.jpg" alt="NITK, Surathkal"></a>
+                                    </div>
+                                    <div class="col-4">
+                                        <a href="{% static 'img/idpimg/nitk/05.jpg" class="single-gallery-item"><img src="{% static 'img/idpimg/nitk/05.jpg" alt="NITK, Surathkal"></a>
+                                    </div>
+                                    <div class="col-4">
+                                        <a href="{% static 'img/idpimg/nitk/06.jpg" class="single-gallery-item"><img src="{% static 'img/idpimg/nitk/06.jpg" alt="NITK, Surathkal"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copywrite Area -->
+        <div class="container">
+            <div class="copywrite-content">
+                <div class="row">
+                    <!-- Copywrite Text -->
+                    <div class="col-12 col-md-6">
+                        <div class="copywrite-text">
+                            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://hackverse.nitk.ac.in" target="_blank">HackVerse Team</a> &amp; <a href="https://colorlib.com" target="_blank">Colorlib</a>
+</p>
+                        </div>
+                    </div>
+                    <!-- Footer Menu -->
+                    <div class="col-12 col-md-6">
+                        <div class="footer-menu">
+                            <ul class="nav">
+                                <li><a target="_blank" rel="noopener noreferrer" href="/docs/HackVerse Terms&Conditions.pdf"><i class="zmdi zmdi-circle"></i>Terms & Conditions</a></li>
+                                <li><a target="_blank" rel="noopener noreferrer" href="https://devfolio.co/code-of-conduct"><i class="zmdi zmdi-circle"></i> Code of Conduct</a></li>
+                                <!-- <li><a href="#"><i class="zmdi zmdi-circle"></i> Privacy Policy</a></li> -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Footer Area End -->
+
+    <!-- **** All JS Files ***** -->
+    <!-- jQuery 2.2.4 -->
+    <script src="{% static '/js/idpjs/jquery.min.js' %}"></script>
+    <!-- Popper -->
+    <script src="{% static 'js/idpjs/popper.min.js' %}"></script>
+    <!-- Bootstrap -->
+    <script src="{% static 'js/idpjs/bootstrap.min.js' %}"></script>
+    <!-- All Plugins -->
+    <script src="{% static 'js/idpjs/confer.bundle.js' %}"></script>
+    <!-- Active -->
+    <script src="{% static 'js/idpjs/default-assets/active.js' %}"></script>
+    <script src="https://use.fontawesome.com/940386bfc9.js' %}"></script>
+    <script>
+        var mobile = document.getElementById('mobile');
+        var desktop = document.getElementById('desktop');
+        var mobile_logo = document.getElementById('logo-mob');        
+        var desktop_logo = document.getElementById('logo-pc');
+
+        if(mobile != null ){
+            mobile.style.display = "none";
+        }
+
+        if(mobile_logo !=null){
+            mobile_logo.onclick = function(){
+                window.location.href = "https://nitk.ac.in"
+            } 
+            mobile_logo.style.display = "none";
+        }
+
+        if(desktop_logo != null){
+            desktop_logo.onclick = function(){
+                window.location.href = "https://nitk.ac.in"
+            }
+        }
+
+        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+            
+            if(mobile != null){
+                mobile.style.display = "block";
+                mobile.style.fontSize = ""
+            }
+
+            if(desktop != null){
+                desktop.style.display = "none";
+            }
+
+            if(mobile_logo != null){
+                mobile_logo.style.display = "block";
+            }
+
+            if(desktop_logo != null){
+                desktop_logo.style.display = "none";
+            }
+
+            var about = document.getElementById('about');
+            if(about != null){
+                var about_sections = [...about.getElementsByClassName('row align-items-center')];
+                about_sections.map((section) => {
+                    section.style.display = "flex";
+                    section.style.justifyContent = "center";
+
+                    var h3_tag = section.querySelector('h3.wow.fadeInUp');
+                    if(h3_tag != null){
+                        h3_tag.style.display = "flex";
+                        h3_tag.style.justifyContent = "center";
+                    }
+                    var content = section.querySelector('p.wow.fadeInUp');
+                    if(content != null) {
+                        content.style.textAlign = "center";
+                    }
+                });
+
+            }
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            let devfolioOptions = {
+                buttonSelector: '#devfolio-apply-now',
+                key: 'hackverse',
+            }
+
+            let script = document.createElement('script');
+            script.src = "https://apply.devfolio.co";
+            document.head.append(script);
+
+            script.onload = function () {
+                new Devfolio(devfolioOptions);
+            }
+
+            script.onerror = function () {
+                document.querySelector(devfolioOptions.buttonSelector).addEventListener('click', function () {
+                    window.location.href = 'https://devfolio.co/external-apply/' + devfolioOptions.key;
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
