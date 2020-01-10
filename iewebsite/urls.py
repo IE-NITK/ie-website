@@ -22,9 +22,6 @@ from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
-                  # delete
-                  path('404/', TemplateView.as_view(template_name='404.html'), name='404'),
-                  # 
                   path('admin/', admin.site.urls),
                   path('', TemplateView.as_view(template_name='index.html'), name='home'),
                   path('workshop/', TemplateView.as_view(template_name='sixth-sense-workshop.html'), name='workshop'),
