@@ -37,8 +37,8 @@ h1 {
   font-size: 46px;
 }
 h2::first-letter { 
-  color: #000000;
-}
+  font-size: 180%;
+  }
 
 h2 {
   font-size: 36px;
