@@ -11,9 +11,9 @@
 
     <link rel="icon" href="{% static 'img/favicon.ico' %}" title="IE NITK">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700|Open+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/styles-merged.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'css/styles-merged.css' %}"> -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'css/custom.css' %}"> -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
         integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
@@ -33,7 +33,45 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="{% static 'css/idp.css' %}">
+        <style>
+ .dropdown {
+  position: relative;
+  display: inline-block;
+}
 
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+        </style>
+    
     <!-- <script type="application/ld+json">
         {
             "@context": "http://schema.org",
@@ -466,17 +504,62 @@
                                     </div>
                                     <div class="container">
                                         <div class="row">
+                                            
                                             <div class="more-schedule-btn text-center mt-50 wow fadeInUp col-sm"
                                                 data-wow-delay="300ms">
-                                                <a href="https://drive.google.com/open?id=1-6e97AX_NswxICQCjOSfff896YqcRbkG"
+                                                <a href="{% static 'media/idp/Brochure.pdf' %}"
                                                     class="btn confer-gb-btn" target="_blank">BROCHURE</a>
                                             </div>
+                                                
+                                                
+                                                
                                             <!-- <div class="more-schedule-btn text-center mt-50 wow fadeInUp col-sm"
                                                 data-wow-delay="300ms">
                                                 <a href="https://drive.google.com/drive/u/0/folders/147QZvnHRYrM6IWnmsRaeOFiRlq4q6Avz"
                                                     class="btn confer-gb-btn" target="_blank">Problem Statement</a>
                                             </div> -->
                                         </div>
+                                        <!-- <div class="row">
+                                            <div style= "align-self: center;" class="dropdown col-sm">
+                                                <button class="confer-gb-btn text-center">Dropdown</button>
+                                                <div class="dropdown-content">
+                                                  <a href="#">Link 1</a>
+                                                  <a href="#">Link 2</a>
+                                                  <a href="#">Link 3</a>
+                                                </div>
+                                              </div>
+                                        </div> -->
+                                    </div>
+                                    <div  style="text-align: center" class="container">
+                                        <div style="display: inline-block;" class="row">
+                                            
+                                            <div  class="dropdown mt-50 wow fadeInUp" data-wow-delay="300ms">
+                                                <button class="confer-gb-btn">Dropdown</button>
+                                                <div class="dropdown-content">
+                                                  <a href="#">Link 1</a>
+                                                  <a href="#">Link 2</a>
+                                                  <a href="#">Link 3</a>
+                                                </div>
+                                            </div>
+                                                
+                                                
+                                                
+                                            <!-- <div class="more-schedule-btn text-center mt-50 wow fadeInUp col-sm"
+                                                data-wow-delay="300ms">
+                                                <a href="https://drive.google.com/drive/u/0/folders/147QZvnHRYrM6IWnmsRaeOFiRlq4q6Avz"
+                                                    class="btn confer-gb-btn" target="_blank">Problem Statement</a>
+                                            </div> -->
+                                        </div>
+                                        <!-- <div class="row">
+                                            <div style= "align-self: center;" class="dropdown col-sm">
+                                                <button class="confer-gb-btn text-center">Dropdown</button>
+                                                <div class="dropdown-content">
+                                                  <a href="#">Link 1</a>
+                                                  <a href="#">Link 2</a>
+                                                  <a href="#">Link 3</a>
+                                                </div>
+                                              </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -515,7 +598,7 @@
                                                 </div>
                                             </div>
                                             <div class="schedule-time-place">
-                                                <p><i class="fas fa-clock"></i> 21st & 22nd March</p>
+                                                <p><i class="fas fa-clock"></i>21st & 22nd March</p>
 
                                             </div>
                                         </div>
@@ -526,7 +609,7 @@
                                     <div class="col-12">
                                         <div class="more-schedule-btn text-center mt-50 wow fadeInUp"
                                             data-wow-delay="300ms">
-                                            <a href="https://drive.google.com/open?id=1-6e97AX_NswxICQCjOSfff896YqcRbkG"
+                                            <a href="{% static 'media/idp/Brochure.pdf' %}"
                                                 class="btn confer-gb-btn" target="_blank">BROCHURE </a>
                                         </div>
                                     </div>
