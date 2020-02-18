@@ -56,7 +56,9 @@ body {
   z-index: auto;
   margin: 0; 
 }
-
+h2::first-letter { 
+  font-size: 180%;
+  }
 h1,
 h2,
 h3,
@@ -707,6 +709,8 @@ input:required {
     .confer-gb-btn:hover::after, .confer-gb-btn:focus::after {
       opacity: 0; }
 
+        /* The container <div> - needed to position the dropdown content */
+        
 /* :: 7.0 Header Area CSS */
 .classy-nav-container {
   /* background color for header */
@@ -2923,8 +2927,3 @@ svg path {
   fill: #fff !important;
 }
 
-/* .our-blog-area .bg-img .bg-gradient-overlay .section-padding-100-60{
-  background: white !important;
-  background-image: none !important;
-} */
-/*# sourceMappingURL=style.css.map */
