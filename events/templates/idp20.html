@@ -46,23 +46,29 @@
   background-color: #f9f9f9;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
+  z-index: 100;
 }
 
 /* Links inside the dropdown */
 .dropdown-content a {
+    display: inline;
   color: black;
-  padding: 12px 16px;
+  padding: 8px 16px;
+  position: relative;
   text-decoration: none;
   display: block;
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #f1f1f1}
+.dropdown-content a:hover {background-color: #df42b1}
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
   display: block;
+  position: absolute;
+  margin-left: 20px;
+  
+  
 }
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
@@ -526,7 +532,15 @@
                                                 <a href="{% static 'media/idp/Brochure.pdf' %}"
                                                     class="btn confer-gb-btn" target="_blank">BROCHURE</a>
                                             </div>
-                                                
+                                            <!-- <div  class="dropdown mt-50 col-sm" data-wow-delay="300ms">
+                                                <button class="confer-gb-btn">Problem Statements</button>
+                                                <div class="dropdown-content">
+                                                  <a href="#">Chemical</a>
+                                                  <a href="#">Civil</a>
+                                                  <a href="#">Mechanical</a>
+                                                  <a href="#">Metallurgical</a>
+                                                </div>
+                                            </div> -->
                                                 
                                                 
                                             <!-- <div class="more-schedule-btn text-center mt-50 wow fadeInUp col-sm"
@@ -596,12 +610,46 @@
 
                                     </div>
 
-                                    <div class="col-12">
-                                        <div class="more-schedule-btn text-center mt-50 wow fadeInUp"
-                                            data-wow-delay="300ms">
-                                            <a href="{% static 'media/idp/Brochure.pdf' %}"
-                                                class="btn confer-gb-btn" target="_blank">BROCHURE </a>
+                                    <div class="container">
+                                        <div class="row">
+                                            
+                                            <div class="more-schedule-btn text-center mt-50 wow fadeInUp col-sm"
+                                                data-wow-delay="300ms">
+                                                <a href="{% static 'media/idp/Brochure.pdf' %}"
+                                                    class="btn confer-gb-btn" target="_blank">BROCHURE</a>
+                                            </div>
+                                            <!-- <div  class="dropdown mt-50 col-sm" data-wow-delay="300ms">
+                                                <button class="confer-gb-btn">Problem Statements</button>
+                                                <div class="dropdown-content">
+                                                  <a href="#">Chemical</a>
+                                                  <a href="#">Civil</a>
+                                                  <a href="#">Mechanical</a>
+                                                  <a href="#">Metallurgical</a>
+                                                </div>
+                                            </div> -->
+                                                
+                                                
+                                            <!-- <div class="more-schedule-btn text-center mt-50 wow fadeInUp col-sm"
+                                                data-wow-delay="300ms">
+                                                <a href="https://drive.google.com/drive/u/0/folders/147QZvnHRYrM6IWnmsRaeOFiRlq4q6Avz"
+                                                    class="btn confer-gb-btn" target="_blank">Problem Statement</a>
+                                            </div> -->
                                         </div>
+                                    </div>
+                                    <div  style="text-align: center" class="container">
+                                        <div style="display: inline-block;" class="row">
+                                            
+                                            <div  class="dropdown mt-50 wow fadeInUp" data-wow-delay="300ms">
+                                                <button class="confer-gb-btn">Problem Statements</button>
+                                                <div class="dropdown-content">
+                                                  <a href="#">Chemical</a>
+                                                  <a href="#">Civil</a>
+                                                  <a href="#">Mechanical</a>
+                                                  <a href="#">Metallurgical</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
                                     </div>
                                 </div>
                             </div>
