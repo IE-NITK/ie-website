@@ -5,9 +5,11 @@ def view_events(request):
     return render(request, 'events.html')
 
 
-def smp(request):
-    return render(request, 'smp.html')
+def smp2019(request):
+    return render(request, 'smp2019.html')
 
+def smp2020(request):
+    return render(request, 'smp2020.html')
 
 def hackverse(request):
     return render(request, 'hackverse.html')
