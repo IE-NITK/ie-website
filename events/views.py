@@ -13,3 +13,6 @@ def smp2020(request):
 
 def hackverse(request):
     return render(request, 'hackverse.html')
+
+def virtual_expo(request):
+    return render(request, 'virtual_expo.html')
