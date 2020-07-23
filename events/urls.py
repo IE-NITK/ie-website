@@ -13,4 +13,5 @@ urlpatterns = [
     path('smp2019/', views.smp2019, name='smp2019'),
     path('smp2020/', views.smp2020, name='smp2020'),
     path('hackverse/', views.hackverse, name='hackverse')
+    path('virtual-expo/', views.virtual_expo, name='virtual_expo')
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
