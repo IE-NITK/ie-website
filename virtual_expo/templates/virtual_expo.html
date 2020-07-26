@@ -1,386 +1,465 @@
 {% extends "base.html" %}
-{% block smp %}active{% endblock %}
+{% load static %}
+{% block virtual_expo %}active{% endblock %}
 {% block main %}
 
 
-    <section class="probootstrap-section probootstrap-section-colored">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-left section-heading probootstrap-animate">
-                    <h1>Virtual Expo</h1>
-                    <!-- <p>
+<section class="probootstrap-section probootstrap-section-colored">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-left section-heading probootstrap-animate">
+                <h1>Virtual Expo</h1>
+                <!-- <p>
                         <a href="https://docs.google.com/forms/d/e/1FAIpQLSfTTi8gRz22ls6MPyiG3qVczV09MaEMQHajrx8WDY_e7_DZ4A/viewform?embedded=true"
                            class="btn btn-primary" target="_blank">Register Now!</a>
                     </p> -->
-                </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
 
 
-    <section class="probootstrap-section probootstrap-section-sm">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="row probootstrap-gutter0">
-                        <div class="col-md-4" id="probootstrap-sidebar">
-                            <div class="probootstrap-sidebar-inner probootstrap-overlap probootstrap-animate">
-                                <h3></h3>
-                                <ul class="probootstrap-side-menu">
-                                    <li class="tablinks active core"><a onclick="return navigate('smp-home')">Home</a>
-                                    </li>
-                                    <li class="tablinks code"><a onclick="return navigate('code')">Code</a></li>
-                                    <li class="tablinks gadget"><a onclick="return navigate('gadget')">Gadget</a></li>
+<section class="probootstrap-section probootstrap-section-sm">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row probootstrap-gutter0">
+                    <div class="col-md-4" id="probootstrap-sidebar">
+                        <div class="probootstrap-sidebar-inner probootstrap-overlap probootstrap-animate">
+                            <h3></h3>
+                            <ul class="probootstrap-side-menu">
+                                <li class="tablinks active core"><a onclick="return navigate('smp-home')">Home</a>
+                                </li>
+                                <li class="tablinks code"><a onclick="return navigate('code')">Code</a></li>
+                                <!-- <li class="tablinks gadget"><a onclick="return navigate('gadget')">Gadget</a></li>
                                     <li class="tablinks garage"><a onclick="return navigate('garage')">Garage</a></li>
                                     <li class="tablinks robotics"><a onclick="return navigate('robotics')">Robotics</a>
-                                    <!-- <li class="tablinks media"><a onclick="return navigate('media')">Media</a> -->
+                                     <li class="tablinks media"><a onclick="return navigate('media')">Media</a> 
                                     <li class="tablinks capital"><a onclick="return navigate('capital')">Capital</a>
-                                    <li class="tablinks script"><a onclick="return navigate('script')">Script</a>
-                                    </li>
-                                </ul>
-                            </div>
+                                    <li class="tablinks script"><a onclick="return navigate('script')">Script</a> -->
+                                </li>
+                            </ul>
                         </div>
-                        <div class="col-md-7 col-md-push-1 probootstrap-animate teams" id="smp-home">
-                            <section class="probootstrap-section">
-                                <div class="container" style="width: 100%;">
-                                    <div class="col-sm-12">
-                                        <div class="probootstrap-teacher text-center probootstrap-animate"
-                                             style="min-height: 220px">
-                                            <div class="text" style="word-wrap: break-word;">
-                                                <h6><b>“Engineering” means “making things happen”.<br><br>
+                    </div>
+                    <div class="col-md-7 col-md-push-1 probootstrap-animate teams" id="smp-home">
+                        <section class="probootstrap-section">
+                            <div class="container" style="width: 100%;">
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 220px">
+                                        <div class="text" style="word-wrap: break-word;">
+                                            <h6><b>“Engineering” means “making things happen”.<br><br>
                                                     <i>Projects we have completed demonstrate what we know <br>
                                                         future projects decide what we learn.</i>
-                                                    <br>
-                                                    <br>
+                                            </h6>
 
-                                                    </h6>
-                                                <p>
-                                                    <a class="typeform-share button" href="https://ie-smp.typeform.com/to/UUQLxD" data-mode="popup" style="display:inline-block;text-decoration:none;background-color:#6A41ED;color:white;cursor:pointer;font-family:Helvetica,Arial,sans-serif;font-size:20px;line-height:50px;text-align:center;margin:0;height:50px;padding:0px 33px;border-radius:25px;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:bold;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;" data-submit-close-delay="5" target="_blank">Register here </a> <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="col-md-7 col-md-push-1 probootstrap-animate teams" id="code">
+                        <h2>Code</h2>
+                        <section class="probootstrap-section">
+                            <div class="container" style="width: 100%;">
+
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px">
+                                        <div class="card">
+                                            <img class="card-img-top" style="width: 100%;"
+                                                src="{% static 'img/virtual-expo/CrowdCounting.jpeg'%}"
+                                                alt="Card image cap">
+                                            <div class="card-header">
+                                                <h3>Crowd Counting</h3>
+                                            </div>
+                                            <div class="card-body">
+
+                                                <a href="{% url 'virtual_expo:crowd-counting' %}"
+                                                    class="btn btn-primary">Read more</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </section>
-                        </div>
 
-                        <div class="col-md-7 col-md-push-1 probootstrap-animate teams" id="code">
-                            <h2>Code</h2>
-                            <section class="probootstrap-section">
-                                <div class="container" style="width: 100%;">
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px">
+                                        <div class="card">
+                                            <img class="card-img-top" style="width: 100%;"
+                                                src="{% static 'img/virtual-expo/isl.jpg'%}" alt="Card image cap">
+                                            <div class="card-header">
+                                                <h3>Indian Sign Language Recogniser</h3>
+                                            </div>
+                                            <div class="card-body">
 
-                                    <div class="col-sm-12">
-                                        <div class="probootstrap-teacher text-center probootstrap-animate"
-                                            style="min-height: 170px">
-                                            <div class="card" style="width: 35rem;">
-                                                <img class="card-img-top" src="..." alt="Card image cap">
-                                                <div class="card-header">Project Title</div>
-                                                <div class="card-body">
-                                                    <p class="card-text">Info regarding the project. Not too detailed.</p>
-                                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                                </div>
+                                                <a href="{% url 'virtual_expo:indian-sign-lang-interpretor' %}"
+                                                    class="btn btn-primary">Read more</a>
                                             </div>
                                         </div>
                                     </div>
-
-                                    <div class="col-sm-12">
-                                        <div class="probootstrap-teacher text-center probootstrap-animate"
-                                            style="min-height: 170px">
-                                            <div class="card" style="width: 35rem;">
-                                                <img class="card-img-top" src="..." alt="Card image cap">
-                                                <div class="card-header">Project Title</div>
-                                                <div class="card-body">
-                                                    <p class="card-text">Info regarding the project. Not too detailed.</p>
-                                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-sm-12">
-                                        <div class="probootstrap-teacher text-center probootstrap-animate"
-                                            style="min-height: 170px">
-                                            <div class="card" style="width: 35rem;">
-                                                <img class="card-img-top" src="..." alt="Card image cap">
-                                                <div class="card-header">Project Title</div>
-                                                <div class="card-body">
-                                                    <p class="card-text">Info regarding the project. Not too detailed.</p>
-                                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-sm-12">
-                                        <div class="probootstrap-teacher text-center probootstrap-animate"
-                                            style="min-height: 170px">
-                                            <div class="card" style="width: 35rem;">
-                                                <img class="card-img-top" src="..." alt="Card image cap">
-                                                <div class="card-header">Project Title</div>
-                                                <div class="card-body">
-                                                    <p class="card-text">Info regarding the project. Not too detailed.</p>
-                                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-sm-12">
-                                        <div class="probootstrap-teacher text-center probootstrap-animate"
-                                            style="min-height: 170px">
-                                            <div class="card" style="width: 35rem;">
-                                                <img class="card-img-top" src="..." alt="Card image cap">
-                                                <div class="card-header">Project Title</div>
-                                                <div class="card-body">
-                                                    <p class="card-text">Info regarding the project. Not too detailed.</p>
-                                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
                                 </div>
-                            </section>
-                        </div>
 
-                        <div class="col-md-7 col-md-push-1 probootstrap-animate teams" id="gadget">
-                            <h2>Gadget</h2>
-                            <section class="probootstrap-section">
-                                <div class="container" style="width: 100%;">
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px">
+                                        <div class="card">
+                                            <img class="card-img-top" style="width: 100%;"
+                                                src="{% static 'img/virtual-expo/ImageCaptioning.jpeg'%}"
+                                                alt="Card image cap">
+                                            <div class="card-header">
+                                                <h3>Image Captioning</h3>
+                                            </div>
+                                            <div class="card-body">
 
-                                    <div class="col-sm-12">
-                                        <div class="probootstrap-teacher text-center probootstrap-animate"
-                                            style="min-height: 170px">
-                                            <div class="card" style="width: 35rem;">
-                                                <img class="card-img-top" src="..." alt="Card image cap">
-                                                <div class="card-header">Project Title</div>
-                                                <div class="card-body">
-                                                    <p class="card-text">Info regarding the project. Not too detailed.</p>
-                                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                                </div>
+                                                <a href="{% url 'virtual_expo:image_captioning' %}"
+                                                    class="btn btn-primary">Read more</a>
                                             </div>
                                         </div>
                                     </div>
-
-                                    <div class="col-sm-12">
-                                        <div class="probootstrap-teacher text-center probootstrap-animate"
-                                            style="min-height: 170px">
-                                            <div class="card" style="width: 35rem;">
-                                                <img class="card-img-top" src="..." alt="Card image cap">
-                                                <div class="card-header">Project Title</div>
-                                                <div class="card-body">
-                                                    <p class="card-text">Info regarding the project. Not too detailed.</p>
-                                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-sm-12">
-                                        <div class="probootstrap-teacher text-center probootstrap-animate"
-                                            style="min-height: 170px">
-                                            <div class="card" style="width: 35rem;">
-                                                <img class="card-img-top" src="..." alt="Card image cap">
-                                                <div class="card-header">Project Title</div>
-                                                <div class="card-body">
-                                                    <p class="card-text">Info regarding the project. Not too detailed.</p>
-                                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-sm-12">
-                                        <div class="probootstrap-teacher text-center probootstrap-animate"
-                                            style="min-height: 170px">
-                                            <div class="card" style="width: 35rem;">
-                                                <img class="card-img-top" src="..." alt="Card image cap">
-                                                <div class="card-header">Project Title</div>
-                                                <div class="card-body">
-                                                    <p class="card-text">Info regarding the project. Not too detailed.</p>
-                                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-sm-12">
-                                        <div class="probootstrap-teacher text-center probootstrap-animate"
-                                            style="min-height: 170px">
-                                            <div class="card" style="width: 35rem;">
-                                                <img class="card-img-top" src="..." alt="Card image cap">
-                                                <div class="card-header">Project Title</div>
-                                                <div class="card-body">
-                                                    <p class="card-text">Info regarding the project. Not too detailed.</p>
-                                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
                                 </div>
-                            </section>
-                        </div>
 
-                        <div class="col-md-7 col-md-push-1 probootstrap-animate teams" id="garage">
-                            <h2>Garage</h2>
-                            <section class="probootstrap-section">
-                                <div class="container" style="width: 100%;">
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px">
+                                        <div class="card">
+                                            <img class="card-img-top" style="width: 100%;"
+                                                src="{% static 'img/virtual-expo/mood_based.jpeg'%}"
+                                                alt="Card image cap">
+                                            <div class="card-header">
+                                                <h3>Mood Based Movie Recommender</h3>
+                                            </div>
+                                            <div class="card-body">
 
-                                    <div class="col-sm-12">
-                                        <div class="probootstrap-teacher text-center probootstrap-animate"
-                                            style="min-height: 170px">
-                                            <div class="card" style="width: 35rem;">
-                                                <img class="card-img-top" src="..." alt="Card image cap">
-                                                <div class="card-header">Project Title</div>
-                                                <div class="card-body">
-                                                    <p class="card-text">Info regarding the project. Not too detailed.</p>
-                                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                                </div>
+                                                <a href="{% url 'virtual_expo:mood_based_movie_recommender' %}"
+                                                    class="btn btn-primary">Read more</a>
                                             </div>
                                         </div>
                                     </div>
-
-                                    <div class="col-sm-12">
-                                        <div class="probootstrap-teacher text-center probootstrap-animate"
-                                            style="min-height: 170px">
-                                            <div class="card" style="width: 35rem;">
-                                                <img class="card-img-top" src="..." alt="Card image cap">
-                                                <div class="card-header">Project Title</div>
-                                                <div class="card-body">
-                                                    <p class="card-text">Info regarding the project. Not too detailed.</p>
-                                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-sm-12">
-                                        <div class="probootstrap-teacher text-center probootstrap-animate"
-                                            style="min-height: 170px">
-                                            <div class="card" style="width: 35rem;">
-                                                <img class="card-img-top" src="..." alt="Card image cap">
-                                                <div class="card-header">Project Title</div>
-                                                <div class="card-body">
-                                                    <p class="card-text">Info regarding the project. Not too detailed.</p>
-                                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-sm-12">
-                                        <div class="probootstrap-teacher text-center probootstrap-animate"
-                                            style="min-height: 170px">
-                                            <div class="card" style="width: 35rem;">
-                                                <img class="card-img-top" src="..." alt="Card image cap">
-                                                <div class="card-header">Project Title</div>
-                                                <div class="card-body">
-                                                    <p class="card-text">Info regarding the project. Not too detailed.</p>
-                                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-sm-12">
-                                        <div class="probootstrap-teacher text-center probootstrap-animate"
-                                            style="min-height: 170px">
-                                            <div class="card" style="width: 35rem;">
-                                                <img class="card-img-top" src="..." alt="Card image cap">
-                                                <div class="card-header">Project Title</div>
-                                                <div class="card-body">
-                                                    <p class="card-text">Info regarding the project. Not too detailed.</p>
-                                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
                                 </div>
-                            </section>
-                        </div> 
 
-                        <div class="col-md-7 col-md-push-1 probootstrap-animate teams" id="robotics">
-                            <h2>Robotics</h2>
-                            <section class="probootstrap-section">
-                                <div class="container" style="width: 100%;">
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px">
+                                        <div class="card">
+                                            <img class="card-img-top" style="width: 100%;"
+                                                src="{% static 'img/virtual-expo/navigation_using_RL1.png'%}"
+                                                alt="Card image cap">
+                                            <div class="card-header">
+                                                <h3>Navigation using Reinforcement Learning</h3>
+                                            </div>
+                                            <div class="card-body">
 
-                                    <div class="col-sm-12">
-                                        <div class="probootstrap-teacher text-center probootstrap-animate"
-                                            style="min-height: 170px">
-                                            <div class="card" style="width: 35rem;">
-                                                <img class="card-img-top" src="..." alt="Card image cap">
-                                                <div class="card-header">Project Title</div>
-                                                <div class="card-body">
-                                                    <p class="card-text">Info regarding the project. Not too detailed.</p>
-                                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                                </div>
+                                                <a href="{% url 'virtual_expo:navigation_using_RL' %}"
+                                                    class="btn btn-primary">Read more</a>
                                             </div>
                                         </div>
                                     </div>
-
-                                    <div class="col-sm-12">
-                                        <div class="probootstrap-teacher text-center probootstrap-animate"
-                                            style="min-height: 170px">
-                                            <div class="card" style="width: 35rem;">
-                                                <img class="card-img-top" src="..." alt="Card image cap">
-                                                <div class="card-header">Project Title</div>
-                                                <div class="card-body">
-                                                    <p class="card-text">Info regarding the project. Not too detailed.</p>
-                                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-sm-12">
-                                        <div class="probootstrap-teacher text-center probootstrap-animate"
-                                            style="min-height: 170px">
-                                            <div class="card" style="width: 35rem;">
-                                                <img class="card-img-top" src="..." alt="Card image cap">
-                                                <div class="card-header">Project Title</div>
-                                                <div class="card-body">
-                                                    <p class="card-text">Info regarding the project. Not too detailed.</p>
-                                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-sm-12">
-                                        <div class="probootstrap-teacher text-center probootstrap-animate"
-                                            style="min-height: 170px">
-                                            <div class="card" style="width: 35rem;">
-                                                <img class="card-img-top" src="..." alt="Card image cap">
-                                                <div class="card-header">Project Title</div>
-                                                <div class="card-body">
-                                                    <p class="card-text">Info regarding the project. Not too detailed.</p>
-                                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-sm-12">
-                                        <div class="probootstrap-teacher text-center probootstrap-animate"
-                                            style="min-height: 170px">
-                                            <div class="card" style="width: 35rem;">
-                                                <img class="card-img-top" src="..." alt="Card image cap">
-                                                <div class="card-header">Project Title</div>
-                                                <div class="card-body">
-                                                    <p class="card-text">Info regarding the project. Not too detailed.</p>
-                                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
                                 </div>
-                            </section>
-                        </div>
 
-                        <!-- <div class="col-md-7 col-md-push-1 probootstrap-animate teams" id="media">
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px">
+                                        <div class="card">
+                                            <img class="card-img-top" style="width: 100%;"
+                                                src="{% static 'img/virtual-expo/semantic_segmentation.jpeg'%}"
+                                                alt="Card image cap">
+                                            <div class="card-header">
+                                                <h3>Semantic Segmentation</h3>
+                                            </div>
+                                            <div class="card-body">
+
+                                                <a href="{% url 'virtual_expo:semantic_segmentation' %}"
+                                                    class="btn btn-primary">Read more</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px">
+                                        <div class="card">
+                                            <img class="card-img-top" style="width: 100%;"
+                                                src="{% static 'img/virtual-expo/toll_cost_calculator.png'%}"
+                                                alt="Card image cap">
+                                            <div class="card-header">
+                                                <h3>Toll Cost Calculator</h3>
+                                            </div>
+                                            <div class="card-body">
+
+                                                <a href="{% url 'virtual_expo:toll_cost_calculator' %}"
+                                                    class="btn btn-primary">Read more</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px">
+                                        <div class="card">
+                                            <img class="card-img-top" style="width: 100%;"
+                                                src="{% static 'img/virtual-expo/ndn.png'%}"
+                                                alt="Card image cap">
+                                            <div class="card-header">
+                                                <h3>NDN</h3>
+                                            </div>
+                                            <div class="card-body">
+
+                                                <a href="{% url 'virtual_expo:NDN' %}"
+                                                    class="btn btn-primary">Read more</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="col-md-7 col-md-push-1 probootstrap-animate teams" id="gadget">
+                        <h2>Gadget</h2>
+                        <section class="probootstrap-section">
+                            <div class="container" style="width: 100%;">
+
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px">
+                                        <div class="card">
+                                            <img class="card-img-top" src="..." alt="Card image cap">
+                                            <div class="card-header">Project Title</div>
+                                            <div class="card-body">
+
+                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px">
+                                        <div class="card">
+                                            <img class="card-img-top" src="..." alt="Card image cap">
+                                            <div class="card-header">Project Title</div>
+                                            <div class="card-body">
+
+                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px">
+                                        <div class="card">
+                                            <img class="card-img-top" src="..." alt="Card image cap">
+                                            <div class="card-header">Project Title</div>
+                                            <div class="card-body">
+
+                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px">
+                                        <div class="card">
+                                            <img class="card-img-top" src="..." alt="Card image cap">
+                                            <div class="card-header">Project Title</div>
+                                            <div class="card-body">
+
+                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px">
+                                        <div class="card">
+                                            <img class="card-img-top" src="..." alt="Card image cap">
+                                            <div class="card-header">Project Title</div>
+                                            <div class="card-body">
+
+                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="col-md-7 col-md-push-1 probootstrap-animate teams" id="garage">
+                        <h2>Garage</h2>
+                        <section class="probootstrap-section">
+                            <div class="container" style="width: 100%;">
+
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px">
+                                        <div class="card">
+                                            <img class="card-img-top" src="..." alt="Card image cap">
+                                            <div class="card-header">Project Title</div>
+                                            <div class="card-body">
+
+                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px">
+                                        <div class="card">
+                                            <img class="card-img-top" src="..." alt="Card image cap">
+                                            <div class="card-header">Project Title</div>
+                                            <div class="card-body">
+
+                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px">
+                                        <div class="card">
+                                            <img class="card-img-top" src="..." alt="Card image cap">
+                                            <div class="card-header">Project Title</div>
+                                            <div class="card-body">
+
+                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px">
+                                        <div class="card">
+                                            <img class="card-img-top" src="..." alt="Card image cap">
+                                            <div class="card-header">Project Title</div>
+                                            <div class="card-body">
+
+                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px">
+                                        <div class="card">
+                                            <img class="card-img-top" src="..." alt="Card image cap">
+                                            <div class="card-header">Project Title</div>
+                                            <div class="card-body">
+
+                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="col-md-7 col-md-push-1 probootstrap-animate teams" id="robotics">
+                        <h2>Robotics</h2>
+                        <section class="probootstrap-section">
+                            <div class="container" style="width: 100%;">
+
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px">
+                                        <div class="card">
+                                            <img class="card-img-top" src="..." alt="Card image cap">
+                                            <div class="card-header">Project Title</div>
+                                            <div class="card-body">
+
+                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px">
+                                        <div class="card">
+                                            <img class="card-img-top" src="..." alt="Card image cap">
+                                            <div class="card-header">Project Title</div>
+                                            <div class="card-body">
+
+                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px">
+                                        <div class="card">
+                                            <img class="card-img-top" src="..." alt="Card image cap">
+                                            <div class="card-header">Project Title</div>
+                                            <div class="card-body">
+
+                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px">
+                                        <div class="card">
+                                            <img class="card-img-top" src="..." alt="Card image cap">
+                                            <div class="card-header">Project Title</div>
+                                            <div class="card-body">
+
+                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px">
+                                        <div class="card">
+                                            <img class="card-img-top" src="..." alt="Card image cap">
+                                            <div class="card-header">Project Title</div>
+                                            <div class="card-body">
+
+                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </section>
+                    </div>
+
+                    <!-- <div class="col-md-7 col-md-push-1 probootstrap-animate teams" id="media">
                             <h2>Media</h2>
                             <section class="probootstrap-section">
                                 <div class="container" style="width: 100%;">
@@ -408,187 +487,187 @@
                             </section>
                         </div> -->
 
-                        <div class="col-md-7 col-md-push-1 probootstrap-animate teams" id="capital">
-                            <h2>Capital</h2>
-                            <section class="probootstrap-section">
-                                <div class="container" style="width: 100%;">
+                    <div class="col-md-7 col-md-push-1 probootstrap-animate teams" id="capital">
+                        <h2>Capital</h2>
+                        <section class="probootstrap-section">
+                            <div class="container" style="width: 100%;">
 
-                                    <div class="col-sm-12">
-                                        <div class="probootstrap-teacher text-center probootstrap-animate"
-                                            style="min-height: 170px">
-                                            <div class="card" style="width: 35rem;">
-                                                <img class="card-img-top" src="..." alt="Card image cap">
-                                                <div class="card-header">Project Title</div>
-                                                <div class="card-body">
-                                                    <p class="card-text">Info regarding the project. Not too detailed.</p>
-                                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                                </div>
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px">
+                                        <div class="card">
+                                            <img class="card-img-top" src="..." alt="Card image cap">
+                                            <div class="card-header">Project Title</div>
+                                            <div class="card-body">
+
+                                                <a href="#" class="btn btn-primary">Go somewhere</a>
                                             </div>
                                         </div>
                                     </div>
-
-                                    <div class="col-sm-12">
-                                        <div class="probootstrap-teacher text-center probootstrap-animate"
-                                            style="min-height: 170px">
-                                            <div class="card" style="width: 35rem;">
-                                                <img class="card-img-top" src="..." alt="Card image cap">
-                                                <div class="card-header">Project Title</div>
-                                                <div class="card-body">
-                                                    <p class="card-text">Info regarding the project. Not too detailed.</p>
-                                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-sm-12">
-                                        <div class="probootstrap-teacher text-center probootstrap-animate"
-                                            style="min-height: 170px">
-                                            <div class="card" style="width: 35rem;">
-                                                <img class="card-img-top" src="..." alt="Card image cap">
-                                                <div class="card-header">Project Title</div>
-                                                <div class="card-body">
-                                                    <p class="card-text">Info regarding the project. Not too detailed.</p>
-                                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-sm-12">
-                                        <div class="probootstrap-teacher text-center probootstrap-animate"
-                                            style="min-height: 170px">
-                                            <div class="card" style="width: 35rem;">
-                                                <img class="card-img-top" src="..." alt="Card image cap">
-                                                <div class="card-header">Project Title</div>
-                                                <div class="card-body">
-                                                    <p class="card-text">Info regarding the project. Not too detailed.</p>
-                                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-sm-12">
-                                        <div class="probootstrap-teacher text-center probootstrap-animate"
-                                            style="min-height: 170px">
-                                            <div class="card" style="width: 35rem;">
-                                                <img class="card-img-top" src="..." alt="Card image cap">
-                                                <div class="card-header">Project Title</div>
-                                                <div class="card-body">
-                                                    <p class="card-text">Info regarding the project. Not too detailed.</p>
-                                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
                                 </div>
-                            </section>
-                        </div>
-                        
-                        <div class="col-md-7 col-md-push-1 probootstrap-animate teams" id="script">
-                            <h2>Script</h2>
-                            <section class="probootstrap-section">
-                                <div class="container" style="width: 100%;">
 
-                                    <div class="col-sm-12">
-                                        <div class="probootstrap-teacher text-center probootstrap-animate"
-                                            style="min-height: 170px">
-                                            <div class="card" style="width: 35rem;">
-                                                <img class="card-img-top" src="..." alt="Card image cap">
-                                                <div class="card-header">Project Title</div>
-                                                <div class="card-body">
-                                                    <p class="card-text">Info regarding the project. Not too detailed.</p>
-                                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                                </div>
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px">
+                                        <div class="card">
+                                            <img class="card-img-top" src="..." alt="Card image cap">
+                                            <div class="card-header">Project Title</div>
+                                            <div class="card-body">
+
+                                                <a href="#" class="btn btn-primary">Go somewhere</a>
                                             </div>
                                         </div>
                                     </div>
-
-                                    <div class="col-sm-12">
-                                        <div class="probootstrap-teacher text-center probootstrap-animate"
-                                            style="min-height: 170px">
-                                            <div class="card" style="width: 35rem;">
-                                                <img class="card-img-top" src="..." alt="Card image cap">
-                                                <div class="card-header">Project Title</div>
-                                                <div class="card-body">
-                                                    <p class="card-text">Info regarding the project. Not too detailed.</p>
-                                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-sm-12">
-                                        <div class="probootstrap-teacher text-center probootstrap-animate"
-                                            style="min-height: 170px">
-                                            <div class="card" style="width: 35rem;">
-                                                <img class="card-img-top" src="..." alt="Card image cap">
-                                                <div class="card-header">Project Title</div>
-                                                <div class="card-body">
-                                                    <p class="card-text">Info regarding the project. Not too detailed.</p>
-                                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-sm-12">
-                                        <div class="probootstrap-teacher text-center probootstrap-animate"
-                                            style="min-height: 170px">
-                                            <div class="card" style="width: 35rem;">
-                                                <img class="card-img-top" src="..." alt="Card image cap">
-                                                <div class="card-header">Project Title</div>
-                                                <div class="card-body">
-                                                    <p class="card-text">Info regarding the project. Not too detailed.</p>
-                                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-sm-12">
-                                        <div class="probootstrap-teacher text-center probootstrap-animate"
-                                            style="min-height: 170px">
-                                            <div class="card" style="width: 35rem;">
-                                                <img class="card-img-top" src="..." alt="Card image cap">
-                                                <div class="card-header">Project Title</div>
-                                                <div class="card-body">
-                                                    <p class="card-text">Info regarding the project. Not too detailed.</p>
-                                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
                                 </div>
-                            </section>
-                        </div>
+
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px">
+                                        <div class="card">
+                                            <img class="card-img-top" src="..." alt="Card image cap">
+                                            <div class="card-header">Project Title</div>
+                                            <div class="card-body">
+
+                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px">
+                                        <div class="card">
+                                            <img class="card-img-top" src="..." alt="Card image cap">
+                                            <div class="card-header">Project Title</div>
+                                            <div class="card-body">
+
+                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px">
+                                        <div class="card">
+                                            <img class="card-img-top" src="..." alt="Card image cap">
+                                            <div class="card-header">Project Title</div>
+                                            <div class="card-body">
+
+                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="col-md-7 col-md-push-1 probootstrap-animate teams" id="script">
+                        <h2>Script</h2>
+                        <section class="probootstrap-section">
+                            <div class="container" style="width: 100%;">
+
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px">
+                                        <div class="card">
+                                            <img class="card-img-top" src="..." alt="Card image cap">
+                                            <div class="card-header">Project Title</div>
+                                            <div class="card-body">
+
+                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px">
+                                        <div class="card">
+                                            <img class="card-img-top" src="..." alt="Card image cap">
+                                            <div class="card-header">Project Title</div>
+                                            <div class="card-body">
+
+                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px">
+                                        <div class="card">
+                                            <img class="card-img-top" src="..." alt="Card image cap">
+                                            <div class="card-header">Project Title</div>
+                                            <div class="card-body">
+
+                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px">
+                                        <div class="card">
+                                            <img class="card-img-top" src="..." alt="Card image cap">
+                                            <div class="card-header">Project Title</div>
+                                            <div class="card-body">
+
+                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px">
+                                        <div class="card">
+                                            <img class="card-img-top" src="..." alt="Card image cap">
+                                            <div class="card-header">Project Title</div>
+                                            <div class="card-body">
+
+                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </section>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <script type="text/javascript">
-        $(".team").addClass("active");
+<script type="text/javascript">
+    $(".team").addClass("active");
+    var tabcontent = document.getElementsByClassName('teams');
+    for (i = 1; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    function navigate(signame) {
         var tabcontent = document.getElementsByClassName('teams');
-        for (i = 1; i < tabcontent.length; i++) {
+        for (i = 0; i < tabcontent.length; i++) {
             tabcontent[i].style.display = "none";
         }
-
-        function navigate(signame) {
-            var tabcontent = document.getElementsByClassName('teams');
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
-            tablinks = document.getElementsByClassName("tablinks");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-            document.getElementById(signame).style.display = "block";
-            $("." + signame).addClass("active");
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
         }
-    </script>
+        document.getElementById(signame).style.display = "block";
+        $("." + signame).addClass("active");
+    }
+</script>
 {% endblock %}

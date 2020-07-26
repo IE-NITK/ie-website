@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+{% block virtual_expo %}active{% endblock %}
+{% load static %}
+{% block main %}
+
+
+<section class="probootstrap-section"
+    style="background-image: url('{% static 'img/virtual-expo/isl.jpg' %}'); width: 100%;background-size: cover;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-left section-heading probootstrap-animate " style="font-co">
+                <h1>
+                    <font color="black">Indian Sign Language Interpretor</font>
+                </h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="probootstrap-section probootstrap-section-sm">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>PROBLEM STATEMENT: </h3>
+                <p>Create an app that recognises static Indian Sign Language hand gestures fed through the
+                    webcam. Each gesture could be from either hand and corresponds to an English alphabet. The
+                    time frame between two consecutive gestures is made as low as possible.
+                </p>
+
+
+                <h3>PROPOSED SOLUTION:</h3>
+                <p>This is a Computer Vision problem and hence, convolutional neural networks is a good way of
+                    going about it. A VGG16 architecture was used to train the model.<br>
+                    The ISL dataset is available in the following website:<br>
+                    https://www.kaggle.com/dodiyaparth/isl-dataset-double-handed<br>
+                    The trained model was later saved and used in the backend of the app.
+                </p>
+
+
+                <h3>TECHNOLOGY USED</h3>
+                <p>Keras OpenCV Tkinter
+                </p>
+
+                <h3>RESULTS</h3>
+                <p>An accuracy of 81.2% was obtained after training the model.
+                </p>
+
+
+                <h3>FUTURE WORK</h3>
+                <p>The accuracy of the model could be improved. Pipeline to better preprocess the dataset and
+                        detect edges ( using IBM Watson ) is underway. Additional functionalities to be added to the web
+                        app, such as merging the detected alphabets into words and meaningful sentences.
+                </p>
+
+
+                <h3>KEY LEARNINGS</h3>
+                <p>Machine Learning, Deep Learning, Computer Vision and CNNs
+                </p>
+
+
+                <h3>Team</h3>
+
+                <p>● Piyush Ingale - ingalepiyush459@gmail.com
+                        <br>
+                    ● Dhanwin Rao - dhanwinrao18@gmail.com<br>
+                    ● Parth Dodiya - parthdodiya999@gmail.com<br>
+                    ● Raghav - raghavraghuwanshi0101@gmail.com
+                    
+                </p>
+                <p></p>
+
+                <!-- <h3>PICTURES</h3>
+                <section class="container">
+                    <div class="row mb-5">
+
+                        <div class="card-deck  col-md-4 col-sm-6 col-sm-12">
+                            <div class="card" style="margin-bottom: 15px;">
+                                <div style="text-align:center">
+
+                                    <img src="" alt="Card image cap" class="img-fluid" style="height:270px; width:100%">
+                                    <div class="card-body">
+                                        <h6 class="card-title">card title</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+ -->
+
+            </div>
+</section>
+</div>
+</div>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+{% comment %} <section class="probootstrap-section probootstrap-section-sm">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+
+            </div>
+        </div>
+    </div>
+</section> {% endcomment %}
+
+<script type="text/javascript">
+    $(".team").addClass("active");
+    var tabcontent = document.getElementsByClassName('teams');
+    for (i = 1; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    function navigate(signame) {
+        var tabcontent = document.getElementsByClassName('teams');
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(signame).style.display = "block";
+        $("." + signame).addClass("active");
+    }
+</script>
+{% endblock %}
