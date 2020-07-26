@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-{% load static %}
 {% block smp %}active{% endblock %}
 {% block main %}
 
@@ -32,12 +31,12 @@
                                     <li class="tablinks active core"><a onclick="return navigate('smp-home')">Home</a>
                                     </li>
                                     <li class="tablinks code"><a onclick="return navigate('code')">Code</a></li>
-                                    <!-- <li class="tablinks gadget"><a onclick="return navigate('gadget')">Gadget</a></li>
+                                    <li class="tablinks gadget"><a onclick="return navigate('gadget')">Gadget</a></li>
                                     <li class="tablinks garage"><a onclick="return navigate('garage')">Garage</a></li>
                                     <li class="tablinks robotics"><a onclick="return navigate('robotics')">Robotics</a>
-                                     <li class="tablinks media"><a onclick="return navigate('media')">Media</a> 
+                                    <!-- <li class="tablinks media"><a onclick="return navigate('media')">Media</a> -->
                                     <li class="tablinks capital"><a onclick="return navigate('capital')">Capital</a>
-                                    <li class="tablinks script"><a onclick="return navigate('script')">Script</a> -->
+                                    <li class="tablinks script"><a onclick="return navigate('script')">Script</a>
                                     </li>
                                 </ul>
                             </div>
@@ -74,8 +73,8 @@
                                         <div class="probootstrap-teacher text-center probootstrap-animate"
                                             style="min-height: 170px">
                                             <div class="card" style="width: 35rem;">
-                                                <img class="img-fluid card-img-top" src="{% static 'img/StockCoding.jpg'%}" alt="Card image cap" >
-                                                <div class="card-header">Crowd Counting</div>
+                                                <img class="card-img-top" src="..." alt="Card image cap">
+                                                <div class="card-header">Project Title</div>
                                                 <div class="card-body">
                                                     <p class="card-text">Info regarding the project. Not too detailed.</p>
                                                     <a href="#" class="btn btn-primary">Go somewhere</a>
