@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+{% block smp %}active{% endblock %}
+{% block main %}
+
+
+    <section class="probootstrap-section " style="background-image: url('https://hatrabbits.com/wp-content/uploads/2016/12/rare-combinaties.jpg');">
+        <div class="container" >
+            <div class="row">
+                <div class="col-md-12 text-left section-heading probootstrap-animate " >
+                    <h1>Project Name</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section class="probootstrap-section probootstrap-section-sm">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>PROBLEM STATEMENT: </h3>
+                    <p>Describe the problem statement in 100-200 words. Mention the nature of the project.Describe the problem statement in 100-200 words. Mention the nature of the project.
+Describe the problem statement in 100-200 words. Mention the nature of the project.
+</p>
+
+
+                    <h3>PROPOSED SOLUTION</h3>
+
+
+
+                    <h3>TECHNOLOGY USED</h3>
+
+
+
+
+
+                    <h3>METHODOLOGY</h3>
+
+
+                    <h3>RESULTS</h3>
+
+
+                    <h3>FUTURE WORK</h3>
+
+
+                    <h3>KEY LEARNINGS</h3>
+
+
+                    <h3>CONCLUSION</h3>
+
+
+
+
+                    <h3>REFERENCES</h3>
+                    <p>
+                        </p><p>1. Fill here<br>2. Fill here</p>
+                    <p></p>
+
+
+                    <h3>PICTURES</h3>
+                    <section class="container">
+                        <div class="row mb-5">
+
+                            <div class="card-deck  col-md-4 col-sm-6 col-sm-12">
+                                <div class="card" style="margin-bottom: 15px;">
+                                    <div style="text-align:center">
+
+                                        <img src="" alt="Card image cap" class="img-fluid" style="height:270px; width:100%">
+                                        <div class="card-body">
+                                            <h6 class="card-title">card title</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+    {% comment %} <section class="probootstrap-section probootstrap-section-sm">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+
+                </div>
+            </div>
+        </div>
+    </section> {% endcomment %}
+
+    <script type="text/javascript">
+        $(".team").addClass("active");
+        var tabcontent = document.getElementsByClassName('teams');
+        for (i = 1; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        function navigate(signame) {
+            var tabcontent = document.getElementsByClassName('teams');
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(signame).style.display = "block";
+            $("." + signame).addClass("active");
+        }
+    </script>
+{% endblock %}
