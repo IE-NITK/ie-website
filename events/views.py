@@ -15,4 +15,4 @@ def hackverse(request):
     return render(request, 'hackverse.html')
 
 def virtual_expo(request):
-    return render(request, 'virtual_expo.html')
+    return render(request, 'coming-soon.html')
