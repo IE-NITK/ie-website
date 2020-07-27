@@ -32,8 +32,8 @@
                                 <li class="tablinks active core"><a onclick="return navigate('smp-home')">Home</a>
                                 </li>
                                 <li class="tablinks code"><a onclick="return navigate('code')">Code</a></li>
-                                <!-- <li class="tablinks gadget"><a onclick="return navigate('gadget')">Gadget</a></li>
-                                    <li class="tablinks garage"><a onclick="return navigate('garage')">Garage</a></li>
+                                <li class="tablinks gadget"><a onclick="return navigate('gadget')">Gadget</a></li>
+                                <!-- <li class="tablinks garage"><a onclick="return navigate('garage')">Garage</a></li>
                                     <li class="tablinks robotics"><a onclick="return navigate('robotics')">Robotics</a>
                                      <li class="tablinks media"><a onclick="return navigate('media')">Media</a> 
                                     <li class="tablinks capital"><a onclick="return navigate('capital')">Capital</a>
@@ -52,7 +52,7 @@
                                             <h6><b>“Engineering” means “making things happen”.<br><br>
                                                     <i>Projects we have completed demonstrate what we know <br>
                                                         future projects decide what we learn.</i><br><br><br>
-                                                <b>Welcome to the first virtual expo by IE NITK!</b>
+                                                    <b>Welcome to the first virtual expo by IE NITK!</b>
                                             </h6>
 
                                         </div>
@@ -187,15 +187,14 @@
                                         style="min-height: 170px">
                                         <div class="card">
                                             <img class="card-img-top" style="width: 100%;"
-                                                src="{% static 'img/virtual-expo/ndn.png'%}"
-                                                alt="Card image cap">
+                                                src="{% static 'img/virtual-expo/ndn.png'%}" alt="Card image cap">
                                             <div class="card-header">
                                                 <h3>NDN</h3>
                                             </div>
                                             <div class="card-body">
 
-                                                <a href="{% url 'virtual_expo:NDN' %}"
-                                                    class="btn btn-primary">Read more</a>
+                                                <a href="{% url 'virtual_expo:NDN' %}" class="btn btn-primary">Read
+                                                    more</a>
                                             </div>
                                         </div>
                                     </div>
@@ -234,11 +233,15 @@
                                     <div class="probootstrap-teacher text-center probootstrap-animate"
                                         style="min-height: 170px">
                                         <div class="card">
-                                            <img class="card-img-top" src="..." alt="Card image cap">
-                                            <div class="card-header">Project Title</div>
+                                            <img class="card-img-top" style="width: 100%;"
+                                                src="{% static 'img/virtual-expo/autonomous-car.jpg'%}" alt="Card image cap">
+                                            <div class="card-header">
+                                                <h3>Autonomous Driving Car</h3>
+                                            </div>
                                             <div class="card-body">
 
-                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                                <a href="{% url 'virtual_expo:autonomous_driving_car' %}"
+                                                    class="btn btn-primary">Read more</a>
                                             </div>
                                         </div>
                                     </div>
@@ -248,11 +251,15 @@
                                     <div class="probootstrap-teacher text-center probootstrap-animate"
                                         style="min-height: 170px">
                                         <div class="card">
-                                            <img class="card-img-top" src="..." alt="Card image cap">
-                                            <div class="card-header">Project Title</div>
+                                            <img class="card-img-top" style="width: 100%;"
+                                                src="{% static 'img/virtual-expo/child-safety.jpg'%}" alt="Card image cap">
+                                            <div class="card-header">
+                                                <h3>Child Safety</h3>
+                                            </div>
                                             <div class="card-body">
 
-                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                                <a href="{% url 'virtual_expo:indian-sign-lang-interpretor' %}"
+                                                    class="btn btn-primary">Read more</a>
                                             </div>
                                         </div>
                                     </div>
@@ -262,11 +269,15 @@
                                     <div class="probootstrap-teacher text-center probootstrap-animate"
                                         style="min-height: 170px">
                                         <div class="card">
-                                            <img class="card-img-top" src="..." alt="Card image cap">
-                                            <div class="card-header">Project Title</div>
+                                            <img class="card-img-top" style="width: 100%;"
+                                                src="{% static 'img/virtual-expo/isl.jpg'%}" alt="Card image cap">
+                                            <div class="card-header">
+                                                <h3>Indian Sign Language Recogniser</h3>
+                                            </div>
                                             <div class="card-body">
 
-                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                                <a href="{% url 'virtual_expo:indian-sign-lang-interpretor' %}"
+                                                    class="btn btn-primary">Read more</a>
                                             </div>
                                         </div>
                                     </div>
@@ -276,11 +287,15 @@
                                     <div class="probootstrap-teacher text-center probootstrap-animate"
                                         style="min-height: 170px">
                                         <div class="card">
-                                            <img class="card-img-top" src="..." alt="Card image cap">
-                                            <div class="card-header">Project Title</div>
+                                            <img class="card-img-top" style="width: 100%;"
+                                                src="{% static 'img/virtual-expo/isl.jpg'%}" alt="Card image cap">
+                                            <div class="card-header">
+                                                <h3>Indian Sign Language Recogniser</h3>
+                                            </div>
                                             <div class="card-body">
 
-                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                                <a href="{% url 'virtual_expo:indian-sign-lang-interpretor' %}"
+                                                    class="btn btn-primary">Read more</a>
                                             </div>
                                         </div>
                                     </div>
@@ -290,16 +305,109 @@
                                     <div class="probootstrap-teacher text-center probootstrap-animate"
                                         style="min-height: 170px">
                                         <div class="card">
-                                            <img class="card-img-top" src="..." alt="Card image cap">
-                                            <div class="card-header">Project Title</div>
+                                            <img class="card-img-top" style="width: 100%;"
+                                                src="{% static 'img/virtual-expo/child-safety.jpg'%}" alt="Card image cap">
+                                            <div class="card-header">
+                                                <h3>Indian Sign Language Recogniser</h3>
+                                            </div>
                                             <div class="card-body">
 
-                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                                <a href="{% url 'virtual_expo:indian-sign-lang-interpretor' %}"
+                                                    class="btn btn-primary">Read more</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px">
+                                        <div class="card">
+                                            <img class="card-img-top" style="width: 100%;"
+                                                src="{% static 'img/virtual-expo/isl.jpg'%}" alt="Card image cap">
+                                            <div class="card-header">
+                                                <h3>Indian Sign Language Recogniser</h3>
+                                            </div>
+                                            <div class="card-body">
+
+                                                <a href="{% url 'virtual_expo:indian-sign-lang-interpretor' %}"
+                                                    class="btn btn-primary">Read more</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px">
+                                        <div class="card">
+                                            <img class="card-img-top" style="width: 100%;"
+                                                src="{% static 'img/virtual-expo/isl.jpg'%}" alt="Card image cap">
+                                            <div class="card-header">
+                                                <h3>Indian Sign Language Recogniser</h3>
+                                            </div>
+                                            <div class="card-body">
+
+                                                <a href="{% url 'virtual_expo:indian-sign-lang-interpretor' %}"
+                                                    class="btn btn-primary">Read more</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px">
+                                        <div class="card">
+                                            <img class="card-img-top" style="width: 100%;"
+                                                src="{% static 'img/virtual-expo/isl.jpg'%}" alt="Card image cap">
+                                            <div class="card-header">
+                                                <h3>Indian Sign Language Recogniser</h3>
+                                            </div>
+                                            <div class="card-body">
+
+                                                <a href="{% url 'virtual_expo:indian-sign-lang-interpretor' %}"
+                                                    class="btn btn-primary">Read more</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px">
+                                        <div class="card">
+                                            <img class="card-img-top" style="width: 100%;"
+                                                src="{% static 'img/virtual-expo/isl.jpg'%}" alt="Card image cap">
+                                            <div class="card-header">
+                                                <h3>Indian Sign Language Recogniser</h3>
+                                            </div>
+                                            <div class="card-body">
+
+                                                <a href="{% url 'virtual_expo:indian-sign-lang-interpretor' %}"
+                                                    class="btn btn-primary">Read more</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px">
+                                        <div class="card">
+                                            <img class="card-img-top" style="width: 100%;"
+                                                src="{% static 'img/virtual-expo/isl.jpg'%}" alt="Card image cap">
+                                            <div class="card-header">
+                                                <h3>Indian Sign Language Recogniser</h3>
+                                            </div>
+                                            <div class="card-body">
+
+                                                <a href="{% url 'virtual_expo:indian-sign-lang-interpretor' %}"
+                                                    class="btn btn-primary">Read more</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </section>
                     </div>

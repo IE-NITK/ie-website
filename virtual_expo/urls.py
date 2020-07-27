@@ -18,5 +18,12 @@ urlpatterns = [
     path('virtual-expo/code/semantic_segmentation', views.semantic_segmentation, name='semantic_segmentation'),
     path('virtual-expo/code/toll_cost_calculator', views.toll_cost_calculator, name='toll_cost_calculator'),
     path('virtual-expo/code/ndn', views.ndn, name='NDN'),
-    
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    path('virtual-expo/gadget/autonomous_driving_car', views.autonomous_driving_car, name='autonomous_driving_car'),
+    path('virtual-expo/gadget/child_safety', views.child_safety, name='child_safety'),
+    path('virtual-expo/gadget/human_activity_recognition', views.human_activity_recognition, name='human_activity_recognition'),
+    path('virtual-expo/gadget/ocr', views.ocr, name='OCR'),
+    path('virtual-expo/gadget/skinput_based_robot', views.skinput_based_robot, name='skinput_based_robot'),
+    path('virtual-expo/gadget/smart_home_automation', views.smart_home_automation, name='smart_home_automation'),
+    path('virtual-expo/gadget/traffic_light_control', views.traffic_light_control, name='traffic_light_control'),
+    path('virtual-expo/gadget/uart_on_fpga', views.uart_on_fpga, name='uart_on_fpga'),
+    ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
