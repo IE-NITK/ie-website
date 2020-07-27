@@ -5,11 +5,13 @@
 
 
 <section class="probootstrap-section"
-    style="background-image: url('{% static 'img/virtual-expo/CrowdCounting.jpeg' %}'); width: 100%;background-size: cover;">
+    style="background-image: url('{% static 'img/virtual-expo/ocr.png' %}'); width: 100%;background-size: cover;">
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-left section-heading probootstrap-animate ">
-                <h1>Crowd Counting</h1>
+                <h1>
+                    <font color="black">OCR - A solution for the Visually Impaired</font>
+                </h1>
             </div>
         </div>
     </div>
@@ -20,82 +22,109 @@
         <div class="row">
             <div class="col-md-12">
                 <h3>PROBLEM STATEMENT: </h3>
-                <p>To develop a method that can accurately estimate the crowd count for an individual image with
-                    arbitrary crowd density and arbitrary perspective.
+                <p>Visually compromised people find navigation quite tricky in their day-to-day lives. The project is an
+                    attempt at helping ease one of the many challenges they face by designing a prototype of a wearable
+                    device. It is an Optical Character Recognition (OCR) tool that can read the text from images and
+                    instantly convert to speech, thus not limiting them only to whatever is available in Braille. The
+                    Efficient and Accurate Scene Text detector (EAST) is a widely used text-detection architecture very
+                    often used in various OCR applications. It is made use of in this project.
                 </p>
 
 
                 <h3>PROPOSED SOLUTION:</h3>
-                <p>We use a multi-column convolutional neural network (MCNN) , which has proposed multi-column
-                    deep neural networks for image classification. Our model contains three columns of convolutional
-                    neural networks whose filters have different sizes. Input of the MCNN is the image, and its output
-                    is a crowd density map whose integral gives the overall crowd count.
+                <p><strong><i>Overview</i></strong><br><br>
+                    A camera takes ‘snapshots’ of the object placed in front of it. This creates a single image which
+                    then can be sent for processing to detect the text written on it. Once the image is pre-processed,
+                    it is fed as input to the pre-trained model. Bounding boxes around the detected text are drawn. Once
+                    the text is detected in the above process, it is sent for further processing to detect individual
+                    characters. This approach is called transfer learning; when one model feeds its output as input to
+                    another model. This way, every character in the detected textual data is extracted and returned. The
+                    output is nothing but the detected text in the image in the form of a string.
+                    <br><br><strong><i>Details</i></strong><br><br>
+                    <img src="{% static 'img/virtual-expo/ocr1.png' %}" class="img-rounded img-fluid"
+                        style="width: 50%;height:50%"><br><br>
+                    The above diagram shows the EAST model architecture. It does the work of text detection from scenic
+                    images. The details of its implementation can be found in [1]. The output from this is then sent for
+                    text recognition. PyTesseract[2] is used for this.
                 </p>
-
-
-                <h3>TECHNOLOGY USED</h3>
-                <p>The code was implemented on Google colab where we have used python as our programming
-                    language, we used ShanghaiTech dataset for training the model. The framework used was Keras.
-                </p>
-
 
 
 
                 <h3>METHODOLOGY</h3>
-                <p>Phase 1 : The learning phase consisted of learning the basics of ML, DL and CNN. For that , we
-                    completed the Andrew NG course named “deeplearning.ai”. Also, for CNN we followed some
-                    videos on YouTube (MIT).<br>
-                    Phase 2: This consisted of implementing our knowledge about the subject on some basic
-                    projects such as classification of digits using the MNIST dataset.<br>
-                    Phase 3: We started with the Crowd Counting Project using Google colab. We have used the
-                    ShanghaiTech dataset which has a variety of related images with different perspectives. We used
-                    keras as the framework for our project.
+                <p>The whole project is divided into three phases:<br>
+
+
+                    Phase 1: Text Detection<br>
+
+                    Phase 2: Text Recognition<br>
+
+                    Phase 3: Text to Speech Conversion<br>
+
+                    Phase 4: Prototyping a wearable device by implementing on the Raspberry Pi<br> <br><br>
+
+
+
+                    Phase 1: Real time scene text detection was performed using EAST, a widely used architecture.
+                    <br>
+
+                    Phase 2: Text recognition was subsequently performed using the “Pytesseract” python tool. It is a
+                    wrapper for Google’s Tesseract-OCR Engine.
+                    <br>
+
+                    Phase 3: “pyttsx3” is a text-to-speech conversion library in Python that was used for this phase.
+                    Unlike alternative libraries that perform the same function, this one can work offline.
+
+                    <br>
+                    Phase 4: The pretrained models were then loaded to the Raspberry Pi 4 and real scene images were
+                    captured using Raspberry Pi V2 camera module. The speech converted was then played using earphones
+                    plugged into the raspberry pi.
                 </p>
 
                 <h3>RESULTS</h3>
-                <p>The value of mae is 47.31868438720702
+                <p>Some of the results obtained are attached:<br>
+                    <img src="{% static 'img/virtual-expo/ocr2.jpg' %}" class="img-rounded img-fluid"
+                        style="width: 50%;height:50%"><br>
+                    <a href="https://drive.google.com/file/d/1LYd3Yw11LuEf2S8CoBOYgCkCtI6Roths/view">After Audio
+                        Conversion</a><br>
+                    <img src="{% static 'img/virtual-expo/ocr3.png' %}" class="img-rounded img-fluid"
+                        style="width: 50%;height:50%"><br>
+                    <a href="https://drive.google.com/file/d/1xoAfXncQhTpXdAE-RsCnMQ2liUOMbRhi/view">After Audio
+                        Conversion</a><br>
                 </p>
 
 
                 <h3>FUTURE WORK</h3>
-                <p>In future we are planning to expand this into a real-time analysis on an actual crowd, the program
-                    currently finished can give an approximate count of the number of people in a crowd based on a
-                    static image.
+                <p>An End-to-End model to detect text and read them to improve the speed and accuracy, instead of
+                    dividing into phases as seen in the above implementation. Adaptation to make a PDF Reader.
                 </p>
 
 
                 <h3>KEY LEARNINGS</h3>
-                <p>Main things that we learnt during the course of this project include getting to learn a lot about
-                    machine learning, deep learning and the way how images are preprocessed before being used
-                    for training the model. Also we learnt many new algorithms and made a suitable model using
-                    CNN.
+                <p>● Neural Networks<br>
+                    ● Raspberry Pi Platform<br>
+                    ● Different deep learning architectures<br>
                 </p>
-
-
-                <h3>CONCLUSION</h3>
-                <p>Crowd counting using has a wide range of applications which include crowd control, disaster
-                    management, violence detection , etc.
-                </p>
-
-
 
 
                 <h3>REFERENCES</h3>
                 <p>
-                    Following are the papers that we used as reference for our project:
+                    Any external references to better understand the project or the links referenced in the above
+                    sections:
                 </p>
-                <p>1. [MCNN] Single-Image Crowd Counting via Multi-Column Convolutional Neural
-                    Network (CVPR2016)<br>2. [CSR] CSRNet: Dilated Convolutional Neural Networks for Understanding the
-                    Highly Congested Scenes</p>
+                <p>
+                    ● <a href="https://arxiv.org/pdf/1704.03155.pdf">https://arxiv.org/pdf/1704.03155.pdf</a><br>
+                    ● <a href="https://pypi.org/project/pytesseract/">https://pypi.org/project/pytesseract/</a>
                 <p></p>
 
                 <h3>TEAM</h3>
 
-                <p>● Shubam Agrawal<br>
-                    ● Anish Patil<br>
-                    ● Sasidhar Swarangi<br>
-                    ● Rutwik Mulay<br>
-                    ● Deepak<br>
+                <p>● Atreya Majumdar (atreyamaj@gmail.com)<br>
+
+                    ● Divyansh Bansal (divyanshbansal0612@gmail.com)<br>
+
+                    ● Rahasya Barkur (rahasyabarkur1999@gmail.com)<br>
+
+                    ● Devishi Suresh (devishisureshkambiranda.171ec115@nitk.edu.in)
                 </p>
                 <p></p>
 
@@ -116,11 +145,11 @@
                         </div>
  -->
 
-                    </div>
-                </section>
             </div>
-        </div>
-    </div>
+</section>
+</div>
+</div>
+</div>
 </section>
 
 

@@ -5,11 +5,13 @@
 
 
 <section class="probootstrap-section"
-    style="background-image: url('{% static 'img/virtual-expo/CrowdCounting.jpeg' %}'); width: 100%;background-size: cover;">
+    style="background-image: url('{% static 'img/virtual-expo/smart_home.webp' %}'); width: 100%;background-size: cover;">
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-left section-heading probootstrap-animate ">
-                <h1>Crowd Counting</h1>
+                <h1>
+                    <font color="black">Smart Home Automation</font>
+                </h1>
             </div>
         </div>
     </div>
@@ -20,86 +22,70 @@
         <div class="row">
             <div class="col-md-12">
                 <h3>PROBLEM STATEMENT: </h3>
-                <p>To develop a method that can accurately estimate the crowd count for an individual image with
-                    arbitrary crowd density and arbitrary perspective.
+                <p>We have implemented smart home automation using IoT and various sensors. We have used
+                    Infrared Sensors to detect the number of people entering and leaving the room. We have
+                    implemented home automation using blynk app and google assistant to turn on/off leds(which
+                    signifies the loads in the house). We have also turned on/off electrical appliances which are
+                    connected to the junction box remotely using a website.
                 </p>
 
 
                 <h3>PROPOSED SOLUTION:</h3>
-                <p>We use a multi-column convolutional neural network (MCNN) , which has proposed multi-column
-                    deep neural networks for image classification. Our model contains three columns of convolutional
-                    neural networks whose filters have different sizes. Input of the MCNN is the image, and its output
-                    is a crowd density map whose integral gives the overall crowd count.
+                <p>Accessing the appliances becomes easier using smart phone rather than turning than turning it
+                    on/off via the switch. Initially we implemented turning on/off leds(which signifies the loads in the
+                    house) using the blynk app then we implemented it using a website which was made by us.
                 </p>
-
-
-                <h3>TECHNOLOGY USED</h3>
-                <p>The code was implemented on Google colab where we have used python as our programming
-                    language, we used ShanghaiTech dataset for training the model. The framework used was Keras.
-                </p>
-
 
 
 
                 <h3>METHODOLOGY</h3>
-                <p>Phase 1 : The learning phase consisted of learning the basics of ML, DL and CNN. For that , we
-                    completed the Andrew NG course named “deeplearning.ai”. Also, for CNN we followed some
-                    videos on YouTube (MIT).<br>
-                    Phase 2: This consisted of implementing our knowledge about the subject on some basic
-                    projects such as classification of digits using the MNIST dataset.<br>
-                    Phase 3: We started with the Crowd Counting Project using Google colab. We have used the
-                    ShanghaiTech dataset which has a variety of related images with different perspectives. We used
-                    keras as the framework for our project.
+                <p>In the odd sem we read about IoT, NodeMCU and the sensors which we were going to use. We
+                    did a bit of coding related to NodeMCU. In the even sem we began implementing the ideas. We
+                    made a bid directional counter using IR leds. We made a website and tried to turn on/off the leds
+                    using the website and NodeMCU.
                 </p>
 
                 <h3>RESULTS</h3>
-                <p>The value of mae is 47.31868438720702
-                </p>
+                <p>We were able to successfully implement the ideas and the codes were working properly.<br>
+                    Following video demonstrates our idea:<br><br>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <video controls>
+                        <source src="{% static 'img/virtual-expo/smart-home.mp4' %}" type="video/mp4">
 
+                        Your browser does not support the video tag.
+                    </video>
+                </div><br>
+                <br. <div class="embed-responsive embed-responsive-16by9">
+                    <video controls>
+                        <source src="{% static 'img/virtual-expo/smart-home1.mp4' %}" type="video/mp4">
 
-                <h3>FUTURE WORK</h3>
-                <p>In future we are planning to expand this into a real-time analysis on an actual crowd, the program
-                    currently finished can give an approximate count of the number of people in a crowd based on a
-                    static image.
-                </p>
-
-
-                <h3>KEY LEARNINGS</h3>
-                <p>Main things that we learnt during the course of this project include getting to learn a lot about
-                    machine learning, deep learning and the way how images are preprocessed before being used
-                    for training the model. Also we learnt many new algorithms and made a suitable model using
-                    CNN.
-                </p>
-
-
-                <h3>CONCLUSION</h3>
-                <p>Crowd counting using has a wide range of applications which include crowd control, disaster
-                    management, violence detection , etc.
-                </p>
+                        Your browser does not support the video tag.
+                    </video>
+            </div>
+            </p>
 
 
 
+            <h3>KEY LEARNINGS</h3>
+            <p>● IoT<br>
+                ● NodeMCU<br>
+                ● HTML<br>
+                ● IR sensor<br>
+            </p>
 
-                <h3>REFERENCES</h3>
-                <p>
-                    Following are the papers that we used as reference for our project:
-                </p>
-                <p>1. [MCNN] Single-Image Crowd Counting via Multi-Column Convolutional Neural
-                    Network (CVPR2016)<br>2. [CSR] CSRNet: Dilated Convolutional Neural Networks for Understanding the
-                    Highly Congested Scenes</p>
-                <p></p>
+            <h3>TEAM</h3>
 
-                <h3>TEAM</h3>
+            <p>Mentors :<br>
+                1. Bhushan<br>
+                2. Nikhil(nikhilprabhakar1@gmail.com)<br>
+                3. Ayush(ayush.171ee209@nitk.edu.in)<br><br>
+                Members :<br>
+                1. Shreyas(shreram30@gmail.com)<br>
+                2. Sahil(sahil.181ee138@nitk.edu.in)
+            </p>
+            <p></p>
 
-                <p>● Shubam Agrawal<br>
-                    ● Anish Patil<br>
-                    ● Sasidhar Swarangi<br>
-                    ● Rutwik Mulay<br>
-                    ● Deepak<br>
-                </p>
-                <p></p>
-
-                <!-- <h3>PICTURES</h3>
+            <!-- <h3>PICTURES</h3>
                 <section class="container">
                     <div class="row mb-5">
 
@@ -116,11 +102,11 @@
                         </div>
  -->
 
-                    </div>
-                </section>
-            </div>
         </div>
-    </div>
+</section>
+</div>
+</div>
+</div>
 </section>
 
 

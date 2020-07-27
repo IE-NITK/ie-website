@@ -5,11 +5,11 @@
 
 
 <section class="probootstrap-section"
-    style="background-image: url('{% static 'img/virtual-expo/CrowdCounting.jpeg' %}'); width: 100%;background-size: cover;">
+    style="background-image: url('{% static 'img/virtual-expo/skinput.jpg' %}'); width: 100%;background-size: cover;">
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-left section-heading probootstrap-animate ">
-                <h1>Crowd Counting</h1>
+                <h1>Skinput Based Robot Car</h1>
             </div>
         </div>
     </div>
@@ -20,82 +20,100 @@
         <div class="row">
             <div class="col-md-12">
                 <h3>PROBLEM STATEMENT: </h3>
-                <p>To develop a method that can accurately estimate the crowd count for an individual image with
-                    arbitrary crowd density and arbitrary perspective.
+                <p>Skin-put is an input technology that uses bio-acoustic sensing to localize finger taps on the skin.
+                    The mini-Sense sensor is placed on different parts of the human arm. The functioning of each tap
+                    is shown on the LCD which is also placed on the arm. Taps on the arm will allow the users to
+                    control a robotic car.
                 </p>
 
 
                 <h3>PROPOSED SOLUTION:</h3>
-                <p>We use a multi-column convolutional neural network (MCNN) , which has proposed multi-column
-                    deep neural networks for image classification. Our model contains three columns of convolutional
-                    neural networks whose filters have different sizes. Input of the MCNN is the image, and its output
-                    is a crowd density map whose integral gives the overall crowd count.
+                <p>❖ An array of vibration sensors used to collect the data generated from finger taps on the skin and
+                    sent over Bluetooth to control the robot car. The data received by the robot car receiver will be
+                    analyzed and its direction of motion will be decided.<br>
+                    ❖ The sensing of finger taps is done by fitting electrodes on a band to be worn on the hand sleeve.
+                    A metallic ring is worn around the finger that is tapping. The signals detected by these electrodes
+                    are fed into the computer and processed to give the exact coordinates of the finger taps and the
+                    intention of it. Through a receiver controller, the motor car is given the direction to move.
                 </p>
-
-
-                <h3>TECHNOLOGY USED</h3>
-                <p>The code was implemented on Google colab where we have used python as our programming
-                    language, we used ShanghaiTech dataset for training the model. The framework used was Keras.
-                </p>
-
-
 
 
                 <h3>METHODOLOGY</h3>
-                <p>Phase 1 : The learning phase consisted of learning the basics of ML, DL and CNN. For that , we
-                    completed the Andrew NG course named “deeplearning.ai”. Also, for CNN we followed some
-                    videos on YouTube (MIT).<br>
-                    Phase 2: This consisted of implementing our knowledge about the subject on some basic
-                    projects such as classification of digits using the MNIST dataset.<br>
-                    Phase 3: We started with the Crowd Counting Project using Google colab. We have used the
-                    ShanghaiTech dataset which has a variety of related images with different perspectives. We used
-                    keras as the framework for our project.
+                <p>Components/Materials Used:<br>
+                    • Piezo Vibration/Tap sensor: for gathering sensor data.<br>
+                    • Arduino: primary microcontroller<br>
+                    • Robot Chassis: To build the bot.<br>
+                    • Bluetooth module: For wireless communication between humans and the bot.<br>
+                    • Motor driver, battery, wheels, DC-motor.<br>
+                    <br>
+                    To read more about skinput and how we made the project <a
+                        href="https://drive.google.com/file/d/1v0U6-6f2NqQ-VfejdZoGm8aj5PnhYRxa/view?usp=sharing">click
+                        here</a> for a detailed explanation.
                 </p>
 
                 <h3>RESULTS</h3>
-                <p>The value of mae is 47.31868438720702
+                <p>
+                    <img src="{% static 'img/virtual-expo/skinput2.jpg' %}" class="img-rounded img-fluid"
+                        style="width: 50%;"><br>
+                    ● Image: It shows the values from 4 different sensors<br><br>
+                    <img src="{% static 'img/virtual-expo/skinput3.jpg' %}" class="img-rounded img-fluid"
+                        style="width: 50%;"><br>
+                    ● Image: Calibrating the sensors<br><br>
+                    <img src="{% static 'img/virtual-expo/skinput4.jpg' %}" class="img-rounded img-fluid"
+                        style="width: 50%;"><br>
+                    ● Image: Final Wireless Robot Car<br><br>
                 </p>
 
 
                 <h3>FUTURE WORK</h3>
-                <p>In future we are planning to expand this into a real-time analysis on an actual crowd, the program
-                    currently finished can give an approximate count of the number of people in a crowd based on a
-                    static image.
+                <p>Once the Robot is working based on the taps of the sensors. We’ll next keep a small Pico projector
+                    on the arm and project the Robot Functionalities and the forearm. Which can be seen in the below
+                    picture.<br>
+                    <img src="{% static 'img/virtual-expo/skinput.jpg' %}" class="img-rounded img-fluid"
+                        style="width: 50%;">
+
                 </p>
 
 
                 <h3>KEY LEARNINGS</h3>
-                <p>Main things that we learnt during the course of this project include getting to learn a lot about
-                    machine learning, deep learning and the way how images are preprocessed before being used
-                    for training the model. Also we learnt many new algorithms and made a suitable model using
-                    CNN.
+                <p>We learnt how to build a Wireless Robot which includes the learning of writing code on Arduino
+                    IDE, connections with the Bluetooth module (HC-05) and integration of the robot motors with the
+                    motor drivers. Secondly, we learned how the vibration sensor works and learned how to calibrate
+                    the sensors. Thirdly we learned how to print any function/text on the LCD screen.
                 </p>
 
 
                 <h3>CONCLUSION</h3>
-                <p>Crowd counting using has a wide range of applications which include crowd control, disaster
-                    management, violence detection , etc.
+                <p>Hence, we started with building a basic wireless robot and worked of the vibration sensors and
+                    finally implemented the Skin put based Robot using the vibration sensor(piezo) and parallelly
+                    sending the data to the wireless bot to do its required functionality.
                 </p>
 
 
 
 
                 <h3>REFERENCES</h3>
-                <p>
-                    Following are the papers that we used as reference for our project:
-                </p>
-                <p>1. [MCNN] Single-Image Crowd Counting via Multi-Column Convolutional Neural
-                    Network (CVPR2016)<br>2. [CSR] CSRNet: Dilated Convolutional Neural Networks for Understanding the
-                    Highly Congested Scenes</p>
+
+                <p>● <a
+                        href="https://www.researchgate.net/publication/221517876_Skinput_Appropriating_the_Body_as_an_Input_Surface">skin
+                        put: Appropriating the Body as an Input Surface by Chris Harrison, Disney Tan, Dan Morris,
+                        Atlanta, GA, USA.</a><br>
+                    ● <a href="https://www.youtube.com/watch?v=g3XPUdW9Ryg&feature=youtu.be">A YouTube video on skin
+                        put: Appropriating the Body as an Input Surface. Chris Harrison, Disney Tan, Dan Morris</a><br>
+                    ● <a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2016/11/p111-harrison.pdf">skin
+                        put: Appropriating the Skin as an Interactive Canvas Chris Harrison, Disney Tan, Dan
+                        Morris.</a><br>
+                    ● <a href="https://dl.acm.org/doi/10.1145/1978542.1978564">Amento, B., Hill, W., Terveen, L. The
+                        sound of one hand: A wrist-mounted bio-acoustic fingertip gesture interface. In Proceedings of
+                        the CHI ‘02 Extended Abstracts (2002), 724–725</a></p>
                 <p></p>
 
                 <h3>TEAM</h3>
 
-                <p>● Shubam Agrawal<br>
-                    ● Anish Patil<br>
-                    ● Sasidhar Swarangi<br>
-                    ● Rutwik Mulay<br>
-                    ● Deepak<br>
+                <p>● Abhijit Kumar (Mentor)<br>
+                    ● Govind Sunil Kumar (Mentor)<br>
+                    ● Yogesh<br>
+                    ● Ritesh Chaudhary<br>
                 </p>
                 <p></p>
 
@@ -116,11 +134,11 @@
                         </div>
  -->
 
-                    </div>
-                </section>
             </div>
-        </div>
-    </div>
+</section>
+</div>
+</div>
+</div>
 </section>
 
 

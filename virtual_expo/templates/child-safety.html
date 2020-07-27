@@ -5,11 +5,13 @@
 
 
 <section class="probootstrap-section"
-    style="background-image: url('{% static 'img/virtual-expo/CrowdCounting.jpeg' %}'); width: 100%;background-size: cover;">
+    style="background-image: url('{% static 'img/virtual-expo/child-safety.webp' %}'); width: 100%;background-size: cover;">
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-left section-heading probootstrap-animate ">
-                <h1>Crowd Counting</h1>
+                <h1>
+                    <font color="black">Child Safety</font>
+                </h1>
             </div>
         </div>
     </div>
@@ -20,82 +22,103 @@
         <div class="row">
             <div class="col-md-12">
                 <h3>PROBLEM STATEMENT: </h3>
-                <p>To develop a method that can accurately estimate the crowd count for an individual image with
-                    arbitrary crowd density and arbitrary perspective.
+                <p>Child safety is a major concern all around the world. We tried to leverage technology to make a
+                    simple gadget that tracks the location of the child given the child is wearing it around the wrist.
+                    Our objective is to build an IoT based child safety device that would allow parents to monitor the
+                    location of their kids and alerts them if the kid goes beyond a particular diameter that is set by
+                    the parents. Communication between parent and child is enabled.
                 </p>
 
 
                 <h3>PROPOSED SOLUTION:</h3>
-                <p>We use a multi-column convolutional neural network (MCNN) , which has proposed multi-column
-                    deep neural networks for image classification. Our model contains three columns of convolutional
-                    neural networks whose filters have different sizes. Input of the MCNN is the image, and its output
-                    is a crowd density map whose integral gives the overall crowd count.
+                <p>To come up with a compact device that tracks the location of the child and alerts the parents using
+                    NodeMCU and GPS. This shall be done by interfacing the GPS module with nodeMCU. Creation of local
+                    web server using NodeMCU and updating the location details on the server webpage, thus avoiding the
+                    usage of applications. Communication between parent and child has to be either visual or any in
+                    non-verbal medium, considering the fact the child might not be able to read.
+
                 </p>
-
-
-                <h3>TECHNOLOGY USED</h3>
-                <p>The code was implemented on Google colab where we have used python as our programming
-                    language, we used ShanghaiTech dataset for training the model. The framework used was Keras.
-                </p>
-
 
 
 
                 <h3>METHODOLOGY</h3>
-                <p>Phase 1 : The learning phase consisted of learning the basics of ML, DL and CNN. For that , we
-                    completed the Andrew NG course named “deeplearning.ai”. Also, for CNN we followed some
-                    videos on YouTube (MIT).<br>
-                    Phase 2: This consisted of implementing our knowledge about the subject on some basic
-                    projects such as classification of digits using the MNIST dataset.<br>
-                    Phase 3: We started with the Crowd Counting Project using Google colab. We have used the
-                    ShanghaiTech dataset which has a variety of related images with different perspectives. We used
-                    keras as the framework for our project.
+                <p> ● NodeMCU is an open source IoT platform which contains firmware that runs on ESP8266 and can be
+                    programmed using Arduino IDE. <br>
+                    ● NodeMCU comes with a built-in Wi-Fi and is affordable. It is important to configure Arduino IDE to
+                    program NodeMCU. <br>
+                    ● We explored different libraries on Arduino and decided to use tinyGPS++ which allows us to extract
+                    location, date and time easily. <br>
+                    ● After exploring libraries we started programming using Arduino IDE and successfully interfaced GPS
+                    with NodeMCU. <br>
+                    ● The module will transmit data in multiple strings at 9600 Baud Rate. GPS module sends the real
+                    time tracking position data in NMEA format.<br>
+                    ● NodeMCU processes the data and uses HTML protocol to display all the key details on a webpage.<br>
+                    ● The child has 4 buttons on the watch with respect to 4 pre-coded messages so that the
+                    corresponding message is displayed on the webpage as soon as a button is pressed by the child.
+
                 </p>
 
                 <h3>RESULTS</h3>
-                <p>The value of mae is 47.31868438720702
+                <p>After uploading the code onto NodeMCU, the screen monitor will display information such as Wi-Fi
+                    connection. If the Wi-Fi is connected, the local IP address will be displayed. This IP address could
+                    be entered on any webpage. After entering the local IP address the location, time and date details
+                    will be displayed on the webpage.
+                    <br>
+                    In addition to location details, the kid can alert the parents using push buttons.This would display
+                    a warning message on the web page hence, warning the parents.
+
                 </p>
 
 
                 <h3>FUTURE WORK</h3>
-                <p>In future we are planning to expand this into a real-time analysis on an actual crowd, the program
-                    currently finished can give an approximate count of the number of people in a crowd based on a
-                    static image.
+                <p>Practically, using the 4 buttons to send 4 pre-recorded messages to parents is not sufficient, since
+                    a child cannot convey a message other than those 4 pre-recorded ones. So adding Speech to Text
+                    conversion feature along with these messages helps the child to send any other message to the
+                    parent.
                 </p>
 
 
                 <h3>KEY LEARNINGS</h3>
-                <p>Main things that we learnt during the course of this project include getting to learn a lot about
-                    machine learning, deep learning and the way how images are preprocessed before being used
-                    for training the model. Also we learnt many new algorithms and made a suitable model using
-                    CNN.
+                <p>● Arduino IDE software.<br>
+                    ● NodeMCU interfacing with Arduino IDE.<br>
+                    ● Functioning and Interfacing GPS module with NodeMCU.<br>
+                    ● HTML to display webpage.<br>
+                    ● Port forwarding
+
                 </p>
 
 
                 <h3>CONCLUSION</h3>
-                <p>Crowd counting using has a wide range of applications which include crowd control, disaster
-                    management, violence detection , etc.
+                <p>Using the internet of things (IoT) we can create a number of projects that would shape the modern
+                    world beyond our wildest imaginations. This project is just the beginning and this technology could
+                    be used in a variety of devices that include safety and tracking.
                 </p>
 
 
 
 
                 <h3>REFERENCES</h3>
-                <p>
-                    Following are the papers that we used as reference for our project:
+
+                <p>● <a
+                        href="https://tttapa.github.io/ESP8266/Chap07%20-%20Wi-Fi%20Connections.html">https://tttapa.github.io/ESP8266/Chap07%20-%20Wi-Fi%20Connections.html</a><br>
+                    ● <a
+                        href="https://www.teachmemicro.com/intro-nodemcu-arduino/">https://www.teachmemicro.com/intro-nodemcu-arduino/</a><br>
+                    ● <a href="https://youtu.be/pVcjXIG4KW8">https://youtu.be/pVcjXIG4KW8</a><br>
+                    ● <a
+                        href="https://www.electronicwings.com/sensors-modules/gps-receiver-module">https://www.electronicwings.com/sensors-modules/gps-receiver-module</a><br>
+                    ● <a
+                        href="https://www.w3schools.com/html/html_form_input_types.asp">https://www.w3schools.com/html/html_form_input_types.asp</a>
                 </p>
-                <p>1. [MCNN] Single-Image Crowd Counting via Multi-Column Convolutional Neural
-                    Network (CVPR2016)<br>2. [CSR] CSRNet: Dilated Convolutional Neural Networks for Understanding the
-                    Highly Congested Scenes</p>
                 <p></p>
 
                 <h3>TEAM</h3>
 
-                <p>● Shubam Agrawal<br>
-                    ● Anish Patil<br>
-                    ● Sasidhar Swarangi<br>
-                    ● Rutwik Mulay<br>
-                    ● Deepak<br>
+                <p>● Jahnavi Kancharla <br>
+                    ● Anirudh <br><br>
+
+                    Mentor:<br>
+                    ● Srujana
+
                 </p>
                 <p></p>
 
@@ -116,11 +139,11 @@
                         </div>
  -->
 
-                    </div>
-                </section>
             </div>
-        </div>
-    </div>
+</section>
+</div>
+</div>
+</div>
 </section>
 
 

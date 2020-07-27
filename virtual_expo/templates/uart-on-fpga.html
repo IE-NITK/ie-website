@@ -5,11 +5,13 @@
 
 
 <section class="probootstrap-section"
-    style="background-image: url('{% static 'img/virtual-expo/CrowdCounting.jpeg' %}'); width: 100%;background-size: cover;">
+    style="background-image: url('{% static 'img/virtual-expo/uart.png' %}'); width: 100%;background-size: cover;">
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-left section-heading probootstrap-animate ">
-                <h1>Crowd Counting</h1>
+                <h1>
+                    <font color="black">UART on FPGA</font>
+                </h1>
             </div>
         </div>
     </div>
@@ -20,82 +22,99 @@
         <div class="row">
             <div class="col-md-12">
                 <h3>PROBLEM STATEMENT: </h3>
-                <p>To develop a method that can accurately estimate the crowd count for an individual image with
-                    arbitrary crowd density and arbitrary perspective.
+                <p>Design and implementation of hardware for UART data transmission on a Spartan-7 FPGA. The UART
+                    protocol is selected for its relative simplicity and popularity. The Spartan-7 FPGA board has a
+                    number of I/O pins that are suitable over a range of voltages and was hence suitable for this
+                    project.
+
                 </p>
 
 
                 <h3>PROPOSED SOLUTION:</h3>
-                <p>We use a multi-column convolutional neural network (MCNN) , which has proposed multi-column
-                    deep neural networks for image classification. Our model contains three columns of convolutional
-                    neural networks whose filters have different sizes. Input of the MCNN is the image, and its output
-                    is a crowd density map whose integral gives the overall crowd count.
+                <p>The UART receiver and transmitter were implemented independently. We used 9600 BAUD rate for
+                    transmission of serial data and divided the system clock accordingly. We followed the Finite State
+                    Machine (FSM) approach to design both UART transmitter and receiver. These FSMs were then written in
+                    Verilog following RTL Design and implemented on the Spartan-7 FPGA board.
                 </p>
-
-
-                <h3>TECHNOLOGY USED</h3>
-                <p>The code was implemented on Google colab where we have used python as our programming
-                    language, we used ShanghaiTech dataset for training the model. The framework used was Keras.
-                </p>
-
-
 
 
                 <h3>METHODOLOGY</h3>
-                <p>Phase 1 : The learning phase consisted of learning the basics of ML, DL and CNN. For that , we
-                    completed the Andrew NG course named “deeplearning.ai”. Also, for CNN we followed some
-                    videos on YouTube (MIT).<br>
-                    Phase 2: This consisted of implementing our knowledge about the subject on some basic
-                    projects such as classification of digits using the MNIST dataset.<br>
-                    Phase 3: We started with the Crowd Counting Project using Google colab. We have used the
-                    ShanghaiTech dataset which has a variety of related images with different perspectives. We used
-                    keras as the framework for our project.
+                <p>UART exchanges text data in an American Standard Code for Information Interchange (ASCII) format in
+                    which each alphabetical character is encoded by 7 bits and transmitted as 8 data bits. For
+                    transmission the UART protocol wraps this 8 bit subword with a start bit in the least significant
+                    bit (LSB) and a stop bit in the most significant bit (MSB) resulting in a 10 bit word format.
+                    <br>
+                    <img src="{% static 'img/virtual-expo/uart1.png' %}" class="img-rounded img-fluid"
+                        style="width: 100%;"><br><br>
+                    <strong><i></i>Transmitter:</strong><br>
+
+                    The function of the transmitter module is to convert the 8 bit serial data into the single bit data.
+                    In this module, when our load signal is high the data_in is stored into the holding register. The
+                    data in the holding register is shifted to the intermediate register with the start bit of zero and
+                    this intermediate register is of 9 bits. Once the shift signal is high the least significant bit of
+                    the intermediate register comes at the output of the transmitter and is served as the input to the
+                    receiver. When the entire data has been sent, the transmitter provides a parity bit which is served
+                    as the input to the receiver.
+                    <br> <img src="{% static 'img/virtual-expo/uart2.png' %}" class="img-rounded img-fluid"
+                        style="width: 50%;"><br><br>
+                    <strong><i></i>Receiver:</strong><br>
+                    The function of the receiver module is to store the tx_serial i.e. the output of the transmitter
+                    which is of single bit into the intermediate register with the start bit as the least significant
+                    bit and collectively provide the 8 bit serial data. When the load signal is high it will get the
+                    start bit from the transmitter which assures that the original data is now being send by the
+                    transmitter. Once the shift signal is becomes high with no load signal, the data coming from the
+                    transmitter gets shifted into the intermediate register of the receiver and provides the 8 bit
+                    serial data which we have given as an input to the transmitter. The Baud rate generator is nothing
+                    but a frequency divider. In this UART we will apply the synchronized clock signal to both
+                    transmitter and the receiver. When the load signal is high it will get the start bit from the
+                    transmitter which assures that the original data is now being send by the transmitter. Once the
+                    shift signal becomes high with no load signal, the data coming from the transmitter gets shifted
+                    into the intermediate register
+                    of the receiver and provides the 8 bit serial data which we have given as an input to the
+                    transmitter. <br> <img src="{% static 'img/virtual-expo/uart3.png' %}" class="img-rounded img-fluid"
+                        style="width: 50%;"><br><br>
+
+
                 </p>
 
                 <h3>RESULTS</h3>
-                <p>The value of mae is 47.31868438720702
+                <p>The testbench created verified the proper functioning of the Verilog Code for both Transmitter and
+                    Receiver. The below graph shows the results of the testbench. A small delay between transmission of
+                    data and its reception was artificially introduced to simulate real-world implementations.
+                    <img src="{% static 'img/virtual-expo/uart4.png' %}" class="img-rounded img-fluid"
+                        style="width: 100%;"><br><br>
+                <p>
                 </p>
 
 
                 <h3>FUTURE WORK</h3>
-                <p>In future we are planning to expand this into a real-time analysis on an actual crowd, the program
-                    currently finished can give an approximate count of the number of people in a crowd based on a
-                    static image.
+                <p>The UART Transmitter and Receiver modules implemented on the FPGA must be tested with real
+                    peripherals to better understand the effect of noise and obtain Bit Error Rate. This UART
+                    implementation on the FPGA can be used to further integrate any other project implemented on the
+                    FPGA with external memory devices.
                 </p>
 
 
                 <h3>KEY LEARNINGS</h3>
-                <p>Main things that we learnt during the course of this project include getting to learn a lot about
-                    machine learning, deep learning and the way how images are preprocessed before being used
-                    for training the model. Also we learnt many new algorithms and made a suitable model using
-                    CNN.
+                <p>Detailed understanding of the working of various data transmission protocols, not just UART. The
+                    inner functioning of an FPGA and ways to use its fundamental units to optimize designs. Design of
+                    digital systems using Verilog.
                 </p>
 
 
                 <h3>CONCLUSION</h3>
-                <p>Crowd counting using has a wide range of applications which include crowd control, disaster
-                    management, violence detection , etc.
+                <p>The FPGA is a versatile device with the potential to be a part of a number of projects. This project
+                    simply scratches the surface of its many uses and further projects involving the FPGA can integrate
+                    this project to allow the FPGA to interface with multiple peripherals.
                 </p>
 
 
-
-
-                <h3>REFERENCES</h3>
-                <p>
-                    Following are the papers that we used as reference for our project:
-                </p>
-                <p>1. [MCNN] Single-Image Crowd Counting via Multi-Column Convolutional Neural
-                    Network (CVPR2016)<br>2. [CSR] CSRNet: Dilated Convolutional Neural Networks for Understanding the
-                    Highly Congested Scenes</p>
-                <p></p>
 
                 <h3>TEAM</h3>
 
-                <p>● Shubam Agrawal<br>
-                    ● Anish Patil<br>
-                    ● Sasidhar Swarangi<br>
-                    ● Rutwik Mulay<br>
-                    ● Deepak<br>
+                <p>● Trinesh Reddy: trinesh.181ec108@nitk.edu.in<br>
+
+                    ● Atulya Mahesh: atulya.181ec108@nitk.edu.in
                 </p>
                 <p></p>
 
@@ -116,11 +135,11 @@
                         </div>
  -->
 
-                    </div>
-                </section>
             </div>
-        </div>
-    </div>
+</section>
+</div>
+</div>
+</div>
 </section>
 
 
