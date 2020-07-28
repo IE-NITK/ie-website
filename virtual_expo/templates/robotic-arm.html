@@ -5,12 +5,12 @@
 
 
 <section class="probootstrap-section"
-    style="background-image: url('{% static 'img/virtual-expo/mood_based.jpeg' %}'); width: 100%;background-size: cover;">
+    style="background-image: url('{% static 'img/virtual-expo/robotic-arm.png' %}'); width: 100%;background-size: cover;">
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-left section-heading probootstrap-animate ">
                 <h1>
-                    <font color="black">Mood Based Movie Recommender</font>
+                    <font color="black">Robotic Arm</font>
                 </h1>
             </div>
         </div>
@@ -22,134 +22,90 @@
         <div class="row">
             <div class="col-md-12">
                 <h3>PROBLEM STATEMENT: </h3>
-                <p>To Design a General Convolutional Neural Network (CNN) building framework for designing real-
-                    time CNNs. The real time CNN should be trained and designed to predict human emotions and
-
-                    predict movies based on those emotions.
+                <p>To make a Robotic Arm that can be controlled using a smartphone with the
+                    help of Bluetooth module
                 </p>
 
 
                 <h3>PROPOSED SOLUTION:</h3>
-                <p>We used Depthwise Separable Convolution Neural Networks and built a miniature version of
-                    Xception Architecture which was proposed by Francois Chollet, the founder of Keras. The
-                    architecture has already been used in certain research references. These CNNs were trained on
-                    the FER-2013 Dataset, which had the following classes {“angry”, “disgust”, “fear”, “happy”, “sad”,
-                    “surprise”, “neutral”}. We used OpenCV to get the Region of Interest (ROI) from the real-time feed
-                    and sent it to the trained min-Xception model for classification. We turned down the number of
-                    classes to the basic 4 emotions {“Happy”, “Sad”, “Neutral”, “Angry”} and assigned some movies
-                    subjectively to each category. A Web Application was developed to host the whole project. Web
-                    Application was built using the Python-Flask framework. It Integrates the prediction model to
-                    serve the recommended movies to the user. It asks the user for a real-time snapshot, which is
-                    then passed to the model in the back-end. List of Movies is extracted from the Database based
-                    on the results produced by the model.
+                <p>A Bluetooth controlled 3-D printed 5 degrees of freedom
+                    robotic arm that can be controlled using a mobile application. AutoCAD and Catia
+                    V5 to be used to design the robot. The robot will use Arduino Uno as an
+                    electronics platform. 3 SG90 and 3 MG996R servo motors to be used at the joints.
+                    MIT app inventor to be used for mobile application where servo motors can be
+                    controlled by the user. The application is user-friendly. The robot will have a
+                    memory so that it can execute previously defined motions so that it can be used in
+                    assembly-line manufacturing.<br>
+
+                    Using the sliders in the app we can manually control the movement of each servo
+                    or axis of the robot arm. Also using the “Save” button we can record each position
+                    or step and then the robot arm can automatically run and repeat these steps. With
+                    the same button we can pause the automatic operation as well as reset or delete all
+                    steps so that we can record new ones.<br>
+                    For making the circuit, we need Arduino UNO, HC-05 Bluetooth module for
+                    communication with the smartphone and servo motors. The control pins of servo
+                    motors are connected to 6 digital pins of Arduino UNO. For powering the servos
+                    we need 5V which comes from an external power source since Arduino cannot
+                    handle the amount of current all of them can draw. The power source must handle
+                    at least 2A of current.<br>
+                    In the Android Application, at the top we have two buttons for connecting the
+                    smartphone to the HC-05 Bluetooth module. Then on the left side we have an
+                    image of the robot arm, and on the right side we have the six sliders for controlling
+                    the servos and one slider for the speed control. Each slider has different initial,
+                    minimum and maximum value that suits the robot arm joints. At the bottom of the
+                    app, we have three buttons, SAVE, RUN and RESET through which we can
+                    program the robot arm to run automatically. There is also a label below which
+                    shows the number of steps we have saved.
                 </p>
 
 
                 <h3>TECHNOLOGY USED</h3>
-                <p>Python, TensorFlow, Keras, OpenCV, Pandas, SciKit_Learn, NumPy, Flask ,HTML, CSS, BootStrap,
-                    MySQL
+                <p>● Designing the bot - AutoCAD and Catia<br>
+                    ● Microcontroller - Arduino UNO<br>
+                    ● Rotation - Servo motors<br>
+                    ● Designing Application - MIT App Inverter<br>
+                    ● Bluetooth and Arduino UNO Interfacing
                 </p>
 
 
-
-
-                <h3>METHODOLOGY</h3>
-                <p>1. Our focus was on building a basic face detection program in OpenCV using Haar
-                    Cascades for the beginning phase. Initially, the algorithm needs a lot of positive images
-                    (images with faces) and negative images (images without faces) to train the classifier
-                    which is very similar to convolutional kernel. We used the default
-                    haarcascade_frontal_face_default.xml .<br>
-                    2. Once our basic building block was done. We diverted our attention on building a
-                    Convolutional Neural Network for training and also on finding a dataset that contains
-                    huge amounts of images.<br>
-                    3. For the Dataset, we found the FER-2013 dataset which was used in Facial Expression
-                    Recognition Kaggle Contest. It contained 35,685 images of 48 x 48 pixels.<br>
-                    4. After doing some brainstorming and learning about CNNs we found that DepthWise
-                    Separable CNNs were more better in classifying images and also reduces overfitting of
-                    the training data.<br>
-                    5. We found a relevant architecture called “Xception Architecture” which was developed by
-                    Google Researchers published under the name of Francois Chollet, creator of Keras.<br>
-                    6. The XCeption Deep Neural Network Model was too expensive to train with the
-                    computational power we had access to. So we decided to implement a miniature version
-                    of this min-XCeption whose architecture was quite elementary and also had citations.<br>
-                    7. Our final architecture is a fully-convolutional neural network that contains 4 residual
-                    depth-wise separable convolutions where each convolution is followed by a batch
-                    normalization operation and a ReLU activation function.<br>
-                    8. This architecture has approximately 60, 000 parameters; which corresponds to a
-                    reduction of 80× when compared to a original CNN.<br>
-                    9. We introduced batch normalization, to address the problem of Internal Covariate Shift,
-                    for much higher training rates, and helped achieving 14 times fewer training steps with
-                    the same accuracy.<br>
-                    10. We carried out real-time detection of emotions on the trained model. Our application
-                    gave the percentage of each emotional class.<br>
-                    11. Our next target was to build a Web Application, which had all of the programs running in
-                    the backend. The Web App had the following functionalities taking real time snapshots of
-                    person, detection of emotion, displaying the resultant emotion and a list of movies which
-                    were subjectively assigned to each emotion and stored in a MySQL database.<br>
-                    12. Everytime a emotion was called, a random list of movies from the corresponding emotion
-                    is displayed on the web app.<br>
-                </p>
 
                 <h3>RESULTS</h3>
-                <p>● Our miniature implementation of the XCeption Architecture performed pretty well on the
-                    FER-2013 dataset with about 74 % accuracy after 56 Epochs<br>
-                    ● The architecture reduces the parameters by 80x while obtaining favourable results by
-                    using depth wise separable convolution neural networks.<br>
+                <p>Robotic Arm is designed which can be controlled via bluetooth
+                    using an application in mobile phone. It has memory to remember the steps
+                    and repeat the saved steps which makes it autonomous.<br>
+                    <img src="{% static 'img/virtual-expo/robotic-arm1.png' %}" class="img-rounded img-fluid"
+                        style="width: 50%;height:50%"><br>
+                        <img src="{% static 'img/virtual-expo/robotic-arm2.png' %}" class="img-rounded img-fluid"
+                        style="width: 50%;height:50%"><br>
                 </p>
 
-                <h3>DEMO</h3>
-                <p>
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <iframe width="686" height="386" src="https://www.youtube.com/embed/n9FIgEeSloE" frameborder="0"
-                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
-                    </div>
-                </p>
 
                 <h3>FUTURE WORK</h3>
-                <p>● If a Survey can be conducted among thousands of people which takes note of the current
-                    movie they would prefer to watch along with the reason “Why” and take a snapshot of the
-                    person. Using this dataset along with word embedding conduct a sentiment analysis, and
-                    then train the current CNN architecture on those emotions based on the results of the
-                    sentiment analysis. This would be a more accurate representation of a movie
-                    recommender<br>
-                    ● We’ve observed that there were certain misclassifications such as persons with glasses
-                    being classified as “angry”. This happens since the label “angry” is highly activated when
-                    it believes a person is frowning and frowning features get confused with darker glass
-                    frames. This leads to bias in the machine learning process. We believe that uncovering
-                    such behaviours is of extreme importance when creating robust classifiers, and that the
-                    use of the visualization techniques such as guided back-propagation will become
-                    invaluable when uncovering model biases.<br>
+                <p>The project involves a robotic arm which is currently controlled
+                    through bluetooth by a mobile application. In the future, image processing could be
+                    implemented with the robotic arm to enable it to detect and interact with objects
+                    based on it’s features such as shape, colour etc. Moreover, dedicated tasks such as
+                    picking up an object and placing it in a different location can be automated too
+                    instead of manually operating it.
                 </p>
 
 
-                <h3>KEY LEARNINGS</h3>
-                <p>● Using OpenCV for Face Detection<br>
-                    ● Workings of DepthWise Separable Convolutions<br>
-                    ● Understanding the Intricacies of Deep Learning<br>
-                    ● Structuring of ML Projects<br>
-                    ● Creating Basic Web Applications on Flask<br>
+
+                <h3>PROJECT LINK</h3>
+                <p>
+                <a href="https://github.com/rajatshuklaa/Robotic-arm.git">GitHub Repository</a><br>
                 </p>
-
-                <h3>REFERENCES</h3>
-
-                    <a href="https://github.com/dwaipayan05/Movie-Recommender">GitHub Repository</a><br>
-                    <a href="https://towardsdatascience.com/face-detection-in-2-minutes-using-opencv-python-90f89d7c0f81">Face Detection Using OpenCV</a><br>
-                    <a href="https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53">A Comprehensive Guide to Convolutional Neural Networks</a><br>
-                    <a href="https://arxiv.org/pdf/1610.02357.pdf">Xception: Deep Learning with Depth Wise Separable Convolutions</a><br>
-                    <a href="https://arxiv.org/pdf/1502.03167.pdf">Batch Normalization : Accelerating Deep Neural Network Training</a><br>
-                    <a href="https://www.digitalocean.com/community/tutorials/how-to-make-a-web-application-using-flask-in-python-3">Basic Flask Introduction</a></p>
-                <p></p>
 
                 <h3>TEAM</h3>
 
-                <p>Mentors : -<br>
-                    ● Souhard Kataria<br>
-                    ● Aashay Maheshwarkar<br><br>
-                    Members : -<br>
-                    ● Dwaipayan Munshi (dwaipayanmunshi2001@gmail.com)<br>
-                    ● Omanshu Mahawar (omanshumahawar.181co237@nitk.edu.in)<br>
-                    ● Ritik Pansuriya (ritik.rjt@gmail.com)<br>
+                <p>● Rajat Shukla - 3rd Year, Mechanical Engineering (Project Mentor)<br>
+                    ● Srujana Nadella - 3rd Year, Electronics and Communication<br>
+                    Engineering (Project Mentor)<br>
+                    ● Abhinav Raj - 2nd Year, Mechanical Engineering<br>
+                    ● Kaustubh Sonawane - 2nd Year, Mechanical Engineering<br>
+                    ● Roshan Rangarajan - 2nd Year, Electronics and Communication
+                    Engineering<br>
+                    ● Sumanth Uppalapati - 2nd Year, Mechanical Engineering<br>
                 </p>
 
                 <!-- <h3>PICTURES</h3>
