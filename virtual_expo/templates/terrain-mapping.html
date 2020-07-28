@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+{% block virtual_expo %}active{% endblock %}
+{% load static %}
+{% block main %}
+
+
+<section class="probootstrap-section"
+    style="background-image: url('{% static 'img/virtual-expo/terrain-mapping.jpg' %}'); width: 100%;background-size: cover;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-left section-heading probootstrap-animate ">
+                <h1>
+                    Terrain Mapping
+                </h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="probootstrap-section probootstrap-section-sm">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>PROBLEM STATEMENT: </h3>
+                <p>To construct a 3D map of the immediate environment from a ground-based
+                    rover using depth cameras mounted on it.
+                </p>
+
+
+                <h3>PROPOSED SOLUTION:</h3>
+                <p>A Digital Terrain Model (DTM) constructed using the sensor
+                    data from the Microsoft Kinect sensor in real time which can then be remotely
+                    accessed from any system. The Ground bot is expected to move at a speed of upto
+                    1m/s to allow time for the Kinect to collect data and for the RPi to compute and
+                    store this data. ROS’ RTabMap package is to be used to create the model.
+                </p>
+
+
+                <h3>TECHNOLOGY USED</h3>
+                <p>Raspberry Pi 4, Kinect V1, ROS
+                </p>
+
+
+
+                <h3>RESULTS</h3>
+                <p>Setting up the Kinect, a Digital Terrain Model was obtained using the
+                    same. Kinect Sensor data of a test run was compiled and the resulting map
+                    analyzed for errors in accuracy. The updated algorithm has not yet been tested on
+                    the bot.<br>
+                    
+
+                </p>
+
+
+                <h3>FUTURE WORK</h3>
+                <p>● If a Survey can be conducted among thousands of people which takes note of the current
+                    movie they would prefer to watch along with the reason “Why” and take a snapshot of the
+                    person. Using this dataset along with word embedding conduct a sentiment analysis, and
+                    then train the current CNN architecture on those emotions based on the results of the
+                    sentiment analysis. This would be a more accurate representation of a movie
+                    recommender<br>
+                    ● We’ve observed that there were certain misclassifications such as persons with glasses
+                    being classified as “angry”. This happens since the label “angry” is highly activated when
+                    it believes a person is frowning and frowning features get confused with darker glass
+                    frames. This leads to bias in the machine learning process. We believe that uncovering
+                    such behaviours is of extreme importance when creating robust classifiers, and that the
+                    use of the visualization techniques such as guided back-propagation will become
+                    invaluable when uncovering model biases.<br>
+                </p>
+
+
+                <h3>KEY LEARNINGS</h3>
+                <p>● Using OpenCV for Face Detection<br>
+                    ● Workings of DepthWise Separable Convolutions<br>
+                    ● Understanding the Intricacies of Deep Learning<br>
+                    ● Structuring of ML Projects<br>
+                    ● Creating Basic Web Applications on Flask<br>
+                </p>
+
+                <h3>REFERENCES AND PROJECT LINKS</h3>
+                <p>
+                    <a href="http://introlab.github.io/rtabmap/">GitHub Repository</a><br>
+                    <a href="http://wiki.ros.org/rtabmap_ros/Tutorials/HandHeldMapping">http://wiki.ros.org/rtabmap_ros/Tutorials/HandHeldMapping</a><br>
+                    </p>
+
+                <h3>TEAM</h3>
+
+                <p>Mentors : -<br>
+                    ● Karn Tiwari - 2nd Year, Electrical and Electronics Engineering<br>
+                    ● Nidhi Achar - 2nd Year Mechanical Engineering<br>
+                    ● Sashi Sekharan - 2nd Year Mechanical Engineering<br>
+                    ● Shreyas - 2nd Year Electrical and Electronics Engineering<br>
+                    ● Sumanth Bharadwaj - 2nd Year Mechanical Engineering<br>
+                    ● Atulya Mahesh - 3rd Year, Electronics and Communication Engineering
+                    (Project Mentor)<br>
+                    ● Rahasya Barkur - 3rd Year, Electronics and Communication Engineering
+                    (Project Mentor)
+                </p>
+
+                <!-- <h3>PICTURES</h3>
+                <section class="container">
+                    <div class="row mb-5">
+
+                        <div class="card-deck  col-md-4 col-sm-6 col-sm-12">
+                            <div class="card" style="margin-bottom: 15px;">
+                                <div style="text-align:center">
+
+                                    <img src="" alt="Card image cap" class="img-fluid" style="height:270px; width:100%">
+                                    <div class="card-body">
+                                        <h6 class="card-title">card title</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+ -->
+
+            </div>
+</section>
+</div>
+</div>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+{% comment %} <section class="probootstrap-section probootstrap-section-sm">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+
+            </div>
+        </div>
+    </div>
+</section> {% endcomment %}
+
+<script type="text/javascript">
+    $(".team").addClass("active");
+    var tabcontent = document.getElementsByClassName('teams');
+    for (i = 1; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    function navigate(signame) {
+        var tabcontent = document.getElementsByClassName('teams');
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(signame).style.display = "block";
+        $("." + signame).addClass("active");
+    }
+</script>
+{% endblock %}

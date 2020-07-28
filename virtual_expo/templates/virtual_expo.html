@@ -33,8 +33,9 @@
                                 </li>
                                 <li class="tablinks code"><a onclick="return navigate('code')">Code</a></li>
                                 <li class="tablinks gadget"><a onclick="return navigate('gadget')">Gadget</a></li>
+                                <li class="tablinks robotics"><a onclick="return navigate('robotics')">Robotics</a>
                                 <!-- <li class="tablinks garage"><a onclick="return navigate('garage')">Garage</a></li>
-                                    <li class="tablinks robotics"><a onclick="return navigate('robotics')">Robotics</a>
+                                    
                                      <li class="tablinks media"><a onclick="return navigate('media')">Media</a> 
                                     <li class="tablinks capital"><a onclick="return navigate('capital')">Capital</a>
                                     <li class="tablinks script"><a onclick="return navigate('script')">Script</a> -->
@@ -450,16 +451,20 @@
                         <h2>Robotics</h2>
                         <section class="probootstrap-section">
                             <div class="container" style="width: 100%;">
-
                                 <div class="col-sm-12">
                                     <div class="probootstrap-teacher text-center probootstrap-animate"
                                         style="min-height: 170px">
                                         <div class="card">
-                                            <img class="card-img-top" src="..." alt="Card image cap">
-                                            <div class="card-header">Project Title</div>
+                                            <img class="card-img-top" style="width: 100%;"
+                                                src="{% static 'img/virtual-expo/autoshopper.jpg'%}"
+                                                alt="Card image cap">
+                                            <div class="card-header">
+                                                <h3>Autoshopper</h3>
+                                            </div>
                                             <div class="card-body">
 
-                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                                <a href="{% url 'virtual_expo:autoshopper' %}"
+                                                    class="btn btn-primary">Read more</a>
                                             </div>
                                         </div>
                                     </div>
@@ -469,11 +474,16 @@
                                     <div class="probootstrap-teacher text-center probootstrap-animate"
                                         style="min-height: 170px">
                                         <div class="card">
-                                            <img class="card-img-top" src="..." alt="Card image cap">
-                                            <div class="card-header">Project Title</div>
+                                            <img class="card-img-top" style="width: 100%;"
+                                                src="{% static 'img/virtual-expo/robotic-arm.png'%}"
+                                                alt="Card image cap">
+                                            <div class="card-header">
+                                                <h3>Robotic Arm</h3>
+                                            </div>
                                             <div class="card-body">
 
-                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                                <a href="{% url 'virtual_expo:robotic_arm' %}"
+                                                    class="btn btn-primary">Read more</a>
                                             </div>
                                         </div>
                                     </div>
@@ -483,76 +493,26 @@
                                     <div class="probootstrap-teacher text-center probootstrap-animate"
                                         style="min-height: 170px">
                                         <div class="card">
-                                            <img class="card-img-top" src="..." alt="Card image cap">
-                                            <div class="card-header">Project Title</div>
+                                            <img class="card-img-top" style="width: 100%;"
+                                                src="{% static 'img/virtual-expo/terrain-mapping.jpg'%}"
+                                                alt="Card image cap">
+                                            <div class="card-header">
+                                                <h3>Terrain Mapping</h3>
+                                            </div>
                                             <div class="card-body">
 
-                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                                <a href="{% url 'virtual_expo:terrain_mapping' %}"
+                                                    class="btn btn-primary">Read more</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="col-sm-12">
-                                    <div class="probootstrap-teacher text-center probootstrap-animate"
-                                        style="min-height: 170px">
-                                        <div class="card">
-                                            <img class="card-img-top" src="..." alt="Card image cap">
-                                            <div class="card-header">Project Title</div>
-                                            <div class="card-body">
-
-                                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-12">
-                                    <div class="probootstrap-teacher text-center probootstrap-animate"
-                                        style="min-height: 170px">
-                                        <div class="card">
-                                            <img class="card-img-top" src="..." alt="Card image cap">
-                                            <div class="card-header">Project Title</div>
-                                            <div class="card-body">
-
-                                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
+                                
                             </div>
                         </section>
                     </div>
 
-                    <!-- <div class="col-md-7 col-md-push-1 probootstrap-animate teams" id="media">
-                            <h2>Media</h2>
-                            <section class="probootstrap-section">
-                                <div class="container" style="width: 100%;">
-                                    <div class="col-sm-12">
-                                        <div class="probootstrap-teacher text-center probootstrap-animate"
-                                             style="min-height: 170px">
-                                            <div class="text" style="word-wrap: break-word;">
-                                                <h3>Basic Photoshop and Premiere pro</h3>
-                                                <p>Photoshop is the biggest name in image editing and so is premiere pro
-                                                    in video editing, but it has a reputation as a complicated and
-                                                    difficult app to use. While it’s certainly feature packed, it’s
-                                                    nowhere near as difficult to get the hang of as it first appears.
-                                                    Let’s look at how to learn Photoshop and Premiere pro this
-                                                    summer.</p>
-                                                <p><b>Detailed Course Plan:</b><a
-                                                        href="https://drive.google.com/open?id=1ifnI3F9Z69BsRDV7p9ikmVTzMgp-kY5I"
-                                                        target="_blank">
-                                                    Course Plan</a></p>
-                                                <p><b>Contact:</b> Aditya S G : 8826950512 / adityasg3@gmail.com
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-                        </div> -->
-
+                    
                     <div class="col-md-7 col-md-push-1 probootstrap-animate teams" id="capital">
                         <h2>Capital</h2>
                         <section class="probootstrap-section">

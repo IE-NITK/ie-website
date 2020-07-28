@@ -69,3 +69,15 @@ def traffic_light_control(request):
 
 def uart_on_fpga(request):
     return render(request, 'uart-on-fpga.html')
+
+
+def autoshopper(request):
+    return render(request, 'autoshopper.html')
+
+
+def robotic_arm(request):
+    return render(request, 'robotic-arm.html')
+
+
+def terrain_mapping(request):
+    return render(request, 'terrain-mapping.html')

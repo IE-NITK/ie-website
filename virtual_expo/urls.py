@@ -26,4 +26,7 @@ urlpatterns = [
     path('virtual-expo/gadget/smart_home_automation', views.smart_home_automation, name='smart_home_automation'),
     path('virtual-expo/gadget/traffic_light_control', views.traffic_light_control, name='traffic_light_control'),
     path('virtual-expo/gadget/uart_on_fpga', views.uart_on_fpga, name='uart_on_fpga'),
+    path('virtual-expo/robotics/autoshopper', views.autoshopper, name='autoshopper'),
+    path('virtual-expo/robotics/robotic_arm', views.robotic_arm, name='robotic_arm'),
+    path('virtual-expo/robotics/terrain_mapping', views.terrain_mapping, name='terrain_mapping'),
     ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
