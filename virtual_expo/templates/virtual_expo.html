@@ -33,10 +33,11 @@
                                 </li>
                                 <li class="tablinks code"><a onclick="return navigate('code')">Code</a></li>
                                 <li class="tablinks gadget"><a onclick="return navigate('gadget')">Gadget</a></li>
+                                <li class="tablinks garage"><a onclick="return navigate('garage')">Garage</a></li>
                                 <li class="tablinks robotics"><a onclick="return navigate('robotics')">Robotics</a>
-                                <!-- <li class="tablinks garage"><a onclick="return navigate('garage')">Garage</a></li>
+                                
                                     
-                                     <li class="tablinks media"><a onclick="return navigate('media')">Media</a> 
+                                 <!--    <li class="tablinks media"><a onclick="return navigate('media')">Media</a> 
                                     <li class="tablinks capital"><a onclick="return navigate('capital')">Capital</a>
                                     <li class="tablinks script"><a onclick="return navigate('script')">Script</a> -->
                                 </li>
@@ -392,14 +393,33 @@
                                         style="min-height: 170px">
                                         <div class="card">
                                             <img class="card-img-top" style="width: 100%;"
-                                                src="{% static 'img/virtual-expo/uart_on_fpga.jpg'%}"
+                                                src="{% static 'img/virtual-expo/drag-system.png'%}"
                                                 alt="Card image cap">
                                             <div class="card-header">
-                                                <h3>UART on FPGA</h3>
+                                                <h3>Design of a Drag reduction System</h3>
                                             </div>
                                             <div class="card-body">
 
-                                                <a href="{% url 'virtual_expo:uart_on_fpga' %}"
+                                                <a href="{% url 'virtual_expo:drag_system' %}"
+                                                    class="btn btn-primary">Read more</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px">
+                                        <div class="card">
+                                            <img class="card-img-top" style="width: 100%;"
+                                                src="{% static 'img/virtual-expo/exhaust-duct.jpg'%}"
+                                                alt="Card image cap">
+                                            <div class="card-header">
+                                                <h3>Simulation of Exhaust Duct</h3>
+                                            </div>
+                                            <div class="card-body">
+
+                                                <a href="{% url 'virtual_expo:exhaust_duct' %}"
                                                     class="btn btn-primary">Read more</a>
                                             </div>
                                         </div>
@@ -414,30 +434,11 @@
                                                 src="{% static 'img/virtual-expo/uart_on_fpga.jpg'%}"
                                                 alt="Card image cap">
                                             <div class="card-header">
-                                                <h3>UART on FPGA</h3>
+                                                <h3>Town Planning Using Pervious Concrete</h3>
                                             </div>
                                             <div class="card-body">
 
-                                                <a href="{% url 'virtual_expo:uart_on_fpga' %}"
-                                                    class="btn btn-primary">Read more</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-12">
-                                    <div class="probootstrap-teacher text-center probootstrap-animate"
-                                        style="min-height: 170px">
-                                        <div class="card">
-                                            <img class="card-img-top" style="width: 100%;"
-                                                src="{% static 'img/virtual-expo/uart_on_fpga.jpg'%}"
-                                                alt="Card image cap">
-                                            <div class="card-header">
-                                                <h3>UART on FPGA</h3>
-                                            </div>
-                                            <div class="card-body">
-
-                                                <a href="{% url 'virtual_expo:uart_on_fpga' %}"
+                                                <a href="{% url 'virtual_expo:town_planning' %}"
                                                     class="btn btn-primary">Read more</a>
                                             </div>
                                         </div>

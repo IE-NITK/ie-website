@@ -29,4 +29,7 @@ urlpatterns = [
     path('virtual-expo/robotics/autoshopper', views.autoshopper, name='autoshopper'),
     path('virtual-expo/robotics/robotic_arm', views.robotic_arm, name='robotic_arm'),
     path('virtual-expo/robotics/terrain_mapping', views.terrain_mapping, name='terrain_mapping'),
+    path('virtual-expo/garage/exhaust_duct', views.exhaust_duct, name='exhaust_duct'),
+    path('virtual-expo/garage/town_planning', views.town_planning, name='town_planning'),
+    path('virtual-expo/garage/drag_system', views.drag_system, name='drag_system'),
     ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

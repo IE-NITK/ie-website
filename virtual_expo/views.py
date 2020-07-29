@@ -81,3 +81,15 @@ def robotic_arm(request):
 
 def terrain_mapping(request):
     return render(request, 'terrain-mapping.html')
+
+
+def drag_system(request):
+    return render(request, 'drag-system.html')
+
+
+def exhaust_duct(request):
+    return render(request, 'exhaust-duct.html')
+
+
+def town_planning(request):
+    return render(request, 'town-planning.html')
