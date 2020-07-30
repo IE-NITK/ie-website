@@ -93,3 +93,7 @@ def exhaust_duct(request):
 
 def town_planning(request):
     return render(request, 'town-planning.html')
+
+
+def material_synthesis(request):
+    return render(request, 'material-synthesis.html')

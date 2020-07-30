@@ -32,4 +32,5 @@ urlpatterns = [
     path('virtual-expo/garage/exhaust_duct', views.exhaust_duct, name='exhaust_duct'),
     path('virtual-expo/garage/town_planning', views.town_planning, name='town_planning'),
     path('virtual-expo/garage/drag_system', views.drag_system, name='drag_system'),
+    path('virtual-expo/garage/material_synthesis', views.material_synthesis, name='material_synthesis'),
     ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
