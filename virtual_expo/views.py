@@ -97,3 +97,19 @@ def town_planning(request):
 
 def material_synthesis(request):
     return render(request, 'material-synthesis.html')
+
+
+def opec(request):
+    return render(request, 'opec.html')
+
+
+def portfolio_management(request):
+    return render(request, 'portfolio-management.html')
+
+
+def risk_assesment(request):
+    return render(request, 'risk-assesment.html')
+
+
+def app_based_delivery(request):
+    return render(request, 'app-based-delivery.html')

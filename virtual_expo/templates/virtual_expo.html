@@ -35,10 +35,10 @@
                                 <li class="tablinks gadget"><a onclick="return navigate('gadget')">Gadget</a></li>
                                 <li class="tablinks garage"><a onclick="return navigate('garage')">Garage</a></li>
                                 <li class="tablinks robotics"><a onclick="return navigate('robotics')">Robotics</a>
-                                
+                                <li class="tablinks capital"><a onclick="return navigate('capital')">Capital</a>
+
+                                    <!--    <li class="tablinks media"><a onclick="return navigate('media')">Media</a> 
                                     
-                                 <!--    <li class="tablinks media"><a onclick="return navigate('media')">Media</a> 
-                                    <li class="tablinks capital"><a onclick="return navigate('capital')">Capital</a>
                                     <li class="tablinks script"><a onclick="return navigate('script')">Script</a> -->
                                 </li>
                             </ul>
@@ -299,8 +299,8 @@
                                             </div>
                                             <div class="card-body">
 
-                                                <a href="{% url 'virtual_expo:OCR' %}"
-                                                    class="btn btn-primary">Read more</a>
+                                                <a href="{% url 'virtual_expo:OCR' %}" class="btn btn-primary">Read
+                                                    more</a>
                                             </div>
                                         </div>
                                     </div>
@@ -311,8 +311,7 @@
                                         style="min-height: 170px">
                                         <div class="card">
                                             <img class="card-img-top" style="width: 100%;"
-                                                src="{% static 'img/virtual-expo/skinput.jpg'%}"
-                                                alt="Card image cap">
+                                                src="{% static 'img/virtual-expo/skinput.jpg'%}" alt="Card image cap">
                                             <div class="card-header">
                                                 <h3>Skinput Based Robot Car</h3>
                                             </div>
@@ -527,12 +526,12 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                             </div>
                         </section>
                     </div>
 
-                    
+
                     <div class="col-md-7 col-md-push-1 probootstrap-animate teams" id="capital">
                         <h2>Capital</h2>
                         <section class="probootstrap-section">
@@ -542,72 +541,73 @@
                                     <div class="probootstrap-teacher text-center probootstrap-animate"
                                         style="min-height: 170px">
                                         <div class="card">
-                                            <img class="card-img-top" src="..." alt="Card image cap">
-                                            <div class="card-header">Project Title</div>
+                                            <img class="card-img-top" style="width: 100%;"
+                                                src="{% static 'img/virtual-expo/opec.jpg'%}" alt="Card image cap">
+                                            <div class="card-header">
+                                                <h3>OPEC and its influence on the world economy</h3>
+                                            </div>
                                             <div class="card-body">
 
-                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                                <a href="{% url 'virtual_expo:opec' %}" class="btn btn-primary">Read
+                                                    more</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
                                 <div class="col-sm-12">
                                     <div class="probootstrap-teacher text-center probootstrap-animate"
                                         style="min-height: 170px">
                                         <div class="card">
-                                            <img class="card-img-top" src="..." alt="Card image cap">
-                                            <div class="card-header">Project Title</div>
+                                            <img class="card-img-top" style="width: 100%;"
+                                                src="{% static 'img/virtual-expo/portfolio.jpg'%}" alt="Card image cap">
+                                            <div class="card-header">
+                                                <h3>Portfolio Diversification and Credit
+
+                                                    Worthiness</h3>
+                                            </div>
                                             <div class="card-body">
 
-                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                                <a href="{% url 'virtual_expo:portfolio_management' %}"
+                                                    class="btn btn-primary">Read more</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
                                 <div class="col-sm-12">
                                     <div class="probootstrap-teacher text-center probootstrap-animate"
                                         style="min-height: 170px">
                                         <div class="card">
-                                            <img class="card-img-top" src="..." alt="Card image cap">
-                                            <div class="card-header">Project Title</div>
+                                            <img class="card-img-top" style="width: 100%;"
+                                                src="{% static 'img/virtual-expo/risk.jpeg'%}" alt="Card image cap">
+                                            <div class="card-header">
+                                                <h3>Risk assessment in SME’S</h3>
+                                            </div>
                                             <div class="card-body">
 
-                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                                <a href="{% url 'virtual_expo:risk_assessment' %}"
+                                                    class="btn btn-primary">Read more</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="col-sm-12">
+                                <!-- <div class="col-sm-12">
                                     <div class="probootstrap-teacher text-center probootstrap-animate"
                                         style="min-height: 170px">
                                         <div class="card">
-                                            <img class="card-img-top" src="..." alt="Card image cap">
-                                            <div class="card-header">Project Title</div>
+                                            <img class="card-img-top" style="width: 100%;"
+                                                src="{% static 'img/virtual-expo/exhaust-duct.jpg'%}"
+                                                alt="Card image cap">
+                                            <div class="card-header">
+                                                <h3>Simulation of Exhaust Duct</h3>
+                                            </div>
                                             <div class="card-body">
 
-                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                                <a href="{% url 'virtual_expo:exhaust_duct' %}"
+                                                    class="btn btn-primary">Read more</a>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-
-                                <div class="col-sm-12">
-                                    <div class="probootstrap-teacher text-center probootstrap-animate"
-                                        style="min-height: 170px">
-                                        <div class="card">
-                                            <img class="card-img-top" src="..." alt="Card image cap">
-                                            <div class="card-header">Project Title</div>
-                                            <div class="card-body">
-
-                                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
+                                </div> -->
                             </div>
                         </section>
                     </div>
