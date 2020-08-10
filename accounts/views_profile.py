@@ -243,3 +243,7 @@ def submission_scriptroundone(request):
         submission = RoundOneSubmission.create(account, ans1, ans2, ans3, ans4, ans5, essayans, created)
         submission.save()
     return HttpResponseRedirect('/profile/')
+
+
+def test_round_1(request):
+    return render()
