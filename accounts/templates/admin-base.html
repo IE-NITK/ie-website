@@ -123,10 +123,11 @@
                                 <li class="{% block sidebar_admin_users %}{% endblock %}"><a href="/admin/users">Manage IE Members<i class="pull-right fa fa-users"></i></a></li>
                                 <li class="{% block sidebar_all_candidates %}{% endblock %}"><a href="/all_candidates">All Candidates<i class="pull-right fa fa-users"></i></a></li>
                             {% endif %}
-                            <!-- {% if user.account.role == 3 %}
+                            {% if user.account.role == 3 %}
                                 <li class="{% block sidebar_apply %}{% endblock %}"><a href="/profile/apply">Apply<i class="pull-right fa fa-users"></i></a></li>
 			    	            <li class="{% block sidebar_status %}{% endblock %}"><a href="/profile/status">Status<i class="pull-right fa fa-users"></i></a></li>
-                            {% endif %} -->
+                                <li class="{% block sidebar_round_1_test %}{% endblock %}"><a href="/profile/test/round-1">Test<i class="pull-right fa fa-users"></i></a></li>    
+                            {% endif %}
                     </ul>
                 </div>
             </div>

@@ -22,5 +22,6 @@ urlpatterns = [
   path('profile/apply/', views_profile.apply, name='profile/apply'),
   path('profile/status/', views_profile.status, name='status'),
   path('scriptroundone/', views_profile.scriptroundone, name='scriptroundone' ),
-  path('scriptroundone/submission_scriptroundone/',views_profile.submission_scriptroundone,name="submission_scriptroundone")
+  path('scriptroundone/submission_scriptroundone/',views_profile.submission_scriptroundone,name="submission_scriptroundone"),
+  path('profile/test/round-1',views_profile.test_round_1,name="round_1_test"),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
