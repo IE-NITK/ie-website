@@ -1,0 +1,144 @@
+{% extends "admin-base.html" %}
+{% load app_filters %}
+{% block sidebar_apply %}active{% endblock %}
+{% block body %}
+
+
+    <p class="lead">Select at least one Core SIG. Once you submit, your choices cannot be changed.</p>
+    <p class="lead">Visit <a href="{% url 'sig:sig' %}">our website </a>to learn more about our Special Interest Groups!</p>
+    <input class="btn btn-primary col-sm-12" type="submit" value="" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <style type="text/css">
+    
+    body {
+        margin: 0;
+    }
+    
+    #element {
+        margin: 40px auto 20px auto;
+        height: 200px;
+        width: 400px;
+        background-color: #e9e9e9;
+        font-size: 20px;
+        padding: 40px 0 0 0;
+        text-align: center;
+        box-sizing: border-box;
+    }
+    
+    #go-button {
+        width: 200px;
+        display: block;
+        margin: 50px auto 0 auto;
+    }
+    
+    /* webkit requires explicit width, height = 100% of sceeen */
+    /* webkit also takes margin into account in full screen also - so margin should be removed (otherwise black areas will be seen) */
+    #element:-webkit-full-screen {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+    }
+    
+    #element:-moz-full-screen {
+
+        margin: 0;
+    }
+    
+    #element:-ms-fullscreen {
+        margin: 0;
+    }
+    
+    /* W3C proposal that will eventually come in all browsers */
+    </style>
+    
+    
+    <div id="element">
+        <span>Full Screen Mode Disabled</span>
+        <button id="go-button">Enable Full Screen</button>
+    </div>
+    
+    <p style="display: none" id = "element2">Hello World</p>
+    
+    <iframe style="display: none" id="element1" src="https://docs.google.com/forms/d/e/1FAIpQLScRnB8ocrb2qMi-wP6W3wYd9OuLNoR1MyEivNKzij1ETrIytQ/viewform?embedded=true" width="640" height="1249" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    <script>
+    
+    /* Get into full screen */
+    function GoInFullscreen(element) {
+        if(element.requestFullscreen)
+            element.requestFullscreen();
+        else if(element.mozRequestFullScreen)
+            element.mozRequestFullScreen();
+        else if(element.webkitRequestFullscreen)
+            element.webkitRequestFullscreen();
+        else if(element.msRequestFullscreen)
+            element.msRequestFullscreen();
+            $(document).bind("contextmenu",function(e) {
+    e.preventDefault();
+    document.oncontextmenu = function(){return false;}
+    });
+        
+    }
+    
+    /* Get out of full screen */
+    function GoOutFullscreen() {
+        
+        if(document.exitFullscreen)
+            document.exitFullscreen();
+        else if(document.mozCancelFullScreen)
+            document.mozCancelFullScreen();
+        else if(document.webkitExitFullscreen)
+            document.webkitExitFullscreen();
+        else if(document.msExitFullscreen)
+            document.msExitFullscreen();
+        
+        
+    }
+    
+    /* Is currently in full screen or not */
+    function IsFullScreenCurrently() {
+        var full_screen_element = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement || null;
+        
+        // If no element is in full-screen
+        if(full_screen_element === null)
+        {
+            document.getElementById("element1").style.setProperty("display", "none", "important");
+            return false;
+        }
+        else
+        {
+            document.getElementById("element1").style.setProperty("display", "block", "important");
+            return true;
+        }
+    }
+    
+    $("#go-button").on('click', function() {
+        if(IsFullScreenCurrently())
+            GoOutFullscreen();
+        else
+            GoInFullscreen($("#element1").get(0));
+
+    });
+    
+    $(document).on('fullscreenchange webkitfullscreenchange mozfullscreenchange MSFullscreenChange', function() {
+        if(IsFullScreenCurrently()) {
+            $("#element span").text('Full Screen Mode Enabled');
+            $("#go-button").text('Disable Full Screen');
+            // document.getElementById("element1").style.display = "block";
+
+        }
+        else {
+            $("#element span").text('Full Screen Mode Disabled');
+            $("#go-button").text('Enable Full Screen');
+            // document.getElementById("element1").style.display = "block";
+        }
+    });
+
+    
+
+    </script>
+    
+{% endblock %}
+
+
+
