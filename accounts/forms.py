@@ -183,5 +183,3 @@ class SIGForm(BasicForm):
     SigAux2 = forms.ChoiceField(
         label='Auxiliary SIG Second Priority', choices=Status.SIG_TYPES_AUX, required=False)
     setup_field(SigAux2, 'Select second Auxiliary SIG')
-    media = forms.BooleanField(
-        label='Select to apply for Media SIG', required=False)
