@@ -156,7 +156,7 @@ def apply(request):
         template_data['form'] = form
         return render(request, 'ienitk/apply.html', template_data)
     else:
-        request.session['alert_danger'] = "You have already registered!"
+        request.session['alert_danger'] = "You have already registered! If this was a mistake contact Chaitany : +91 9834708844"
         return HttpResponseRedirect('/profile/')
 
 

@@ -17,7 +17,7 @@ def validate_username_available_and_edu_mail(username):
     validator for checking whether the given mail id is an edu mail id.
     """
     if not username.endswith("@nitk.edu.in"):
-        raise forms.ValidationError("Email is not an edu id")
+        raise forms.ValidationError("Please enter an edu mail id")
 
 
 def validate_username_exists(username):
