@@ -3,188 +3,193 @@
 {% block sig %}active{% endblock %}
 {% block main %}
 
-    <section class="probootstrap-section probootstrap-section-colored">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-left section-heading probootstrap-animate">
-                    <h1>Special Interest Groups</h1>
-                </div>
+<section class="probootstrap-section probootstrap-section-colored">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-left section-heading probootstrap-animate">
+                <h1>Special Interest Groups</h1>
             </div>
         </div>
-    </section>
-    <style>
-        /* Your custom css code goes here */
-        h3 {
-            text-align: center;
-            size: 50px;
-            font-weight: bold;
-        }
+    </div>
+</section>
+<style>
+    /* Your custom css code goes here */
+    h3 {
+        text-align: center;
+        size: 50px;
+        font-weight: bold;
+    }
 
-        .probootstrap-media {
-            background-color: black;
-            position: relative;
-            border-radius: 50%;
+    .probootstrap-media {
+        background-color: black;
+        position: relative;
+        border-radius: 50%;
 
-        }
+    }
 
-        .probootstrap-media img {
-            width: 100%;
-            height: 100%;
-        }
+    .probootstrap-media img {
+        width: 100%;
+        height: 100%;
+    }
 
-        .probootstrap-text {
-            position: relative;
-            height: 400px;
-            font-size: 1.2em;
-        }
+    .probootstrap-text {
+        position: relative;
+        height: 400px;
+        font-size: 1.2em;
+    }
 
-        .probootstrap-text {
-            margin-top: 10%;
-        }
+    .probootstrap-text {
+        margin-top: 10%;
+    }
 
-        .probootstrap-media {
-            border-radius: 50%;
-            background-color: #0b0b0b
-        }
+    .probootstrap-media {
+        border-radius: 50%;
+        background-color: #0b0b0b
+    }
+</style>
 
-    </style>
+<section class="probootstrap-section">
+    <div class="container">
 
-    <section class="probootstrap-section">
-        <div class="container">
-
-            <div class="row">
-                <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 probootstrap-animate">
-                    <a href="{% url 'sig:projects' sig="Code" %}" class="probootstrap-featured-news-box">
-                        <figure class="probootstrap-media"><img src="{% static 'img/CodeSIG.png' %}"
-                                                                alt="Free Bootstrap Template by ProBootstrap.com"
-                                                                class="img-responsive"></figure>
-                        <div class="probootstrap-text">
-                            <h3>Code</h3>
-                            <p>Our vision is to develop the average standard at NITK, to set standards higher for future
-                                batches, to help bring out the best in them.
-                                Code is a modest group of some of the most talented and overachieving students of NITK.
-                                We let our resumes do the talking.</p>
-                            <p class="btn btn-small">Click to view our projects!</p>
-                        </div>
-                    </a>
-                </div>
-
-
-                <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 probootstrap-animate">
-                    <a href="{% url 'sig:projects' sig="Gadget" %}" class="probootstrap-featured-news-box">
-                        <figure class="probootstrap-media"><img style="border-radius: 50%; background-color: #0b0b0b"
-                                                                src="{% static 'img/GadgetSIG.png' %}"
-                                                                alt="Free Bootstrap Template by ProBootstrap.com"
-                                                                class="img-responsive"></figure>
-                        <div class="probootstrap-text">
-                            <h3>Gadget</h3>
-                            <p>Find your electronic labs boring and pointless? The Gadget family is a group of ‘heavily
-                                doped’ and motivated individuals who learn and propagate practical electronics. In other words, the more the LEDs
-                                we burn, the more pleasure we derive.</p>
-                            <p class="btn btn-small">Click to view our projects!</p>
-                        </div>
-
-
-                    </a>
-                </div>
-
-
-                <div class="clearfix visible-sm-block visible-xs-block"></div>
-                <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 probootstrap-animate">
-                    <a href="{% url 'sig:projects' sig="Garage" %}" class="probootstrap-featured-news-box">
-                        <figure class="probootstrap-media"><img src="{% static 'img/GarageSIG.png' %}"
-                                                                alt="Free Bootstrap Template by ProBootstrap.com"
-                                                                class="img-responsive"></figure>
-                        <div class="probootstrap-text">
-                            <h3>Garage</h3>
-                            <p>IE Garage, is a group of the top upcoming engineers in the core branches of engineering.
-                                Dedicated, hardworking, and sincere, we aim to solve common world problems using
-                                engineering methodology</p>
-                            <p class="btn btn-small">Click to view our projects!</p>
-                        </div>
-
-
-                    </a>
-                </div>
-
-                <div class="clearfix visible-md-block"></div>
-
-                <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 probootstrap-animate">
-                    <a href="#" class="probootstrap-featured-news-box">
-                        <figure class="probootstrap-media"><img src="{% static 'img/booksig.png' %}"
-                                                                alt="Free Bootstrap Template by ProBootstrap.com"
-                                                                class="img-responsive"></figure>
-                        <div class="probootstrap-text">
-                            <h3>Script</h3>
-                            <p>On literature appreciation, discussing the intricate and magical power of words. We also
-                                aim at making our own blog!</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="clearfix visible-sm-block visible-xs-block"></div>
-
-                <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 probootstrap-animate">
-                    <a href="#" class="probootstrap-featured-news-box">
-                        <figure class="probootstrap-media"><img src="{% static 'img/VriddhiSIG.png' %}"
-                                                                alt="Free Bootstrap Template by ProBootstrap.com"
-                                                                class="img-responsive"></figure>
-                        <div class="probootstrap-text">
-                            <h3>Vriddhi</h3>
-                            <p>Our social initiative, which aims at small to large scale rural development programmes in
-                                collaboration with various NGO's.</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 probootstrap-animate">
-                    <a href="#" class="probootstrap-featured-news-box">
-                        <figure class="probootstrap-media"><img src="{% static 'img/robotics.png' %}"
-                                                                alt="Free Bootstrap Template by ProBootstrap.com"
-                                                                class="img-responsive"></figure>
-                        <div class="probootstrap-text">
-                            <h3>Robotics</h3>
-                            <p>A culmination of all SIG's, we work on everything from Core Robotics, IoT, AI that makes
-                                life easier and futuristic.</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="clearfix visible-sm-block visible-xs-block"></div>
-
-                <div class="col-md-offset-2 col-md-4 col-sm-offset-3 col-sm-6 col-xs-offset-3 col-xs-6 col-xxs-offset-6 col-xxs-12 probootstrap-animate">
-                    <a href="#" class="probootstrap-featured-news-box">
-                        <figure class="probootstrap-media"><img src="{% static 'img/capital.png' %}"
-                                                                alt="Free Bootstrap Template by ProBootstrap.com"
-                                                                class="img-responsive"></figure>
-                        <div class="probootstrap-text">
-                            <h3>Capital</h3>
-                            <p>Capital is the newest special interest group (SIG) of IE NITK. We direct our efforts in
-                                sensitizing the student community towards socially directed financial and economic
-                                solutions to real world problems</p>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 probootstrap-animate">
-                    <a href="#" class="probootstrap-featured-news-box">
-                        <figure class="probootstrap-media"><img src="{% static 'img/media.webp' %}"
-                                                                alt="Free Bootstrap Template by ProBootstrap.com"
-                                                                class="img-responsive"></figure>
-                        <div class="probootstrap-text">
-                            <h3>Media</h3>
-                            <p>The newly launched Media SIG ensures that our club events do not go unnoticed by the
-                                student community, by managing the various social media profiles and the necessary
-                                publicity.</p>
-                        </div>
-                    </a>
-                </div>
-
+        <div class="row">
+            <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 probootstrap-animate">
+                <a href="{% url 'sig:projects' sig="Code" %}" class="probootstrap-featured-news-box">
+                    <figure class="probootstrap-media"><img style="border-radius: 50%; background-color: #ffffff"
+                            src="{% static 'img/Code.png' %}" alt="Code" class="img-responsive"></figure>
+                    <div style="height: 480px" class="probootstrap-text">
+                        <h3>Code</h3>
+                        <p>IE Code is a peer group of computer tech enthusiasts. We at Code explore various new fields
+                            and technologies in computer science and maintain a competitive coding culture in the club.
+                        </p>
+                        <p class="btn btn-small">Click to view our projects!</p>
+                    </div>
+                </a>
             </div>
+
+
+            <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 probootstrap-animate">
+                <a href="{% url 'sig:projects' sig="Gadget" %}" class="probootstrap-featured-news-box">
+                    <figure class="probootstrap-media"><img style="border-radius: 50%; background-color: #ffffff"
+                            src="{% static 'img/Gadget.png' %}" alt="Gadget" class="img-responsive"></figure>
+                    <div style="height: 480px" class="probootstrap-text">
+                        <h3>Gadget</h3>
+                        <p>IE Gadget is an assembly of talented individuals from diverse technical backgrounds who share
+                            a common love for circuitry and computation. We are a group of ‘heavily doped’ and motivated
+                            individuals who learn and propagate practical electronics. In other words, the more the LEDs
+                            we burn, the more pleasure we derive.</p>
+                        <p class="btn btn-small">Click to view our projects!</p>
+                    </div>
+
+
+                </a>
+            </div>
+
+
+            <div class="clearfix visible-sm-block visible-xs-block"></div>
+            <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 probootstrap-animate">
+                <a href="{% url 'sig:projects' sig="Garage" %}" class="probootstrap-featured-news-box">
+                    <figure class="probootstrap-media"><img style="border-radius: 50%; background-color: #ffffff"
+                            src="{% static 'img/Garage.png' %}" alt="Garage" class="img-responsive"></figure>
+                    <div style="height: 480px" class="probootstrap-text">
+                        <h3>Garage</h3>
+                        <p>IE Garage is the oldest special interest group of the IE NITK chapter. We are a group of
+                            combobulated techies from core engineering fields. We believe that learning happens when you
+                            get your hands dirty, as most successful enterprises started off in 'garages' from where we
+                            take inspiration. We are a group of multidisciplinary budding engineers trying to solve
+                            problems around us by cleverly applying our technical skills.
+                        </p>
+                        <p class="btn btn-small">Click to view our projects!</p>
+                    </div>
+
+
+                </a>
+            </div>
+
+            <div class="clearfix visible-md-block"></div>
+
+            <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 probootstrap-animate">
+                <a href="#" class="probootstrap-featured-news-box">
+                    <figure class="probootstrap-media"><img style="border-radius: 50%; background-color: #ffffff"
+                            src="{% static 'img/Script.png' %}" alt="Script" class="img-responsive"></figure>
+                    <div style="height: 480px" class="probootstrap-text">
+                        <h3>Script</h3>
+                        <p>Script is a collection of people with differing interests. Some are voracious readers, while
+                            others are avid cinephiles and ardent music fans. Our strength lies in our diversity, which
+                            we solidify by hosting regular discussions about various topics, both deep and trivial to
+                            gain an insight into the perspectives of others. This coalescence of multifarious
+                            personalities makes us who we are, and will continue to be the cornerstone of IE Script for
+                            decades to come.</p>
+                    </div>
+                </a>
+            </div>
+            <div class="clearfix visible-sm-block visible-xs-block"></div>
+
+            <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 probootstrap-animate">
+                <a href="#" class="probootstrap-featured-news-box">
+                    <figure class="probootstrap-media"><img style="border-radius: 50%; background-color: #ffffff"
+                            src="{% static 'img/Robotics.png' %}" alt="Robotics" class="img-responsive"></figure>
+                    <div style="height: 480px" class="probootstrap-text">
+                        <h3>Robotics</h3>
+                        <p>IE Robotics is an amalgamation of all SIGs, brought together by our common love for
+                            automation and bot building. Our members come from various technical backgrounds spanning
+                            IoT, Artificial Intelligence and Machine Learning, Mechanical Engineering and many more. Our
+                            vision is to create without any constraints and consequences, which is the cornerstone of IE
+                            Robotics</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 probootstrap-animate">
+                <a href="#" class="probootstrap-featured-news-box">
+                    <figure class="probootstrap-media"><img style="border-radius: 50%; background-color: #ffffff"
+                            src="{% static 'img/Capital.png' %}" alt="Capital" class="img-responsive"></figure>
+                    <div style="height: 480px" class="probootstrap-text">
+                        <h3>Capital</h3>
+                        <p>Capital is a small “worthy” group of business, marketing, and finance enthusiasts directing
+                            our efforts in sensitizing the student community towards socially directed financial and
+                            economic solutions to real-world problems. We love to transcend our limits to achieve the
+                            impossible.</p>
+                    </div>
+                </a>
+            </div>
+            <div class="clearfix visible-sm-block visible-xs-block"></div>
+
+            <!-- <div
+                class="col-md-offset-2 col-md-4 col-sm-offset-3 col-sm-6 col-xs-offset-3 col-xs-6 col-xxs-offset-6 col-xxs-12 probootstrap-animate">
+                <a href="#" class="probootstrap-featured-news-box">
+                    <figure class="probootstrap-media"><img style="border-radius: 50%; background-color: #ffffff" src="{% static 'img/Capital.png' %}"
+                            alt="Capital" class="img-responsive"></figure>
+                    <div style = "height: 480px" class="probootstrap-text">
+                        <h3>Capital</h3>
+                        <p>Capital is the newest special interest group (SIG) of IE NITK. We direct our efforts in
+                            sensitizing the student community towards socially directed financial and economic
+                            solutions to real world problems</p>
+                    </div>
+                </a>
+            </div> -->
+
+            <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 probootstrap-animate">
+                <a href="#" class="probootstrap-featured-news-box">
+                    <figure class="probootstrap-media"><img style="border-radius: 50%; background-color: #ffffff"
+                            src="{% static 'img/tectonic.png' %}" alt="Tecttonic" class="img-responsive"></figure>
+                    <div style="height: 480px" class="probootstrap-text">
+                        <h3>Tectonic</h3>
+                        <p>Tectonic is a newly born Special Interest Group of IE. We aim to create, improve, and design
+                            a brighter future by using our knowledge from Civil and Architecture. As the students with a
+                            shared interest in Construction and Designing but not restricted to those two, we discuss
+                            and share ideas regarding ongoing civil innovations and how to build a better tomorrow in a
+                            'civil'ized manner.</p>
+                    </div>
+                </a>
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
 
 
 
 
-    <!-- END wrapper -->
+<!-- END wrapper -->
 {% endblock %}
 
 
@@ -193,4 +198,5 @@
 <script src="js/custom.js"></script>
 
 </body>
+
 </html>
