@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 from .models import Account, Profile, Status
 
+
 def validate_username_available_and_edu_mail(username):
     """
     validator that throws an error if the given username already exists.
@@ -183,3 +184,12 @@ class SIGForm(BasicForm):
     SigAux2 = forms.ChoiceField(
         label='Auxiliary SIG Second Priority', choices=Status.SIG_TYPES_AUX, required=False)
     setup_field(SigAux2, 'Select second Auxiliary SIG')
+    quesn1 = forms.CharField(label='What do you expect from the club?',
+                             widget=forms.Textarea(attrs={"rows": 5}), required=True)
+    setup_field(quesn1, 'Enter your response here')
+    quesn2 = forms.CharField(label='Why do you think you are a good fit at IE?',
+                             widget=forms.Textarea(attrs={"rows": 5}), required=True)
+    setup_field(quesn2, 'Enter your response here')
+    quesn3 = forms.CharField(label='Two interesting facts about you',
+                             widget=forms.Textarea(attrs={"rows": 5}), required=True)
+    setup_field(quesn3, 'Enter your response here')
