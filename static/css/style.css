@@ -1498,13 +1498,13 @@ a:hover, a:focus, a:active {
 @media screen and (max-width: 768px) {
   .probootstrap-flex-block .probootstrap-image {
     width: 100%;
-    height: 300px;
+    height: 100%;
   }
 }
 
 @media screen and (max-width: 480px) {
   .probootstrap-flex-block .probootstrap-image {
-    height: 200px;
+    height: 100%;
   }
 }
 
