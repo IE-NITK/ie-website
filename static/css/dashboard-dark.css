@@ -102,6 +102,14 @@
         .btn:hover{
             background-color: #248f5d;
         }
+
+        table.dataTable tbody tr{
+          background-color:grey !important;
+        } 
+    
+        .dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate {
+          color: grey !important;
+        }
     }
     
     @media (min-width: 1330px) {
@@ -131,6 +139,14 @@
         .btn:hover{
             background-color: #248f5d;
         }
+
+        table.dataTable tbody tr{
+          background-color:grey !important;
+        } 
+    
+        .dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate {
+          color: grey !important;
+        }
     }
     
     nav.sidebar .navbar-nav .open .dropdown-menu>li>a:hover, nav.sidebar .navbar-nav .open .dropdown-menu>li>a:focus {
@@ -152,5 +168,13 @@
 
     .btn:hover{
         background-color: #248f5d;
+    }
+
+    table.dataTable tbody tr{
+      background-color:grey !important;
+    } 
+
+    .dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate {
+      color: grey !important;
     }
 }
