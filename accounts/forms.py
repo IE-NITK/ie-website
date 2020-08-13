@@ -185,11 +185,11 @@ class SIGForm(BasicForm):
         label='Auxiliary SIG Second Priority', choices=Status.SIG_TYPES_AUX, required=False)
     setup_field(SigAux2, 'Select second Auxiliary SIG')
     quesn1 = forms.CharField(label='What do you expect from the club?',
-                             widget=forms.Textarea(attrs={"rows": 5}), required=True)
+                             widget=forms.Textarea(attrs={"rows": 5}), required=True, max_length=300)
     setup_field(quesn1, 'Enter your response here')
     quesn2 = forms.CharField(label='Why do you think you are a good fit at IE?',
-                             widget=forms.Textarea(attrs={"rows": 5}), required=True)
+                             widget=forms.Textarea(attrs={"rows": 5}), required=True, max_length=300)
     setup_field(quesn2, 'Enter your response here')
     quesn3 = forms.CharField(label='Two interesting facts about you',
-                             widget=forms.Textarea(attrs={"rows": 5}), required=True)
+                             widget=forms.Textarea(attrs={"rows": 5}), required=True, max_length=300)
     setup_field(quesn3, 'Enter your response here')
