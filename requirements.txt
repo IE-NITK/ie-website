@@ -4,3 +4,4 @@ psycopg2==2.7.5
 psycopg2-binary==2.7.5
 pytz==2018.5
 captcha
+django-queryset-csv
