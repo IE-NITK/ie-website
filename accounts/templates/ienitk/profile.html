@@ -3,9 +3,24 @@
 {% load static %}
 {% block title %}Overview{% endblock %}
 {% block sidebar_profile %}active{% endblock %}
-{% block body_header %}Welcome{% endblock %}
+{% block body_header %}Welcome {{profile.firstname}}{% endblock %}
 
 
 {% block body %}
-    <!-- <img src = "{% static 'img/FreshersPoster2019.png' %}" alt="Freshers Poster"> -->
+<p>
+    Hi, there!<br><br>
+
+We know that these challenging times can often make us feel very distant to you. Worry not, we are only a call away, fellow IE enthusiast!
+<br><br>
+For all questions regarding the recruitment process, contact - 
+<br><br>
+Junaid Hussain: +91 7829023969<br>
+Nishant Kumar: +91 9035207801
+<br><br>
+For all your 404 errors such as problems with applying on the website, contact - 
+<br><br>
+Chaitany Pandiya: +91 98347 08844
+<br>Madhumitha Nara: +91 7981819450
+</p>
+    
 {% endblock %}
