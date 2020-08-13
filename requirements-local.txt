@@ -3,3 +3,4 @@ gunicorn==19.9.0
 pytz==2018.5
 captcha
 django-queryset-csv
+six
