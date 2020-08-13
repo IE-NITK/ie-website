@@ -17,9 +17,15 @@ def profile_view(request):
     # Get template data from session
     template_data = views.parse_session(request)
 
-    # Checking if the candidate applied for Script (online test link to be provided)
+    #Passing profile to template data
     current_user = request.user
+    account = Account.objects.get(user=current_user)
+    profile = account.profile
+    template_data["profile"] = profile
+
+    # Checking if the candidate applied for Script (online test link to be provided)
     account = current_user.account
+    
     registered_sigs = Status.objects.filter(user=account)
     applied_for_script = False
     for entry in registered_sigs:
@@ -128,6 +134,14 @@ def apply(request):
                     account,
                     datetime.datetime.now(),
                     "RE"
+                )
+
+                views.register_question_responses(
+                    form.cleaned_data['quesn1'],
+                    form.cleaned_data['quesn2'],
+                    form.cleaned_data['quesn3'],
+                    account,
+                    datetime.datetime.now()
                 )
 
                 request.session['alert_success'] = "Successfully registered the SIGs with the portal."
