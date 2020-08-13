@@ -11,7 +11,6 @@ class ActivationRecord(models.Model):
     roll_no = models.CharField(null=True, max_length=10)
 
 
-
 class Profile(models.Model):
     GENDER = (
         ('M', "Male"),
@@ -101,8 +100,6 @@ class Account(models.Model):
         return self.profile.__str__()
 
 
-
-
 class Status(models.Model):
     STATUS_TYPES = (
         ("RE", "Application Accepted"),
@@ -117,7 +114,7 @@ class Status(models.Model):
     SIG_TYPES_AUX = (("", "None"), ("SR", "Script"),
                      ("RO", "Robotics"),
                      ("CA", "Capital"),
-                     ("ME", "Media"))
+                     ("TE", "Tectonics"))
     SIG_TYPES = (
         ("CO", "Code"),
         ("GD", "Gadget"),
@@ -125,7 +122,7 @@ class Status(models.Model):
         ("SR", "Script"),
         ("RO", "Robotics"),
         ("CA", "Capital"),
-        ("ME", "Media")
+        ("TE", "Tectonics")
     )
 
     def to_status(self):
@@ -168,3 +165,14 @@ class RoundOneSubmission(models.Model):
 
     def __str__(self):
         return self.user.__str__() + " " + self.rollno + " " + str(self.created_at)
+
+
+class BasicResponses(models.Model):
+    user = models.ForeignKey(Account, on_delete=models.CASCADE)
+    ans1 = models.TextField(default="")
+    ans2 = models.TextField(default="")
+    ans3 = models.TextField(default="")
+    created_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.user.__str__()

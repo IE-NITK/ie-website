@@ -17,9 +17,15 @@ def profile_view(request):
     # Get template data from session
     template_data = views.parse_session(request)
 
-    # Checking if the candidate applied for Script (online test link to be provided)
+    #Passing profile to template data
     current_user = request.user
+    account = Account.objects.get(user=current_user)
+    profile = account.profile
+    template_data["profile"] = profile
+
+    # Checking if the candidate applied for Script (online test link to be provided)
     account = current_user.account
+    
     registered_sigs = Status.objects.filter(user=account)
     applied_for_script = False
     for entry in registered_sigs:
@@ -130,13 +136,13 @@ def apply(request):
                     "RE"
                 )
 
-                if form.cleaned_data['media']:
-                    views.register_SIG(
-                        "ME",
-                        account,
-                        datetime.datetime.now(),
-                        "RE"
-                    )
+                views.register_question_responses(
+                    form.cleaned_data['quesn1'],
+                    form.cleaned_data['quesn2'],
+                    form.cleaned_data['quesn3'],
+                    account,
+                    datetime.datetime.now()
+                )
 
                 request.session['alert_success'] = "Successfully registered the SIGs with the portal."
                 registered_sigs = Status.objects.filter(user=account)
@@ -153,13 +159,10 @@ def apply(request):
                     final_cleaned_data.append([sig_name, sig_status])
 
                 applied_for_script = False
-                applied_for_media = False
                 for entry in registered_sigs:
                     if entry.SIG == "SR":
                         applied_for_script = True
-                    if entry.SIG == "ME":
-                        applied_for_media = True
-                return render(request, 'ienitk/status.html', {'query': final_cleaned_data, 'applied_for_script': applied_for_script, 'applied_for_media': applied_for_media})
+                return render(request, 'ienitk/status.html', {'query': final_cleaned_data, 'applied_for_script': applied_for_script})
             else:
                 return render(request, 'ienitk/apply.html', template_data)
         else:
@@ -167,7 +170,7 @@ def apply(request):
         template_data['form'] = form
         return render(request, 'ienitk/apply.html', template_data)
     else:
-        request.session['alert_danger'] = "You have already registered!"
+        request.session['alert_danger'] = "You have already registered! If this was a mistake contact Chaitany : +91 9834708844"
         return HttpResponseRedirect('/profile/')
 
 
@@ -189,15 +192,14 @@ def status(request):
         final_cleaned_data.append([sig_name, sig_status])
 
     applied_for_script = False
-    applied_for_media = False
+
     for entry in registered_sigs:
         if entry.SIG == "SR":
             applied_for_script = True
-        if entry.SIG == "ME":
-            applied_for_media = True
+
 
     return render(request, 'ienitk/status.html',
-                  {'query': final_cleaned_data, 'applied_for_script': applied_for_script, 'applied_for_media':applied_for_media})
+                  {'query': final_cleaned_data, 'applied_for_script': applied_for_script})
 
 
 def scriptroundone(request):
@@ -246,4 +248,5 @@ def submission_scriptroundone(request):
 
 
 def test_round_1(request):
-    return render()
+    
+    return render(request,'round_1_test.html')

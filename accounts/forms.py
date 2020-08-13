@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 from .models import Account, Profile, Status
 
+
 def validate_username_available_and_edu_mail(username):
     """
     validator that throws an error if the given username already exists.
@@ -17,7 +18,7 @@ def validate_username_available_and_edu_mail(username):
     validator for checking whether the given mail id is an edu mail id.
     """
     if not username.endswith("@nitk.edu.in"):
-        raise forms.ValidationError("Email is not an edu id")
+        raise forms.ValidationError("Please enter an edu mail id")
 
 
 def validate_username_exists(username):
@@ -69,7 +70,7 @@ class BasicForm(forms.Form):
 class LoginForm(BasicForm):
     email = forms.EmailField(max_length=50, validators=[
                              validate_username_exists])
-    setup_field(email, 'Enter Email here')
+    setup_field(email, 'Enter NITK EDU Email here')
     password = forms.CharField(max_length=50, widget=forms.PasswordInput())
     setup_field(password, 'Enter password here')
 
@@ -95,7 +96,7 @@ class AccountRegisterForm(BasicForm):
     setup_field(lastname, 'Enter last name here')
     email = forms.EmailField(max_length=50, validators=[
                              validate_username_available_and_edu_mail])
-    setup_field(email, 'Enter email here')
+    setup_field(email, 'Enter NITK EDU email here')
     password_first = forms.CharField(
         label='Password', min_length=1, max_length=50, widget=forms.PasswordInput())
     setup_field(password_first, "Enter password here")
@@ -183,5 +184,12 @@ class SIGForm(BasicForm):
     SigAux2 = forms.ChoiceField(
         label='Auxiliary SIG Second Priority', choices=Status.SIG_TYPES_AUX, required=False)
     setup_field(SigAux2, 'Select second Auxiliary SIG')
-    media = forms.BooleanField(
-        label='Select to apply for Media SIG', required=False)
+    quesn1 = forms.CharField(label='What do you expect from the club?',
+                             widget=forms.Textarea(attrs={"rows": 5}), required=True, max_length=300)
+    setup_field(quesn1, 'Enter your response here')
+    quesn2 = forms.CharField(label='Why do you think you are a good fit at IE?',
+                             widget=forms.Textarea(attrs={"rows": 5}), required=True, max_length=300)
+    setup_field(quesn2, 'Enter your response here')
+    quesn3 = forms.CharField(label='Two interesting facts about you',
+                             widget=forms.Textarea(attrs={"rows": 5}), required=True, max_length=300)
+    setup_field(quesn3, 'Enter your response here')
