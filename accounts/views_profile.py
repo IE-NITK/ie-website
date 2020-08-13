@@ -17,7 +17,7 @@ def profile_view(request):
     # Get template data from session
     template_data = views.parse_session(request)
 
-    #Passing profile to template data
+    # Passing profile to template data
     current_user = request.user
     account = Account.objects.get(user=current_user)
     profile = account.profile
@@ -25,16 +25,16 @@ def profile_view(request):
 
     # Checking if the candidate applied for Script (online test link to be provided)
     account = current_user.account
-    
+
     registered_sigs = Status.objects.filter(user=account)
     applied_for_script = False
     for entry in registered_sigs:
         if entry.SIG == "SR":
             applied_for_script = True
     template_data["applied_for_script"] = applied_for_script
-    #passing status of the user to html
+    # passing status of the user to html
     status = Status.objects.filter(user=account)
-    #flag = 0 means not selected
+    # flag = 0 means not selected
     flag = 0
     for entry in status:
         if entry.status == 'SL':
@@ -47,14 +47,17 @@ def profile_view(request):
 def password_view(request):
     # Authentication check
     authentication_result = views.authentication_check(request)
-    if authentication_result is not None: return authentication_result
+    if authentication_result is not None:
+        return authentication_result
     # Get template data from session
-    template_data = views.parse_session(request, {'form_button': "Change password"})
+    template_data = views.parse_session(
+        request, {'form_button': "Change password"})
     # Proceed with rest of the view
     if request.method == 'POST':
         form = PasswordForm(request.POST)
         if form.is_valid():
-            user = authenticate(username=request.user.username, password=form.cleaned_data['password_current'])
+            user = authenticate(username=request.user.username,
+                                password=form.cleaned_data['password_current'])
             if user is None:
                 form.mark_error('password_current', 'Incorrect Password')
             else:
@@ -72,9 +75,11 @@ def password_view(request):
 def profile_update(request):
     # Authentication check.
     authentication_result = views.authentication_check(request)
-    if authentication_result is not None: return authentication_result
+    if authentication_result is not None:
+        return authentication_result
     # Get the template data from the session
-    template_data = views.parse_session(request, {'form_button': "Update profile"})
+    template_data = views.parse_session(
+        request, {'form_button': "Update profile"})
     # Proceed with the rest of the view
     profile = request.user.account.profile
     if request.method == 'POST':
@@ -96,8 +101,10 @@ def profile_update(request):
 
 
 def apply(request):
-    authentication_result = views.authentication_check(request, [Account.ACCOUNT_ADMIN, Account.ACCOUNT_CANDIDATE])
-    if authentication_result is not None: return authentication_result
+    authentication_result = views.authentication_check(
+        request, [Account.ACCOUNT_ADMIN, Account.ACCOUNT_CANDIDATE])
+    if authentication_result is not None:
+        return authentication_result
     template_data = views.parse_session(request, {'form_button': "Submit"})
 
     account = Account.objects.get(user=request.user)
@@ -131,6 +138,13 @@ def apply(request):
 
                 views.register_SIG(
                     form.cleaned_data['SigAux2'],
+                    account,
+                    datetime.datetime.now(),
+                    "RE"
+                )
+
+                views.register_SIG(
+                    form.cleaned_data['SigAux3'],
                     account,
                     datetime.datetime.now(),
                     "RE"
@@ -197,14 +211,15 @@ def status(request):
         if entry.SIG == "SR":
             applied_for_script = True
 
-
     return render(request, 'ienitk/status.html',
                   {'query': final_cleaned_data, 'applied_for_script': applied_for_script})
 
 
 def scriptroundone(request):
-    authentication_result = views.authentication_check(request, [Account.ACCOUNT_CANDIDATE])
-    if authentication_result is not None: return authentication_result
+    authentication_result = views.authentication_check(
+        request, [Account.ACCOUNT_CANDIDATE])
+    if authentication_result is not None:
+        return authentication_result
     account = Account.objects.get(user=request.user)
     registered_sigs = Status.objects.filter(user=account)
     final_cleaned_data = []
@@ -242,11 +257,12 @@ def submission_scriptroundone(request):
         created = datetime.datetime.now()
         current_user = request.user
         account = current_user.account
-        submission = RoundOneSubmission.create(account, ans1, ans2, ans3, ans4, ans5, essayans, created)
+        submission = RoundOneSubmission.create(
+            account, ans1, ans2, ans3, ans4, ans5, essayans, created)
         submission.save()
     return HttpResponseRedirect('/profile/')
 
 
 def test_round_1(request):
-    
-    return render(request,'round_1_test.html')
+
+    return render(request, 'round_1_test.html')
