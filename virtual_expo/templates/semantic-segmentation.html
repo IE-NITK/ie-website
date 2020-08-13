@@ -1,0 +1,221 @@
+{% extends "base.html" %}
+{% block virtual_expo %}active{% endblock %}
+{% load static %}
+{% block main %}
+
+
+<section class="probootstrap-section"
+    style="background-image: url('{% static 'img/virtual-expo/semantic_segmentation.jpeg' %}'); width: 100%;background-size: cover;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-left section-heading probootstrap-animate ">
+                <h1>Semantic Segmentation</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="probootstrap-section probootstrap-section-sm">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>PROBLEM STATEMENT: </h3>
+                <p>Image segmentation is the process of partitioning a digital image into multiple segments (sets of
+                    pixels). The goal of segmentation is to simplify and/or change the representation of an image into
+                    something that is more meaningful and easier to analyze. Image segmentation is typically used to
+                    locate objects and boundaries (lines, curves, etc.) in images. More precisely, image segmentation
+                    is the process of assigning a label to every pixel in an image such that pixels with the same label
+                    share certain characteristics.<br>
+                    This project aims at creating a learning model to classify each pixel of an image into different
+                    classes so that its extended version can be helpful in various applications like Autonomous
+                    vehicles,Medical image diagnostics etc .
+                </p>
+
+
+                <h3>PROPOSED SOLUTION:</h3>
+                <p>Project attempts to train visual recognition model using images which have output where the
+                    objects present in the image have been classified into several classes sharing some common
+                    characteristics.
+                </p>
+
+
+                <h3>TECHNOLOGY USED</h3>
+                <p>The Project is build using ResNet in Tensorflow v1.1.0 framework on the PASCAL VOC dataset.
+                    All the code is written using python 2.7.
+                </p>
+
+
+
+
+                <h3>METHODOLOGY</h3>
+                <p>This project is built on a fully convolutional variant of ResNet with atrous (dilated) convolutions
+                    and atrous spatial pyramid pooling.<br>
+                    The model is trained on a mini-batch of images and corresponding ground truth masks with the
+                    softmax classifier at the top. During training, the masks are downsampled to match the size of the
+                    output from the network; during inference, to acquire the output of the same size as the input,
+                    bilinear upsampling is applied. The final segmentation mask is computed using argmax over the
+                    logits. The implementation of the project journey went on, in the following manner :<br>
+                    Phase 1 (September End) - This phase went in Looking for papers, dataset and models for the
+                    problem.<br>
+                    Phase 2 (mid of December) - This was the Learning phase in which we learnt all the required
+                    libraries (like matplotlib, numPy), frameworks and architecture (Residual Network a CNN
+                    architecture.)<br>
+                    Phase 3 (January End) - Create a baseline model for semantic image segmentation.<br>
+                    Phase 4 ( mid Feb ) - Fixed the implementation of the batch normalization layer: which supports
+                    both the training and inference steps. If the flag --is-training is provided, the running means and
+                    variances will be updated, otherwise, they will be kept intact. Fixed the evaluation procedure and
+                    As a result, the performance score on the validation set has increased to 80.1%<br>
+                    Phase 5 ( march end ) - This was the most challenging phase as in this phase, we have Optimized
+                    our baseline model in which we have re-written the training script train.py following the original
+                    optimization setup, SGD with momentum, weight decay, learning rate with polynomial decay,
+                    different learning rates for different layers, The training script with multi-scale inputs
+                    train_msc.py
+                    has been added the input is resized to 0.5 and 0.75 of the original resolution, and losses are
+                    aggregated. We also wrote the code using openCV so that it will be able to capture images from
+                    the webcam not just static image and then, it will display the mask of the image as an output.
+                </p>
+
+                <h3>RESULTS</h3>
+                <p>On the test set of PASCAL VOC, the model achieves 79.7% of mean intersection-over-union.
+                    Evaluation of a single-scale converted pre-trained model on the PASCAL VOC validation dataset
+                    leads to 86.9%.
+                    <br>
+                    <img src="{% static 'img/virtual-expo/semantic_segmentation03.png' %}" class="img-rounded img-fluid"
+                        style="width: 100%;">
+                    <img src="{% static 'img/virtual-expo/semantic_segmentation02.png' %}" class="img-rounded img-fluid"
+                        style="width: 100%;">
+                    <img src="{% static 'img/virtual-expo/semantic_segmentation01.png' %}" class="img-rounded img-fluid"
+                        style="width: 100%;">
+
+                    <br>
+                    Resnet 101 delivers better segmentation results along object boundaries. We think the identity
+                    mapping of Resnet 101 has an effect as hyper-column features that exploit the features from
+                    intermediate layers to better localize boundaries.<br>
+                    However, in the dataset much focus was on humans. So, the mask of humans was much more
+                    clearer in images than other objects.
+                </p>
+
+                <h3>DEMO</h3>
+                <p>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe width="686" height="386" src="https://www.youtube.com/embed/JjCYkZqVySw" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                </p>
+
+
+                <h3>FUTURE WORK</h3>
+                <p>The model can be improved later on so that other objects can also be distinguished clearly.<br>
+                    Apart from the existing objects, other objects can be added so that they can be segmented and
+                    the mask can be generated.<br>
+                    As we have implemented our baseline model, we can try to segment images in real-time and
+                    create an API for it.<br>
+                </p>
+
+
+                <h3>KEY LEARNINGS</h3>
+                <p>We learned a lot while working on this project. Some of the things we learnt are:-<br>
+                    ● Creating and training the model.<br>
+                    ● Optimizing the model and testing the model with various datasets.<br>
+                    ● Learned about Tensorflow frameworks and CNN architecture (resnet).<br>
+                    ● Generating the mask image of the input image.<br>
+                    ● Worked on a script to capture images from webcam using opencv and generate its mask
+                    image.
+                </p>
+
+
+                <h3>CONCLUSION</h3>
+                <p>Image segmentation depends on many factors, i.e., pixel color, texture, intensity, similarity of
+                    images, image content, and problem domain. Therefore, it is not possible to consider a single
+                    method for all types of images nor all methods can perform well for a particular type of image.
+                    Hence, it is good to use a hybrid solution consisting of multiple methods for image segmentation
+                    problems.
+                </p>
+
+
+
+
+                <h3>REFERENCES</h3>
+
+                <p>
+                    1. <a
+                        href="https://medium.com/datadriveninvestor/deep-learning-for-image-segmentation-d10d19131113">https://medium.com/datadriveninvestor/deep-learning-for-image-segmentation-d10d19131113</a>
+                    <br>
+                    2. <a href="https://towardsdatascience.com/summary-of-segnet-a-deep-convolutional-encoder-decoder-architecture-for-image-segmentation-75b2805d86f5">https://towardsdatascience.com/summary-of-segnet-a-deep-convolutional-encoder-decoder-architecture-for-image-segmentation-75b2805d86f5</a></p>
+                <p></p>
+
+                <h3>TEAM</h3>
+
+                <p>● Asis Kumar Rout asisrout7@gmail.com<br>
+                    ● Awanit Ranjan awanitranjan000512@gmail.com<br>
+                    ● Avdhesh Yadav avdheshyadavdow@gmail.com<br>
+                    ● Dhruvik Navadiya navadiyadhruvik2@gmail.com<br>
+                </p>
+                <p></p>
+
+                <!-- <h3>PICTURES</h3>
+                <section class="container">
+                    <div class="row mb-5">
+
+                        <div class="card-deck  col-md-4 col-sm-6 col-sm-12">
+                            <div class="card" style="margin-bottom: 15px;">
+                                <div style="text-align:center">
+
+                                    <img src="" alt="Card image cap" class="img-fluid" style="height:270px; width:100%">
+                                    <div class="card-body">
+                                        <h6 class="card-title">card title</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+ -->
+
+            </div>
+</section>
+</div>
+</div>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+{% comment %} <section class="probootstrap-section probootstrap-section-sm">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+
+            </div>
+        </div>
+    </div>
+</section> {% endcomment %}
+
+<script type="text/javascript">
+    $(".team").addClass("active");
+    var tabcontent = document.getElementsByClassName('teams');
+    for (i = 1; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    function navigate(signame) {
+        var tabcontent = document.getElementsByClassName('teams');
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(signame).style.display = "block";
+        $("." + signame).addClass("active");
+    }
+</script>
+{% endblock %}

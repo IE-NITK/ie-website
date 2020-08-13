@@ -4,8 +4,9 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.contrib.auth import get_user_model
 from accounts import views
-from accounts.models import Account, Status
+from accounts.models import Account, Status, BasicResponses
 from webadmin.forms import AddUserForm
+from djqscsv import render_to_csv_response
 
 User = get_user_model()
 
@@ -218,3 +219,12 @@ def candidates_view(request):
         template_data['query'] = Status.objects.filter(SIG__in=["SR", "VR", "RO", "CA", "ME"])
     template_data['logged_in_user'] = current_user
     return render(request, 'ienitk/admin/candidates.html', template_data)
+
+
+def download_basic_responses_csv(request):
+    authentication_result = views.authentication_check(request, [Account.ACCOUNT_ADMIN, Account.ACCOUNT_MEMBER])
+    if authentication_result is not None:
+        return authentication_result
+    responses = BasicResponses.objects.all()
+    return render_to_csv_response(responses,filename=u'Candidates_responses.csv')
+    

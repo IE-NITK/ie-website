@@ -1,0 +1,203 @@
+{% extends "base.html" %}
+{% block virtual_expo %}active{% endblock %}
+{% load static %}
+{% block main %}
+
+
+<section class="probootstrap-section"
+    style="background-image: url('{% static 'img/virtual-expo/toll_cost_calculator.png' %}'); width: 100%;background-size: cover;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-left section-heading probootstrap-animate ">
+                <h1>
+                    <font color="black">Toll Cost Calculator</font>
+                </h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="probootstrap-section probootstrap-section-sm">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>PROBLEM STATEMENT: </h3>
+                <p>Android vehicle toll payment using RFID is a method which aims at reducing the
+                    queuing delay at the toll plazas and makes toll payment accessible from the source point. A
+                    user can enter his/her source and destination in the application, and in return, the app will show
+                    the shortest path with the cost of tolls (if any present).<br>
+                    This project aims to make the payment process easier and also give an idea to the user about
+                    the shortest route that can sometimes have no tolls. The result of this would be less wastage of
+                    fuel, time, and not so long queues in the toll plazas.<br>
+                    Another important thing is that the user will have an idea of how much would it cost if the given
+                    route is taken so that the user account has sufficient balance left to be used up in the journey. If
+                    the user refrains from making payment via app then also it would be useful to have an idea
+                    about the travelling cost.
+                </p>
+
+
+                <h3>PROPOSED SOLUTION:</h3>
+                <p>The basic working of the app is to take source and destination from the user and as an output, it
+                    gives us the total number of tolls and its cumulative cost between the two-point. The solution can
+                    be split into two tasks, one is to get the shortest route between the points and then calculate the
+                    number of tolls.<br>
+                    For task one, we can easily achieve this with the help of google maps API. The google maps
+                    elegantly return us the coordinates of the source and destination. After getting the two points to
+                    say A and B we put markers on this and draw a polyline to trace the path. Again which is assisted
+                    by google direction API. Now we have the shortest route and we have traced the path. The
+                    direction API returns a JSON object which contains information about objects in the path
+                    including the toll. We will retrieve the information about tolls on the way. We count the number of
+                    tolls encountered in the path and multiple it with the cost we have stored.
+                </p>
+
+
+                <h3>TECHNOLOGY USED</h3>
+                <p>Android Studio, Java for android, Google directions API, Google maps API.
+                </p>
+
+
+
+
+                <h3>METHODOLOGY</h3>
+                <p>Phase 1: Enabling the Google Maps Directions API.
+                    We visited the Google Cloud Platform Console. Created a new Project and activated the
+                    Directions API.<br>
+                    Phase 2: Showing the markers on the map.<br>
+                    We took the source and destination as input as strings from the user and geocoded that into
+                    latitude and longitude using the LatLng module.<br>
+                    Markers were made using the MarkerOptions module of android maps.
+                    Phase 3:Creating Direction Request and printing the polyline.
+                    Polyline would be showing the desired route between source and destination.
+                    This was made possible by creating an Http direction request to the webservice.
+                    We fetched the data from the request in the form of a JSON object.<br>
+                    Phase 4:Finding the number of tolls.<br>
+                    The result of the direction request is a JSON object. It has the routes
+                    and legs which contains the address of the waypoints. This contains the string "toll road" if it has
+                    a toll. We searched the JSON object for the string and counted the total number of tolls on the
+                    way.<br>
+                    Pseudocode:<br>
+                    computeTotalTolls(result)<br>
+                    total = 0;<br>
+                    myroute = result.routes[0];<br>
+                    totalTolls=0;<br>
+                    for ( i = 0; i &lt; myroute.legs.length; i++)<br>
+                    for(] j=0;j &lt; myroute.legs[i].steps.length;j++)<br>
+                    if(containsWord(myroute.legs[i].steps[j].instructions, 'toll road'))<br>
+                    totalTolls+=1;<br>
+                    Phase 5:Printing the total cost.<br>
+                    We assigned a dummy cost which when multiplied by the total number of
+                    The toll would return the required balance the user would need to have in their
+                    FasTag Wallet.
+                </p>
+
+                <h3>RESULTS</h3>
+                <p>We could obtain the optimal path with the least toll cost.
+                </p>
+
+
+                <h3>FUTURE WORK</h3>
+                <p>The frontend can be improved. The method of collecting information from the user can be
+                    improved.
+                </p>
+
+
+                <h3>KEY LEARNINGS</h3>
+                <p>Google directions API and android framework.
+                </p>
+
+
+                <h3>CONCLUSION</h3>
+                <p>The backend logic was implemented. The toll cost estimates can help a user maintain sufficient
+                    balance in his account since the tolls now have made it mandatory to include a FASTag on a
+                    vehicle using their services.
+                </p>
+
+
+
+
+                <h3>REFERENCES</h3>
+
+                <p>
+                    ● <a href="https://nevonprojects.com/android-vehicle-toll-payment-system/">https://nevonprojects.com/android-vehicle-toll-payment-system/</a><br>
+                    ● <a href="http://ijiet.com/wp-content/uploads/2018/06/8.pdf">http://ijiet.com/wp-content/uploads/2018/06/8.pdf</a><br>
+                    ● <a href="http://www.ijsrp.org/research-paper-0415/ijsrp-p4080.pdf">http://www.ijsrp.org/research-paper-0415/ijsrp-p4080.pdf</a><br>
+                    <br>
+                    Link to Code - <a href="https://github.com/ShraddhaGole/Toll_Cost_Calculator">Github</a>
+
+                    <p></p>
+
+                    <h3>TEAM</h3>
+
+                    <p>● Shrinidhi Anil Varna (shrinidhi99.varna@gmail.com)<br>
+                        ● Shraddha Gole(shraddhagole.181it145@nitk.edu.in)<br>
+                        ● Shonali KS (kshonalis72@gmail.com)<br>
+                        ● Darshan V<br>
+                        ● Archana P<br>
+                    </p>
+                    <p></p>
+
+                    <!-- <h3>PICTURES</h3>
+                <section class="container">
+                    <div class="row mb-5">
+
+                        <div class="card-deck  col-md-4 col-sm-6 col-sm-12">
+                            <div class="card" style="margin-bottom: 15px;">
+                                <div style="text-align:center">
+
+                                    <img src="" alt="Card image cap" class="img-fluid" style="height:270px; width:100%">
+                                    <div class="card-body">
+                                        <h6 class="card-title">card title</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+ -->
+
+            </div>
+</section>
+</div>
+</div>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+{% comment %} <section class="probootstrap-section probootstrap-section-sm">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+
+            </div>
+        </div>
+    </div>
+</section> {% endcomment %}
+
+<script type="text/javascript">
+    $(".team").addClass("active");
+    var tabcontent = document.getElementsByClassName('teams');
+    for (i = 1; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    function navigate(signame) {
+        var tabcontent = document.getElementsByClassName('teams');
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(signame).style.display = "block";
+        $("." + signame).addClass("active");
+    }
+</script>
+{% endblock %}

@@ -1,0 +1,211 @@
+{% extends "base.html" %}
+{% block virtual_expo %}active{% endblock %}
+{% load static %}
+{% block main %}
+
+
+<section class="probootstrap-section"
+    style="background-image: url('{% static 'img/virtual-expo/portfolio.jpg' %}'); width: 100%;background-size: cover;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-left section-heading probootstrap-animate ">
+                <h1>
+                    <font color="black">Portfolio Diversification and Credit Worthiness</font>
+                </h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="probootstrap-section probootstrap-section-sm">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>PROBLEM STATEMENT: </h3>
+                <p>We live in a capitalist country with a number of risks associated with every investment. We are
+                    not new to the problems posed by an economic crisis, in fact we might witness one in the near
+                    future. Why is it that a lot of investors lose money during recessions? How do they calculate
+                    risks? Is it possible to mitigate the loss?
+                    “Never put all your eggs in one basket”
+                    Our problem statement mostly revolves around the old saying mentioned above. Our task is to
+                    make a diversified portfolio that has a better chance of surviving than a non diversified portfolio
+                    during a financial crisis.
+                </p>
+
+                <h3>PROJECT DESCRIPTION:</h3>
+                <p>
+                    <strong>THE STOCK MARKET:</strong><br>
+
+                    To solve a problem that involves trading it is important to understand the fundamentals of the
+                    stock market. Our primary goal was to analyse the market on a day to day basis and compare
+                    the data to that of during a recession. After analysing the data we came up with companies that
+                    are neutral, safe and have less risk associated with them.<br>
+                    <strong>ECONOMIC CRISIS:</strong><br>
+                    The fluctuation in the stock market is bizarre especially during recessions. It is always better to
+                    be prepared. We analysed real time diversified portfolios during a financial crisis and used that
+                    data to calculate risk factor.<br>
+                    <strong>THMAKING A DIVERSIFIED PORTFOLIO:</strong><br>
+                    In this step we took data from six different stock exchange markets for sector division depending
+                    on their weightage in each of the markets. After calculating the average weightage of each
+                    sector, we selected major companies from each sector and calculated idiosyncratic risk and
+                    unsystematic risk of the entire portfolio with respect to the beta of each company.<br>
+                    <strong>HEDGING AND HEDGING TECHNIQUES:</strong><br>
+                    A hedge is an investment to reduce the risk of adverse price movements in an asset.Hedging is
+                    the practice of taking a position in one market to offset and balance against the risk adopted by
+                    assuming a position in a contrary or opposing market or investment. There are many hedging
+                    techniques used by many firms. We have used the following hedging techniques:<br>
+                    1) Hedging With Gold : Gold prices increase in times of crisis and it can be a good hedge in
+                    times of global crisis.<br>
+                    2) Hedging With Foreign Currency : This hedging helps in economic crises of a particular
+                    country.<br>
+                    3) Hedging With Derivatives( Not used in project) : This helps the portfolio from all types of
+                    crisis but it requires a lot of knowledge and investors should be really active.<br>
+                    4) Making a SIP : It averages the price and neutralizes all the fluctuation in share price. It
+                    helps in reducing the risk in the market but return is reduced and as it is a neutralization
+                    technique it requires patience.
+                </p>
+
+
+
+
+
+                <h3>RESULTS</h3>
+                <p>After calculating the aggregate risk, we used several hedging techniques to test the portfolio we
+                    made and the results are as follows:<br>
+                    ● After calculating the average return of the companies in each sector, we calculated the
+                    overall return of the portfolio.<br>
+                    ● We invested 70% in shares of different companies and 30% in gold in portfolio one. The
+                    overall return of this portfolio came out to be 10.51%.<br>
+
+                    ● We invested 70% in shares of different companies and 30% in ForEx in portfolio two.
+                    The overall return of this portfolio came out to be 12.63%.<br>
+                    ● Companies with a lower beta value are safer than that of companies with a higher beta
+                    value.<br>
+                    ● Neutral stocks with low return values save the portfolio during a financial crisis. ( gold
+                    price goes up )<br>
+                    ● The covariance between the assets plays an important role in deciding the overall return
+                    of a portfolio.<br>
+
+                </p>
+
+                <h3>KEY LEARNINGS</h3>
+                <p>It is extremely hard to predict the fluctuations of a market as it is impossible to calculate
+                    the risk imposed by the future.<br>
+                    ● Minimising risk of loss :if one investment performs poorly over a certain period, other
+                    investments may perform better over that same period, reducing the potential losses of
+                    your investment portfolio from concentrating all your capital under one type of
+                    investment.<br>
+                    ● Preserving capital : not all investors are in the accumulation phase of life; some who are
+                    close to retirement have goals oriented towards preservation of capital, and
+                    diversification can help protect your savings.<br>
+                    ● Generating returns : sometimes investments don’t always perform as expected, by
+                    diversifying you’re not merely relying upon one source for income.<br>
+
+                </p>
+
+                <h3>GRAPHS AND DATASHEETS:</h3>
+                <p>
+                    <img src="{% static 'img/virtual-expo/portfolio1.png' %}" class="img-rounded img-fluid"
+                        style="width: 75%;"><br>
+                    <img src="{% static 'img/virtual-expo/portfolio2.png' %}" class="img-rounded img-fluid"
+                        style="width: 75%;"><br>
+                    <br><strong> DIVISION AND RISK CALCULATION:</strong><br>
+                    <a
+                        href="https://docs.google.com/spreadsheets/d/1DglObYbQ_gm7XyKvnKAE8wI6kJT8GNouPjHGuRKnFSw/edit?usp=sharing">Datasheet</a>
+                </p>
+
+
+                <h3>FUTURE WORK</h3>
+                <p>We have worked on analyzing risk and reducing it. We have applied many hedging techniques and worked
+                    on decreasing risk and keeping the money safe. In the future we can work on maximizing the profit
+                    using many techniques and trading strategies to gain financial freedom.
+                </p>
+
+                <h3>CONCLUSION</h3>
+                <p>It is clear from the project that diversifying a portfolio involves less risk when compared to that
+                    of a non diversified portfolio. It is impossible to predict the future. Stress tests are accurate to
+                    a certain point and there are a number of other factors which are still unknown with regard to
+                    predicting the present value or the future value of an asset. Making money in a free market always
+                    involves risk but with some accurate predictions and precautions it shouldn’t be hard to do the
+                    task.
+
+
+                </p>
+
+
+
+
+                <h3>TEAM</h3>
+
+                <p>
+                    ● Pranav : Mentor<br>
+                    ● Priyank : Mentor<br>
+                    ● VAIBHAV SAHAI – vaibhavsahai.181cv151@nitk.edu.in - 8050829050<br>
+                    ● Jahnavi Kancharla - 9591512111 - jahnavikancharla99@gmail.com
+                </p>
+
+                <!-- <h3>PICTURES</h3>
+                <section class="container">
+                    <div class="row mb-5">
+
+                        <div class="card-deck  col-md-4 col-sm-6 col-sm-12">
+                            <div class="card" style="margin-bottom: 15px;">
+                                <div style="text-align:center">
+
+                                    <img src="" alt="Card image cap" class="img-fluid" style="height:270px; width:100%">
+                                    <div class="card-body">
+                                        <h6 class="card-title">card title</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+ -->
+
+            </div>
+</section>
+</div>
+</div>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+{% comment %} <section class="probootstrap-section probootstrap-section-sm">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+
+            </div>
+        </div>
+    </div>
+</section> {% endcomment %}
+
+<script type="text/javascript">
+    $(".team").addClass("active");
+    var tabcontent = document.getElementsByClassName('teams');
+    for (i = 1; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    function navigate(signame) {
+        var tabcontent = document.getElementsByClassName('teams');
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(signame).style.display = "block";
+        $("." + signame).addClass("active");
+    }
+</script>
+{% endblock %}

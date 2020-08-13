@@ -1,0 +1,185 @@
+{% extends "base.html" %}
+{% block virtual_expo %}active{% endblock %}
+{% load static %}
+{% block main %}
+
+
+<section class="probootstrap-section"
+    style="background-image: url('{% static 'img/virtual-expo/uart.png' %}'); width: 100%;background-size: cover;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-left section-heading probootstrap-animate ">
+                <h1>
+                    <font color="black">UART on FPGA</font>
+                </h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="probootstrap-section probootstrap-section-sm">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>PROBLEM STATEMENT: </h3>
+                <p>Design and implementation of hardware for UART data transmission on a Spartan-7 FPGA. The UART
+                    protocol is selected for its relative simplicity and popularity. The Spartan-7 FPGA board has a
+                    number of I/O pins that are suitable over a range of voltages and was hence suitable for this
+                    project.
+
+                </p>
+
+
+                <h3>PROPOSED SOLUTION:</h3>
+                <p>The UART receiver and transmitter were implemented independently. We used 9600 BAUD rate for
+                    transmission of serial data and divided the system clock accordingly. We followed the Finite State
+                    Machine (FSM) approach to design both UART transmitter and receiver. These FSMs were then written in
+                    Verilog following RTL Design and implemented on the Spartan-7 FPGA board.
+                </p>
+
+
+                <h3>METHODOLOGY</h3>
+                <p>UART exchanges text data in an American Standard Code for Information Interchange (ASCII) format in
+                    which each alphabetical character is encoded by 7 bits and transmitted as 8 data bits. For
+                    transmission the UART protocol wraps this 8 bit subword with a start bit in the least significant
+                    bit (LSB) and a stop bit in the most significant bit (MSB) resulting in a 10 bit word format.
+                    <br>
+                    <img src="{% static 'img/virtual-expo/uart1.png' %}" class="img-rounded img-fluid"
+                        style="width: 100%;"><br><br>
+                    <strong><i></i>Transmitter:</strong><br>
+
+                    The function of the transmitter module is to convert the 8 bit serial data into the single bit data.
+                    In this module, when our load signal is high the data_in is stored into the holding register. The
+                    data in the holding register is shifted to the intermediate register with the start bit of zero and
+                    this intermediate register is of 9 bits. Once the shift signal is high the least significant bit of
+                    the intermediate register comes at the output of the transmitter and is served as the input to the
+                    receiver. When the entire data has been sent, the transmitter provides a parity bit which is served
+                    as the input to the receiver.
+                    <br> <img src="{% static 'img/virtual-expo/uart2.png' %}" class="img-rounded img-fluid"
+                        style="width: 50%;"><br><br>
+                    <strong><i></i>Receiver:</strong><br>
+                    The function of the receiver module is to store the tx_serial i.e. the output of the transmitter
+                    which is of single bit into the intermediate register with the start bit as the least significant
+                    bit and collectively provide the 8 bit serial data. When the load signal is high it will get the
+                    start bit from the transmitter which assures that the original data is now being send by the
+                    transmitter. Once the shift signal is becomes high with no load signal, the data coming from the
+                    transmitter gets shifted into the intermediate register of the receiver and provides the 8 bit
+                    serial data which we have given as an input to the transmitter. The Baud rate generator is nothing
+                    but a frequency divider. In this UART we will apply the synchronized clock signal to both
+                    transmitter and the receiver. When the load signal is high it will get the start bit from the
+                    transmitter which assures that the original data is now being send by the transmitter. Once the
+                    shift signal becomes high with no load signal, the data coming from the transmitter gets shifted
+                    into the intermediate register
+                    of the receiver and provides the 8 bit serial data which we have given as an input to the
+                    transmitter. <br> <img src="{% static 'img/virtual-expo/uart3.png' %}" class="img-rounded img-fluid"
+                        style="width: 50%;"><br><br>
+
+
+                </p>
+
+                <h3>RESULTS</h3>
+                <p>The testbench created verified the proper functioning of the Verilog Code for both Transmitter and
+                    Receiver. The below graph shows the results of the testbench. A small delay between transmission of
+                    data and its reception was artificially introduced to simulate real-world implementations.
+                    <img src="{% static 'img/virtual-expo/uart4.png' %}" class="img-rounded img-fluid"
+                        style="width: 100%;"><br><br>
+                <p>
+                </p>
+
+
+                <h3>FUTURE WORK</h3>
+                <p>The UART Transmitter and Receiver modules implemented on the FPGA must be tested with real
+                    peripherals to better understand the effect of noise and obtain Bit Error Rate. This UART
+                    implementation on the FPGA can be used to further integrate any other project implemented on the
+                    FPGA with external memory devices.
+                </p>
+
+
+                <h3>KEY LEARNINGS</h3>
+                <p>Detailed understanding of the working of various data transmission protocols, not just UART. The
+                    inner functioning of an FPGA and ways to use its fundamental units to optimize designs. Design of
+                    digital systems using Verilog.
+                </p>
+
+
+                <h3>CONCLUSION</h3>
+                <p>The FPGA is a versatile device with the potential to be a part of a number of projects. This project
+                    simply scratches the surface of its many uses and further projects involving the FPGA can integrate
+                    this project to allow the FPGA to interface with multiple peripherals.
+                </p>
+
+
+
+                <h3>TEAM</h3>
+
+                <p>● Trinesh Reddy: trinesh.181ec108@nitk.edu.in<br>
+
+                    ● Atulya Mahesh: atulya.181ec108@nitk.edu.in
+                </p>
+                <p></p>
+
+                <!-- <h3>PICTURES</h3>
+                <section class="container">
+                    <div class="row mb-5">
+
+                        <div class="card-deck  col-md-4 col-sm-6 col-sm-12">
+                            <div class="card" style="margin-bottom: 15px;">
+                                <div style="text-align:center">
+
+                                    <img src="" alt="Card image cap" class="img-fluid" style="height:270px; width:100%">
+                                    <div class="card-body">
+                                        <h6 class="card-title">card title</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+ -->
+
+            </div>
+</section>
+</div>
+</div>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+{% comment %} <section class="probootstrap-section probootstrap-section-sm">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+
+            </div>
+        </div>
+    </div>
+</section> {% endcomment %}
+
+<script type="text/javascript">
+    $(".team").addClass("active");
+    var tabcontent = document.getElementsByClassName('teams');
+    for (i = 1; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    function navigate(signame) {
+        var tabcontent = document.getElementsByClassName('teams');
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(signame).style.display = "block";
+        $("." + signame).addClass("active");
+    }
+</script>
+{% endblock %}

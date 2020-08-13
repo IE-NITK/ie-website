@@ -17,9 +17,15 @@ def profile_view(request):
     # Get template data from session
     template_data = views.parse_session(request)
 
-    # Checking if the candidate applied for Script (online test link to be provided)
+    #Passing profile to template data
     current_user = request.user
+    account = Account.objects.get(user=current_user)
+    profile = account.profile
+    template_data["profile"] = profile
+
+    # Checking if the candidate applied for Script (online test link to be provided)
     account = current_user.account
+    
     registered_sigs = Status.objects.filter(user=account)
     applied_for_script = False
     for entry in registered_sigs:
@@ -130,6 +136,14 @@ def apply(request):
                     "RE"
                 )
 
+                views.register_question_responses(
+                    form.cleaned_data['quesn1'],
+                    form.cleaned_data['quesn2'],
+                    form.cleaned_data['quesn3'],
+                    account,
+                    datetime.datetime.now()
+                )
+
                 request.session['alert_success'] = "Successfully registered the SIGs with the portal."
                 registered_sigs = Status.objects.filter(user=account)
                 final_cleaned_data = []
@@ -156,7 +170,7 @@ def apply(request):
         template_data['form'] = form
         return render(request, 'ienitk/apply.html', template_data)
     else:
-        request.session['alert_danger'] = "You have already registered!"
+        request.session['alert_danger'] = "You have already registered! If this was a mistake contact Chaitany : +91 9834708844"
         return HttpResponseRedirect('/profile/')
 
 
@@ -234,4 +248,5 @@ def submission_scriptroundone(request):
 
 
 def test_round_1(request):
-    return render(request, 'ienitk/roundone.html')
+    
+    return render(request,'round_1_test.html')

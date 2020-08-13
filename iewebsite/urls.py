@@ -32,6 +32,7 @@ urlpatterns = [
                   path('', include('accounts.urls', namespace="accounts")),
                   path('', include('teams.urls', namespace="teams")),
                   path('', include('alumni.urls', namespace="alumni")),
+                  path('', include('virtual_expo.urls', namespace="virtual_expo")),
                   path('password-reset-confirm/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(),
                        name='password_reset_confirm'),
                   path('password_reset/', auth_views.PasswordResetView.as_view(), name='password_reset'),

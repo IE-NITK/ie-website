@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'alumni.apps.AlumniConfig',
     'webadmin.apps.WebadminConfig',
     'accounts.apps.AccountsConfig',
-    'captcha'
+    'captcha',
+    'virtual_expo.apps.VirtualExpoConfig'
 ]
 
 MIDDLEWARE = [

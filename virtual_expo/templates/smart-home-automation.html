@@ -1,0 +1,152 @@
+{% extends "base.html" %}
+{% block virtual_expo %}active{% endblock %}
+{% load static %}
+{% block main %}
+
+
+<section class="probootstrap-section"
+    style="background-image: url('{% static 'img/virtual-expo/smart_home.webp' %}'); width: 100%;background-size: cover;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-left section-heading probootstrap-animate ">
+                <h1>
+                    <font color="black">Smart Home Automation</font>
+                </h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="probootstrap-section probootstrap-section-sm">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>PROBLEM STATEMENT: </h3>
+                <p>We have implemented smart home automation using IoT and various sensors. We have used
+                    Infrared Sensors to detect the number of people entering and leaving the room. We have
+                    implemented home automation using blynk app and google assistant to turn on/off leds(which
+                    signifies the loads in the house). We have also turned on/off electrical appliances which are
+                    connected to the junction box remotely using a website.
+                </p>
+
+
+                <h3>PROPOSED SOLUTION:</h3>
+                <p>Accessing the appliances becomes easier using smart phone rather than turning than turning it
+                    on/off via the switch. Initially we implemented turning on/off leds(which signifies the loads in the
+                    house) using the blynk app then we implemented it using a website which was made by us.
+                </p>
+
+
+
+                <h3>METHODOLOGY</h3>
+                <p>In the odd sem we read about IoT, NodeMCU and the sensors which we were going to use. We
+                    did a bit of coding related to NodeMCU. In the even sem we began implementing the ideas. We
+                    made a bid directional counter using IR leds. We made a website and tried to turn on/off the leds
+                    using the website and NodeMCU.
+                </p>
+
+                <h3>RESULTS</h3>
+                <p>We were able to successfully implement the ideas and the codes were working properly.<br>
+                    Following video demonstrates our idea:<br><br>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <video controls>
+                        <source src="{% static 'img/virtual-expo/smart-home.mp4' %}" type="video/mp4">
+
+                        Your browser does not support the video tag.
+                    </video>
+                </div><br>
+                <br. <div class="embed-responsive embed-responsive-16by9">
+                    <video controls>
+                        <source src="{% static 'img/virtual-expo/smart-home1.mp4' %}" type="video/mp4">
+
+                        Your browser does not support the video tag.
+                    </video>
+            </div>
+            </p>
+
+
+
+            <h3>KEY LEARNINGS</h3>
+            <p>● IoT<br>
+                ● NodeMCU<br>
+                ● HTML<br>
+                ● IR sensor<br>
+            </p>
+
+            <h3>TEAM</h3>
+
+            <p>Mentors :<br>
+                1. Bhushan<br>
+                2. Nikhil(nikhilprabhakar1@gmail.com)<br>
+                3. Ayush(ayush.171ee209@nitk.edu.in)<br><br>
+                Members :<br>
+                1. Shreyas(shreram30@gmail.com)<br>
+                2. Sahil(sahil.181ee138@nitk.edu.in)
+            </p>
+            <p></p>
+
+            <!-- <h3>PICTURES</h3>
+                <section class="container">
+                    <div class="row mb-5">
+
+                        <div class="card-deck  col-md-4 col-sm-6 col-sm-12">
+                            <div class="card" style="margin-bottom: 15px;">
+                                <div style="text-align:center">
+
+                                    <img src="" alt="Card image cap" class="img-fluid" style="height:270px; width:100%">
+                                    <div class="card-body">
+                                        <h6 class="card-title">card title</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+ -->
+
+        </div>
+</section>
+</div>
+</div>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+{% comment %} <section class="probootstrap-section probootstrap-section-sm">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+
+            </div>
+        </div>
+    </div>
+</section> {% endcomment %}
+
+<script type="text/javascript">
+    $(".team").addClass("active");
+    var tabcontent = document.getElementsByClassName('teams');
+    for (i = 1; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    function navigate(signame) {
+        var tabcontent = document.getElementsByClassName('teams');
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(signame).style.display = "block";
+        $("." + signame).addClass("active");
+    }
+</script>
+{% endblock %}

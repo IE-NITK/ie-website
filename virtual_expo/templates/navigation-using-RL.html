@@ -1,0 +1,205 @@
+{% extends "base.html" %}
+{% block virtual_expo %}active{% endblock %}
+{% load static %}
+{% block main %}
+
+
+<section class="probootstrap-section"
+    style="background-image: url('{% static 'img/virtual-expo/navigation_using_RL1.png' %}'); width: 100%;background-size: cover;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-left section-heading probootstrap-animate ">
+                <h1>
+                    <font color="black">Navigation using Reinforcement Learning</font>
+                </h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="probootstrap-section probootstrap-section-sm">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>PROBLEM STATEMENT: </h3>
+                <p>The aim is to train a maze solving agent in a 3D Unity engine environment. To do this we first
+                    have to make a 3D maze in Unity as the environment in which the agent will learn to navigate.
+                    The goal is to have the agent learn how to efficiently navigate to the location of a target object
+                    that is randomly spawned in this maze. The agent has to be designed with an action space that
+                    would allow it to freely navigate the entire maze. We also have to keep in mind that the
+                    observation the agent takes from the environment is sufficient for it to learn this behavior.
+                </p>
+
+
+                <h3>PROPOSED SOLUTION:</h3>
+                <p>Reinforcement learning being the core of the project we have to use a relevant RL algorithm to
+                    learn the required behavior. We use Unity’s inbuilt Proximal Policy Optimization (PPO) which is
+                    well suited to this task.
+                </p>
+
+
+                <h3>TECHNOLOGY USED</h3>
+                <p>● Unity<br>
+                    ● Unity ML-Agents Toolkit <a
+                        href="https://github.com/Unity-Technologies/ml-agents">(https://github.com/Unity-Technologies/ml-agents)</a><br>
+                    ● Python environment with ml-agents dependencies installed (Tensorflow environment)<br>
+                </p>
+
+
+
+
+                <h3>METHODOLOGY</h3>
+                <p>The first step is to build the environment in Unity which fulfills the criterion mentioned in the
+                    problem statement. We built a simple maze with a base and walls that act as obstacles for the
+                    agent preventing it from reaching the target easily. We also have to decide the agent and its
+                    functionality. We used a cube with a simple action space being the four cardinal directions (Up,
+                    Down, Left and Right movement) with which it can navigate the maze as the agent. A stationary
+                    cylindrical object was used as a target.<br><br>
+
+                    The next step was deciding the observations that the agent collected from the surroundings.
+                    These observations serve as the input to the PPO algorithm by which the model learns. Initially
+                    we used the vector coordinates of both the agent and the target as observations. It is clear to see
+                    why this would fail as the trained model has no means to identify obstacles (walls) in its path to
+                    the target. To overcome this, we needed to use additional observations and we choose to use
+                    Raycast Observations provided by unity. Raycast allows us to project rays of defined maximum
+                    length in different directions from the agent. It allows the agent to perceive the surroundings by
+                    telling it if the rays hit an obstacle and if so at what distance. With Raycast added on for making
+                    observations it was enough information for the PPO algorithm to learn a model that reliably
+                    navigates to the target.<br><br>
+                    To train the model we had to come up with a relevant reward scheme that would encourage the
+                    agent to learn the right behavior. This is the scheme we decided to use. The agent starts each
+                    episode with a fixed positive reward. We then give it small penalties at regular time intervals to
+                    encourage it to solve the maze as soon as possible. We give the agent larger penalties if it sticks
+                    to a wall. This penalty continues for as long as the agent is in contact with the wall.
+                    With the agent observation and reward function as described above we could move on to train
+                    the model with Unity’s inbuilt Proximal Policy Optimization (PPO) algorithm.
+                    Also we have applied the DQN algorithm to the flappy bird environment to understand the
+                    working of the algorithm and its implementation.
+                </p>
+
+                <h3>RESULTS</h3>
+                <p>We succeeded in training a model that can reliably take the agent to the target. Though rarely the
+                    agent looks like it is unsure of what action to take, given enough time it will almost always reach
+                    the randomly spawned target.<br>
+                    We were able to successfully apply the DQN algorithm to the flappy bird environment game.
+                </p>
+
+                <h3>DEMO</h3>
+                <p>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe width="686" height="386" src="https://www.youtube.com/embed/exggl2hx6xA" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+
+                    <br><br>
+
+                </div>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe width="686" height="386" src="https://www.youtube.com/embed/ZRQ2rEq-phQ" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                </p>
+
+
+                <h3>FUTURE WORK</h3>
+                <p>This project was done mainly for learning purposes.
+                </p>
+
+
+                <h3>KEY LEARNINGS</h3>
+                <p>The concepts we learn as part of this project are understanding reinforcement learning
+                    algorithms and its implementation using tensorflow framework to the environment we created
+                    using Unity Platform. Also we have applied the reinforcement learning algorithms to the flappy
+                    bird environment.
+                </p>
+
+
+                <h3>CONCLUSION</h3>
+                <p>We were able to successfully achieve our project learning outcome.
+                </p>
+
+
+
+
+                <h3>REFERENCES</h3>
+
+                <p>● <a
+                        href="https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Learning-Environment-Design-Agents.md">https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Learning-Environment-Design-Agents.md</a>
+                </p>
+                <p></p>
+
+                <h3>TEAM</h3>
+
+                <p>● Chaitany Pandiya (chaitany.pandiya@gmail.com)<br>
+                    ● Karn Tiwari (karn.181ee123@nitk.edu.in)<br>
+                    ● K Rahul Reddy (krahulrereddy.171CO119@nitk.edu.in)<br>
+                    ● Rajath Aralikatti (rajath.181co241@nitk.edu.in)<br>
+                </p>
+                <p></p>
+
+                <!-- <h3>PICTURES</h3>
+                <section class="container">
+                    <div class="row mb-5">
+
+                        <div class="card-deck  col-md-4 col-sm-6 col-sm-12">
+                            <div class="card" style="margin-bottom: 15px;">
+                                <div style="text-align:center">
+
+                                    <img src="" alt="Card image cap" class="img-fluid" style="height:270px; width:100%">
+                                    <div class="card-body">
+                                        <h6 class="card-title">card title</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+ -->
+
+            </div>
+</section>
+</div>
+</div>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+{% comment %} <section class="probootstrap-section probootstrap-section-sm">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+
+            </div>
+        </div>
+    </div>
+</section> {% endcomment %}
+
+<script type="text/javascript">
+    $(".team").addClass("active");
+    var tabcontent = document.getElementsByClassName('teams');
+    for (i = 1; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    function navigate(signame) {
+        var tabcontent = document.getElementsByClassName('teams');
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(signame).style.display = "block";
+        $("." + signame).addClass("active");
+    }
+</script>
+{% endblock %}
