@@ -20,9 +20,6 @@ def validate_username_available_and_edu_mail(username):
     if not username.endswith("@nitk.edu.in"):
         raise forms.ValidationError("Please enter an edu mail id")
 
-    if username.find("+"):
-        raise forms.ValidationError("Nice try fooling us")
-
 
 def validate_username_exists(username):
     """
