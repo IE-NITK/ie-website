@@ -12,7 +12,6 @@ from django.utils.encoding import force_bytes, force_text
 from .tokens import account_activation_token
 
 
-
 from .forms import LoginForm, AccountRegisterForm
 from .models import Account
 from . import views
@@ -39,7 +38,8 @@ def setup_view(request):
                 Account.ACCOUNT_ADMIN
             )
             user = authenticate(
-                username=form.cleaned_data['email'].lower(),  # Make sure it's lowercase
+                # Make sure it's lowercase
+                username=form.cleaned_data['email'].lower(),
                 password=form.cleaned_data['password_first']
             )
             login(request, user)
@@ -103,7 +103,7 @@ def register_view(request):
     # Get template data from session
     template_data = views.parse_session(request, {'form_button': "Register"})
     # Proceed with rest of the view
-    
+
     if request.method == 'POST':
         form = AccountRegisterForm(request.POST)
         if form.is_valid():
@@ -120,14 +120,14 @@ def register_view(request):
             mail_subject = 'Activate your account'
 
             message = render_to_string('ienitk/acc_active_email.html', {
-               'user': user,
-               'domain': current_site.domain,
-               'uid': urlsafe_base64_encode(force_bytes(user.pk)).decode(),
-               'token': account_activation_token.make_token(user),
+                'user': user,
+                'domain': current_site.domain,
+                'uid': urlsafe_base64_encode(force_bytes(user.pk)),
+                'token': account_activation_token.make_token(user),
             })
             to_email = form.cleaned_data['email']
             email = EmailMessage(
-               mail_subject, message, to=[to_email]
+                mail_subject, message, to=[to_email]
             )
             email.content_subtype = "html"
             email.send()
@@ -139,8 +139,6 @@ def register_view(request):
     return render(request, 'ienitk/register.html', template_data)
 
 
-
-
 def activate(request, uidb64, token):
     try:
         uid = force_text(urlsafe_base64_decode(uidb64))
@@ -148,7 +146,7 @@ def activate(request, uidb64, token):
     except(TypeError, ValueError, OverflowError, User.DoesNotExist):
         user = None
 
-    print(account_activation_token.check_token(user,token))
+    print(account_activation_token.check_token(user, token))
     if user is not None and account_activation_token.check_token(user, token):
         user.is_active = True
         user.save()
@@ -160,7 +158,6 @@ def activate(request, uidb64, token):
         return HttpResponseRedirect('/profile/apply')
     else:
         return HttpResponse('Activation link is invalid!')
-
 
 
 def error_denied_view(request):
