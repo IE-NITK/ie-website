@@ -25,7 +25,8 @@ def sitemap(request):
 
 def view_archived_users(request):
     # Authentication check.
-    authentication_result = views.authentication_check(request, [Account.ACCOUNT_ADMIN])
+    authentication_result = views.authentication_check(
+        request, [Account.ACCOUNT_ADMIN])
     if authentication_result is not None:
         return authentication_result
     # Get the template data from the session
@@ -37,7 +38,8 @@ def view_archived_users(request):
 
 def restore_user(request):
     # Authentication check.
-    authentication_result = views.authentication_check(request, [Account.ACCOUNT_ADMIN])
+    authentication_result = views.authentication_check(
+        request, [Account.ACCOUNT_ADMIN])
     if authentication_result is not None:
         return authentication_result
     # Get the template data from the session
@@ -60,8 +62,10 @@ def restore_user(request):
 
 def users_view(request):
     # Authentication check
-    authentication_result = views.authentication_check(request, [Account.ACCOUNT_ADMIN])
-    if authentication_result is not None: return authentication_result
+    authentication_result = views.authentication_check(
+        request, [Account.ACCOUNT_ADMIN])
+    if authentication_result is not None:
+        return authentication_result
     # Get the template data from the session
     template_data = views.parse_session(request)
     # Proceed with the rest of the view
@@ -72,7 +76,8 @@ def users_view(request):
         if account is not None:
             account.role = role
             account.save()
-            template_data['alert_success'] = "Updated " + account.user.username + "'s role!"
+            template_data['alert_success'] = "Updated " + \
+                account.user.username + "'s role!"
 
     if request.method == 'POST' and 'SIG' in request.POST:
         pk = request.POST['pk']
@@ -81,16 +86,19 @@ def users_view(request):
         if account is not None:
             account.SIG = SIG
             account.save()
-            template_data['alert_success'] = "Updated " + account.user.username + "'s SIG!"
+            template_data['alert_success'] = "Updated " + \
+                account.user.username + "'s SIG!"
 
     # Parse search sorting
-    template_data['query'] = Account.objects.filter(archive=False, role__in=[1, 2, 4]).order_by('-role')
+    template_data['query'] = Account.objects.filter(
+        archive=False, role__in=[1, 2, 4]).order_by('-role')
     return render(request, 'ienitk/admin/users.html', template_data)
 
 
 def user_archive(request):
     # Authentication check.
-    authentication_result = views.authentication_check(request, [Account.ACCOUNT_ADMIN])
+    authentication_result = views.authentication_check(
+        request, [Account.ACCOUNT_ADMIN])
     if authentication_result is not None:
         return authentication_result
     # Get the template data from the session
@@ -114,7 +122,8 @@ def user_archive(request):
 
 def delete_user(request):
     # Authentication check.
-    authentication_result = views.authentication_check(request, [Account.ACCOUNT_ADMIN])
+    authentication_result = views.authentication_check(
+        request, [Account.ACCOUNT_ADMIN])
     if authentication_result is not None:
         return authentication_result
     # Get the template data from the session
@@ -136,8 +145,10 @@ def delete_user(request):
 
 def add_user(request):
     # Authentication check
-    authentication_result = views.authentication_check(request, [Account.ACCOUNT_ADMIN])
-    if authentication_result is not None: return authentication_result
+    authentication_result = views.authentication_check(
+        request, [Account.ACCOUNT_ADMIN])
+    if authentication_result is not None:
+        return authentication_result
     # Get the template data from the session
     template_data = views.parse_session(request, {'form_button': "Register"})
     # Proceed with the rest of the view
@@ -165,7 +176,8 @@ def add_user(request):
 # View all candidates and their status
 def all_candidates_view(request):
     # Authentication check
-    authentication_result = views.authentication_check(request, [Account.ACCOUNT_ADMIN, Account.ACCOUNT_MEMBER, Account.ACCOUNT_AUX_ADMIN])
+    authentication_result = views.authentication_check(
+        request, [Account.ACCOUNT_ADMIN, Account.ACCOUNT_MEMBER, Account.ACCOUNT_AUX_ADMIN])
     if authentication_result is not None:
         return authentication_result
 
@@ -185,7 +197,8 @@ def all_candidates_view(request):
         if candidate is not None:
             candidate.status = status
             candidate.save()
-            template_data['alert_success'] = "Updated" + candidate.user.user.username + "'s status!"
+            template_data['alert_success'] = "Updated" + \
+                candidate.user.user.username + "'s status!"
     # Parse search sorting
     template_data['query'] = Account.objects.filter(role=3)
 
@@ -196,7 +209,8 @@ def all_candidates_view(request):
 # View SIG specific candidates and their status
 def candidates_view(request):
     # Authentication check
-    authentication_result = views.authentication_check(request, [Account.ACCOUNT_ADMIN, Account.ACCOUNT_MEMBER, Account.ACCOUNT_AUX_ADMIN])
+    authentication_result = views.authentication_check(
+        request, [Account.ACCOUNT_ADMIN, Account.ACCOUNT_MEMBER, Account.ACCOUNT_AUX_ADMIN])
     if authentication_result is not None:
         return authentication_result
     # Get the template data from the session
@@ -212,19 +226,22 @@ def candidates_view(request):
         if candidate is not None:
             candidate.status = status
             candidate.save()
-            template_data['alert_success'] = "Updated" + candidate.user.user.username + "'s status!"
+            template_data['alert_success'] = "Updated" + \
+                candidate.user.user.username + "'s status!"
     # Parse search sorting
     template_data['query'] = Status.objects.filter(SIG=SIG_User)
     if current_user.account.role == 4:
-        template_data['query'] = Status.objects.filter(SIG__in=["SR", "VR", "RO", "CA", "ME"])
+        template_data['query'] = Status.objects.filter(
+            SIG__in=["SR", "VR", "RO", "CA", "ME"])
     template_data['logged_in_user'] = current_user
     return render(request, 'ienitk/admin/candidates.html', template_data)
 
 
 def download_basic_responses_csv(request):
-    authentication_result = views.authentication_check(request, [Account.ACCOUNT_ADMIN, Account.ACCOUNT_MEMBER])
+    authentication_result = views.authentication_check(
+        request, [Account.ACCOUNT_ADMIN, Account.ACCOUNT_MEMBER])
     if authentication_result is not None:
         return authentication_result
-    responses = BasicResponses.objects.all()
-    return render_to_csv_response(responses,filename=u'Candidates_responses.csv')
-    
+    responses = BasicResponses.objects.values(
+        'user__profile__firstname', 'user__roll_no', 'ans1', 'ans2', 'ans3', 'created_at')
+    return render_to_csv_response(responses, filename=u'Candidates_responses.csv')
