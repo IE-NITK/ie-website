@@ -242,6 +242,15 @@ def download_basic_responses_csv(request):
         request, [Account.ACCOUNT_ADMIN, Account.ACCOUNT_MEMBER])
     if authentication_result is not None:
         return authentication_result
+    csv_mapping = {
+        'user__profile__firstname': 'Firstname',
+        'user__roll_no': 'Roll No',
+        'ans1': 'Answer1',
+        'ans2': 'Answer2',
+        'ans3': 'Answer3',
+        'created_at': 'Create At'
+    }
+
     responses = BasicResponses.objects.values(
         'user__profile__firstname', 'user__roll_no', 'ans1', 'ans2', 'ans3', 'created_at')
-    return render_to_csv_response(responses, filename=u'Candidates_responses.csv')
+    return render_to_csv_response(responses, filename=u'Candidates_responses.csv',field_header_map=csv_mapping)
