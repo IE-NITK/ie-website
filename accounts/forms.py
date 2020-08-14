@@ -173,7 +173,7 @@ class ProfileForm(BasicForm):
 
 class SIGForm(BasicForm):
     SigMain1 = forms.ChoiceField(
-        label='Core SIG First Priority', choices=Status.SIG_TYPES_MAIN, required=True)
+        label='Core SIG First Priority*', choices=Status.SIG_TYPES_MAIN, required=True)
     setup_field(SigMain1, 'Select first Core SIG')
     SigMain2 = forms.ChoiceField(
         label='Core SIG Second Priority', choices=Status.SIG_TYPES_MAIN, required=False)
@@ -187,12 +187,12 @@ class SIGForm(BasicForm):
     SigAux3 = forms.ChoiceField(
         label='Auxiliary SIG Third Priority', choices=Status.SIG_TYPES_AUX, required=False)
     setup_field(SigAux3, 'Select third Auxiliary SIG')
-    quesn1 = forms.CharField(label='What do you expect from the club?',
+    quesn1 = forms.CharField(label='What do you expect from the club?*',
                              widget=forms.Textarea(attrs={"rows": 5}), required=True, max_length=300)
     setup_field(quesn1, 'Enter your response here')
-    quesn2 = forms.CharField(label='Why do you think you are a good fit at IE?',
+    quesn2 = forms.CharField(label='Why do you think you are a good fit at IE?*',
                              widget=forms.Textarea(attrs={"rows": 5}), required=True, max_length=300)
     setup_field(quesn2, 'Enter your response here')
-    quesn3 = forms.CharField(label='Two interesting facts about you',
+    quesn3 = forms.CharField(label='Two interesting facts about you*',
                              widget=forms.Textarea(attrs={"rows": 5}), required=True, max_length=300)
     setup_field(quesn3, 'Enter your response here')
