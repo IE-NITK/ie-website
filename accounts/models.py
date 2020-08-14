@@ -114,7 +114,7 @@ class Status(models.Model):
     SIG_TYPES_AUX = (("", "None"), ("SR", "Script"),
                      ("RO", "Robotics"),
                      ("CA", "Capital"),
-                     ("TE", "Tectonics"))
+                     ("TE", "Tectonic"))
     SIG_TYPES = (
         ("CO", "Code"),
         ("GD", "Gadget"),
@@ -122,7 +122,7 @@ class Status(models.Model):
         ("SR", "Script"),
         ("RO", "Robotics"),
         ("CA", "Capital"),
-        ("TE", "Tectonics")
+        ("TE", "Tectonic")
     )
 
     def to_status(self):
