@@ -184,6 +184,9 @@ class SIGForm(BasicForm):
     SigAux2 = forms.ChoiceField(
         label='Auxiliary SIG Second Priority', choices=Status.SIG_TYPES_AUX, required=False)
     setup_field(SigAux2, 'Select second Auxiliary SIG')
+    SigAux3 = forms.ChoiceField(
+        label='Auxiliary SIG Third Priority', choices=Status.SIG_TYPES_AUX, required=False)
+    setup_field(SigAux3, 'Select third Auxiliary SIG')
     quesn1 = forms.CharField(label='What do you expect from the club?',
                              widget=forms.Textarea(attrs={"rows": 5}), required=True, max_length=300)
     setup_field(quesn1, 'Enter your response here')
