@@ -170,7 +170,7 @@
         background-color: #248f5d;
     }
 
-    table.dataTable tbody tr{
+    table.dataTable tbody{
       background-color:grey !important;
     } 
 
