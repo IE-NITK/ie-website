@@ -102,13 +102,14 @@
                     <li class="{% block virtual_expo %}{% endblock %}"><a href="{% url 'virtual_expo:virtual_expo' %}">Virtual Expo</a></li>
 {#                    <li ><a href="{% url 'events:hackverse' %}">Hackverse</a></li>#}
                     <li class="{% block flappy %}{% endblock %}"><a href="{% url 'flappy' %}">Bored?</a></li>
-                    <li ><a href="{% url 'accounts:register' %}"><b>Apply</b></a></li>
+                    
 
                     {% if user.is_authenticated %}
                         <li ><a href="{% url 'accounts:profile' %}">Profile</a></li>
                         <li ><a href="{% url 'accounts:logout' %}">Logout</a></li>
                     {% else %}
                     <li ><a href="{% url 'accounts:index' %}">Login</a></li>
+                    <li ><a href="{% url 'accounts:register' %}"><b>Register</b></a></li>
                     {% endif %}
                     <!-- <li class="contact"><a href="contact.html">Contact</a></li> -->
                 </ul>
