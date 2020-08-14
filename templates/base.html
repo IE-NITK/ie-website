@@ -72,9 +72,9 @@
             </div>
         </div>
     </div>
-<!--     <marquee>
-        <strong>SMPs are LIVE  <a href="{% url 'events:smp2020' %}">Click here to apply.</a></strong>
-    </marquee>  -->
+    <marquee>
+        <strong>Registrations are LIVE  <a href="{% url 'accounts:register' %}">Click here to apply.</a></strong>
+    </marquee> 
     <nav class="navbar navbar-default probootstrap-navbar">
         <div class="container">
             <div class="navbar-header">
@@ -102,7 +102,7 @@
                     <li class="{% block virtual_expo %}{% endblock %}"><a href="{% url 'virtual_expo:virtual_expo' %}">Virtual Expo</a></li>
 {#                    <li ><a href="{% url 'events:hackverse' %}">Hackverse</a></li>#}
                     <li class="{% block flappy %}{% endblock %}"><a href="{% url 'flappy' %}">Bored?</a></li>
-                    <!-- <li ><a href="{% url 'accounts:register' %}"><b>Apply</b></a></li> -->
+                    <li ><a href="{% url 'accounts:register' %}"><b>Apply</b></a></li>
 
                     {% if user.is_authenticated %}
                         <li ><a href="{% url 'accounts:profile' %}">Profile</a></li>
