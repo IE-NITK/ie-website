@@ -232,7 +232,7 @@ def candidates_view(request):
     template_data['query'] = Status.objects.filter(SIG=SIG_User)
     if current_user.account.role == 4:
         template_data['query'] = Status.objects.filter(
-            SIG__in=["SR", "VR", "RO", "CA", "ME"])
+            SIG__in=["SR", "VR", "RO", "CA", "TE"])
     template_data['logged_in_user'] = current_user
     return render(request, 'ienitk/admin/candidates.html', template_data)
 
