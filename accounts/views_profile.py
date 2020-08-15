@@ -264,5 +264,62 @@ def submission_scriptroundone(request):
 
 
 def test_round_1(request):
+    # Authentication check
+    authentication_result = views.authentication_check(
+        request, [Account.ACCOUNT_ADMIN, Account.ACCOUNT_CANDIDATE])
+    if authentication_result is not None:
+        return authentication_result
+    # Get the template data from the session
+    template_data = views.parse_session(request)
+    # Get the SIG information of the user
+    current_user = request.user
+    account = current_user.account
+    all_status = Status.objects.filter(user=account)
+    registered_sigs = []
+    for entry in all_status:
+        registered_sigs.append(entry.SIG)
+    print(registered_sigs)
+    # Only display links for which user is eligible to give test
+    code_eligible = False
+    gadget_eligible = False
+    garage_eligible = False
+    capital_eligible = False
+    robotics_eligible = False
+    code_test_link = ""
+    garage_test_link = ""
+    capital_test_link = ""
+    gadget_test_link = ""
+    robotics_test_link = ""
+
+    if views.is_eligible(registered_sigs, "CO"):
+        code_eligible = True
+    if views.is_eligible(registered_sigs, "GR"):
+        garage_eligible = True
+    if views.is_eligible(registered_sigs, "GD"):
+        gadget_eligible = True
+    if views.is_eligible(registered_sigs, "CA"):
+        capital_eligible = True
+    if views.is_eligible(registered_sigs, "RO"):
+        robotics_eligible = True
+    
+    template_data["code_eligible"] =code_eligible
+    template_data["garage_eligible"] =garage_eligible
+    template_data["gadget_eligible"] =gadget_eligible
+    template_data["capital_eligible"] =capital_eligible
+    template_data["robotics_eligible"] =robotics_eligible
+    template_data["code_test_link"] =code_test_link 
+    template_data["garage_test_link"] =garage_test_link
+    template_data["capital_test_link"] =capital_test_link
+    template_data["gadget_test_link"] =gadget_test_link
+    template_data["robotics_test_link"] =robotics_test_link
 
     return render(request, 'ienitk/roundone.html')
+
+
+def update_esc_counter(request):
+    if request.method == 'POST':
+        account = Player.objects.get()
+        player.blur_quantity = request.POST['counter']
+        player.save()
+        message = 'update successful'
+    return HttpResponse(message)
