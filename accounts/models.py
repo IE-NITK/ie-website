@@ -95,6 +95,7 @@ class Account(models.Model):
     is_active = models.BooleanField(default=False)
     SIG = models.CharField(null=True, max_length=2)
     roll_no = models.CharField(null=True, max_length=10)
+    esc_counter = models.IntegerField(default=0)
 
     def __str__(self):
         return self.profile.__str__()
