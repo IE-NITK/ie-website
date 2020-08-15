@@ -265,4 +265,4 @@ def submission_scriptroundone(request):
 
 def test_round_1(request):
 
-    return render(request, 'round_1_test.html')
+    return render(request, 'ienitk/roundone.html')
