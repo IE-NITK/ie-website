@@ -4,9 +4,11 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
 import datetime
 from .forms import PasswordForm, ProfileForm, SIGForm
-from .models import Account, Status, RoundOneSubmission
+from .models import Account, Status, RoundOneSubmission, EscapeCounter
 from . import views
 from django.http import Http404
+from django.views.decorators.csrf import csrf_exempt
+from django.http import HttpResponse
 
 
 def profile_view(request):
@@ -278,7 +280,6 @@ def test_round_1(request):
     registered_sigs = []
     for entry in all_status:
         registered_sigs.append(entry.SIG)
-    print(registered_sigs)
     # Only display links for which user is eligible to give test
     code_eligible = False
     gadget_eligible = False
@@ -313,13 +314,17 @@ def test_round_1(request):
     template_data["gadget_test_link"] =gadget_test_link
     template_data["robotics_test_link"] =robotics_test_link
 
-    return render(request, 'ienitk/roundone.html')
+    return render(request, 'ienitk/roundone.html', template_data)
 
-
+@csrf_exempt
 def update_esc_counter(request):
     if request.method == 'POST':
-        account = Player.objects.get()
-        player.blur_quantity = request.POST['counter']
-        player.save()
+        account = Account.objects.get(user = request.user)
+        account.esc_counter = account.esc_counter + 1
+        account.save()
+        counter = EscapeCounter()
+        counter.user = account
+        counter.fullscreen = False
+        counter.save()
         message = 'update successful'
     return HttpResponse(message)

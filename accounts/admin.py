@@ -1,5 +1,5 @@
 from django.contrib import admin
-from accounts.models import Profile, Account, Status, RoundOneSubmission, ActivationRecord, BasicResponses
+from accounts.models import Profile, Account, Status, RoundOneSubmission, ActivationRecord, BasicResponses, EscapeCounter
 
 
 admin.site.register(Profile)
@@ -14,6 +14,11 @@ class AccountAdmin(admin.ModelAdmin):
 @admin.register(BasicResponses)
 class ResponsesAdmin(admin.ModelAdmin):
     list_display = ('user', 'ans1', 'ans2', 'ans3', 'created_at')
+
+
+@admin.register(EscapeCounter)
+class counterAdmin(admin.ModelAdmin):
+    list_display = ('user', 'pressed_at')
 
 
 admin.site.register(Status)

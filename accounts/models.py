@@ -177,3 +177,9 @@ class BasicResponses(models.Model):
 
     def __str__(self):
         return self.user.__str__()
+
+
+class EscapeCounter(models.Model):
+    user = models.ForeignKey(Account, on_delete=models.CASCADE)
+    fullscreen = models.BooleanField(default=False)
+    pressed_at = models.DateTimeField(auto_now=True)
