@@ -4,40 +4,20 @@
 {% block body %}
 
 
-<p class="lead">Welcome to IE! Read the instructions below before opening any test.</p>
+<p class="lead">
+</p>
 <div class="alert alert-info" role="alert">
-    Important: Use ONLY Google Chrome browser to take the tests on your PC. 			
-Make sure you are logged in on your personal and NITK EDU email accounts beforehand. 
-<br><br>
-The tests are available only during the time specified in the schedule. Make sure that you attempt and submit before the deadline. If not submitted by then, your attempt won’t get recorded hence we won't be able to evaluate you.
-<br><br>
-
-In full screen mode, system time might not be displayed. Keep checking your cell phone and make sure you submit before the deadline. 
-<br><br>
-
-The tests require you to use your NITK edu ids. Make sure that you are logged into your edu account as well on your system.
-<br><br>
-
-Login to the website 5 minutes earlier to avoid any last minute hiccups. Make sure that you have a stable internet connection throughout the test and especially while you are submitting the test.
-<br><br>
-
-We advise you to use your laptop/desktop PC for smoother user experience during the test. Use only Google Chrome for best experience.
-<br><br>
-Common aptitude test has to be given by all candidates except the ones applying for Script.
-<br><br>
-DO NOT EXIT FULLSCREEN BEFORE THE TEST IS OVER, AS THIS WILL BE RECORDED AND SUBMISSION CAN BE CANCELLED
-
-
-Lastly, your activity inside and outside fullscreen is continuously recorded. They are not your daily moodle tests :)
-<br><br>
-
-In case of any technical issues on the website, kindly contact the following:
-<br>Chaitany: 9834708844
-<br>	Madhumitha: 7981819450
+    The tests are now closed. If you have missed any test, contact:
+    <br>
+    Junaid - 7829023969
+    <br>Nishant - 9035207801<br><br>
+    In case of any technical issues on the website, kindly contact the following:
+    <br>Chaitany: 9834708844
+    <br> Madhumitha: 7981819450
 </div>
-<div class="alert alert-danger" role="alert">
+<!-- <div class="alert alert-danger" role="alert">
     Times you exited fullscreen : {{esc_count}}
-    </div>
+</div> -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <style type="text/css">
     body {
@@ -72,17 +52,38 @@ In case of any technical issues on the website, kindly contact the following:
     /* W3C proposal that will eventually come in all browsers */
 </style>
 
+{% if script_eligible or tectonic_eligible%}
 
+<div class="text-center">
+    <h4> <strong>Takehome Assignments</strong></h4>
+</div><br><br>
+{% endif %}
+
+{% if tectonic_eligible %}
+<div class="text-center" id="code-button">
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeobI8EV1AKwQzrKNokNiB0hPcWZSTj5S_s-oM3P9LUnfZbDQ/viewform?" class="btn btn-info" role="button">Tectonic Assignment</a>
+</div>
+
+<br>
+{% endif%}
+{% if script_eligible %}
+<div class="text-center" id="code-button">
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdCLhR_YB5QfqoaR5F1pfufIYolbmjJbARFUq5w6iW5eRodGQ/viewform?" class="btn btn-info" role="button">Script Assignment</a>
+</div>
+
+<br>
+{% endif%}
 <!-- <div id="element">
     <button id="go-button">Enable Full Screen</button>
 </div> -->
-<div class="text-center">
-    <h4>Start Aptitude test by clicking below</h4>
+
+<!-- <div class="text-center">
+    <h4>Click Below for Script Assignment</h4>
 </div>
 <div class="text-center" id="aptitude-button">
-    <button type="button" class="btn btn-info">Start Aptitude Test</button>
-</div>
-<br>
+    <button type="button" class="btn btn-info"></button> -->
+<!-- </div> -->
+<!-- <br>
 {% if code_eligible%}
 <div class="text-center">
     <h4>Start Code test by clicking below</h4>
@@ -93,6 +94,7 @@ In case of any technical issues on the website, kindly contact the following:
 
 <br>
 {% endif%}
+
 
 {% if gadget_eligible %}
 <div class="text-center">
@@ -131,9 +133,9 @@ In case of any technical issues on the website, kindly contact the following:
     <button type="button" class="btn btn-info">Start Robotics Test</button>
 </div>
 <br>
-{% endif %}
+{% endif %} -->
 
-<iframe style="display: none" id="aptitude-test"
+<!-- <iframe style="display: none" id="aptitude-test"
     src="https://docs.google.com/forms/d/e/1FAIpQLSdUx0RJz4gq2jK_9sZ9OaAlZ2FffrFFjfqS8IgHdoylnjqbGA/viewform?embedded=true"
     width="640" height="1249" frameborder="0" marginheight="0" marginwidth="0">Loading…
 </iframe>
@@ -165,233 +167,233 @@ In case of any technical issues on the website, kindly contact the following:
 <iframe style="display: none" id="robotics-test"
     src="https://docs.google.com/forms/d/e/1FAIpQLSeiLNGYTMckamO55Zk_JIZ1HVy94DD_t42HT-v4DybQ8y9-1w/viewform?embedded=true"
     width="640" height="1249" frameborder="0" marginheight="0" marginwidth="0">Loading…
-</iframe>
+</iframe> -->
 
-<script>
-    var counter = 0;
-    /* Get into full screen */
-    function GoInFullscreen(element) {
-        if (element.requestFullscreen)
-            element.requestFullscreen();
-        else if (element.mozRequestFullScreen)
-            element.mozRequestFullScreen();
-        else if (element.webkitRequestFullscreen)
-            element.webkitRequestFullscreen();
-        else if (element.msRequestFullscreen)
-            element.msRequestFullscreen();
+<!-- <script> -->
+<!-- //     var counter = 0;
+//     /* Get into full screen */
+//     function GoInFullscreen(element) {
+//         if (element.requestFullscreen)
+//             element.requestFullscreen();
+//         else if (element.mozRequestFullScreen)
+//             element.mozRequestFullScreen();
+//         else if (element.webkitRequestFullscreen)
+//             element.webkitRequestFullscreen();
+//         else if (element.msRequestFullscreen)
+//             element.msRequestFullscreen();
 
-    }
+//     }
 
-    /* Get out of full screen */
-    function GoOutFullscreen() {
+//     /* Get out of full screen */
+//     function GoOutFullscreen() {
 
-        if (document.exitFullscreen)
-            document.exitFullscreen();
-        else if (document.mozCancelFullScreen)
-            document.mozCancelFullScreen();
-        else if (document.webkitExitFullscreen)
-            document.webkitExitFullscreen();
-        else if (document.msExitFullscreen)
-            document.msExitFullscreen();
-
-
-    }
-    // Checking for aptitude test button
-    /* Is currently in full screen or not */
-    function IsFullScreenCurrentlyAptitude() {
-        var full_screen_element = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement || null;
-
-        // If no element is in full-screen
-        if (full_screen_element === null) {
-            document.getElementById("aptitude-test").style.setProperty("display", "none", "important");
-            return false;
-        }
-        else {
-            document.getElementById("aptitude-test").style.setProperty("display", "block", "important");
-            return true;
-        }
-    }
-
-    $("#aptitude-button").on('click', function () {
-        if (IsFullScreenCurrentlyAptitude())
-            GoOutFullscreen();
-        else
-            GoInFullscreen($("#aptitude-test").get(0));
-
-    });
-
-    //Checking for Code test button
-    function IsFullScreenCurrentlyCode() {
-        var full_screen_element = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement || null;
-
-        // If no element is in full-screen
-        if (full_screen_element === null) {
-            document.getElementById("code-test").style.setProperty("display", "none", "important");
-            return false;
-        }
-        else {
-            document.getElementById("code-test").style.setProperty("display", "block", "important");
-            return true;
-        }
-    }
-
-    $("#code-button").on('click', function () {
-        if (IsFullScreenCurrentlyCode())
-            GoOutFullscreen();
-        else
-            GoInFullscreen($("#code-test").get(0));
-
-    });
-
-    function IsFullScreenCurrentlyGadget() {
-        var full_screen_element = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement || null;
-
-        // If no element is in full-screen
-        if (full_screen_element === null) {
-            document.getElementById("gadget-test").style.setProperty("display", "none", "important");
-            return false;
-        }
-        else {
-            document.getElementById("gadget-test").style.setProperty("display", "block", "important");
-            return true;
-        }
-    }
-
-    $("#gadget-button").on('click', function () {
-        if (IsFullScreenCurrentlyGadget())
-            GoOutFullscreen();
-        else
-            GoInFullscreen($("#gadget-test").get(0));
-
-    });
+//         if (document.exitFullscreen)
+//             document.exitFullscreen();
+//         else if (document.mozCancelFullScreen)
+//             document.mozCancelFullScreen();
+//         else if (document.webkitExitFullscreen)
+//             document.webkitExitFullscreen();
+//         else if (document.msExitFullscreen)
+//             document.msExitFullscreen();
 
 
-    function IsFullScreenCurrentlyGarage() {
-        var full_screen_element = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement || null;
+//     }
+//     // Checking for aptitude test button
+//     /* Is currently in full screen or not */
+//     function IsFullScreenCurrentlyAptitude() {
+//         var full_screen_element = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement || null;
 
-        // If no element is in full-screen
-        if (full_screen_element === null) {
-            document.getElementById("garage-test").style.setProperty("display", "none", "important");
-            return false;
-        }
-        else {
-            document.getElementById("garage-test").style.setProperty("display", "block", "important");
-            return true;
-        }
-    }
+//         // If no element is in full-screen
+//         if (full_screen_element === null) {
+//             document.getElementById("aptitude-test").style.setProperty("display", "none", "important");
+//             return false;
+//         }
+//         else {
+//             document.getElementById("aptitude-test").style.setProperty("display", "block", "important");
+//             return true;
+//         }
+//     }
 
-    $("#garage-button").on('click', function () {
-        if (IsFullScreenCurrentlyGarage())
-            GoOutFullscreen();
-        else
-            GoInFullscreen($("#garage-test").get(0));
+//     $("#aptitude-button").on('click', function () {
+//         if (IsFullScreenCurrentlyAptitude())
+//             GoOutFullscreen();
+//         else
+//             GoInFullscreen($("#aptitude-test").get(0));
 
-    });
+//     });
 
-    function IsFullScreenCurrentlyCapital() {
-        var full_screen_element = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement || null;
+//     //Checking for Code test button
+//     function IsFullScreenCurrentlyCode() {
+//         var full_screen_element = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement || null;
 
-        // If no element is in full-screen
-        if (full_screen_element === null) {
-            document.getElementById("capital-test").style.setProperty("display", "none", "important");
-            return false;
-        }
-        else {
-            document.getElementById("capital-test").style.setProperty("display", "block", "important");
-            return true;
-        }
-    }
+//         // If no element is in full-screen
+//         if (full_screen_element === null) {
+//             document.getElementById("code-test").style.setProperty("display", "none", "important");
+//             return false;
+//         }
+//         else {
+//             document.getElementById("code-test").style.setProperty("display", "block", "important");
+//             return true;
+//         }
+//     }
 
-    $("#capital-button").on('click', function () {
-        if (IsFullScreenCurrentlyCapital())
-            GoOutFullscreen();
-        else
-            GoInFullscreen($("#capital-test").get(0));
+//     $("#code-button").on('click', function () {
+//         if (IsFullScreenCurrentlyCode())
+//             GoOutFullscreen();
+//         else
+//             GoInFullscreen($("#code-test").get(0));
 
-    });
+//     });
+
+//     function IsFullScreenCurrentlyGadget() {
+//         var full_screen_element = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement || null;
+
+//         // If no element is in full-screen
+//         if (full_screen_element === null) {
+//             document.getElementById("gadget-test").style.setProperty("display", "none", "important");
+//             return false;
+//         }
+//         else {
+//             document.getElementById("gadget-test").style.setProperty("display", "block", "important");
+//             return true;
+//         }
+//     }
+
+//     $("#gadget-button").on('click', function () {
+//         if (IsFullScreenCurrentlyGadget())
+//             GoOutFullscreen();
+//         else
+//             GoInFullscreen($("#gadget-test").get(0));
+
+//     });
 
 
-    function IsFullScreenCurrentlyRobotics() {
-        var full_screen_element = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement || null;
+//     function IsFullScreenCurrentlyGarage() {
+//         var full_screen_element = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement || null;
 
-        // If no element is in full-screen
-        if (full_screen_element === null) {
-            document.getElementById("robotics-test").style.setProperty("display", "none", "important");
-            return false;
-        }
-        else {
-            document.getElementById("robotics-test").style.setProperty("display", "block", "important");
-            return true;
-        }
-    }
+//         // If no element is in full-screen
+//         if (full_screen_element === null) {
+//             document.getElementById("garage-test").style.setProperty("display", "none", "important");
+//             return false;
+//         }
+//         else {
+//             document.getElementById("garage-test").style.setProperty("display", "block", "important");
+//             return true;
+//         }
+//     }
 
-    $("#robotics-button").on('click', function () {
-        if (IsFullScreenCurrentlyRobotics())
-            GoOutFullscreen();
-        else
-            GoInFullscreen($("#robotics-test").get(0));
+//     $("#garage-button").on('click', function () {
+//         if (IsFullScreenCurrentlyGarage())
+//             GoOutFullscreen();
+//         else
+//             GoInFullscreen($("#garage-test").get(0));
 
-    });
+//     });
+
+//     function IsFullScreenCurrentlyCapital() {
+//         var full_screen_element = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement || null;
+
+//         // If no element is in full-screen
+//         if (full_screen_element === null) {
+//             document.getElementById("capital-test").style.setProperty("display", "none", "important");
+//             return false;
+//         }
+//         else {
+//             document.getElementById("capital-test").style.setProperty("display", "block", "important");
+//             return true;
+//         }
+//     }
+
+//     $("#capital-button").on('click', function () {
+//         if (IsFullScreenCurrentlyCapital())
+//             GoOutFullscreen();
+//         else
+//             GoInFullscreen($("#capital-test").get(0));
+
+//     });
+
+
+//     function IsFullScreenCurrentlyRobotics() {
+//         var full_screen_element = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement || null;
+
+//         // If no element is in full-screen
+//         if (full_screen_element === null) {
+//             document.getElementById("robotics-test").style.setProperty("display", "none", "important");
+//             return false;
+//         }
+//         else {
+//             document.getElementById("robotics-test").style.setProperty("display", "block", "important");
+//             return true;
+//         }
+//     }
+
+//     $("#robotics-button").on('click', function () {
+//         if (IsFullScreenCurrentlyRobotics())
+//             GoOutFullscreen();
+//         else
+//             GoInFullscreen($("#robotics-test").get(0));
+
+//     });
 
     
 
-    $(document).on('fullscreenchange webkitfullscreenchange mozfullscreenchange MSFullscreenChange', function () {
-        if (IsFullScreenCurrentlyAptitude()) {
-            // $("#element span").text('Full Screen Mode Enabled');
-            // $("#go-button").text('Disable Full Screen');
+//     $(document).on('fullscreenchange webkitfullscreenchange mozfullscreenchange MSFullscreenChange', function () {
+//         if (IsFullScreenCurrentlyAptitude()) {
+//             // $("#element span").text('Full Screen Mode Enabled');
+//             // $("#go-button").text('Disable Full Screen');
             
-        }
+//         }
         
-        if (IsFullScreenCurrentlyCode()) {
+//         if (IsFullScreenCurrentlyCode()) {
            
         
-        }
+//         }
         
-        if (IsFullScreenCurrentlyGarage()) {
-    //         var fullscreen = 1;
-    //         $.ajax({
-    //      url: '/profile/update_counter/',
-    //      data: {'fullscreen': fullscreen},
-    //      type: 'POST'
-    //    }).done(function(response){
-    //      console.log(response);
-    //    });
+//         if (IsFullScreenCurrentlyGarage()) {
+//     //         var fullscreen = 1;
+//     //         $.ajax({
+//     //      url: '/profile/update_counter/',
+//     //      data: {'fullscreen': fullscreen},
+//     //      type: 'POST'
+//     //    }).done(function(response){
+//     //      console.log(response);
+//     //    });
         
-        }
+//         }
         
-        if (IsFullScreenCurrentlyGadget()) {
+//         if (IsFullScreenCurrentlyGadget()) {
        
         
-        }
+//         }
         
-        if (IsFullScreenCurrentlyCapital()) {
+//         if (IsFullScreenCurrentlyCapital()) {
            
-        }
+//         }
 
         
         
-        if (IsFullScreenCurrentlyRobotics()) {
+//         if (IsFullScreenCurrentlyRobotics()) {
             
-        }
-        else {
-            // $("#element span").text('Full Screen Mode Disabled');
-            // $("#go-button").text('Enable Full Screen');
-            alert("You have gone out of full screen. This activity will be reported to us. Do not do it again.")
-            var fullscreen = 0;
-            $.ajax({
-         url: '/profile/update_counter/',
-         data: {'fullscreen': fullscreen},
-         type: 'POST'
-       }).done(function(response){
-         console.log(response);
-       });
-        }
+//         }
+//         else {
+//             // $("#element span").text('Full Screen Mode Disabled');
+//             // $("#go-button").text('Enable Full Screen');
+//             alert("You have gone out of full screen. This activity will be reported to us. Do not do it again.")
+//             var fullscreen = 0;
+//             $.ajax({
+//          url: '/profile/update_counter/',
+//          data: {'fullscreen': fullscreen},
+//          type: 'POST'
+//        }).done(function(response){
+//          console.log(response);
+//        });
+//         }
 
-        });
+//         });
         
-    
+     -->
 
 
-</script>
+<!--</script>-->
 
 {% endblock %}

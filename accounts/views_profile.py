@@ -282,39 +282,40 @@ def test_round_1(request):
     for entry in all_status:
         registered_sigs.append(entry.SIG)
     # Only display links for which user is eligible to give test
-    code_eligible = False
-    gadget_eligible = False
-    garage_eligible = False
-    capital_eligible = False
-    robotics_eligible = False
-    code_test_link = ""
-    garage_test_link = ""
-    capital_test_link = ""
-    gadget_test_link = ""
-    robotics_test_link = ""
-
-    if views.is_eligible(registered_sigs, "CO"):
-        code_eligible = True
-    if views.is_eligible(registered_sigs, "GR"):
-        garage_eligible = True
-    if views.is_eligible(registered_sigs, "GD"):
-        gadget_eligible = True
-    if views.is_eligible(registered_sigs, "CA"):
-        capital_eligible = True
-    if views.is_eligible(registered_sigs, "RO"):
-        robotics_eligible = True
+    # code_eligible = False
+    # gadget_eligible = False
+    # garage_eligible = False
+    # capital_eligible = False
+    # robotics_eligible = False
+    # code_test_link = ""
+    # garage_test_link = ""
+    # capital_test_link = ""
+    # gadget_test_link = ""
+    # robotics_test_link = ""
+    script_eligible = False
+    tectonic_eligible = False
+    if views.is_eligible(registered_sigs, "SR"):
+        script_eligible = True
+    if views.is_eligible(registered_sigs, "TE"):
+        tectonic_eligible = True
+    # if views.is_eligible(registered_sigs, "GD"):
+    #     gadget_eligible = True
+    # if views.is_eligible(registered_sigs, "CA"):
+    #     capital_eligible = True
+    # if views.is_eligible(registered_sigs, "RO"):
+    #     robotics_eligible = True
     
-    template_data["code_eligible"] =code_eligible
-    template_data["garage_eligible"] =garage_eligible
-    template_data["gadget_eligible"] =gadget_eligible
-    template_data["capital_eligible"] =capital_eligible
-    template_data["robotics_eligible"] =robotics_eligible
-    template_data["code_test_link"] =code_test_link 
-    template_data["garage_test_link"] =garage_test_link
-    template_data["capital_test_link"] =capital_test_link
-    template_data["gadget_test_link"] =gadget_test_link
-    template_data["robotics_test_link"] =robotics_test_link
-    template_data["esc_count"] =esc_count
+    template_data["script_eligible"] =script_eligible
+    template_data["tectonic_eligible"] =tectonic_eligible
+    # template_data["gadget_eligible"] =gadget_eligible
+    # template_data["capital_eligible"] =capital_eligible
+    # template_data["robotics_eligible"] =robotics_eligible
+    # template_data["code_test_link"] =code_test_link 
+    # template_data["garage_test_link"] =garage_test_link
+    # template_data["capital_test_link"] =capital_test_link
+    # template_data["gadget_test_link"] =gadget_test_link
+    # template_data["robotics_test_link"] =robotics_test_link
+    # template_data["esc_count"] =esc_count
     return render(request, 'ienitk/roundone.html', template_data)
 
 @csrf_exempt
