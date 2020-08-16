@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.contrib.auth import get_user_model
 from accounts import views
-from accounts.models import Account, Status, BasicResponses
+from accounts.models import Account, Status, BasicResponses, EscapeCounter
 from webadmin.forms import AddUserForm
 from djqscsv import render_to_csv_response
 
@@ -239,7 +239,7 @@ def candidates_view(request):
 
 def download_basic_responses_csv(request):
     authentication_result = views.authentication_check(
-        request, [Account.ACCOUNT_ADMIN, Account.ACCOUNT_MEMBER])
+        request, [Account.ACCOUNT_ADMIN, Account.ACCOUNT_MEMBER, Account.ACCOUNT_AUX_ADMIN])
     if authentication_result is not None:
         return authentication_result
     column_mapping = {
@@ -255,3 +255,22 @@ def download_basic_responses_csv(request):
     responses = BasicResponses.objects.values(
         'user__profile__firstname', 'user__roll_no', 'ans1', 'ans2', 'ans3', 'user__profile__phone', 'created_at')
     return render_to_csv_response(responses, filename=u'Candidates_responses.csv', field_header_map=column_mapping)
+
+
+def download_esc_count_csv(request):
+    authentication_result = views.authentication_check(
+        request, [Account.ACCOUNT_ADMIN, Account.ACCOUNT_MEMBER, Account.ACCOUNT_AUX_ADMIN])
+    if authentication_result is not None:
+        return authentication_result
+    column_mapping = {
+        'user__profile__firstname': 'Firstname',
+        'user__roll_no': 'Roll No',
+        'user__esc_counter': 'Escape Count',
+        'user__profile__phone': 'Contact Number',
+        'pressed_at': 'Pressed At'
+    }
+
+    responses = EscapeCounter.objects.values(
+        'user__profile__firstname', 'user__roll_no', 'user__esc_counter', 'user__profile__phone', 'pressed_at')
+    return render_to_csv_response(responses, filename=u'Candidate Escape Responses.csv', field_header_map=column_mapping)
+

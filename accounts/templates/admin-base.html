@@ -126,6 +126,7 @@
                                 <li class="{% block sidebar_admin_users %}{% endblock %}"><a href="/admin/users">Manage IE Members<i class="pull-right fa fa-users"></i></a></li>
                                 <li class="{% block sidebar_all_candidates %}{% endblock %}"><a href="/all_candidates">All Candidates<i class="pull-right fa fa-users"></i></a></li>
                                 <li class="{% block sidebar_download_responses %}{% endblock %}"><a href="{% url 'webadmin:download_responses_csv'%}">Download Candidates Responses<i class="pull-right fa fa-users"></i></a></li>
+                                <li class="{% block sidebar_download_esc_count_responses %}{% endblock %}"><a href="{% url 'webadmin:download_esc_count_csv'%}">Download Candidates Escape Responses<i class="pull-right fa fa-users"></i></a></li>
                                 
                                 {% endif %}
                             {% if user.account.role == 3 %}
