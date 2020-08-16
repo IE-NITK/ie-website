@@ -107,6 +107,7 @@
                     {% if user.is_authenticated %}
                         <li ><a href="{% url 'accounts:profile' %}">Profile</a></li>
                         <li ><a href="{% url 'accounts:logout' %}">Logout</a></li>
+                        <li ><a href="/profile/test/round-1">Test</a></li>
                     {% else %}
                     <li ><a href="{% url 'accounts:index' %}">Login</a></li>
                     <li ><a href="{% url 'accounts:register' %}"><b>Register</b></a></li>
