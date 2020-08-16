@@ -276,6 +276,7 @@ def test_round_1(request):
     # Get the SIG information of the user
     current_user = request.user
     account = current_user.account
+    esc_count = account.esc_counter
     all_status = Status.objects.filter(user=account)
     registered_sigs = []
     for entry in all_status:
@@ -313,7 +314,7 @@ def test_round_1(request):
     template_data["capital_test_link"] =capital_test_link
     template_data["gadget_test_link"] =gadget_test_link
     template_data["robotics_test_link"] =robotics_test_link
-
+    template_data["esc_count"] =esc_count
     return render(request, 'ienitk/roundone.html', template_data)
 
 @csrf_exempt
