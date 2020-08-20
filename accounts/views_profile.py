@@ -294,23 +294,23 @@ def test_round_1(request):
     # robotics_test_link = ""
     script_eligible = False
     tectonic_eligible = False
+    gadget_eligible = False
+    robotics_eligible = False
     if views.is_eligible(registered_sigs, "SR"):
         script_eligible = True
     if views.is_eligible(registered_sigs, "TE"):
         tectonic_eligible = True
-    # if views.is_eligible(registered_sigs, "GD"):
-    #     gadget_eligible = True
-    # if views.is_eligible(registered_sigs, "CA"):
-    #     capital_eligible = True
+    if views.is_eligible(registered_sigs, "GD"):
+        gadget_eligible = True
     # if views.is_eligible(registered_sigs, "RO"):
     #     robotics_eligible = True
-    
-    template_data["script_eligible"] =script_eligible
-    template_data["tectonic_eligible"] =tectonic_eligible
-    # template_data["gadget_eligible"] =gadget_eligible
+
+    # template_data["script_eligible"] = script_eligible
+    # template_data["tectonic_eligible"] = tectonic_eligible
+    template_data["gadget_eligible"] =gadget_eligible
     # template_data["capital_eligible"] =capital_eligible
     # template_data["robotics_eligible"] =robotics_eligible
-    # template_data["code_test_link"] =code_test_link 
+    # template_data["code_test_link"] =code_test_link
     # template_data["garage_test_link"] =garage_test_link
     # template_data["capital_test_link"] =capital_test_link
     # template_data["gadget_test_link"] =gadget_test_link
@@ -318,10 +318,11 @@ def test_round_1(request):
     # template_data["esc_count"] =esc_count
     return render(request, 'ienitk/roundone.html', template_data)
 
+
 @csrf_exempt
 def update_esc_counter(request):
     if request.method == 'POST':
-        account = Account.objects.get(user = request.user)
+        account = Account.objects.get(user=request.user)
         account.esc_counter = account.esc_counter + 1
         account.save()
         counter = EscapeCounter()
