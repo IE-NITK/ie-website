@@ -302,6 +302,13 @@ def test_round_1(request):
         tectonic_eligible = True
     if views.is_eligible(registered_sigs, "GD"):
         gadget_eligible = True
+
+    if gadget_eligible:
+        gadget_status = Status.objects.get(user=account, SIG="GD")
+        if gadget_status.status == "TE":
+            gadget_eligible = True
+        else:
+            gadget_eligible = False
     # if views.is_eligible(registered_sigs, "RO"):
     #     robotics_eligible = True
 
