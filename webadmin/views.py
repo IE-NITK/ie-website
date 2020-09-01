@@ -274,3 +274,6 @@ def download_esc_count_csv(request):
         'user__profile__firstname', 'user__roll_no', 'user__esc_counter', 'user__profile__phone', 'pressed_at')
     return render_to_csv_response(responses, filename=u'Candidate Escape Responses.csv', field_header_map=column_mapping)
 
+def deploy_website(request):
+    
+    return render(request, 'ienitk/admin/deploy.html')
