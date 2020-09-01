@@ -218,3 +218,12 @@ def candidates_view(request):
         template_data['query'] = Status.objects.filter(SIG__in=["SR", "VR", "RO", "CA", "ME"])
     template_data['logged_in_user'] = current_user
     return render(request, 'ienitk/admin/candidates.html', template_data)
+
+def deploy_website(request):
+    # Authentication check
+    authentication_result = views.authentication_check(request, [Account.ACCOUNT_ADMIN, Account.ACCOUNT_MEMBER, Account.ACCOUNT_AUX_ADMIN])
+    if authentication_result is not None:
+        return authentication_result
+    # Get the template data from the session
+    template_data = views.parse_session(request)
+    # Get the SIG information of the user

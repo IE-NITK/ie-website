@@ -109,6 +109,7 @@ class Status(models.Model):
         ("WR", "Written Round"),
         ("TE", "Technical"),
         ("HR", "HR"),
+        ("HR2", "HR2"),
         ("SL", "Selected")
     )
     SIG_TYPES_MAIN = (("", "None"), ("CO", "Code"),
