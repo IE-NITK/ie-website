@@ -19,6 +19,7 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700|Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/styles-merged.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style-dark.css' %}">
     <link rel="stylesheet" href="{% static 'css/custom.css' %}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
@@ -71,9 +72,9 @@
             </div>
         </div>
     </div>
-<!--     <marquee>
-        <strong>SMPs are LIVE  <a href="{% url 'events:smp2020' %}">Click here to apply.</a></strong>
-    </marquee>  -->
+    <marquee>
+        <strong>Registrations are closed.</strong>
+    </marquee> 
     <nav class="navbar navbar-default probootstrap-navbar">
         <div class="container">
             <div class="navbar-header">
@@ -98,16 +99,18 @@
                     <li class="{% block teams %}{% endblock %}"><a href="{% url 'teams:teams' %}">Team</a></li>
                     <li class="{% block alumni %}{% endblock %}"><a href="{% url 'alumni:alumni' %}">Alumni</a></li>
                     <li class="{% block smp %}{% endblock %}"><a href="{% url 'events:smp2020' %}">SMP</a></li>
-                    <li class="{% block virtual_expo %}{% endblock %}"><a href="{% url 'events:virtual_expo' %}">Virtual Expo</a></li>
+                    <li class="{% block virtual_expo %}{% endblock %}"><a href="{% url 'virtual_expo:virtual_expo' %}">Virtual Expo</a></li>
 {#                    <li ><a href="{% url 'events:hackverse' %}">Hackverse</a></li>#}
                     <li class="{% block flappy %}{% endblock %}"><a href="{% url 'flappy' %}">Bored?</a></li>
-                    <!-- <li ><a href="{% url 'accounts:register' %}"><b>Apply</b></a></li> -->
+                    
 
                     {% if user.is_authenticated %}
                         <li ><a href="{% url 'accounts:profile' %}">Profile</a></li>
                         <li ><a href="{% url 'accounts:logout' %}">Logout</a></li>
+                        <li ><a href="/profile/test/round-1">Test</a></li>
                     {% else %}
                     <li ><a href="{% url 'accounts:index' %}">Login</a></li>
+                    <li ><a href="{% url 'accounts:register' %}"><b>Register</b></a></li>
                     {% endif %}
                     <!-- <li class="contact"><a href="contact.html">Contact</a></li> -->
                 </ul>
@@ -128,7 +131,7 @@
                         <p>Institution of Engineers, NITK Chapter, is one of the six exclusive clubs in NITK. We are
                             divided by three core Special Interest Groups (SIGs) - Code, Gadget and Garage; but united
                             by five auxiliary SIGs - Vriddhi, our social initiative, Script, our literary SIG, Robotics,
-                            Business and Media.</p>
+                            Business and Tectonic, our newest SIG for Civil and Architecture.</p>
                         <h3>Social</h3>
                         <ul class="probootstrap-footer-social">
                             <li><a href="https://facebook.com/ienitk" target="_blank"><i class="icon-facebook"></i></a></li>

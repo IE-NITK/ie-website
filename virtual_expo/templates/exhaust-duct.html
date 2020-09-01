@@ -1,0 +1,183 @@
+{% extends "base.html" %}
+{% block virtual_expo %}active{% endblock %}
+{% load static %}
+{% block main %}
+
+
+<section class="probootstrap-section"
+    style="background-image: url('{% static 'img/virtual-expo/exhaust-duct.jpg' %}'); width: 100%;background-size: cover;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-left section-heading probootstrap-animate ">
+                <h1>
+                    <font color="black">Simulation of Exhaust Duct</font>
+                </h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="probootstrap-section probootstrap-section-sm">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>PROBLEM STATEMENT: </h3>
+                <p>The reduction of engine specific fuel consumption
+                    (SFC) is a major impetus in the development of aero-engines and the
+                    aerodynamic performance of the exhaust system is fundamental to this
+                    drive. A lot of heat energy is lost through the exhaust duct in the form of
+                    radiations which leads in decreased efficiency of the engine. To
+                    compensate the loss SFC of the engine increases.
+                </p>
+
+
+
+                <h3>TECHNOLOGY USED</h3>
+                <p>We used CATIA to design and modify the geometry
+                    of the exhaust duct by taking the parameters from different research
+                    generals and various books.<br>
+                    <img src="{% static 'img/virtual-expo/exhaust-duct6.png' %}" class="img-rounded img-fluid"
+                        style="width: 50%;"><br><br>
+                    Thermal analysis of the duct was done using the ANSYS.<br>
+                    <img src="{% static 'img/virtual-expo/exhaust-duct5.png' %}" class="img-rounded img-fluid"
+                        style="width: 50%;"><br>
+                </p>
+
+
+                <h3>METHODOLOGY</h3>
+                <p>We started by designing a few exhaust ducts by taking
+                    parameters from different research papers. One of the models designed
+                    is shown in the figure below.<br>
+                    <img src="{% static 'img/virtual-expo/exhaust-duct4.png' %}" class="img-rounded img-fluid"
+                        style="width: 50%;"><br><br>
+                    We analysed all the ducts in Ansys using static thermal analysis. The
+                    following parameters were used for the analysis:<br>
+                    1. Inlet temperature: 800 C<br>
+                    2. Outlet temperature: 300 C<br>
+                    3. Heat flow: 1000W at the cross-section of inlet.<br>
+                    4. Internal heat generation: 1000W<br>
+                    5. Film Coefficient:2500 W/(m^2 .K)<br>
+                    6. Radiation emissivity is 0.8W/(cm^2.micron)<br>
+                    7. Ambient Temp. :550 C<br>
+                    We got the following result of the analysis:-<br>
+                    <img src="{% static 'img/virtual-expo/exhaust-duct3.png' %}" class="img-rounded img-fluid"
+                        style="width: 50%;"><br>
+                    After going through the results we modified the initial geometry by
+                    adding holes near the outlet of the duct which resulted in the following
+                    geometry.<br>
+
+                    <img src="{% static 'img/virtual-expo/exhaust-duct2.png' %}" class="img-rounded img-fluid"
+                        style="width: 50%;"><br>
+                    We again performed the analysis using the same parameters and got
+                    the following result:-<br>
+                    <img src="{% static 'img/virtual-expo/exhaust-duct1.png' %}" class="img-rounded img-fluid"
+                        style="width: 50%;"><br>
+                </p>
+
+                <h3>RESULTS</h3>
+                <p>The heat distribution pattern is almost uniform now which will
+                    result in fewer heat radiations. This will reduce the SFC of the engine<br>
+
+
+                </p>
+                <h3>CONCLUSION</h3>
+                <p>By modifying the design and adding holes near the outlet
+                    of the duct we observe that the pattern of heat distribution is almost
+                    uniform.
+
+                </p>
+
+
+                <h3>FUTURE WORK</h3>
+                <p>Try to minimise the radiation by using different materials
+                    for making the exhaust duct. Optimising the exhaust duct by means of
+                    the CFD technique, which deals with various types of heat and fluid flow
+                    problems.
+                </p>
+
+
+                <h3>REFERENCES</h3>
+                <p>
+                    1. Ansys Icem Cfd 12.0, User Guide, http://www.ansys.com, 2009.<br>
+                    2. Frick, C. W., Davis, W. F., Randall, M. R., Mossman, E. A., An
+                    Experimental Investigation of NACA Submerged-Duct Entrances,
+                    NACA-ACR-5I20, 1945.<br>
+                    3. Stalewski, W., Parametric Modelling of Aerodynamic Objects – The
+                    Key to Successful Design and Optimisation, Proceedings of CEAS,
+                    The International Conference of the European Aerospace
+                    Societies, Venice, Italy 2011</p>
+
+                <h3>TEAM</h3>
+
+                <p>
+                    ● Shefin S - shefinshareef99@gmail.com<br>
+                    ● Meghana R - maggy1399@gmail.com<br>
+                    ● Sashi Sekharan - sasi.181me124@nitk.edu.in<br>
+                    ● Abhinav Raj - abhinavraj.181me102@nitk.edu.in<br>
+                </p>
+
+                <!-- <h3>PICTURES</h3>
+                <section class="container">
+                    <div class="row mb-5">
+
+                        <div class="card-deck  col-md-4 col-sm-6 col-sm-12">
+                            <div class="card" style="margin-bottom: 15px;">
+                                <div style="text-align:center">
+
+                                    <img src="" alt="Card image cap" class="img-fluid" style="height:270px; width:100%">
+                                    <div class="card-body">
+                                        <h6 class="card-title">card title</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+ -->
+
+            </div>
+</section>
+</div>
+</div>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+{% comment %} <section class="probootstrap-section probootstrap-section-sm">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+
+            </div>
+        </div>
+    </div>
+</section> {% endcomment %}
+
+<script type="text/javascript">
+    $(".team").addClass("active");
+    var tabcontent = document.getElementsByClassName('teams');
+    for (i = 1; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    function navigate(signame) {
+        var tabcontent = document.getElementsByClassName('teams');
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(signame).style.display = "block";
+        $("." + signame).addClass("active");
+    }
+</script>
+{% endblock %}

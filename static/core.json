@@ -1,128 +1,120 @@
 [
         {
-            "name": "Mishal Shah",
-            "post": "Convenor",
-            "email": "shahmishal1998@gmail.com",
-            "linkedin": "https://www.linkedin.com/in/mishal23"
-        },
-        {
-            "name": "Adarsh Malapaka",
-            "post": "President",
-            "email": "adarshmalapaka98@gmail.com",
-            "linkedin": "https://www.linkedin.com/in/adarsh-malapaka-653455152/"
-        },
-        {
-            "name": "Sai Sushil ",
-            "post": "Joint Convenor",
-            "email": "saisushil10@gmail.com",
-            "linkedin": "https://www.linkedin.com/in/sai-sushil-10"
-        },
-        {
-            "name": "Namrata Ladda",
-            "post": "Vice President",
-            "email": "namrataladda@gmail.com",
-            "linkedin": "https://www.linkedin.com/in/namrata-ladda-255593153"
-        },
-        {
-            "name": "Shreyas Seshadri",
-            "post": "Code SIG Head",
-            "email": "shreyasseshadri@gmail.com",
-            "linkedin": "https://www.linkedin.com/in/shreyas-seshadri-8b278a130/"
-        },
-        {
-            "name": "Shreyas Shankar",
-            "post": "Code SIG Head",
-            "email": "shreyas.shankar920@gmail.com",
-            "linkedin": "https://www.linkedin.com/in/shreyas-shankar-474731140"
-        },
-        {
-            "name": "Udayagiri Rithwik",
-            "post": "Gadget SIG Head",
-            "email": "rithwik.math@gmail.com",
-            "linkedin": "https://www.linkedin.com/in/udayagiri-rithwik-950264157"
-        },
-        {
-            "name": "Jaina Rohith",
-            "post": "Gadget SIG Head",
-            "email": "jainarohith98@gmail.com",
-            "linkedin": "https://www.linkedin.com/in/rohith-jaina/"
-        },
-        {
-            "name": "Varsha Mavath",
-            "post": "Garage SIG Head",
-            "email": "varshamavath98@gmail.com",
-            "linkedin": "https://www.linkedin.com/in/varsha-mavath"
-        },
-        {
-            "name": "Shaurya Seth",
-            "post": "Technical Head & Garage SIG Head",
-            "email": "shauryaseth.16mt33@nitk.edu.in",
-            "linkedin": "https://www.linkedin.com/in/shaurya-seth-16b122148"
-        },
-        {
-            "name": "Rahul Madhogarhia",
-            "post": "Robotics SIG Head",
-            "email": "madhogarhiarahul@gmail.com",
-            "linkedin": "https://www.linkedin.com/in/rahul-madhogarhia-156ab3140"
-        },
-        {
-            "name": "Mehnaz Yunus",
-            "post": "Website Head",
-            "email": "mehnaz138@gmail.com",
-            "linkedin": "https://www.linkedin.com/in/mehnaz-yunus/"
-        },
-        {
-            "name": "Akash L",
-            "post": "Media SIG Head",
-            "email": "akash9721l@gmail.com",
-            "linkedin": "https://www.linkedin.com/in/akash-l-285787126/"
-        },
-        {
-            "name": "Dev Shankar N",
-            "post": "Head of Content",
-            "email": "dev.shankar1@gmail.com",
-            "linkedin": "https://www.linkedin.com/in/dev-shankar-899a8b144"
-        },
-        {
-            "name": "Neha Saji Jacob",
-            "post": "Treasurer",
-            "email": "nehasjacob@gmail.com",
-            "linkedin": "https://www.linkedin.com/in/neha-saji-jacob/"
-        },
-        {
             "name": "Shreyansh Shrivastava",
-            "post": "Code SIG Coordinator",
+            "post": "Convenor",
             "email": "Shreyansh25.shrivastava@gmail.com",
             "linkedin": "https://www.linkedin.com/in/shreyansh-shrivastava-a26489180/"
         },
-        {
-            "name": "Ratan Mamdekar",
-            "post": "Gadget SIG Coordinator",
-            "email": "ratan.171ee234@nitk.edu.in",
-            "linkedin": "https://www.linkedin.com/in/ratan-mamdekar-218b6b49"
-        },
-        {
-            "name": "Priyank Agarwal ",
-            "post": "Garage SIG Coordinator ",
-            "email": "priyank.agarwal2807@gmail.com ",
-            "linkedin": "https://www.linkedin.com/in/priyank-a-b83856b8"
-        },
+
         {
             "name": "Madhumitha Nara",
-            "post": "Script SIG Coordinator",
+            "post": "President",
             "email": "madhumithanara.171it125@nitk.edu.in",
             "linkedin": "https://linkedin.com/in/madhumitha-nara"
         },
         {
+            "name": "Nishant Kumar",
+            "post": "Joint Convenor",
+            "email": "nishant.kum08@gmail.com"
+        },
+
+        {
+            "name": "Junaid Hussain",
+            "post": "Vice President",
+            "email": "junaid.12399@gmail.com",
+            "linkedin": "https://www.linkedin.com/junaidhussainhaveri"
+        },
+
+        {
+            "name": "Neha Saji Jacob",
+            "post": "External Relations and Content Head",
+            "email": "nehasjacob@gmail.com",
+            "linkedin": "https://www.linkedin.com/in/neha-saji-jacob/"
+        },
+
+        {
+            "name": "Ratan Mamdekar",
+            "post": "Secretary",
+            "email": "ratan.171ee234@nitk.edu.in",
+            "linkedin": "https://www.linkedin.com/in/ratan-mamdekar-218b6b49"
+        },
+
+
+        {
+            "name": "K Rahul Reddy",
+            "post": "Code SIG Head",
+            "email": "k_rahul_reddy@outlook.com",
+            "linkedin": "https://www.linkedin.com/in/rahul-reddy-181522161/"
+        },
+
+        {
+            "name": "Tushar Dubey",
+            "post": "Code SIG Head",
+            "email": "dtushar279@gmail.com",
+            "linkedin": "https://www.linkedin.com/in/tushar-dubey-24543114a/"
+        },
+        {
+            "name": "Atulya Mahesh",
+            "post": "Gadget SIG Head",
+            "email": "atulya.171ec110@nitk.edu.in",
+            "linkedin": "https://www.linkedin.com/in/atulya-mahesh-8072281b1/"
+        },
+        {
+            "name": "Rahasya Barkur",
+            "post": "Gadget SIG Head",
+            "email": "rahasyabarkur.171ec138@nitk.edu.in",
+            "linkedin": "https://www.linkedin.com/in/rahasya-barkur-95950a165/"
+        },
+
+        {
+            "name": "Priyank Agarwal ",
+            "post": "Garage SIG Head",
+            "email": "priyank.agarwal2807@gmail.com ",
+            "linkedin": "https://www.linkedin.com/in/priyank-a-b83856b8"
+        },
+
+        {
+            "name": "Manan Lohani",
+            "post": "Garage SIG Head",
+            "email": "manan.171me140@nitk.edu.in",
+            "linkedin": "https://www.linkedin.com/in/manan-lohani-b19002185/"
+        },
+
+        {
+            "name": "Govind Sunilkumar",
+            "post": "Robotics SIG Head",
+            "email": "govindsunilkumar.171ec217@nitk.edu.in",
+            "linkedin": "https://www.linkedin.com/in/govind-sunilkumar-71431b186/"
+        },
+
+        {
             "name": "Aditya S Gourishetty",
-            "post": "Media SIG Coordinator",
+            "post": "Design and Creative Head",
             "email": "adityasg3@gmail.com",
             "linkedin": "https://www.linkedin.com/in/aditya-gourishetty-675399185"
         },
+
         {
-            "name": "Junaid Hussain",
-            "post": "Robotics SIG Co-ordinator",
-            "email": "junaid.12399@gmail.com",
-            "linkedin": "https://www.linkedin.com/junaidhussainhaveri"
+            "name": "Pranav Krishna",
+            "post": "Script SIG Head",
+            "email": "pranav.171ch033@nitk.edu.in",
+            "linkedin": "https://www.linkedin.com/in/pranavkrishna99/"
+        },
+
+        {
+            "name": "Yash Harlalka",
+            "post": "Capital SIG Head",
+            "email": "yash.171mt043@nitk.edu.in",
+            "linkedin": "https://www.linkedin.com/in/yash-harlalka/"
+        },
+
+        {
+            "name": "Chaitany Pandiya",
+            "post": "Website Head",
+            "email": "chaitany.pandiya@gmail.com",
+            "linkedin": "https://www.linkedin.com/in/chaitany-pandiya-6b2788147/"
         }
+        
+        
+        
 ]

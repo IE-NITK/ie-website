@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.core.exceptions import ObjectDoesNotExist
 import datetime
-from .models import Account, Profile, Status, ActivationRecord
+from .models import Account, Profile, Status, ActivationRecord, BasicResponses
 from django.views.generic import View
 from django.template.loader import get_template
 from django.shortcuts import render
@@ -79,6 +79,7 @@ def register_user(email, password, first_name, last_name, phone, roll_no, active
 
     return user
 
+
 def activate_candidate(user):
     record = user.activationrecord
     profile = Profile(
@@ -98,6 +99,7 @@ def activate_candidate(user):
 
     return
 
+
 def register_candidate(email, password, first_name, last_name, phone, roll_no):
     user = User.objects.create_user(
         email.lower(),
@@ -114,7 +116,6 @@ def register_candidate(email, password, first_name, last_name, phone, roll_no):
         roll_no=roll_no,
     )
     record.save()
-
 
     return user
 
@@ -134,3 +135,21 @@ def register_SIG(SIG, user, updated_at, status):
 
 def sanitize_js(string):
     return string.replace("\\", "\\\\").replace("'", "\\'")
+
+
+def register_question_responses(ans1, ans2, ans3, user, updated_at):
+    responses = BasicResponses(
+        user=user,
+        ans1=ans1,
+        ans2=ans2,
+        ans3=ans3,
+        created_at=updated_at
+    )
+    responses.save()
+
+
+def is_eligible(registered_sigs, sig):
+    if registered_sigs.__contains__(sig):
+        return True
+    else:
+        return False

@@ -1,0 +1,195 @@
+{% extends "base.html" %}
+{% block virtual_expo %}active{% endblock %}
+{% load static %}
+{% block main %}
+
+
+<section class="probootstrap-section"
+    style="background-image: url('{% static 'img/virtual-expo/ocr.png' %}'); width: 100%;background-size: cover;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-left section-heading probootstrap-animate ">
+                <h1>
+                    <font color="black">OCR - A solution for the Visually Impaired</font>
+                </h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="probootstrap-section probootstrap-section-sm">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>PROBLEM STATEMENT: </h3>
+                <p>Visually compromised people find navigation quite tricky in their day-to-day lives. The project is an
+                    attempt at helping ease one of the many challenges they face by designing a prototype of a wearable
+                    device. It is an Optical Character Recognition (OCR) tool that can read the text from images and
+                    instantly convert to speech, thus not limiting them only to whatever is available in Braille. The
+                    Efficient and Accurate Scene Text detector (EAST) is a widely used text-detection architecture very
+                    often used in various OCR applications. It is made use of in this project.
+                </p>
+
+
+                <h3>PROPOSED SOLUTION:</h3>
+                <p><strong><i>Overview</i></strong><br><br>
+                    A camera takes ‘snapshots’ of the object placed in front of it. This creates a single image which
+                    then can be sent for processing to detect the text written on it. Once the image is pre-processed,
+                    it is fed as input to the pre-trained model. Bounding boxes around the detected text are drawn. Once
+                    the text is detected in the above process, it is sent for further processing to detect individual
+                    characters. This approach is called transfer learning; when one model feeds its output as input to
+                    another model. This way, every character in the detected textual data is extracted and returned. The
+                    output is nothing but the detected text in the image in the form of a string.
+                    <br><br><strong><i>Details</i></strong><br><br>
+                    <img src="{% static 'img/virtual-expo/ocr1.png' %}" class="img-rounded img-fluid"
+                        style="width: 50%;height:50%"><br><br>
+                    The above diagram shows the EAST model architecture. It does the work of text detection from scenic
+                    images. The details of its implementation can be found in [1]. The output from this is then sent for
+                    text recognition. PyTesseract[2] is used for this.
+                </p>
+
+
+
+                <h3>METHODOLOGY</h3>
+                <p>The whole project is divided into three phases:<br>
+
+
+                    Phase 1: Text Detection<br>
+
+                    Phase 2: Text Recognition<br>
+
+                    Phase 3: Text to Speech Conversion<br>
+
+                    Phase 4: Prototyping a wearable device by implementing on the Raspberry Pi<br> <br><br>
+
+
+
+                    Phase 1: Real time scene text detection was performed using EAST, a widely used architecture.
+                    <br>
+
+                    Phase 2: Text recognition was subsequently performed using the “Pytesseract” python tool. It is a
+                    wrapper for Google’s Tesseract-OCR Engine.
+                    <br>
+
+                    Phase 3: “pyttsx3” is a text-to-speech conversion library in Python that was used for this phase.
+                    Unlike alternative libraries that perform the same function, this one can work offline.
+
+                    <br>
+                    Phase 4: The pretrained models were then loaded to the Raspberry Pi 4 and real scene images were
+                    captured using Raspberry Pi V2 camera module. The speech converted was then played using earphones
+                    plugged into the raspberry pi.
+                </p>
+
+                <h3>RESULTS</h3>
+                <p>Some of the results obtained are attached:<br>
+                    <img src="{% static 'img/virtual-expo/ocr2.jpg' %}" class="img-rounded img-fluid"
+                        style="width: 50%;height:50%"><br>
+                    <a href="https://drive.google.com/file/d/1LYd3Yw11LuEf2S8CoBOYgCkCtI6Roths/view">After Audio
+                        Conversion</a><br>
+                    <img src="{% static 'img/virtual-expo/ocr3.png' %}" class="img-rounded img-fluid"
+                        style="width: 50%;height:50%"><br>
+                    <a href="https://drive.google.com/file/d/1xoAfXncQhTpXdAE-RsCnMQ2liUOMbRhi/view">After Audio
+                        Conversion</a><br>
+                </p>
+
+
+                <h3>FUTURE WORK</h3>
+                <p>An End-to-End model to detect text and read them to improve the speed and accuracy, instead of
+                    dividing into phases as seen in the above implementation. Adaptation to make a PDF Reader.
+                </p>
+
+
+                <h3>KEY LEARNINGS</h3>
+                <p>● Neural Networks<br>
+                    ● Raspberry Pi Platform<br>
+                    ● Different deep learning architectures<br>
+                </p>
+
+
+                <h3>REFERENCES</h3>
+                <p>
+                    Any external references to better understand the project or the links referenced in the sections
+                    below:
+                </p>
+                <p>
+                    ● <a href="https://arxiv.org/pdf/1704.03155.pdf">https://arxiv.org/pdf/1704.03155.pdf</a><br>
+                    ● <a href="https://pypi.org/project/pytesseract/">https://pypi.org/project/pytesseract/</a>
+                <p></p>
+
+                <h3>TEAM</h3>
+
+                <p>● Atreya Majumdar (atreyamaj@gmail.com)<br>
+
+                    ● Divyansh Bansal (divyanshbansal0612@gmail.com)<br>
+
+                    ● Rahasya Barkur (rahasyabarkur1999@gmail.com)<br>
+
+                    ● Devishi Suresh (devishisureshkambiranda.171ec115@nitk.edu.in)
+                </p>
+                <p></p>
+
+                <!-- <h3>PICTURES</h3>
+                <section class="container">
+                    <div class="row mb-5">
+
+                        <div class="card-deck  col-md-4 col-sm-6 col-sm-12">
+                            <div class="card" style="margin-bottom: 15px;">
+                                <div style="text-align:center">
+
+                                    <img src="" alt="Card image cap" class="img-fluid" style="height:270px; width:100%">
+                                    <div class="card-body">
+                                        <h6 class="card-title">card title</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+ -->
+
+            </div>
+</section>
+</div>
+</div>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+{% comment %} <section class="probootstrap-section probootstrap-section-sm">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+
+            </div>
+        </div>
+    </div>
+</section> {% endcomment %}
+
+<script type="text/javascript">
+    $(".team").addClass("active");
+    var tabcontent = document.getElementsByClassName('teams');
+    for (i = 1; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    function navigate(signame) {
+        var tabcontent = document.getElementsByClassName('teams');
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(signame).style.display = "block";
+        $("." + signame).addClass("active");
+    }
+</script>
+{% endblock %}

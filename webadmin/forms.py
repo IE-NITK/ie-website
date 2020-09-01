@@ -16,7 +16,7 @@ class AddUserForm(BasicForm):
     lastname = forms.CharField(label='Last Name', max_length=50)
     setup_field(lastname, 'Enter last name')
     email = forms.EmailField(max_length=50, validators=[aforms.validate_username_available_and_edu_mail])
-    setup_field(email, 'Enter email here')
+    setup_field(email, 'Enter NITK EDU email here')
     password_first = forms.CharField(label='Password', min_length=1, max_length=50, widget=forms.PasswordInput())
     setup_field(password_first, "Enter password here")
     password_second = forms.CharField(label='', min_length=1, max_length=50, widget=forms.PasswordInput())

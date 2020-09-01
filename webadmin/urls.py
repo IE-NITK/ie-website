@@ -17,5 +17,7 @@ urlpatterns = [
     path('admin/adduser/', views.add_user, name='admin/adduser'),
     path('candidates/', views.candidates_view, name='candidates'),
     path('all_candidates/', views.all_candidates_view, name='all_candidates'),
-    path('deploy_website/',views.deploy_website,name='deploy')
+    path('download_responses_csv/', views.download_basic_responses_csv, name = 'download_responses_csv'),
+    path('download_esc_count_csv/', views.download_esc_count_csv, name = 'download_esc_count_csv'),
+    path('deploy_website/', views.deploy_website, name='deploy')
 ]

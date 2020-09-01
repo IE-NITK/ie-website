@@ -7,10 +7,28 @@
 <body>
 
 {% autoescape off %}
-Hi {{ user.username }},<br>
-Please click on the link to confirm your registration,
+Hello {{ firstname }}!<br>
+
+Congratulations, you are now one step closer to joining the IE family! :D
+<br>
+Please click on the link to activate your account: 
+<br>
 http://{{ domain }}{% url 'accounts:activate' uidb64=uid token=token %}
 {% endautoescape %}
+<br><br>
+We look forward to interacting with you!
+<br>
+Wishing you luck,
+<br><br>
+<b>Chaitany Pandiya</b>
+<br>
+Website Head
+<br>
+<i>The Institution of Engineers, NITK Chapter <br>
+Institutional Member ID: IM0001491</i>
+<br>
++91 98347 08844
+<br>
 
 </body>
 </html>

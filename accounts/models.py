@@ -11,7 +11,6 @@ class ActivationRecord(models.Model):
     roll_no = models.CharField(null=True, max_length=10)
 
 
-
 class Profile(models.Model):
     GENDER = (
         ('M', "Male"),
@@ -96,11 +95,10 @@ class Account(models.Model):
     is_active = models.BooleanField(default=False)
     SIG = models.CharField(null=True, max_length=2)
     roll_no = models.CharField(null=True, max_length=10)
+    esc_counter = models.IntegerField(default=0)
 
     def __str__(self):
         return self.profile.__str__()
-
-
 
 
 class Status(models.Model):
@@ -118,7 +116,7 @@ class Status(models.Model):
     SIG_TYPES_AUX = (("", "None"), ("SR", "Script"),
                      ("RO", "Robotics"),
                      ("CA", "Capital"),
-                     ("ME", "Media"))
+                     ("TE", "Tectonic"))
     SIG_TYPES = (
         ("CO", "Code"),
         ("GD", "Gadget"),
@@ -126,7 +124,7 @@ class Status(models.Model):
         ("SR", "Script"),
         ("RO", "Robotics"),
         ("CA", "Capital"),
-        ("ME", "Media")
+        ("TE", "Tectonic")
     )
 
     def to_status(self):
@@ -169,3 +167,20 @@ class RoundOneSubmission(models.Model):
 
     def __str__(self):
         return self.user.__str__() + " " + self.rollno + " " + str(self.created_at)
+
+
+class BasicResponses(models.Model):
+    user = models.ForeignKey(Account, on_delete=models.CASCADE)
+    ans1 = models.TextField(default="")
+    ans2 = models.TextField(default="")
+    ans3 = models.TextField(default="")
+    created_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.user.__str__()
+
+
+class EscapeCounter(models.Model):
+    user = models.ForeignKey(Account, on_delete=models.CASCADE)
+    fullscreen = models.BooleanField(default=False)
+    pressed_at = models.DateTimeField(auto_now=True)
