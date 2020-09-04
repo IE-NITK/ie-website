@@ -36,3 +36,7 @@ class AddUserForm(BasicForm):
         if password_first and password_second and password_first != password_second:
             self.mark_error('password_second', 'Passwords do not match')
         return cleaned_data
+
+
+class GetBranchNameForm(BasicForm):
+    branch_name = forms.CharField(label='Branch Name', max_length=50)

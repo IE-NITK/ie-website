@@ -4,6 +4,11 @@
 {% block sidebar_profile %}active{% endblock %}
 {% block body_header %}Deploy{% endblock %}
 {% block body %}
-    <p class="lead">Enter the branch to deploy.</p>
-    {% include "singleform.html" %}
+    <p class="lead">Enter the branch name to deploy.</p>
+    <form style="color: grey;" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input class="btn btn-success" type="submit" value="Deploy">
+        <p></p>
+      </form>
 {% endblock %}
