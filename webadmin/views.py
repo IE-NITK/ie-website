@@ -10,6 +10,7 @@ from djqscsv import render_to_csv_response
 from django.core.exceptions import PermissionDenied
 import subprocess
 import os
+
 from iewebsite import constants
 
 User = get_user_model()
@@ -328,6 +329,10 @@ def deploy_website(request):
                 output = executeCommand(['git', 'pull', 'origin', branch_name], output)
                 # output = executeCommand(['.', '../venv/bin/activate'], output)
                 os.system(". ../bin/activate")
+                activate_this = "/home/ie/newsite/bin/activate"
+                with open(activate_this) as f:
+                        code = compile(f.read(), activate_this, 'exec')
+                        exec(code, dict(__file__=activate_this))
                 output = executeCommand(
                     ["python3", "manage.py", "makemigrations"], output)
                 output = executeCommand(["python3", "manage.py", "migrate"], output)
