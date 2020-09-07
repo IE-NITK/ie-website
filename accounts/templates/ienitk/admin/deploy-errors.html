@@ -1,0 +1,11 @@
+{% extends "admin-base.html" %}
+{% load app_filters %}
+{% block title %}Deploy{% endblock %}
+{% block sidebar_profile %}active{% endblock %}
+{% block body_header %}Deploy{% endblock %}
+{% block body %}
+    <p class="lead">Errors</p>
+    <p>
+      {{output}}
+    </p>
+{% endblock %}

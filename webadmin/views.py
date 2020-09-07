@@ -279,29 +279,34 @@ def download_esc_count_csv(request):
     return render_to_csv_response(responses, filename=u'Candidate Escape Responses.csv', field_header_map=column_mapping)
 
 
-def executeCommand(cmd, request):
-    p = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE,
-                         stderr=subprocess.PIPE, stdin=subprocess.PIPE)
+def executeCommand(cmd, output):
+    p = subprocess.Popen(cmd, stdout=subprocess.PIPE,
+                         stderr=subprocess.PIPE)
     stdout, stderr = p.communicate()
     if p.returncode == 0:
-        return stdout.strip()
+        print("success")
+        return output
+
 
     else:
         # handle error
-        request.session['alert_info'] = repr(stdout)
-        request.session['alert_info'] = repr(stderr)
+        output = output + repr(stdout) + "\n"
+        output = output + repr(stderr) + "\n"
+        return output
 
-def executeSudoCommand(cmd, request):
+def executeSudoCommand(cmd, output):
     p = subprocess.Popen(cmd, shell=True, stdin=subprocess.PIPE, stderr=subprocess.PIPE,
                                       universal_newlines=True)
     stdout, stderr = p.communicate(constants.SERVER_PASSWORD+'\n')
     if p.returncode == 0:
-        return stdout.strip()
+        print("success")
+        return output
 
     else:
         # handle error
-        request.session['alert_info'] = repr(stdout)
-        request.session['alert_info'] = repr(stderr)
+        output = output + repr(stdout) + "\n"
+        output = output + repr(stderr) + "\n"
+        return output
 
 def deploy_website(request):
     # Only deploy for Superusers
@@ -313,18 +318,24 @@ def deploy_website(request):
             if form.is_valid():
                 branch_name = form.cleaned_data["branch_name"]
                 prevdir = os.getcwd()
+                # Get all errors as output in html
+                output = "" 
+            
                 # Changing directory to the project directory
                 os.chdir("/home/chaitany/ie-website")
                 # Checkout to given branch
-                executeCommand(['git', 'checkout', branch_name], request)
-                executeCommand(['git', 'pull', 'origin', branch_name], request)
-                executeCommand(
-                    ["python", "manage.py", "makemigrations"], request)
-                executeCommand(["python", "manage.py", "migrate"], request)
-                executeSudoCommand(["sudo", "-S", "systemctl", "restart", "gunicorn"], request)
+                output = executeCommand(['git', 'checkout', branch_name], output)
+                output = executeCommand(['git', 'pull', 'origin', branch_name], output)
+                output = executeCommand(
+                    ["python", "manage.py", "makemigrations"], output)
+                output = executeCommand(["python", "manage.py", "migrate"], output)
+                output = executeSudoCommand(["sudo", "-S", "systemctl", "restart", "gunicorn"], output)
                 os.chdir(prevdir)
                 request.session['alert_success'] = "Successfully deployed to " + \
                     branch_name + " branch"
+                template_data["output"] = output
+                
+                return render(request, 'ienitk/admin/deploy-errors.html', template_data)
                 
         else:
             form = GetBranchNameForm()
