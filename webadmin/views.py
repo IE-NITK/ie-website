@@ -322,7 +322,7 @@ def deploy_website(request):
                 output = "" 
             
                 # Changing directory to the project directory
-                os.chdir("/home/chaitany/ie-website")
+                os.chdir("/home/ie/newsite/ie-website")
                 # Checkout to given branch
                 output = executeCommand(['git', 'checkout', branch_name], output)
                 output = executeCommand(['git', 'pull', 'origin', branch_name], output)
