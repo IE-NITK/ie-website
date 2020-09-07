@@ -328,7 +328,7 @@ def deploy_website(request):
                 output = executeCommand(['git', 'checkout', branch_name], output)
                 output = executeCommand(['git', 'pull', 'origin', branch_name], output)
                 # output = executeCommand(['.', '../venv/bin/activate'], output)
-                os.system(". ../bin/activate")
+                # os.system(". ../bin/activate")
                 activate_this = "/home/ie/newsite/bin/activate"
                 with open(activate_this) as f:
                         code = compile(f.read(), activate_this, 'exec')
