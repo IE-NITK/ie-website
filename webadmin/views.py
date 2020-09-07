@@ -326,9 +326,11 @@ def deploy_website(request):
                 # Checkout to given branch
                 output = executeCommand(['git', 'checkout', branch_name], output)
                 output = executeCommand(['git', 'pull', 'origin', branch_name], output)
+                # output = executeCommand(['.', '../venv/bin/activate'], output)
+                os.system(". ../bin/activate")
                 output = executeCommand(
-                    ["python", "manage.py", "makemigrations"], output)
-                output = executeCommand(["python", "manage.py", "migrate"], output)
+                    ["python3", "manage.py", "makemigrations"], output)
+                output = executeCommand(["python3", "manage.py", "migrate"], output)
                 output = executeSudoCommand(["sudo", "-S", "systemctl", "restart", "gunicorn"], output)
                 os.chdir(prevdir)
                 request.session['alert_success'] = "Successfully deployed to " + \
