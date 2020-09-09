@@ -25,7 +25,7 @@ SECRET_KEY = '!th-(6rochf+vi!$e(o84^-)3+&oj7osgrztitz5p#8_mtq5t%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-# DEBUG = True	#for localhost
+#DEBUG = True	#for localhost
 
 ALLOWED_HOSTS = ['ie.nitk.ac.in', '10.4.0.67', '*']
 
@@ -152,3 +152,4 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = constants.EMAIL
 EMAIL_HOST_PASSWORD = constants.PASSWORD
+SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']
