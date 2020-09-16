@@ -1,4 +1,4 @@
-constants.py
+iewebsite/constants.py
 .idea/
 .vscode/
 # Byte-compiled / optimized / DLL files
@@ -106,4 +106,4 @@ venv.bak/
 
 # mypy
 .mypy_cache/
-iewebsite/settings.py
+

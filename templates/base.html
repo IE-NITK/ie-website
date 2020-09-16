@@ -73,7 +73,7 @@
         </div>
     </div>
     <marquee>
-        <strong>Registrations are LIVE  <a href="{% url 'accounts:register' %}">Click here to apply.</a></strong>
+        <strong>Registrations are closed....</strong>
     </marquee> 
     <nav class="navbar navbar-default probootstrap-navbar">
         <div class="container">
@@ -107,6 +107,7 @@
                     {% if user.is_authenticated %}
                         <li ><a href="{% url 'accounts:profile' %}">Profile</a></li>
                         <li ><a href="{% url 'accounts:logout' %}">Logout</a></li>
+                        <li ><a href="/profile/test/round-1">Test</a></li>
                     {% else %}
                     <li ><a href="{% url 'accounts:index' %}">Login</a></li>
                     <li ><a href="{% url 'accounts:register' %}"><b>Register</b></a></li>

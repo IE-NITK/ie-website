@@ -146,3 +146,10 @@ def register_question_responses(ans1, ans2, ans3, user, updated_at):
         created_at=updated_at
     )
     responses.save()
+
+
+def is_eligible(registered_sigs, sig):
+    if registered_sigs.__contains__(sig):
+        return True
+    else:
+        return False

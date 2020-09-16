@@ -95,6 +95,7 @@ class Account(models.Model):
     is_active = models.BooleanField(default=False)
     SIG = models.CharField(null=True, max_length=2)
     roll_no = models.CharField(null=True, max_length=10)
+    esc_counter = models.IntegerField(default=0)
 
     def __str__(self):
         return self.profile.__str__()
@@ -106,6 +107,7 @@ class Status(models.Model):
         ("WR", "Written Round"),
         ("TE", "Technical"),
         ("HR", "HR"),
+        ("H2", "HR2"),
         ("SL", "Selected")
     )
     SIG_TYPES_MAIN = (("", "None"), ("CO", "Code"),
@@ -176,3 +178,9 @@ class BasicResponses(models.Model):
 
     def __str__(self):
         return self.user.__str__()
+
+
+class EscapeCounter(models.Model):
+    user = models.ForeignKey(Account, on_delete=models.CASCADE)
+    fullscreen = models.BooleanField(default=False)
+    pressed_at = models.DateTimeField(auto_now=True)

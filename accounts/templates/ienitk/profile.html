@@ -9,18 +9,26 @@
 {% block body %}
 <p>
     Hi, there!<br><br>
-
-We know that these challenging times can often make us feel very distant to you. Worry not, we are only a call away, fellow IE enthusiast!
-<br><br>
-For all questions regarding the recruitment process, contact - 
-<br><br>
-Junaid Hussain: +91 7829023969<br>
-Nishant Kumar: +91 9035207801
-<br><br>
-For all your 404 errors such as problems with applying on the website, contact - 
-<br><br>
-Chaitany Pandiya: +91 98347 08844
-<br>Madhumitha Nara: +91 7981819450
 </p>
-    
+{% if selected %}
+<p>
+    Congratulations! You are now officially a part of the IE family!<br><br>
+    <img src="{% static 'img/congratulations.gif' %}" class="img-rounded img-fluid"
+                        style="width: 80%;"><br>
+    <br>
+    We will be adding you to the club groups shortly, and keep an eye out for announcements, there might be a special
+    something in there just for you ;)
+</p>
+
+
+
+{% else %}
+<p>
+    This year, we had an exceptional roster of candidates to choose from, each with their own strengths and areas of
+    expertise. We have tried our best in order to align the needs of the club with the needs and strengths of the
+    candidates.<br>
+    We highly encourage you to apply again next year.<br>
+    Best of luck, hope to see you again :)
+</p>
+{% endif %}
 {% endblock %}

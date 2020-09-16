@@ -4,9 +4,11 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
 import datetime
 from .forms import PasswordForm, ProfileForm, SIGForm
-from .models import Account, Status, RoundOneSubmission
+from .models import Account, Status, RoundOneSubmission, EscapeCounter
 from . import views
 from django.http import Http404
+from django.views.decorators.csrf import csrf_exempt
+from django.http import HttpResponse
 
 
 def profile_view(request):
@@ -264,5 +266,75 @@ def submission_scriptroundone(request):
 
 
 def test_round_1(request):
+    # Authentication check
+    authentication_result = views.authentication_check(
+        request, [Account.ACCOUNT_ADMIN, Account.ACCOUNT_CANDIDATE])
+    if authentication_result is not None:
+        return authentication_result
+    # Get the template data from the session
+    template_data = views.parse_session(request)
+    # Get the SIG information of the user
+    current_user = request.user
+    account = current_user.account
+    esc_count = account.esc_counter
+    all_status = Status.objects.filter(user=account)
+    registered_sigs = []
+    for entry in all_status:
+        registered_sigs.append(entry.SIG)
+    # Only display links for which user is eligible to give test
+    # code_eligible = False
+    # gadget_eligible = False
+    # garage_eligible = False
+    # capital_eligible = False
+    # robotics_eligible = False
+    # code_test_link = ""
+    # garage_test_link = ""
+    # capital_test_link = ""
+    # gadget_test_link = ""
+    # robotics_test_link = ""
+    script_eligible = False
+    tectonic_eligible = False
+    gadget_eligible = False
+    robotics_eligible = False
+    if views.is_eligible(registered_sigs, "SR"):
+        script_eligible = True
+    if views.is_eligible(registered_sigs, "TE"):
+        tectonic_eligible = True
+    if views.is_eligible(registered_sigs, "GD"):
+        gadget_eligible = True
 
-    return render(request, 'round_1_test.html')
+    if gadget_eligible:
+        gadget_status = Status.objects.get(user=account, SIG="GD")
+        if gadget_status.status == "TE":
+            gadget_eligible = True
+        else:
+            gadget_eligible = False
+    # if views.is_eligible(registered_sigs, "RO"):
+    #     robotics_eligible = True
+
+    # template_data["script_eligible"] = script_eligible
+    # template_data["tectonic_eligible"] = tectonic_eligible
+    template_data["gadget_eligible"] =gadget_eligible
+    # template_data["capital_eligible"] =capital_eligible
+    # template_data["robotics_eligible"] =robotics_eligible
+    # template_data["code_test_link"] =code_test_link
+    # template_data["garage_test_link"] =garage_test_link
+    # template_data["capital_test_link"] =capital_test_link
+    # template_data["gadget_test_link"] =gadget_test_link
+    # template_data["robotics_test_link"] =robotics_test_link
+    # template_data["esc_count"] =esc_count
+    return render(request, 'ienitk/roundone.html', template_data)
+
+
+@csrf_exempt
+def update_esc_counter(request):
+    if request.method == 'POST':
+        account = Account.objects.get(user=request.user)
+        account.esc_counter = account.esc_counter + 1
+        account.save()
+        counter = EscapeCounter()
+        counter.user = account
+        counter.fullscreen = False
+        counter.save()
+        message = 'update successful'
+    return HttpResponse(message)

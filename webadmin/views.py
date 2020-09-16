@@ -4,9 +4,14 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.contrib.auth import get_user_model
 from accounts import views
-from accounts.models import Account, Status, BasicResponses
-from webadmin.forms import AddUserForm
+from accounts.models import Account, Status, BasicResponses, EscapeCounter
+from webadmin.forms import AddUserForm, GetBranchNameForm
 from djqscsv import render_to_csv_response
+from django.core.exceptions import PermissionDenied
+import subprocess
+import os
+
+from iewebsite import constants
 
 User = get_user_model()
 
@@ -232,14 +237,14 @@ def candidates_view(request):
     template_data['query'] = Status.objects.filter(SIG=SIG_User)
     if current_user.account.role == 4:
         template_data['query'] = Status.objects.filter(
-            SIG__in=["SR", "VR", "RO", "CA", "ME"])
+            SIG__in=["SR", "VR", "RO", "CA", "TE"])
     template_data['logged_in_user'] = current_user
     return render(request, 'ienitk/admin/candidates.html', template_data)
 
 
 def download_basic_responses_csv(request):
     authentication_result = views.authentication_check(
-        request, [Account.ACCOUNT_ADMIN, Account.ACCOUNT_MEMBER])
+        request, [Account.ACCOUNT_ADMIN, Account.ACCOUNT_MEMBER, Account.ACCOUNT_AUX_ADMIN])
     if authentication_result is not None:
         return authentication_result
     column_mapping = {
@@ -255,3 +260,94 @@ def download_basic_responses_csv(request):
     responses = BasicResponses.objects.values(
         'user__profile__firstname', 'user__roll_no', 'ans1', 'ans2', 'ans3', 'user__profile__phone', 'created_at')
     return render_to_csv_response(responses, filename=u'Candidates_responses.csv', field_header_map=column_mapping)
+
+
+def download_esc_count_csv(request):
+    authentication_result = views.authentication_check(
+        request, [Account.ACCOUNT_ADMIN, Account.ACCOUNT_MEMBER, Account.ACCOUNT_AUX_ADMIN])
+    if authentication_result is not None:
+        return authentication_result
+    column_mapping = {
+        'user__profile__firstname': 'Firstname',
+        'user__roll_no': 'Roll No',
+        'user__esc_counter': 'Escape Count',
+        'user__profile__phone': 'Contact Number',
+        'pressed_at': 'Pressed At'
+    }
+
+    responses = EscapeCounter.objects.values(
+        'user__profile__firstname', 'user__roll_no', 'user__esc_counter', 'user__profile__phone', 'pressed_at')
+    return render_to_csv_response(responses, filename=u'Candidate Escape Responses.csv', field_header_map=column_mapping)
+
+
+def executeCommand(cmd, output):
+    p = subprocess.Popen(cmd, stdout=subprocess.PIPE,
+                         stderr=subprocess.PIPE)
+    stdout, stderr = p.communicate()
+    if p.returncode == 0:
+        print("success")
+        return output
+
+
+    else:
+        # handle error
+        output = output + repr(stdout) + "\n"
+        output = output + repr(stderr) + "\n"
+        return output
+
+def executeSudoCommand(cmd, output):
+    p = subprocess.Popen(cmd, shell=True, stdin=subprocess.PIPE, stderr=subprocess.PIPE,
+                                      universal_newlines=True)
+    stdout, stderr = p.communicate(constants.SERVER_PASSWORD+'\n')
+    if p.returncode == 0:
+        print("success")
+        return output
+
+    else:
+        # handle error
+        output = output + repr(stdout) + "\n"
+        output = output + repr(stderr) + "\n"
+        return output
+
+def deploy_website(request):
+    # Only deploy for Superusers
+    if request.user.is_superuser:
+        template_data = {}
+        # Getting branch name to deploy
+        if request.method == 'POST':
+            form = GetBranchNameForm(request.POST)
+            if form.is_valid():
+                branch_name = form.cleaned_data["branch_name"]
+                prevdir = os.getcwd()
+                # Get all errors as output in html
+                output = "" 
+            
+                # Changing directory to the project directory
+                os.chdir("/home/ie/newsite/ie-website")
+                # Checkout to given branch
+                output = executeCommand(['git', 'checkout', branch_name], output)
+                output = executeCommand(['git', 'pull', 'origin', branch_name], output)
+                # output = executeCommand(['.', '../venv/bin/activate'], output)
+                # os.system(". ../bin/activate")
+                activate_this = "/home/ie/newsite/bin/activate"
+                with open(activate_this) as f:
+                        code = compile(f.read(), activate_this, 'exec')
+                        exec(code, dict(__file__=activate_this))
+                output = executeCommand(
+                    ["python3", "manage.py", "makemigrations"], output)
+                output = executeCommand(["python3", "manage.py", "migrate"], output)
+                output = executeSudoCommand(["sudo", "-S", "systemctl", "restart", "gunicorn"], output)
+                os.chdir(prevdir)
+                request.session['alert_success'] = "Successfully deployed to " + \
+                    branch_name + " branch"
+                template_data["output"] = output
+                
+                return render(request, 'ienitk/admin/deploy-errors.html', template_data)
+                
+        else:
+            form = GetBranchNameForm()
+        template_data['form'] = form
+        return render(request, 'ienitk/admin/deploy.html', template_data)
+    else:
+        request.session['alert_danger'] = "You don't have permission to view the page."
+        return HttpResponseRedirect('/error/denied/')
