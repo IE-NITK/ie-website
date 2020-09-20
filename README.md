@@ -44,6 +44,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/devil-r"><img src="https://avatars2.githubusercontent.com/u/32450140?v=4" width="100px;" alt=""/><br /><sub><b>Tushar Dubey</b></sub></a><br /><a href="https://github.com/IE-NITK/ie-website/commits?author=devil-r" title="Code">💻</a> <a href="https://github.com/IE-NITK/ie-website/commits?author=devil-r" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/dhanwin247"><img src="https://avatars1.githubusercontent.com/u/54177621?v=4" width="100px;" alt=""/><br /><sub><b>Dhanwin Rao</b></sub></a><br /><a href="https://github.com/IE-NITK/ie-website/commits?author=dhanwin247" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/Paranjaysaxena"><img src="https://avatars0.githubusercontent.com/u/42527319?v=4" width="100px;" alt=""/><br /><sub><b>Paranjaysaxena</b></sub></a><br /><a href="https://github.com/IE-NITK/ie-website/commits?author=Paranjaysaxena" title="Code">💻</a></td>
+        <td align="center"><a href="https://github.com/Shreesha-B"><img src="https://avatars3.githubusercontent.com/u/44157881?v=4" width="100px;" alt=""/><br /><sub><b>Shreesha-B</b></sub></a><br /><a href="https://github.com/IE-NITK/ie-website/commits?author=Shreesha-B" title="Code">💻</a></td>
   </tr>
 </table>
 

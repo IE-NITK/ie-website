@@ -33,7 +33,7 @@
         "design"
       ]
     },
-    {
+     {
       "login": "dhanwin247",
       "name": "Dhanwin Rao",
       "avatar_url": "https://avatars1.githubusercontent.com/u/54177621?v=4",
@@ -60,7 +60,16 @@
       "contributions": [
         "code"
       ]
-    }
+    },
+    {
+      "login": "Shreesha-B",
+      "name": "Shreesha-B",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/44157881?v=4",
+      "profile": "https://github.com/Shreesha-B",
+      "contributions": [
+        "code"
+      ]
+     }
   ],
   "contributorsPerLine": 7,
   "projectName": "ie-website",
