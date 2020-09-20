@@ -33,6 +33,34 @@
         "design"
       ]
     },
+     {
+      "login": "dhanwin247",
+      "name": "Dhanwin Rao",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/54177621?v=4",
+      "profile": "https://github.com/dhanwin247",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "devil-r",
+      "name": "Tushar Dubey",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/32450140?v=4",
+      "profile": "https://github.com/devil-r",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "Paranjaysaxena",
+      "name": "Paranjaysaxena",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/42527319?v=4",
+      "profile": "https://github.com/Paranjaysaxena",
+      "contributions": [
+        "code"
+      ]
+    },
     {
       "login": "Shreesha-B",
       "name": "Shreesha-B",
@@ -41,7 +69,7 @@
       "contributions": [
         "code"
       ]
-    }
+     }
   ],
   "contributorsPerLine": 7,
   "projectName": "ie-website",
