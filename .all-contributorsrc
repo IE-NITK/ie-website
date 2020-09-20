@@ -32,6 +32,19 @@
         "code",
         "design"
       ]
+    },
+    {
+      "login": "mehnazyunus",
+      "name": "Mehnaz Yunus",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/27924407?v=4",
+      "profile": "https://github.com/mehnazyunus",
+      "contributions": [
+        "code",
+        "doc",
+        "design",
+        "content",
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
