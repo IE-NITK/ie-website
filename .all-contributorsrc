@@ -82,7 +82,18 @@
         "content",
         "bug"
       ]
-    }
+    },
+    {
+      "login": "shrey920",
+      "name": "Shreyas Shankar",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/29249472?v=4",
+      "profile": "https://github.com/shrey920",
+      "contributions": [
+        "code",
+        "bug",
+        "content",
+      ]
+     }
   ],
   "contributorsPerLine": 7,
   "projectName": "ie-website",
