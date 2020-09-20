@@ -22,6 +22,16 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "krahulreddy",
+      "name": "K Rahul Reddy",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/31247036?v=4",
+      "profile": "http://krahulreddy.github.io",
+      "contributions": [
+        "code",
+        "design"
+      ]
     }
   ],
   "contributorsPerLine": 7,
