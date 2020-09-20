@@ -32,6 +32,16 @@
         "code",
         "design"
       ]
+    },
+    {
+      "login": "devil-r",
+      "name": "Tushar Dubey",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/32450140?v=4",
+      "profile": "https://github.com/devil-r",
+      "contributions": [
+        "code",
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
