@@ -1,6 +1,6 @@
 # IE-Website
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ## Install components
@@ -39,6 +39,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://github.com/chaitany10"><img src="https://avatars1.githubusercontent.com/u/32352441?v=4" width="100px;" alt=""/><br /><sub><b>Chaitany Pandiya</b></sub></a><br /><a href="https://github.com/IE-NITK/ie-website/commits?author=chaitany10" title="Code">💻</a></td>
+    <td align="center"><a href="http://madhumithanara.github.io"><img src="https://avatars2.githubusercontent.com/u/38850744?v=4" width="100px;" alt=""/><br /><sub><b>madhumithanara</b></sub></a><br /><a href="https://github.com/IE-NITK/ie-website/commits?author=madhumithanara" title="Code">💻</a></td>
   </tr>
 </table>
 
