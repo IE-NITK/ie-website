@@ -93,7 +93,18 @@
         "bug",
         "content",
       ]
-     }
+     },
+         {
+      "login": "mishal23",
+      "name": "Mishal Shah",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/21958074?v=4",
+      "profile": "https://mishal23.github.io/",
+      "contributions": [
+        "code",
+        "design",
+        "bug"
+      ]
+    }
   ],
   "contributorsPerLine": 7,
   "projectName": "ie-website",
