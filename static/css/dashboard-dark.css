@@ -15,6 +15,10 @@
     nav.sidebar{
         z-index: 1;
     }
+
+    .modal-body, .modal-title{
+      color: black;
+    }
     
     @media (min-width: 765px) {
     
@@ -24,7 +28,11 @@
             margin-left: 30px;
             float: right;
         }
-    
+
+        .modal-body, .modal-title{
+          color: black;
+        }
+        
         nav.sidebar:hover + .main{
             margin-left: 190px;
         }
@@ -117,6 +125,10 @@
         .main{
           width: calc(100% - 110px);
           margin-left: 110px;
+        }
+        
+        .modal-body, .modal-title{
+          color: black;
         }
     
         nav.sidebar:hover + .main{

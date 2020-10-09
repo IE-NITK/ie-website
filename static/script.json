@@ -1,5 +1,12 @@
 [
    {
+      "email": "bnamrathakamath.181mn005@nitk.edu.in",
+      "name": "B NAMRATHA KAMATH",
+      "rollno": "181MN005",
+
+      "linkedin": "#"
+   },
+   {
       "email": "dwaipayanmunshi@yahoo.in",
       "name": "Dwaipayan Munshi",
       "rollno": "181MN010",
@@ -26,5 +33,33 @@
       "rollno": "181CV123",
 
       "linkedin": "https://www.linkedin.com/in/sudeepthi-nallareddy-4b3a83192"
+   },
+   {
+      "email": "aritrasinha.191ec108@nitk.edu.in",
+      "name": "Aritra Sinha",
+      "rollno": "191EC108",
+
+      "linkedin": "#"
+   },
+   {
+      "email": "thotasreeharsha.191cs258@nitk.edu.in",
+      "name": "Harsha Thota",
+      "rollno": "191CS258",
+
+      "linkedin": "#"
+   },
+   {
+      "email": "sagar.191ee144@nitk.edu.in",
+      "name": "Sagar Lamani",
+      "rollno": "191EE144",
+
+      "linkedin": "#"
+   },
+   {
+      "email": "mohdsahilakhtar.191mn021@nitk.edu.in",
+      "name": "Sahil Akhtar",
+      "rollno": "191CH061",
+
+      "linkedin": "#"
    }
 ]
