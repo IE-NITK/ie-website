@@ -24,20 +24,20 @@
                   <div class="probootstrap-sidebar-inner probootstrap-overlap probootstrap-animate">
                     <h3></h3>
                     <ul class="probootstrap-side-menu">
-                      <li class="tablinks active 2020"><a onclick="return navigate('2020')">2020</a></li>
-                      <li class="tablinks 2019"><a onclick="return navigate('2019')">2019</a></li>
-                      <li class="tablinks 2018"><a onclick="return navigate('2018')">2018</a></li>
-                      <li class="tablinks 2017"><a onclick="return navigate('2017')">2017</a></li>
-                      <li class="tablinks 2016"><a onclick="return navigate('2016')">2016</a></li>
-                      <li class="tablinks 2015"><a onclick="return navigate('2015')">2015</a></li>
+                      <li class="tablinks 2020" id=2020><a href="{% url 'alumni:alumni' 2020 %}">2020</a></li>
+                      <li class="tablinks 2019" id=2019><a href="{% url 'alumni:alumni' 2019 %}">2019</a></li>
+                      <li class="tablinks 2018" id="2018"><a  href="{% url 'alumni:alumni' 2018 %}">2018</a></li>
+                      <li class="tablinks 2017" id="2017"><a  href="{% url 'alumni:alumni' 2017 %}">2017</a></li>
+                      <li class="tablinks 2016" id="2016"><a  href="{% url 'alumni:alumni' 2016 %}">2016</a></li>
+                      <li class="tablinks 2015" id="2015"><a  href="{% url 'alumni:alumni' 2015 %}">2015</a></li>
                     </ul>
                   </div>
                 </div>
-                <div class="col-md-7 col-md-push-1 probootstrap-animate teams" id="2020">
-                  <h2> Batch of 2020</h2>
+                <div class="col-md-7 col-md-push-1 probootstrap-animate teams" id={{year}}>
+                  <h2> Batch of {{year}}</h2>
                   <section class="probootstrap-section">
                     <div class="container" style="width: 100%;">
-                      {% for member in alumni2020 %}
+                      {% for member in alumni %}
 
                       <div class="col-sm-6">
                         <div class="probootstrap-teacher text-center probootstrap-animate" style="min-height: 220px">
@@ -53,120 +53,8 @@
                             </div>
                         </div>
                       </div>
-
                       {% endfor %}
                     </div>
-                  </section>
-                </div>
-                <div class="col-md-7 col-md-push-1 probootstrap-animate teams" id="2019">
-                  <h2> Batch of 2019</h2>
-                  <section class="probootstrap-section">
-                    <div class="container" style="width: 100%;">
-                      {% for member in alumni2019 %}
-
-                      <div class="col-sm-6">
-                        <div class="probootstrap-teacher text-center probootstrap-animate" style="min-height: 220px">
-                            <div class="text" style="word-wrap: break-word;">
-                              <h3>{{ member.name }}</h3>
-
-                                <h6 style='margin-top:10px'>{{ member.post }}</h6>
-                                <a  href="mailto:{{ member.email }}"><i class='fas fa-envelope' style='font-size:35px;margin-right: 10px;margin-top: 20px;'></i></a>
-                                {%if member.linkedin %}
-                                  <a href="{{ member.linkedin }}" target="_blank"><i class='fab fa-linkedin' style='font-size:35px;margin-left: 10px'></i></a>
-                                {% endif %}
-
-                            </div>
-                        </div>
-                      </div>
-
-                      {% endfor %}
-                    </div>
-                  </section>
-                </div>
-                <div class="col-md-7 col-md-push-1 probootstrap-animate teams" id="2018">
-                  <h2>Batch of 2018</h2>
-                  <section class="probootstrap-section">
-                    <div class="container" style="width: 100%;">
-                      {% for member in alumni2018 %}
-                      <div class="col-sm-6">
-                        <div class="probootstrap-teacher text-center probootstrap-animate" style="min-height: 170px">
-                            <div class="text" style="word-wrap: break-word;">
-                              <h3>{{ member.name }}</h3>
-                                <h6 style='margin-top:10px'>{{ member.post }}</h6>
-                                  {%if member.linkedin %}
-                                  <a href="{{ member.linkedin }}" target="_blank"><i class='fab fa-linkedin' style='font-size:35px;margin-left: 10px;'></i></a>
-                                {% endif %}
-                            </div>
-                        </div>
-                      </div>
-
-                      {% endfor %}
-                    </div>
-                  </section>
-                </div>
-                <div class="col-md-7 col-md-push-1 probootstrap-animate teams" id="2017">
-                  <h2>Batch of 2017</h2>
-                  <section class="probootstrap-section">
-                    <div class="container" style="width: 100%;">
-                      {% for member in alumni2017 %}
-                      <div class="col-sm-6" >
-                        <div class="probootstrap-teacher text-center probootstrap-animate" style="min-height: 170px">
-                            <div class="text" style="word-wrap: break-word;">
-                              <h3>{{ member.name }}</h3>
-                                <h6 style='margin-top:10px'>{{ member.post }}</h6>
-                                  {%if member.linkedin %}
-                                  <a href="{{ member.linkedin }}" target="_blank"><i class='fab fa-linkedin' style='font-size:35px;margin-left: 10px;'></i></a>
-                                {% endif %}
-                            </div>
-                        </div>
-                      </div>
-
-                      {% endfor %}
-                    </div>
-                  </section>
-                </div>
-                <div class="col-md-7 col-md-push-1 probootstrap-animate teams" id="2016">
-                  <h2>Batch of 2016</h2>
-                  <section class="probootstrap-section">
-                    <div class="container" style="width: 100%;">
-                      {% for member in alumni2016 %}
-                      <div class="col-sm-6" >
-                        <div class="probootstrap-teacher text-center probootstrap-animate" style="min-height: 170px">
-                            <div class="text" style="word-wrap: break-word;">
-                              <h3>{{ member.name }}</h3>
-                                <h6 style='margin-top:10px'>{{ member.post }}</h6>
-                                  {%if member.linkedin %}
-                                  <a href="{{ member.linkedin }}" target="_blank"><i class='fab fa-linkedin' style='font-size:35px;margin-left: 10px;'></i></a>
-                                {% endif %}
-                            </div>
-                        </div>
-                      </div>
-
-                      {% endfor %}
-                    </div>
-                  </section>
-                </div>
-                <div class="col-md-7 col-md-push-1 probootstrap-animate teams" id="2015">
-                  <h2>Batch of 2015</h2>
-                  <section class="probootstrap-section">
-                    <div class="container" style="width: 100%;">
-                      {% for member in alumni2015 %}
-                      <div class="col-sm-6" >
-                        <div class="probootstrap-teacher text-center probootstrap-animate" style="min-height: 170px">
-                            <div class="text" style="word-wrap: break-word;">
-                              <h3>{{ member.name }}</h3>
-                                <h6 style='margin-top:10px'>{{ member.post }}</h6>
-                                  {%if member.linkedin %}
-                                  <a href="{{ member.linkedin }}" target="_blank"><i class='fab fa-linkedin' style='font-size:35px;margin-left: 10px;'></i></a>
-                                {% endif %}
-                            </div>
-                        </div>
-                      </div>
-
-                      {% endfor %}
-                    </div>
-                  </section>
-                </div>
                   </section>
                 </div>
               </div>
@@ -176,22 +64,13 @@
       </section>
 
       <script type="text/javascript">
-        $(".team").addClass("active");
-        var tabcontent = document.getElementsByClassName('teams');
-        for (i = 1; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-          }
-        function navigate(signame) {
-          var tabcontent = document.getElementsByClassName('teams');
-          for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-          }
           tablinks = document.getElementsByClassName("tablinks");
           for (i = 0; i < tablinks.length; i++) {
             tablinks[i].className = tablinks[i].className.replace(" active", "");
           }
-          document.getElementById(signame).style.display = "block";
-          $("."+signame).addClass("active");
-        }
+          year="{{year}}"
+          document.getElementById(year).style.display = "block";
+          $("."+year).addClass("active");
+          console.log(document.getElementById(year))
       </script>
 {% endblock %}
