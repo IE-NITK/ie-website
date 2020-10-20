@@ -5,8 +5,8 @@
 {% block body_header %}
     View Archived Users
     <br>
-    <a class="btn btn-success btn-sm" href="/admin/adduser/" role="button">Add User</a>
-    <a class="btn btn-info btn-sm" href="/admin/users/" role="button">View Current Users</a>
+    <a class="btn btn-success btn-sm" href="{% url 'webadmin:admin/adduser' %}" role="button">Add User</a>
+    <a class="btn btn-info btn-sm" href="{% url 'webadmin:admin/users' %}" role="button">View Current Users</a>
 {% endblock %}
 {% block body %}
     <table id="datatable" class="table table-hover table-striped table-bordered">
