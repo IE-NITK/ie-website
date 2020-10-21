@@ -75,15 +75,15 @@
                 <ul class="nav navbar-nav navbar-right">
                     {% if user|isAuthenticated %}
                         <li class="dropdown">
-                            <a href="/profile/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Account Management <span class="caret"></span></a>
+                            <a href="{% url 'accounts:profile' %}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Account Management <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="/profile/">Signed in as {{ user.username }}</a></li>
+                                <li><a href="{% url 'accounts:profile' %}">Signed in as {{ user.username }}</a></li>
                                 <li class="divider"></li>
-                                <li><a href="/profile/">View Profile<i class="pull-right fa fa-user"></i></a></li>
-                                <li><a href="/profile/update/">Update Profile<i class="pull-right fa fa-pencil"></i></a></li>
-                                <li><a href="/profile/password">Change Password<i class="pull-right fa fa-cog"></i></a></li>
+                                <li><a href="{% url 'accounts:profile' %}">View Profile<i class="pull-right fa fa-user"></i></a></li>
+                                <li><a href="{% url 'accounts:profile/update' %}">Update Profile<i class="pull-right fa fa-pencil"></i></a></li>
+                                <li><a href="{% url 'accounts:profile/password' %}">Change Password<i class="pull-right fa fa-cog"></i></a></li>
                                 <li class="divider"></li>
-                                <li><a href="/logout">Logout<i class="pull-right fa fa-sign-out"></i></i></a></li>
+                                <li><a href="{% url 'accounts:logout' %}">Logout<i class="pull-right fa fa-sign-out"></i></i></a></li>
                             </ul>
                         </li>
                     {% else %}
@@ -112,26 +112,26 @@
                 </div>
                 <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                            <li class="{% block sidebar_profile %}{% endblock %}"><a href="/profile/">Home<i class="pull-right fa fa-user"></i></a></li>
-                            <li class="{% block sidebar_round_1_test %}{% endblock %}"><a href="/profile/test/round-1">Test<i class="pull-right fa fa-users"></i></a></li>
+                            <li class="{% block sidebar_profile %}{% endblock %}"><a href="{% url 'accounts:profile' %}">Home<i class="pull-right fa fa-user"></i></a></li>
+                            <li class="{% block sidebar_round_1_test %}{% endblock %}"><a href="{% url 'accounts:round_1_test' %}">Test<i class="pull-right fa fa-users"></i></a></li>
                             {% comment %} {% if user.account.role == 2 %}
                             {% endif %} {% endcomment %}
 
                             {% if user.account.role == 1 or user.account.role == 2 or user.account.role == 4 %}
-                                <li class="{% block sidebar_candidates %}{% endblock %}"><a href="/candidates">SIG Candidates<i class="pull-right fa fa-users"></i></a></li>
+                                <li class="{% block sidebar_candidates %}{% endblock %}"><a href="{% url 'webadmin:candidates' %}">SIG Candidates<i class="pull-right fa fa-users"></i></a></li>
                                 
                                 {% endif %}
 
                             {% if user.account.role == 1 %}
-                                <li class="{% block sidebar_admin_users %}{% endblock %}"><a href="/admin/users">Manage IE Members<i class="pull-right fa fa-users"></i></a></li>
-                                <li class="{% block sidebar_all_candidates %}{% endblock %}"><a href="/all_candidates">All Candidates<i class="pull-right fa fa-users"></i></a></li>
+                                <li class="{% block sidebar_admin_users %}{% endblock %}"><a href="{% url 'webadmin:admin/users' %}">Manage IE Members<i class="pull-right fa fa-users"></i></a></li>
+                                <li class="{% block sidebar_all_candidates %}{% endblock %}"><a href="{% url 'webadmin:all_candidates' %}">All Candidates<i class="pull-right fa fa-users"></i></a></li>
                                 <li class="{% block sidebar_download_responses %}{% endblock %}"><a href="{% url 'webadmin:download_responses_csv'%}">Download Candidates Responses<i class="pull-right fa fa-users"></i></a></li>
                                 <li class="{% block sidebar_download_esc_count_responses %}{% endblock %}"><a href="{% url 'webadmin:download_esc_count_csv'%}">Download Candidates Escape Responses<i class="pull-right fa fa-users"></i></a></li>
                                 
                                 {% endif %}
                             {% if user.account.role == 3 %}
-                                <li class="{% block sidebar_apply %}{% endblock %}"><a href="/profile/apply">Apply<i class="pull-right fa fa-users"></i></a></li>
-			    	            <li class="{% block sidebar_status %}{% endblock %}"><a href="/profile/status">Status<i class="pull-right fa fa-users"></i></a></li>
+                                <li class="{% block sidebar_apply %}{% endblock %}"><a href="{% url 'accounts:profile/apply' %}">Apply<i class="pull-right fa fa-users"></i></a></li>
+			    	            <li class="{% block sidebar_status %}{% endblock %}"><a href="{% url 'accounts:status' %}">Status<i class="pull-right fa fa-users"></i></a></li>
                                     
                             {% endif %}
                     </ul>

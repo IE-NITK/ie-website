@@ -10,6 +10,7 @@ from djqscsv import render_to_csv_response
 from django.core.exceptions import PermissionDenied
 import subprocess
 import os
+from django.urls import reverse
 
 from iewebsite import constants
 
@@ -57,12 +58,12 @@ def restore_user(request):
                 user = Account.objects.get(pk=pk)
             except Exception:
                 template_data['alert_danger'] = "Unable to delete the user. Please try again later"
-                return HttpResponseRedirect('/admin/users')
+                return HttpResponseRedirect(reverse('webadmin:admin/users'))
             user.archive = False
             user.save()
             template_data['alert_success'] = "The user has been restored."
-            return HttpResponseRedirect('/admin/users')
-    return HttpResponseRedirect('/admin/users')
+            return HttpResponseRedirect(reverse('webadmin:admin/users'))
+    return HttpResponseRedirect(reverse('webadmin:admin/users'))
 
 
 def users_view(request):
@@ -122,7 +123,7 @@ def user_archive(request):
             user.archive = True
             user.save()
             template_data['alert_success'] = "The user has been archived."
-            return HttpResponseRedirect('/admin/users')
+            return HttpResponseRedirect(reverse('webadmin:admin/users'))
 
 
 def delete_user(request):
@@ -145,7 +146,7 @@ def delete_user(request):
                 return
             USER.delete()
             template_data['alert_success'] = "The user has been deleted."
-            return HttpResponseRedirect('/admin/users')
+            return HttpResponseRedirect(reverse('webadmin:admin/users'))
 
 
 def add_user(request):
@@ -171,7 +172,7 @@ def add_user(request):
                 form.cleaned_data['member_type']
             )
             request.session['alert_success'] = "Successfully created new member account. Please ask them to change the password first"
-            return HttpResponseRedirect('/admin/users/')
+            return HttpResponseRedirect(reverse('webadmin:admin/users'))
     else:
         form = AddUserForm()
     template_data['form'] = form
@@ -350,4 +351,4 @@ def deploy_website(request):
         return render(request, 'ienitk/admin/deploy.html', template_data)
     else:
         request.session['alert_danger'] = "You don't have permission to view the page."
-        return HttpResponseRedirect('/error/denied/')
+        return HttpResponseRedirect(reverse('accounts:error_denied'))

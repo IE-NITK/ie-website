@@ -9,6 +9,7 @@ from . import views
 from django.http import Http404
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
+from django.urls import reverse
 
 
 def profile_view(request):
@@ -187,7 +188,7 @@ def apply(request):
         return render(request, 'ienitk/apply.html', template_data)
     else:
         request.session['alert_danger'] = "You have already registered! If this was a mistake contact Chaitany : +91 9834708844"
-        return HttpResponseRedirect('/profile/')
+        return HttpResponseRedirect(reverse('accounts:profile'))
 
 
 def status(request):
@@ -245,7 +246,7 @@ def scriptroundone(request):
         return render(request, 'ienitk/scriptroundone.html')
     else:
         request.session['alert_danger'] = "You haven't registered for the Script SIG to be part of the round!"
-        return HttpResponseRedirect('/profile/')
+        return HttpResponseRedirect(reverse('accounts:profile'))
 
 
 def submission_scriptroundone(request):
@@ -262,7 +263,7 @@ def submission_scriptroundone(request):
         submission = RoundOneSubmission.create(
             account, ans1, ans2, ans3, ans4, ans5, essayans, created)
         submission.save()
-    return HttpResponseRedirect('/profile/')
+    return HttpResponseRedirect(reverse('accounts:profile'))
 
 
 def test_round_1(request):

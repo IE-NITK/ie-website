@@ -7,7 +7,7 @@ from .models import Account, Profile, Status, ActivationRecord, BasicResponses
 from django.views.generic import View
 from django.template.loader import get_template
 from django.shortcuts import render
-
+from django.urls import reverse
 
 def authentication_check(request, required_roles=None, required_GET=None):
     """
@@ -19,23 +19,23 @@ def authentication_check(request, required_roles=None, required_GET=None):
     # Authentication check. Users not logged in cannot view the page
     if not request.user.is_authenticated:
         request.session['alert_danger'] = "You must be logged in to view the page."
-        return HttpResponseRedirect('/login/')
+        return HttpResponseRedirect(reverse('accounts:index'))
     # Sanity Check. Users without accounts cannot interact with virtual clinic
     try:
         request.user.account
     except ObjectDoesNotExist:
         request.session['alert_danger'] = "Your account was not properly created, please try a different account."
-        return HttpResponseRedirect('/logout/')
+        return HttpResponseRedirect(reverse('accounts:logout'))
     # Permission check
     if required_roles and request.user.account.role not in required_roles:
         request.session['alert_danger'] = "You don't have permission to view the page."
-        return HttpResponseRedirect('/error/denied/')
+        return HttpResponseRedirect(reverse('accounts:error_denied'))
     # Validation check. Make sure this page has any required GET keys
     if required_GET:
         for key in required_GET:
             if key not in request.GET:
                 request.session['alert_danger'] = "Looks like you tried to use a malformed URL."
-                return HttpResponseRedirect('/error/denied/')
+                return HttpResponseRedirect(reverse('accounts:error_denied'))
 
 
 def parse_session(request, template_data=None):
