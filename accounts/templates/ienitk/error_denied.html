@@ -6,6 +6,6 @@
 {% block body %}
     <p class="lead">We couldn't display that page for you.</p>
     <div class="col-sm-3">
-        <a href="/profile/" class="btn btn-primary btn-block" role="button">Return to profile</a>
+        <a href="{% url 'accounts:profile' %}" class="btn btn-primary btn-block" role="button">Return to profile</a>
     </div>
 {% endblock %}

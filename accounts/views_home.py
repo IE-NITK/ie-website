@@ -10,17 +10,16 @@ from django.contrib.sites.shortcuts import get_current_site
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.utils.encoding import force_bytes, force_text
 from .tokens import account_activation_token
-
-
 from .forms import LoginForm, AccountRegisterForm
 from .models import Account, ActivationRecord
 from . import views
+from django.urls import reverse
 
 
 def setup_view(request):
     if Account.objects.all().count() > 0:
         request.session['alert_success'] = "Setup has already been completed."
-        return HttpResponseRedirect('/')
+        return HttpResponseRedirect(reverse('home'))
     # Get template data from the session
     template_data = views.parse_session(request, {'form_button': "Register"})
     # Proceed with rest of the view
@@ -44,7 +43,7 @@ def setup_view(request):
             )
             login(request, user)
             request.session['alert_success'] = "Successfully setup IE NITK primary admin account."
-            return HttpResponseRedirect('/profile/')
+            return HttpResponseRedirect(reverse('accounts:profile'))
     else:
         form = AccountRegisterForm()
     template_data['form'] = form
@@ -64,15 +63,15 @@ def logout_view(request):
         request.session['alert_success'] = saved_data['alert_success']
     if 'alert_danger' in saved_data:
         request.session['alert_danger'] = saved_data['alert_danger']
-    return HttpResponseRedirect('/')
+    return HttpResponseRedirect(reverse('home'))
 
 
 def login_view(request):
     # Authentication check. Users currently logged in cannot view this page.
     if request.user.is_authenticated:
-        return HttpResponseRedirect('/profile/')
+        return HttpResponseRedirect(reverse('accounts:profile'))
     elif Account.objects.all().count() == 0:
-        return HttpResponseRedirect('/setup/')
+        return HttpResponseRedirect(reverse('accounts:setup'))
     # get template data from session
     template_data = views.parse_session(request, {'form_button': "Login"})
     # Proceed with the rest of view
@@ -85,7 +84,7 @@ def login_view(request):
             )
             login(request, user)
             request.session['alert_success'] = "Successfully logged in."
-            return HttpResponseRedirect('/profile')
+            return HttpResponseRedirect(reverse('accounts:profile'))
     else:
         form = LoginForm()
     template_data['form'] = form
@@ -97,9 +96,9 @@ def register_view(request):
     # Authentication check. Users logged in cannot view this page.
 
     if request.user.is_authenticated:
-        return HttpResponseRedirect('/profile/')
+        return HttpResponseRedirect(reverse('accounts:profile'))
     elif Account.objects.all().count() == 0:
-        return HttpResponseRedirect('/setup/')
+        return HttpResponseRedirect(reverse('accounts:setup'))
     # Get template data from session
     template_data = views.parse_session(request, {'form_button': "Register"})
     # Proceed with rest of the view
@@ -159,7 +158,7 @@ def activate(request, uidb64, token):
         # return redirect('home')
         request.session['alert_success'] = "Successfully registered with the portal."
 
-        return HttpResponseRedirect('/profile/apply')
+        return HttpResponseRedirect(reverse('accounts:profile/apply'))
     else:
         return HttpResponse('Activation link is invalid!')
 
