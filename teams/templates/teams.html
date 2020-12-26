@@ -54,6 +54,9 @@
                 <li class="tablinks publicity">
                   <a onclick="return navigate('publicity')">Publicity</a>
                 </li>
+                <li class="tablinks tectonic">
+                  <a onclick="return navigate('tectonic')">Tectonic</a>
+                </li>
               </ul>
             </div>
           </div>
@@ -415,6 +418,7 @@
               </div>
             </section>
           </div>
+
           <div
             class="col-md-7 col-md-push-1 probootstrap-animate teams"
             id="robotics"
@@ -594,6 +598,58 @@
                       />
                       <h3>{{ member.name }}</h3>
                       <br />
+                      <a href="mailto:{{ member.email }}"
+                        ><i
+                          class="fas fa-envelope"
+                          style="font-size: 35px; margin-right: 10px"
+                        ></i
+                      ></a>
+                      <a href="{{ member.linkedin }}" target="_blank"
+                        ><i
+                          class="fab fa-linkedin"
+                          style="font-size: 35px; margin-left: 10px"
+                        ></i
+                      ></a>
+                      <a href="{{ member.github }}" target="_blank"
+                        ><i
+                          class="fab fa-github"
+                          style="font-size: 35px; margin-left: 10px"
+                        ></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+
+                {% endfor %}
+              </div>
+            </section>
+          </div>
+
+          <div
+            class="col-md-7 col-md-push-1 probootstrap-animate teams"
+            id="tectonic"
+          >
+            <h2>Tectonic</h2>
+            <section class="probootstrap-section">
+              <div class="container" style="width: 100%">
+                {% for member in tectonic %}
+
+                <div class="col-sm-6">
+                  <div
+                    class="probootstrap-teacher text-center probootstrap-animate"
+                    style="min-height: 220px"
+                  >
+                    <div class="text" style="word-wrap: break-word">
+                      <img
+                        src="../../static/img/profile/{{ member.email }}.jpg"
+                        class="img-circle"
+                        alt="profile"
+                        height="150em"
+                        width="150em"
+                        onerror="this.src='../../static/img/profile/default.jpg'"
+                        style="object-fit: contain"
+                      />
+                      <h3>{{ member.name }}</h3>
                       <a href="mailto:{{ member.email }}"
                         ><i
                           class="fas fa-envelope"
