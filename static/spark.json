@@ -2,20 +2,25 @@
     {
         "name": "Nihal Mohamed Naeem",
         "email": "nihalnaeem@gmail.com",
-        "linkedinProfileLink": "https://www.linkedin.com/in/nihal-naeem-829402172"
+        "linkedin": "https://www.linkedin.com/in/nihal-naeem-829402172",
+        "github":"#"
     },
     {
         "name": "Pranav Krishna",
         "email": "pranavkrishna99@gmail.com",
-        "linkedinProfileLink": "https://www.linkedin.com/in/pranav-krishna-aa8121173"
+        "linkedin": "https://www.linkedin.com/in/pranav-krishna-aa8121173",
+        "github":"#"
     },
     {
         "name": "Shreyansh Shrivastava",
         "email": "shreyansh25.shrivastava@gmail.com",
-        "linkedinProfileLink": "https://www.linkedin.com/in/shreyansh-shrivastava-a26489180/"
+        "linkedin": "https://www.linkedin.com/in/shreyansh-shrivastava-a26489180/",
+        "github":"https://github.com/sjs253"
     },
     {
-        "name": "Sharan Venkatesh ",
-        "email": "sharksk123@gmail.com "
+        "name": "Sharan Venkatesh",
+        "email": "sharksk123@gmail.com",
+        "linkedin":"https://www.linkedin.com/in/sharan-venkatesh-7247a016b/",
+        "github":"#"
     }
 ]
