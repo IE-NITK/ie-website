@@ -26,6 +26,7 @@ urlpatterns = [
                   path('', TemplateView.as_view(template_name='index.html'), name='home'),
                   path('workshop/', TemplateView.as_view(template_name='sixth-sense-workshop.html'), name='workshop'),
                   path('flappy/', TemplateView.as_view(template_name='flappy.html'), name='flappy'),
+                  path('enigma/', TemplateView.as_view(template_name='enigma.html'), name="enigma"),
                   path('', include('webadmin.urls', namespace="webadmin")),
                   path('', include('sig.urls', namespace="sig")),
                   path('', include('events.urls', namespace="events")),

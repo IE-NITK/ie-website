@@ -1,0 +1,259 @@
+<html lang="en">
+{%load static%}
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>IE NITK</title>
+    <meta name="description" content="IE NITK" />
+    <meta
+        name="keywords"
+        content="IE NITK, exclusive technical club, ie nitk, ie-nitk, NITK, Institution of Engineers, NITK Chapter, Institution of Engineers"
+    />
+
+    <meta property="og:title" content="IE NITK" />
+    <meta
+    property="og:description"
+    content="IE NITK aims to enhance the technical expertise of its members and the student community, while acknowledging the importance of fine arts and social work."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ie.nitk.ac.in" />
+    <meta property="og:image" content="{% static 'img/favicon.ico' %}" />
+
+    <link rel="stylesheet" type="" href="" />
+    <link rel="icon" href="{% static 'img/favicon.ico' %}" title="IE NITK" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link
+        href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700|Open+Sans"
+        rel="stylesheet"
+    />
+
+    <title>Enigma 2021</title>
+</head>
+
+<body>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <style type="text/css">
+        body {
+            font-family: 'Raleway', sans-serif;
+            margin: 0px;
+            text-align: center;
+            padding: 0px;
+            color: white;
+            background-color: #313131;
+        }
+
+        .enigma-img {
+            width: 100%;
+            height: auto;
+        }
+
+        .g-form-link {
+            width: 100%;
+            height: 80px;
+            font-size: 24px;
+        }
+    </style>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6 py-5">
+                <img class="enigma-img" src="{% static 'img/enigma_logo.png' %}" alt="Spark">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8">
+                <p>IE's flagship event where Freshers get to experiment in different fields of engineering and arts. A very diverse event where each SIG conducts stimulating competitions ranging from coding challenges to implementing marketing strategies.</p>
+            </div>
+        </div>
+    </div>
+    <h1 class="py-4">Attempt 1st Round</h2>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-3 p-3">
+                <button class="btn btn-info g-form-link" onclick="startRTFM()">RTFM</button>
+            </div>
+
+            <div class="col-12 col-md-3 p-3">
+                <button class="btn btn-info g-form-link" onclick="startSync()">Sync</button>
+            </div>
+
+            <div class="col-12 col-md-3 p-3">
+                <button class="btn btn-info g-form-link" onclick="startLaAtraco()">La Atraco</button>
+            </div>
+        </div>
+    </div>
+
+    <div style="display: none" id="rtfm-test">
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            Do not exit full screen
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <iframe 
+            src="https://docs.google.com/forms/d/e/1FAIpQLSecKP10zLo5RlREjzeeW19IUvELUKY_j9mjSY3t5wYQZBVxIQ/viewform?embedded=true"
+            width="640" height="1249" frameborder="0" marginheight="0" marginwidth="0">Loading…
+        </iframe>
+    </div>
+
+    <div style="display: none" id="sync-test">
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            Do not exit full screen
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSenQXkDIIqv8O_IafpukldytkizL1384gJLVdZ3xg_bHgk3rA/viewform?embedded=true"
+            width="640" height="1249" frameborder="0" marginheight="0" marginwidth="0">Loading…
+        </iframe>
+    </div>
+
+    <div style="display: none" id="laatraco-test">
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            Do not exit full screen
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSenQXkDIIqv8O_IafpukldytkizL1384gJLVdZ3xg_bHgk3rA/viewform?embedded=true"
+            width="640" height="1249" frameborder="0" marginheight="0" marginwidth="0">Loading…
+        </iframe>
+    </div>
+
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body text-dark">
+                <div id="warning-message">
+
+                </div>
+            </div>
+            <div class="modal-footer justify-content-center" style="text-align: center;">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Exit Test</button>
+                <button type="button" class="btn btn-primary" onclick="resumeTest()">Resume Test</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+    <script>
+        var counter = 0;
+        var isRTFMActive = false;
+        var isLaAtracoActive = false;
+        var isSyncActive = false;
+        var isRobogoActive = false;
+        var isCasomaniaActive = false;
+        var isEntziffernActive = false;
+
+        var exitCount = 0;
+        
+            /* Get into full screen */
+        function GoInFullscreen(element) {
+            if (element.requestFullscreen)
+                element.requestFullscreen();
+            else if (element.mozRequestFullScreen)
+                element.mozRequestFullScreen();
+            else if (element.webkitRequestFullscreen)
+                element.webkitRequestFullscreen();
+            else if (element.msRequestFullscreen)
+                element.msRequestFullscreen();
+        }
+
+
+        function resetTest() {
+            isRTFMActive = false;
+            isLaAtracoActive = false;
+            isSyncActive = false;
+            isRobogoActive = false;
+            isCasomaniaActive = false;
+            isEntziffernActive = false;
+        }
+
+
+        function startRTFM() {
+            elem = document.getElementById("rtfm-test");
+            elem.style.setProperty("display", "block");
+            resetTest();
+            isRTFMActive = true;
+            GoInFullscreen(elem);
+        }
+
+
+        function startSync() {
+            elem = document.getElementById("sync-test");
+            elem.style.setProperty("display", "block");
+            resetTest();
+            isSyncActive = true;
+            GoInFullscreen(elem);
+        }
+
+
+        function startLaAtraco() {
+            elem = document.getElementById("laatraco-test");
+            elem.style.setProperty("display", "block");
+            resetTest();
+            isLaAtracoActive = true;
+            GoInFullscreen(elem);
+        }
+
+
+        function resumeTest() {
+            if(isRTFMActive) {
+                elem = document.getElementById("rtfm-test");
+                elem.style.setProperty("display", "block");
+                GoInFullscreen(elem);
+            }
+            else if(isSyncActive) {
+                elem = document.getElementById("sync-test");
+                elem.style.setProperty("display", "block");
+                GoInFullscreen(elem);
+            }
+            else if(isLaAtracoActive) {
+                elem = document.getElementById("laatraco-test");
+                elem.style.setProperty("display", "block");
+                GoInFullscreen(elem);
+            }
+        }
+
+
+        $(document).on('fullscreenchange mozfullscreenchange webkitfullscreenchange msfullscreenchange', function() {
+            if (document.fullScreen || document.mozFullScreen || document.webkitIsFullScreen || document.msFullscreenElement)
+            {
+
+            }
+            else
+            {
+                if(isRTFMActive) {
+                    elem = document.getElementById("rtfm-test");
+                    elem.style.setProperty("display", "none");
+                }
+                else if(isSyncActive) {
+                    elem = document.getElementById("sync-test");
+                    elem.style.setProperty("display", "none");
+                }
+                else if(isLaAtracoActive) {
+                    elem = document.getElementById("laatraco-test");
+                    elem.style.setProperty("display", "none");
+                }
+                exitCount++;
+                document.getElementById("warning-message").innerHTML = "You have gone out of full screen. This activity will be reported to us. Do not do it again. No of times you exited fullscreen : " + exitCount;
+                $('#exampleModalCenter').modal('show');
+            }
+        });
+
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
