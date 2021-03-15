@@ -15,10 +15,6 @@ def view_teams(request):
         open(os.path.join(settings.STATICFILES_DIRS[0], 'garage.json')).read())
     website = json.loads(
         open(os.path.join(settings.STATICFILES_DIRS[0], 'website.json')).read())
-    spark = json.loads(
-        open(os.path.join(settings.STATICFILES_DIRS[0], 'spark.json')).read())
-    publicity = json.loads(
-        open(os.path.join(settings.STATICFILES_DIRS[0], 'publicity.json')).read())
     robotics = json.loads(
         open(os.path.join(settings.STATICFILES_DIRS[0], 'robotics.json')).read())
     script = json.loads(
@@ -30,6 +26,5 @@ def view_teams(request):
     tectonic = json.loads(
         open(os.path.join(settings.STATICFILES_DIRS[0], 'tectonic.json')).read())
 
-    context = {'core': core, 'code': code, 'gadget': gadget, 'garage': garage, 'website': website, 'spark': spark,
-               'publicity': publicity, 'robotics': robotics, 'script': script, 'media': media, 'capital': capital, 'tectonic': tectonic, }
+    context = {'core': core, 'code': code, 'gadget': gadget, 'garage': garage, 'website': website, 'robotics': robotics, 'script': script, 'media': media, 'capital': capital, 'tectonic': tectonic, }
     return render(request, 'teams.html', context)
