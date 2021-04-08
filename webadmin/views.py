@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.contrib.auth import get_user_model
 from accounts import views
-from accounts.models import Account, Status, BasicResponses, EscapeCounter
+from accounts.models import Account, Status, BasicResponses, EscapeCounter, Profile
 from webadmin.forms import AddUserForm, GetBranchNameForm
 from djqscsv import render_to_csv_response
 from django.core.exceptions import PermissionDenied
@@ -140,11 +140,13 @@ def delete_user(request):
             pk = request.POST['pk']
             try:
                 user = Account.objects.get(pk=pk)
+                profile = Profile.objects.get(pk=pk)
                 USER = user.user
             except Exception:
                 template_data['alert_danger'] = "Unable to delete the user. Please try again later"
                 return
             USER.delete()
+            profile.delete()
             template_data['alert_success'] = "The user has been deleted."
             return HttpResponseRedirect(reverse('webadmin:admin/users'))
 
