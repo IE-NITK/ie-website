@@ -129,7 +129,7 @@
         </div>
       </div>
       <marquee>
-        <strong><a href="/enigma">Click here to </a>give first round of RTFM</strong>
+        <strong><a href="{% url 'events:smp2021' %}">Click here to </a>regsiter for our SMPs</strong>
       </marquee> 
       <nav class="navbar navbar-default probootstrap-navbar">
         <div class="container">
@@ -175,7 +175,7 @@
                 <a href="{% url 'alumni:alumni' %}">Alumni</a>
               </li>
               <li class="{% block smp %}{% endblock %}">
-                <a href="{% url 'events:smp2020' %}">SMP</a>
+                <a href="{% url 'events:smp2021' %}">SMP</a>
               </li>
               <li class="{% block virtual_expo %}{% endblock %}">
                 <a href="{% url 'virtual_expo:virtual_expo' %}">Virtual Expo</a>
