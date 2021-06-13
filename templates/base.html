@@ -129,7 +129,7 @@
         </div>
       </div>
       <marquee>
-        <strong><a href="/enigma">Click here to </a>give first round of RTFM</strong>
+        <strong>Deadline for SMP 2021 registration is 8th May. Register <a href="{% url 'events:smp2021' %}">here</a></strong>
       </marquee> 
       <nav class="navbar navbar-default probootstrap-navbar">
         <div class="container">
@@ -175,7 +175,7 @@
                 <a href="{% url 'alumni:alumni' %}">Alumni</a>
               </li>
               <li class="{% block smp %}{% endblock %}">
-                <a href="{% url 'events:smp2020' %}">SMP</a>
+                <a href="{% url 'events:smp2021' %}">SMP</a>
               </li>
               <li class="{% block virtual_expo %}{% endblock %}">
                 <a href="{% url 'virtual_expo:virtual_expo' %}">Virtual Expo</a>
@@ -264,6 +264,7 @@
                   <li><a href="{% url 'home' %}">Home</a></li>
                   <li><a href="{% url 'events:events' %}">Events</a></li>
                   <li><a href="{% url 'sig:sig' %}">SIGs</a></li>
+                  <li><a href="{% url 'events:smp2021' %}">SMP</a></li>
                   <li><a href="/blog">Blog</a></li>
                   <li><a href="{% url 'teams:teams' %}">Team</a></li>
                   <li><a href="{% url 'flappy' %}">Bored?</a></li>
