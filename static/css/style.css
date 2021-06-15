@@ -451,7 +451,9 @@ a:hover, a:focus, a:active {
   padding-bottom: 0 !important;
   font-size: 30px;
   text-transform: uppercase;
-  background: url(../img/newielogo@1x.png) no-repeat left 100%;
+  /* background: url(../img/newielogo@2x.png) no-repeat left 100%; */
+  background: url(../img/IE-Pride-Logo.png) no-repeat left 100%;
+  background-size: contain;
   top: 24px;
   position: relative;
   width: 160px;
@@ -479,8 +481,10 @@ a:hover, a:focus, a:active {
     position: relative;
     width: 160px;
     height: 43px;
-    background: url(../img/newielogo@2x.png) no-repeat left 100%;
-    background-size: cover;
+     /* background: url(../img/newielogo@2x.png) no-repeat left 100%; */
+     background: url(../img/IE-Pride-Logo.png) no-repeat left 100%;
+     background-size: contain;
+     /* background-size: cover; */
   }
 }
 
