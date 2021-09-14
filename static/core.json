@@ -1,187 +1,120 @@
 [
     {
-        "email": "prakritigoyal19@gmail.com",
-        "name": "Prakriti Goyal",
+        "name": "Shreyansh Shrivastava",
         "post": "Convenor",
-        "linkedin": "https://www.linkedin.com/in/prakriti-goyal-595340192/",
-        "github": "https://github.com/prakritigoyal19"
+        "email": "shreyansh25.shrivastava@gmail.com",
+        "linkedin": "https://www.linkedin.com/in/shreyansh-shrivastava-a26489180/",
+        "github": "https://github.com/sjs253"
     },
     {
-        "email": "atreyamaj.181ec206@nitk.edu.in",
-        "name": "Atreya Majumdar",
+        "name": "Madhumitha Nara",
         "post": "President",
-        "rollno": "181EC206",
-        "linkedin": "https://www.linkedin.com/in/atreya-majumdar-745028b7/",
+        "email": "naramadhumitha@gmail.com",
+        "linkedin": "https://linkedin.com/in/madhumitha-nara",
+        "github": "https://github.com/madhumithanara"
+    },
+    {
+        "name": "Nishant Kumar",
+        "post": "Joint Convenor",
+        "email": "nishant.kum08@gmail.com",
         "github": "#"
     },
     {
-        "email": "sudeepthinallareddy@gmail.com",
-        "name": "Sudeepthi Nalla",
-        "post": "Chairperson",
-        "rollno": "181CV123",
-        "linkedin": "https://www.linkedin.com/in/sudeepthi-nallareddy-4b3a83192",
+        "name": "Junaid Hussain",
+        "post": "Vice President",
+        "email": "junaid.12399@gmail.com",
+        "linkedin": "https://www.linkedin.com/junaidhussainhaveri",
         "github": "#"
     },
     {
-        "email": "kaustubhpsonawane@gmail.com",
-        "name": "Kaustubh Sonawane",
-        "rollno": "181ME236",
+        "name": "Neha Saji Jacob",
+        "post": "External Relations and Content Head",
+        "email": "nehasjacob@gmail.com",
+        "linkedin": "https://www.linkedin.com/in/neha-saji-jacob/",
+        "github": "#"
+    },
+    {
+        "name": "Ratan Mamdekar",
         "post": "Secretary",
-        "linkedin": "https://www.linkedin.com/in/kaustubh-sonawane-80a326192",
+        "email": "ratan.171ee234@nitk.edu.in",
+        "linkedin": "https://www.linkedin.com/in/ratan-mamdekar-218b6b49",
         "github": "#"
     },
     {
-        "name": "Chinmay Gupta",
+        "name": "K Rahul Reddy",
         "post": "Code SIG Head",
         "email": "k_rahul_reddy@outlook.com",
         "linkedin": "https://www.linkedin.com/in/rahul-reddy-181522161/",
         "github": "https://github.com/krahulreddy/"
     },
     {
+        "name": "Tushar Dubey",
         "post": "Code SIG Head",
-        "email": "manasdtrivedi@gmail.com",
-        "name": "Manas Trivedi",
-        "rollno": "181CO231",
-        "linkedin": "https://www.linkedin.com/in/manas-trivedi-701324192",
-        "github": "https://github.com/manasdtrivedi"
+        "email": "dtushar279@gmail.com",
+        "linkedin": "https://www.linkedin.com/in/tushar-dubey-24543114a/",
+        "github": "#"
     },
     {
-        "email": "ritik.rjt@gmail.com",
-        "name": "Ritik Pansuriya",
-        "post": "Code SIG Administrator",
-        "rollno": "181IT237",
-        "linkedin": "www.linkedin.com/in/ritik-pansuriya-84856a176",
-        "github": "https://github.com/ritiksp2411"
-    },
-    {
-        "email": "yovikas1730@gmail.com",
-        "name": "Yogesh",
-        "post": "Gadget SIG & Design Head",
-        "rollno": "181EC155",
-        "linkedin": " https://www.linkedin.com/in/yogesh-6a0211191",
-        "github": "https://github.com/yovikas1730"
-    },
-    {
-        "email": "psriramsaran@gmail.com",
-        "name": "P Sriram Saran",
+        "name": "Atulya Mahesh",
         "post": "Gadget SIG Head",
-        "rollno": "181EC131",
-        "linkedin": "https://www.linkedin.com/in/sriramsaran-p-2a9878176",
-        "github": "https://github.com/sriramsaranp"
-    },
-    {
-        "email": "rithikjain1811@gmail.com",
-        "name": "Rithik Jain",
-        "post": "Gadget SIG Administrator",
-        "rollno": "181EE137",
-        "linkedin": "https://www.linkedin.com/in/rithik-jain-162324192",
+        "email": "atulya.171ec110@nitk.edu.in",
+        "linkedin": "https://www.linkedin.com/in/atulya-mahesh-8072281b1/",
         "github": "#"
     },
     {
-        "email": "sumanth007hk@gmail.com",
-        "name": "H.K Sumanth Bharadwaj",
-        "rollno": "181ME227",
+        "name": "Rahasya Barkur",
+        "post": "Gadget SIG Head",
+        "email": "rahasyabarkur1999@gmail.com",
+        "linkedin": "https://www.linkedin.com/in/rahasya-barkur-95950a165/",
+        "github": "#"
+    },
+    {
+        "name": "Priyank Agarwal ",
         "post": "Garage SIG Head",
-        "linkedin": "https://www.linkedin.com/in/sumanth-bharadwaj-a80896187",
+        "email": "priyank.agarwal2807@gmail.com ",
+        "linkedin": "https://www.linkedin.com/in/priyank-a-b83856b8",
         "github": "#"
     },
     {
-        "email": "kenkaushal1@gmail.com",
-        "name": "Ken Kaushal",
-        "rollno": "181MT021",
+        "name": "Manan Lohani",
         "post": "Garage SIG Head",
-        "Phone number": 9535977944,
-        "linkedin": "#",
+        "email": "manan.171me140@nitk.edu.in",
+        "linkedin": "https://www.linkedin.com/in/manan-lohani-b19002185/",
         "github": "#"
     },
     {
-        "email": "sekharan1009@gmail.com ",
-        "name": "Gangu Sasi Sekharan Sadaram",
-        "rollno": "181ME124",
-        "post": "Garage SIG Administrator",
-        "linkedin": "https://www.linkedin.com/in/gangu-sasi-sekharan-sadaram-0291a817a",
-        "github": "#"
-    },
-    {
-        "email": "karntiwari3003@gmail.com",
-        "name": "Karn Tiwari",
-        "rollno": "181EE123",
+        "name": "Govind Sunilkumar",
         "post": "Robotics SIG Head",
-        "linkedin": "https://www.linkedin.com/in/karn-tiwari-552342173",
+        "email": "govindsunilkumar.171ec217@nitk.edu.in",
+        "linkedin": "https://www.linkedin.com/in/govind-sunilkumar-71431b186/",
         "github": "#"
     },
     {
-        "email": "nikhilesh2001@gmail.com",
-        "name": "Nikhilesh Singh",
-        "post": "Robotics SIG Head",
-        "rollno": "181ME255",
-        "linkedin": "https://www.linkedin.com/in/nikhilesh-singh-b65b91182",
+        "name": "Aditya S Gourishetty",
+        "post": "Design and Creative Head",
+        "email": "adityasg3@gmail.com",
+        "linkedin": "https://www.linkedin.com/in/aditya-gourishetty-675399185",
         "github": "#"
     },
     {
-        "email": "dwaipayanmunshi2001@gmail.com",
-        "name": "Dwaipayan Munshi",
+        "name": "Pranav Krishna",
         "post": "Script SIG Head",
-        "rollno": "181MN010",
-        "linkedin": "https://www.linkedin.com/in/dwaipayan-munshi-110429192/",
-        "github": "https://github.com/dwaipayan05"
+        "email": "pranav.171ch033@nitk.edu.in",
+        "linkedin": "https://www.linkedin.com/in/pranavkrishna99/",
+        "github": "#"
     },
     {
-        "email": "vineetha.181me264@nitk.edu.in",
-        "name": "R V S vineetha",
-        "post": "Script SIG Head",
-        "rollno": "181ME264",
-        "linkedin": "https://www.linkedin.com/in/vineetha-ravada-4712a3185",
-        "github":"#"
-     },
-     {
-        "email": "jahnavikancharla99@gmail.com",
-        "name": "Jahnavi kancharla",
+        "name": "Yash Harlalka",
         "post": "Capital SIG Head",
-        "rollno": "181EC219",
-        "linkedin": "http://linkedin.com/in/jahnavi-kancharla-b68379191",
-        "github":"#"
-     },
-     {
-        "email": "zuhayrmohammed722000@gmail.com",
-        "name": "Zuhayr Shariff",
-        "rollno": "181ME289",
-        "post": "Capital SIG Head",
-        "linkedin": "https://www.linkedin.com/in/zuhayr-shariff-37515817a",
-        "github":"#"
-     },
-     {
-        "email": "gkramyashree.181cv112@nitk.edu.in",
-        "name": "Ramyashree ",
-        "post":"Tectonic SIG Head",
-        "rollno": "181CV112",
-        "Phone number": 9380031676,
-        "linkedin":"https://www.linkedin.com/in/ramyashree-g-k-0002b616b",
-        "github":"#"
+        "email": "yash.171mt043@nitk.edu.in",
+        "linkedin": "https://www.linkedin.com/in/yash-harlalka/",
+        "github": "#"
     },
     {
-        "email": "vaibhavsahai.181cv151@nitk.edu.in",
-        "name": "Vaibhav Sahai",
-        "rollno": "181CV151",
-        "post":"Tectonic SIG Head",
-        "linkedin": "www.linkedin.com/in/vaibhav-sahai-01567b191",
-        "github":"#"
-     },
-
-   {
-      "email": "omanshumahawar1234@gmail.com",
-      "name": "Omanshu Mahawar",
-      "post": "Design and Website Head",
-      "rollno": "181CO237",
-      "linkedin": "https://www.linkedin.com/in/omanshu-mahawar-7b6325192/",
-      "github":"https://github.com/Omanshu840"
-   },
-   {
-    "name": "Anusha Reddy",
-    "post": "Social Media Administrator",
-    "email": "anushapandu333@gmail.com",
-    "Phone number": 9542859513,
-    "linkedin": "https://www.linkedin.com/in/thumalapally-anusha-a46324192",
-    "github": "#"
-}
+        "name": "Chaitany Pandiya",
+        "post": "Website Head",
+        "email": "chaitany.pandiya@gmail.com",
+        "linkedin": "https://www.linkedin.com/in/chaitany-pandiya-6b2788147/",
+        "github": "https://github.com/chaitany10"
+    }
 ]
