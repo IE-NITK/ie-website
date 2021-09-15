@@ -1,19 +1,21 @@
 [
+
     {
-        "email": "prakritigoyal19@gmail.com",
-        "name": "Prakriti Goyal",
-        "post": "Convenor",
-        "linkedin": "https://www.linkedin.com/in/prakriti-goyal-595340192/",
-        "github": "https://github.com/prakritigoyal19"
-    },
-    {
-        "email": "atreyamaj.181ec206@nitk.edu.in",
-        "name": "Atreya Majumdar",
-        "post": "President",
-        "rollno": "181EC206",
-        "linkedin": "https://www.linkedin.com/in/atreya-majumdar-745028b7/",
-        "github": "#"
-    },
+        "email": "jahnavikancharla99@gmail.com",
+        "name": "Jahnavi kancharla",
+        "post": "Capital SIG Head",
+        "rollno": "181EC219",
+        "linkedin": "http://linkedin.com/in/jahnavi-kancharla-b68379191",
+        "github":"#"
+     },
+     {
+        "email": "zuhayrmohammed722000@gmail.com",
+        "name": "Zuhayr Shariff",
+        "rollno": "181ME289",
+        "post": "Capital SIG Head",
+        "linkedin": "https://www.linkedin.com/in/zuhayr-shariff-37515817a",
+        "github":"#"
+     },
     {
         "email": "sudeepthinallareddy@gmail.com",
         "name": "Sudeepthi Nalla",
@@ -23,20 +25,21 @@
         "github": "#"
     },
     {
-        "email": "kaustubhpsonawane@gmail.com",
-        "name": "Kaustubh Sonawane",
-        "rollno": "181ME236",
-        "post": "Secretary",
-        "linkedin": "https://www.linkedin.com/in/kaustubh-sonawane-80a326192",
-        "github": "#"
+        "email": "ritik.rjt@gmail.com",
+        "name": "Ritik Pansuriya",
+        "post": "Code SIG Administrator",
+        "rollno": "181IT237",
+        "linkedin": "www.linkedin.com/in/ritik-pansuriya-84856a176",
+        "github": "https://github.com/ritiksp2411"
     },
     {
+        "email": "chinmaygupta61@gmail.com",
         "name": "Chinmay Gupta",
+        "rollno": "181CO215",
         "post": "Code SIG Head",
-        "email": "k_rahul_reddy@outlook.com",
-        "linkedin": "https://www.linkedin.com/in/rahul-reddy-181522161/",
-        "github": "https://github.com/krahulreddy/"
-    },
+        "linkedin": "https://www.linkedin.com/in/chinmay-gupta-a3135a17b",
+        "github":"https://github.com/chinmaygupta14"
+     },
     {
         "post": "Code SIG Head",
         "email": "manasdtrivedi@gmail.com",
@@ -46,12 +49,27 @@
         "github": "https://github.com/manasdtrivedi"
     },
     {
-        "email": "ritik.rjt@gmail.com",
-        "name": "Ritik Pansuriya",
-        "post": "Code SIG Administrator",
-        "rollno": "181IT237",
-        "linkedin": "www.linkedin.com/in/ritik-pansuriya-84856a176",
-        "github": "https://github.com/ritiksp2411"
+        "email": "prakritigoyal19@gmail.com",
+        "name": "Prakriti Goyal",
+        "post": "Convenor",
+        "linkedin": "https://www.linkedin.com/in/prakriti-goyal-595340192/",
+        "github": "https://github.com/prakritigoyal19"
+    },
+    {
+        "email": "omanshumahawar1234@gmail.com",
+        "name": "Omanshu Mahawar",
+        "post": "Design and Website Head",
+        "rollno": "181CO237",
+        "linkedin": "https://www.linkedin.com/in/omanshu-mahawar-7b6325192/",
+        "github":"https://github.com/Omanshu840"
+    },
+    {
+        "email": "rithikjain1811@gmail.com",
+        "name": "Rithik Jain",
+        "post": "Gadget SIG Administrator",
+        "rollno": "181EE137",
+        "linkedin": "https://www.linkedin.com/in/rithik-jain-162324192",
+        "github": "#"
     },
     {
         "email": "yovikas1730@gmail.com",
@@ -70,11 +88,11 @@
         "github": "https://github.com/sriramsaranp"
     },
     {
-        "email": "rithikjain1811@gmail.com",
-        "name": "Rithik Jain",
-        "post": "Gadget SIG Administrator",
-        "rollno": "181EE137",
-        "linkedin": "https://www.linkedin.com/in/rithik-jain-162324192",
+        "email": "sekharan1009@gmail.com ",
+        "name": "Gangu Sasi Sekharan Sadaram",
+        "rollno": "181ME124",
+        "post": "Garage SIG Administrator",
+        "linkedin": "https://www.linkedin.com/in/gangu-sasi-sekharan-sadaram-0291a817a",
         "github": "#"
     },
     {
@@ -95,11 +113,11 @@
         "github": "#"
     },
     {
-        "email": "sekharan1009@gmail.com ",
-        "name": "Gangu Sasi Sekharan Sadaram",
-        "rollno": "181ME124",
-        "post": "Garage SIG Administrator",
-        "linkedin": "https://www.linkedin.com/in/gangu-sasi-sekharan-sadaram-0291a817a",
+        "email": "atreyamaj.181ec206@nitk.edu.in",
+        "name": "Atreya Majumdar",
+        "post": "President",
+        "rollno": "181EC206",
+        "linkedin": "https://www.linkedin.com/in/atreya-majumdar-745028b7/",
         "github": "#"
     },
     {
@@ -134,22 +152,23 @@
         "linkedin": "https://www.linkedin.com/in/vineetha-ravada-4712a3185",
         "github":"#"
      },
-     {
-        "email": "jahnavikancharla99@gmail.com",
-        "name": "Jahnavi kancharla",
-        "post": "Capital SIG Head",
-        "rollno": "181EC219",
-        "linkedin": "http://linkedin.com/in/jahnavi-kancharla-b68379191",
-        "github":"#"
-     },
-     {
-        "email": "zuhayrmohammed722000@gmail.com",
-        "name": "Zuhayr Shariff",
-        "rollno": "181ME289",
-        "post": "Capital SIG Head",
-        "linkedin": "https://www.linkedin.com/in/zuhayr-shariff-37515817a",
-        "github":"#"
-     },
+    {
+        "email": "kaustubhpsonawane@gmail.com",
+        "name": "Kaustubh Sonawane",
+        "rollno": "181ME236",
+        "post": "Secretary",
+        "linkedin": "https://www.linkedin.com/in/kaustubh-sonawane-80a326192",
+        "github": "#"
+    },
+
+   {
+    "name": "Anusha Reddy",
+    "post": "Social Media Administrator",
+    "email": "anushapandu333@gmail.com",
+    "Phone number": 9542859513,
+    "linkedin": "https://www.linkedin.com/in/thumalapally-anusha-a46324192",
+    "github": "#"
+    },
      {
         "email": "gkramyashree.181cv112@nitk.edu.in",
         "name": "Ramyashree ",
@@ -166,22 +185,5 @@
         "post":"Tectonic SIG Head",
         "linkedin": "www.linkedin.com/in/vaibhav-sahai-01567b191",
         "github":"#"
-     },
-
-   {
-      "email": "omanshumahawar1234@gmail.com",
-      "name": "Omanshu Mahawar",
-      "post": "Design and Website Head",
-      "rollno": "181CO237",
-      "linkedin": "https://www.linkedin.com/in/omanshu-mahawar-7b6325192/",
-      "github":"https://github.com/Omanshu840"
-   },
-   {
-    "name": "Anusha Reddy",
-    "post": "Social Media Administrator",
-    "email": "anushapandu333@gmail.com",
-    "Phone number": 9542859513,
-    "linkedin": "https://www.linkedin.com/in/thumalapally-anusha-a46324192",
-    "github": "#"
-}
+    }
 ]
