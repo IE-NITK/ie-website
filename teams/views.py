@@ -6,7 +6,7 @@ from django.conf import settings
 
 def view_teams(request):
     core = json.loads(
-        open(os.path.join(settings.STATICFILES_DIRS[0], 'core.json')).read())
+        open(os.path.join(settings.STATICFILES_DIRS[0], 'core2021.json')).read())
     code = json.loads(
         open(os.path.join(settings.STATICFILES_DIRS[0], 'code.json')).read())
     gadget = json.loads(

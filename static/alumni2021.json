@@ -1,1 +1,333 @@
-[]
+[
+	{
+            "name": "Shreyansh Shrivastava",
+            "post": "Convenor",
+            "email": "shreyansh25.shrivastava@gmail.com",
+            "linkedin": "https://www.linkedin.com/in/shreyansh-shrivastava-a26489180/"
+        },
+
+        {
+            "name": "Madhumitha Nara",
+            "post": "President",
+            "email": "naramadhumitha@gmail.com",
+            "linkedin": "https://linkedin.com/in/madhumitha-nara"
+        },
+        {
+            "name": "Nishant Kumar",
+            "post": "Joint Convenor",
+            "email": "nishant.kum08@gmail.com"
+        },
+
+        {
+            "name": "Junaid Hussain",
+            "post": "Vice President",
+            "email": "junaid.12399@gmail.com",
+            "linkedin": "https://www.linkedin.com/junaidhussainhaveri"
+        },
+
+        {
+            "name": "Neha Saji Jacob",
+            "post": "External Relations and Content Head",
+            "email": "nehasjacob@gmail.com",
+            "linkedin": "https://www.linkedin.com/in/neha-saji-jacob/"
+        },
+
+        {
+            "name": "Ratan Mamdekar",
+            "post": "Secretary",
+            "email": "ratan.171ee234@nitk.edu.in",
+            "linkedin": "https://www.linkedin.com/in/ratan-mamdekar-218b6b49"
+        },
+
+
+        {
+            "name": "K Rahul Reddy",
+            "post": "Code SIG Head",
+            "email": "k_rahul_reddy@outlook.com",
+            "linkedin": "https://www.linkedin.com/in/rahul-reddy-181522161/"
+        },
+
+        {
+            "name": "Tushar Dubey",
+            "post": "Code SIG Head",
+            "email": "dtushar279@gmail.com",
+            "linkedin": "https://www.linkedin.com/in/tushar-dubey-24543114a/"
+        },
+        {
+            "name": "Atulya Mahesh",
+            "post": "Gadget SIG Head",
+            "email": "atulya.171ec110@nitk.edu.in",
+            "linkedin": "https://www.linkedin.com/in/atulya-mahesh-8072281b1/"
+        },
+        {
+            "name": "Rahasya Barkur",
+            "post": "Gadget SIG Head",
+            "email": "rahasyabarkur1999@gmail.com",
+            "linkedin": "https://www.linkedin.com/in/rahasya-barkur-95950a165/"
+        },
+
+        {
+            "name": "Priyank Agarwal ",
+            "post": "Garage SIG Head",
+            "email": "priyank.agarwal2807@gmail.com ",
+            "linkedin": "https://www.linkedin.com/in/priyank-a-b83856b8"
+        },
+
+        {
+            "name": "Manan Lohani",
+            "post": "Garage SIG Head",
+            "email": "manan.171me140@nitk.edu.in",
+            "linkedin": "https://www.linkedin.com/in/manan-lohani-b19002185/"
+        },
+
+        {
+            "name": "Govind Sunilkumar",
+            "post": "Robotics SIG Head",
+            "email": "govindsunilkumar.171ec217@nitk.edu.in",
+            "linkedin": "https://www.linkedin.com/in/govind-sunilkumar-71431b186/"
+        },
+
+        {
+            "name": "Aditya S Gourishetty",
+            "post": "Design and Creative Head",
+            "email": "adityasg3@gmail.com",
+            "linkedin": "https://www.linkedin.com/in/aditya-gourishetty-675399185"
+        },
+
+        {
+            "name": "Pranav Krishna",
+            "post": "Script SIG Head",
+            "email": "pranav.171ch033@nitk.edu.in",
+            "linkedin": "https://www.linkedin.com/in/pranavkrishna99/"
+        },
+
+        {
+            "name": "Yash Harlalka",
+            "post": "Capital SIG Head",
+            "email": "yash.171mt043@nitk.edu.in",
+            "linkedin": "https://www.linkedin.com/in/yash-harlalka/"
+        },
+
+        {
+            "name": "Chaitany Pandiya",
+            "post": "Website Head",
+            "email": "chaitany.pandiya@gmail.com",
+            "linkedin": "https://www.linkedin.com/in/chaitany-pandiya-6b2788147/"
+        },
+	{
+      		"name": "Deepak Garhwal",
+		"post": "Executive Member",
+      		"email": "deepakgarhwal15@gmail.com",
+		"linkedin":"#"
+	},
+  	{
+
+    		"name": "Anish Patil",
+    		"email": "anish.india1299@gmail.com",
+		"post":"Executive Member",
+    		"linkedin":"#"
+  	},
+  	{ 
+
+		"name": "Niwedita",
+    		"email": "niwedita.dakshana2017@gmail.com",
+		"post":"Executive Member",
+    		"linkedin":"#"
+
+ 	},
+	{
+
+		"name": "Souhard Kataria",
+		"email": "souhard.kataria@gmail.com",
+		"post":"Executive Member",
+		"linkedin":"http://linkedin.com/in/souhard-kataria-b8495252"
+	},
+	{
+		
+		"name": "Shubham Agrawal",
+		"email": "shubham050300@gmail.com",
+		"post":"Executive Member",
+		"linkedin":"https://www.linkedin.com/in/shubham050300/"
+	},
+	{
+
+		"name": "Dodiya Parth Hiteshbhai",
+		"email": "dodiyaparth.171co215@nitk.edu.in",
+		"post":"Executive Member",
+		"linkedin":"#"
+	},
+	{
+		
+		"name": "Shrinidhi Anil Varna",
+		"email": "shrinidhi99.varna@gmail.com",
+		"post":"Executive Member",
+		"linkedin":"https://www.linkedin.com/in/shrinidhi99/"
+	},
+	{
+
+		"name": "Devishi",
+		"email": "deviparvathi18@yahoo.com",
+		"post":"Executive Member",
+		"linkedin":"#"
+	},
+	{
+
+		"name": "Aashay Maheshwarkar",
+		"email": "aashaym1@gmail.com",
+		"post":"Executive Member",
+		"linkedin":"https://www.linkedin.com/in/aashaym1"
+
+	},
+	{
+		"name": "Raghav Raghuwanshi",
+		"email": "raghavraghuwanshi0101@gmail.com",
+		"post":"Executive Member",
+		"linkedin":"#"
+	},
+	{
+		"name": "Avdhesh Yadav",
+		"email": "avdheshyadavdow@gmail.com",
+		"post":"Executive Member",
+		"linkedin":"#"
+	},
+
+	{
+		"name": "Akshit Patel",
+		"email": "akshitpatel01@gmail.com",
+		"post":"Executive Member",
+		"linkedin":"#"
+	},
+	{
+		"name": "Dhruvik Navadiya",
+		"email": "navadiyadhruvik2@gmail.com",
+		"post":"Executive Member",
+		"linkedin":"https://www.linkedin.com/in/dhruvik-navadiya-136810149/"
+	},
+	{
+		
+		"name": "Ayush Sharma",
+		"email": "ayushhsharma@gmail.com",
+		"post":"Executive Member",
+		"linkedin":"https://www.linkedin.com/in/ayush-sharma-07b37a199/"
+	},
+	{
+		
+		"name": "Abhijit Kumar Gupta",
+		"email": "abhijitkumar1417@gmail.com",
+		"post":"Executive Member",
+		"linkedin":"#"
+	},
+	{
+		
+		"name": "Atulya Mahesh",
+		"email": "atulya.171ec110@nitk.edu.in",
+		"post":"Executive Member",
+		"linkedin": "https://www.linkedin.com/in/atulya-mahesh/"
+	},
+	{
+		
+
+		"name": "Karan Jain",
+		"email": "karanjain71@gmail.com",
+		"post":"Executive Member",
+		"linkedin":"#"
+	},
+	
+	{
+		"name": "M Nikhil Bharath",
+		"email": "nikhilbharat1792000@gmail.com",
+		"post":"Executive Member",
+		"linkedin":"https://www.linkedin.com/in/m-nikhil-bharath-97b149173/"
+	},
+	{
+		"name": "Sri Preethi",
+		"email": "sripreethipuchakayala@gmail.com",
+		"post":"Executive Member",
+		"linkedin":"#"
+	},
+	{
+		"name": "Nadella Srujana",
+		"email": "srujju99@gmail.com",
+		"post":"Executive Member",
+		"linkedin":"#"
+	},
+	{
+	
+		"name": "Soumya Mondal",
+		"email": "mondalsoumya38@gmail.com",
+		"post":"Executive Member",
+		"linkedin":"#"
+	},
+	{
+		"name": "Nikhil Prabhakar",
+		"email": "nikhilprabhakar1@gmail.com",
+		"post":"Executive Member",
+		"linkedin":"https://www.linkedin.com/in/nikhil-prabhakar-0a3b7469"
+	},
+	{
+		
+		"name": "Anurag Negi",
+		"email": "anuragnegi99@gmail.com",
+		"post":"Executive Member",
+		"linkedin":"#"
+	},
+	
+	{
+		
+		"name": "Snehal Satlawar",
+		"email": "snehalsatlawar@gmail.com",
+		"post":"Executive Member",
+		"linkedin": "#"
+	},
+	{
+		
+		"name": "Sharan Venkatesh",
+		"email": "sharksk123@gmail.com",
+		"post":"Executive Member",
+		"linkedin": "https://www.linkedin.com/in/sharan-venkatesh-7247a016b/"
+	},
+	{
+		
+		"name": "Rajat Shukla",
+		"email": "rajatme58@gmail.com",
+		"post":"Executive Member",
+		"linkedin": "#"
+	},
+	{
+
+		"name": "Nihal Mohamed Naeem",
+		"email": "nihalnaeem@gmail.com",
+		"post":"Executive Member",
+		"linkedin": "https://www.linkedin.com/in/nihalnaeem"
+	},
+	{
+
+		"name": "Shreyash Sabare",
+		"email": "sabareshreyash@gmail.com",
+		"post":"Executive Member",
+		"linkedin": "#"
+	},  
+	{
+	
+
+		"name": "Meghana R",
+		"email": "maggy1399@gmail.com",
+		"post":"Executive Member",
+		"linkedin": "#"
+	},
+	{
+		
+		"name": "Ameya Shende",
+		"email": "ameyashende0@gmail.com",
+		"post":"Executive Member",
+		"linkedin": "#"
+	},
+	{
+	
+
+		"name": "Aditya D Patil",
+		"email": "theaditya.d@gmail.com",
+		"post":"Executive Member",
+		"linkedin": "#"
+	}
+]
