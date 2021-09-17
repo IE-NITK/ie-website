@@ -187,7 +187,7 @@ def apply(request):
         template_data['form'] = form
         return render(request, 'ienitk/apply.html', template_data)
     else:
-        request.session['alert_danger'] = "You have already registered! If this was a mistake contact Chaitany : +91 9834708844"
+        request.session['alert_danger'] = "You have already registered! If this was a mistake contact Omanshu Mahawar : +91 82091 04660"
         return HttpResponseRedirect(reverse('accounts:profile'))
 
 
@@ -277,53 +277,44 @@ def test_round_1(request):
     # Get the SIG information of the user
     current_user = request.user
     account = current_user.account
-    esc_count = account.esc_counter
     all_status = Status.objects.filter(user=account)
     registered_sigs = []
     for entry in all_status:
         registered_sigs.append(entry.SIG)
     # Only display links for which user is eligible to give test
-    # code_eligible = False
-    # gadget_eligible = False
-    # garage_eligible = False
-    # capital_eligible = False
-    # robotics_eligible = False
-    # code_test_link = ""
-    # garage_test_link = ""
-    # capital_test_link = ""
-    # gadget_test_link = ""
-    # robotics_test_link = ""
-    script_eligible = False
-    tectonic_eligible = False
+    code_eligible = False
     gadget_eligible = False
+    garage_eligible = False
+    capital_eligible = False
     robotics_eligible = False
-    if views.is_eligible(registered_sigs, "SR"):
-        script_eligible = True
-    if views.is_eligible(registered_sigs, "TE"):
-        tectonic_eligible = True
+    code_test_link = ""
+    garage_test_link = ""
+    capital_test_link = ""
+    gadget_test_link = ""
+    robotics_test_link = ""
+
+    if views.is_eligible(registered_sigs, "CO"):
+        code_eligible = True
+    if views.is_eligible(registered_sigs, "GR"):
+        garage_eligible = True
     if views.is_eligible(registered_sigs, "GD"):
         gadget_eligible = True
-
-    if gadget_eligible:
-        gadget_status = Status.objects.get(user=account, SIG="GD")
-        if gadget_status.status == "TE":
-            gadget_eligible = True
-        else:
-            gadget_eligible = False
-    # if views.is_eligible(registered_sigs, "RO"):
-    #     robotics_eligible = True
-
-    # template_data["script_eligible"] = script_eligible
-    # template_data["tectonic_eligible"] = tectonic_eligible
+    if views.is_eligible(registered_sigs, "CA"):
+        capital_eligible = True
+    if views.is_eligible(registered_sigs, "RO"):
+        robotics_eligible = True
+    
+    template_data["code_eligible"] =code_eligible
+    template_data["garage_eligible"] =garage_eligible
     template_data["gadget_eligible"] =gadget_eligible
-    # template_data["capital_eligible"] =capital_eligible
-    # template_data["robotics_eligible"] =robotics_eligible
-    # template_data["code_test_link"] =code_test_link
-    # template_data["garage_test_link"] =garage_test_link
-    # template_data["capital_test_link"] =capital_test_link
-    # template_data["gadget_test_link"] =gadget_test_link
-    # template_data["robotics_test_link"] =robotics_test_link
-    # template_data["esc_count"] =esc_count
+    template_data["capital_eligible"] =capital_eligible
+    template_data["robotics_eligible"] =robotics_eligible
+    template_data["code_test_link"] =code_test_link 
+    template_data["garage_test_link"] =garage_test_link
+    template_data["capital_test_link"] =capital_test_link
+    template_data["gadget_test_link"] =gadget_test_link
+    template_data["robotics_test_link"] =robotics_test_link
+
     return render(request, 'ienitk/roundone.html', template_data)
 
 
