@@ -453,7 +453,7 @@ a:hover, a:focus, a:active {
   text-transform: uppercase;
   background: url(../img/newielogo@2x.png) no-repeat left 100%;
   /* background: url(../img/IE-Pride-Logo.png) no-repeat left 100%; */
-  /* background-size: contain; */
+  background-size: contain;
   top: 24px;
   position: relative;
   width: 160px;
