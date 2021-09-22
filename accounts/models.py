@@ -7,7 +7,7 @@ class ActivationRecord(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     firstname = models.CharField(blank=True, max_length=50)
     lastname = models.CharField(blank=True, max_length=50)
-    phone = models.CharField(blank=True, max_length=10)
+    phone = models.CharField(blank=True, max_length=15)
     roll_no = models.CharField(null=True, max_length=10)
 
 
@@ -27,7 +27,7 @@ class Profile(models.Model):
     firstname = models.CharField(blank=True, max_length=50)
     lastname = models.CharField(blank=True, max_length=50)
     sex = models.CharField(blank=True, max_length=1, choices=GENDER)
-    phone = models.CharField(blank=True, max_length=10)
+    phone = models.CharField(blank=True, max_length=15)
 
     def get_populated_fields(self):
         """

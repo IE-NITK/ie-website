@@ -245,6 +245,40 @@ def candidates_view(request):
     return render(request, 'ienitk/admin/candidates.html', template_data)
 
 
+def not_applied_candidate_view(request):
+    authentication_result = views.authentication_check(
+        request, [Account.ACCOUNT_ADMIN, Account.ACCOUNT_MEMBER, Account.ACCOUNT_AUX_ADMIN])
+    if authentication_result is not None:
+        return authentication_result
+    # Get the template data from the session
+    template_data = views.parse_session(request)
+
+    current_user = request.user
+
+    if current_user.account.role != 1:
+        return
+
+    all_candidates = Account.objects.filter(role=3)
+    applied_candidates = BasicResponses.objects.all()
+
+    not_applied_candidates = []
+
+    for candidate in all_candidates:
+        flag = True
+        for applied_candidate in applied_candidates:
+            if(candidate == applied_candidate.user):
+                flag = False
+                break
+        
+        if(flag):
+            not_applied_candidates.append(candidate)
+    
+    template_data['query'] = not_applied_candidates
+
+    template_data['logged_in_user'] = current_user
+    return render(request, 'ienitk/admin/not_applied_candidates.html', template_data)
+
+
 def download_basic_responses_csv(request):
     authentication_result = views.authentication_check(
         request, [Account.ACCOUNT_ADMIN, Account.ACCOUNT_MEMBER, Account.ACCOUNT_AUX_ADMIN])

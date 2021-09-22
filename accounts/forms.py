@@ -103,7 +103,7 @@ class AccountRegisterForm(BasicForm):
     password_second = forms.CharField(
         label='', min_length=1, max_length=50, widget=forms.PasswordInput())
     setup_field(password_second, "Enter password again")
-    phone = forms.CharField(label='Phone Number', min_length=1, max_length=10)
+    phone = forms.CharField(label='Phone Number', min_length=1, max_length=15)
     setup_field(phone, "Enter phone number")
     roll_no = forms.CharField(label='Roll Number', min_length=1, max_length=10)
     setup_field(roll_no, "Enter Roll number")
