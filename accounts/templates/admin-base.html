@@ -123,6 +123,7 @@
                                 {% endif %}
 
                             {% if user.account.role == 1 %}
+                            <li class="{% block sidebar_admin_test %}{% endblock %}"><a href="{% url 'accounts:admin_test' %}">Admin Test<i class="pull-right fa fa-users"></i></a></li>
                                 <li class="{% block sidebar_admin_users %}{% endblock %}"><a href="{% url 'webadmin:admin/users' %}">Manage IE Members<i class="pull-right fa fa-users"></i></a></li>
                                 <li class="{% block sidebar_all_candidates %}{% endblock %}"><a href="{% url 'webadmin:all_candidates' %}">All Candidates<i class="pull-right fa fa-users"></i></a></li>
                                 <li class="{% block sidebar_not_applied_candidates %}{% endblock %}"><a href="{% url 'webadmin:not_applied_candidates' %}">Not Applied Candidates<i class="pull-right fa fa-users"></i></a></li>

@@ -68,7 +68,7 @@ class BasicForm(forms.Form):
 
 
 class LoginForm(BasicForm):
-    email = forms.EmailField(max_length=50, validators=[
+    email = forms.EmailField(max_length=100, validators=[
                              validate_username_exists])
     setup_field(email, 'Enter NITK EDU Email here')
     password = forms.CharField(max_length=50, widget=forms.PasswordInput())
@@ -94,7 +94,7 @@ class AccountRegisterForm(BasicForm):
     setup_field(firstname, 'Enter first name here')
     lastname = forms.CharField(label='Last Name', max_length=50)
     setup_field(lastname, 'Enter last name here')
-    email = forms.EmailField(max_length=50, validators=[
+    email = forms.EmailField(max_length=100, validators=[
                              validate_username_available_and_edu_mail])
     setup_field(email, 'Enter NITK EDU email here')
     password_first = forms.CharField(

@@ -1,6 +1,6 @@
 {% extends "admin-base.html" %}
 {% load app_filters %}
-{% block sidebar_round_1_test %}active{% endblock %}
+{% block sidebar_admin_test %}active{% endblock %}
 {% block body %}
 
 
@@ -60,14 +60,14 @@
     <button id="go-button">Enable Full Screen</button>
 </div> -->
 
-<!-- <div class="text-center">
+<div class="text-center">
     <h4>Start Aptitude test by clicking below</h4>
 </div>
 <div class="text-center" id="aptitude-button">
     <button type="button" class="btn btn-info">Start Aptitude Test</button>
 </div>
 <br>
-{% if code_eligible%}
+
 <div class="text-center">
     <h4>Start Code test by clicking below</h4>
 </div>
@@ -76,9 +76,7 @@
 </div>
 
 <br>
-{% endif%}
 
-{% if gadget_eligible %}
 <div class="text-center">
     <h4>Start Gadget test by clicking below</h4>
 </div>
@@ -87,8 +85,7 @@
 </div>
 
 <br>
-{% endif %}
-{% if garage_eligible %}
+
 <div class="text-center">
     <h4>Start Garage test by clicking below</h4>
 </div>
@@ -97,8 +94,7 @@
 </div>
 
 <br>
-{% endif %}
-{% if capital_eligible %}
+
 <div class="text-center">
     <h4>Start Capital test by clicking below</h4>
 </div>
@@ -106,8 +102,7 @@
     <button type="button" class="btn btn-info">Start Capital Test</button>
 </div>
 <br>
-{% endif%}
-{% if robotics_eligible %}
+
 <div class="text-center">
     <h4>Start Robotics test by clicking below</h4>
 </div>
@@ -115,7 +110,7 @@
     <button type="button" class="btn btn-info">Start Robotics Test</button>
 </div>
 <br>
-{% endif %} -->
+
 
 For any technical difficulties/errors such as problems with applying on the website, contact -
 <br><br>
@@ -127,7 +122,7 @@ Omanshu Mahawar: +91 82091 04660
 <br>
 <br>
 
-<!-- <iframe style="display: none" id="aptitude-test"
+<iframe style="display: none" id="aptitude-test"
     src="https://docs.google.com/forms/d/e/1FAIpQLSenQXkDIIqv8O_IafpukldytkizL1384gJLVdZ3xg_bHgk3rA/viewform?embedded=true"
     width="640" height="1249" frameborder="0" marginheight="0" marginwidth="0">Loading…
 </iframe>
@@ -159,7 +154,7 @@ Omanshu Mahawar: +91 82091 04660
 <iframe style="display: none" id="robotics-test"
     src="https://docs.google.com/forms/d/e/1FAIpQLSfzYSCC0aeCxsT8XnJgUHaaname8a6p3krnImASDyWbtaQgkA/viewform?embedded=true"
     width="640" height="1249" frameborder="0" marginheight="0" marginwidth="0">Loading…
-</iframe> -->
+</iframe>
 
 <script>
     var counter = 0;
@@ -383,16 +378,16 @@ Omanshu Mahawar: +91 82091 04660
 
         });
     
-        // if (navigator.mediaDevices.getUserMedia) {
-        //     navigator.mediaDevices.getUserMedia({ video: true })
-        //         .then(function (stream) {
+        if (navigator.mediaDevices.getUserMedia) {
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then(function (stream) {
                     
-        //         })
-        //         .catch(function (err0r) {
-        //             alert("Please give camera access");
-        //             location.reload();
-        //         });
-        //     }
+                })
+                .catch(function (err0r) {
+                    alert("Please give camera access");
+                    location.reload();
+                });
+            }
         
     
 
