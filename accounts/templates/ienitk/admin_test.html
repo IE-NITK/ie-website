@@ -37,6 +37,15 @@
         height: 100%;
     }
 
+    #videoElement {
+        width: 300px;
+        height: 175px;
+    }
+
+    .proctored-video {
+        text-align: right;
+    }
+
 
     /* W3C proposal that will eventually come in all browsers */
 </style>
@@ -59,6 +68,12 @@
 <!-- <div id="element">
     <button id="go-button">Enable Full Screen</button>
 </div> -->
+
+<div class="proctored-video">
+    <video autoplay="true" id="videoElement">
+
+    </video>
+</div>
 
 <div class="text-center">
     <h4>Start Aptitude test by clicking below</h4>
@@ -377,11 +392,13 @@ Omanshu Mahawar: +91 82091 04660
         }
 
         });
+
+        var video = document.querySelector("#videoElement");
     
         if (navigator.mediaDevices.getUserMedia) {
             navigator.mediaDevices.getUserMedia({ video: true })
                 .then(function (stream) {
-                    
+                    video.srcObject = stream;
                 })
                 .catch(function (err0r) {
                     alert("Please give camera access");
