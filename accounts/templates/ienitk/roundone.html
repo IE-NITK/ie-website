@@ -37,6 +37,15 @@
         height: 100%;
     }
 
+    #videoElement {
+        width: 300px;
+        height: 175px;
+    }
+
+    .proctored-video {
+        text-align: right;
+    }
+
 
     /* W3C proposal that will eventually come in all browsers */
 </style>
@@ -61,7 +70,13 @@
     <button id="go-button">Enable Full Screen</button>
 </div> -->
 
-<!-- <div class="text-center">
+<div class="proctored-video">
+    <video autoplay="true" id="videoElement">
+
+    </video>
+</div>
+
+<div class="text-center">
     <h4>Start Aptitude test by clicking below</h4>
 </div>
 <div class="text-center" id="aptitude-button">
@@ -116,7 +131,7 @@
     <button type="button" class="btn btn-info">Start Robotics Test</button>
 </div>
 <br>
-{% endif %} -->
+{% endif %}
 
 For any technical difficulties/errors such as problems with applying on the website, contact -
 <br><br>
@@ -128,39 +143,38 @@ Omanshu Mahawar: +91 82091 04660
 <br>
 <br>
 
-<!-- <iframe style="display: none" id="aptitude-test"
-    src="https://docs.google.com/forms/d/e/1FAIpQLSenQXkDIIqv8O_IafpukldytkizL1384gJLVdZ3xg_bHgk3rA/viewform?embedded=true"
+<iframe style="display: none" id="aptitude-test"
+    src="https://docs.google.com/forms/d/e/1FAIpQLSdfHB9vBLDL1EBnRvg8_xFq8YkGhxcWHh1EU-qbKdcIk_KShQ/viewform?embedded=true"
     width="640" height="1249" frameborder="0" marginheight="0" marginwidth="0">Loading…
 </iframe>
 
 <iframe style="display: none" id="code-test"
-    src="https://docs.google.com/forms/d/e/1FAIpQLSfzYSCC0aeCxsT8XnJgUHaaname8a6p3krnImASDyWbtaQgkA/viewform?embedded=true"
+    src="https://docs.google.com/forms/d/e/1FAIpQLSeU86VVNmAoYa1j0AQ2zAeJVtt9A74b6UF5z2AIXfe8MIWj3Q/viewform?embedded=true"
     width="640" height="1249" frameborder="0" marginheight="0" marginwidth="0">Loading…
 </iframe>
 
-
 <iframe style="display: none" id="gadget-test"
-    src="https://docs.google.com/forms/d/e/1FAIpQLSfzYSCC0aeCxsT8XnJgUHaaname8a6p3krnImASDyWbtaQgkA/viewform?embedded=true"
+    src="https://docs.google.com/forms/d/e/1FAIpQLScPFRTjnFm69cHJDLY4YZxX3cDYEPuMFhvs14_ITXK4mC5fiw/viewform?embedded=true"
     width="640" height="1249" frameborder="0" marginheight="0" marginwidth="0">Loading…
 </iframe>
 
 
 <iframe style="display: none" id="garage-test"
-    src="https://docs.google.com/forms/d/e/1FAIpQLSfzYSCC0aeCxsT8XnJgUHaaname8a6p3krnImASDyWbtaQgkA/viewform?embedded=true"
+    src="https://docs.google.com/forms/d/e/1FAIpQLSdn0x1GZj1MM0Tj_3jBFnMASJMJsayGbSChalZyob6DOqGTZg/viewform?embedded=true"
     width="640" height="1249" frameborder="0" marginheight="0" marginwidth="0">Loading…
 </iframe>
 
 
 <iframe style="display: none" id="capital-test"
-    src="https://docs.google.com/forms/d/e/1FAIpQLSfzYSCC0aeCxsT8XnJgUHaaname8a6p3krnImASDyWbtaQgkA/viewform?embedded=true"
+    src="https://docs.google.com/forms/d/e/1FAIpQLSfcVJDn8yYoaxyDABW4ryJITBu1ylffvpCKFo4GG0zJGdgp2g/viewform?embedded=true"
     width="640" height="1249" frameborder="0" marginheight="0" marginwidth="0">Loading…
 </iframe>
 
 
 <iframe style="display: none" id="robotics-test"
-    src="https://docs.google.com/forms/d/e/1FAIpQLSfzYSCC0aeCxsT8XnJgUHaaname8a6p3krnImASDyWbtaQgkA/viewform?embedded=true"
+    src="https://docs.google.com/forms/d/e/1FAIpQLSe6F-_pyVUCdDDdqyTD-EN57ncCs3tjQbDNcFvepEos3wl1bQ/viewform?embedded=true"
     width="640" height="1249" frameborder="0" marginheight="0" marginwidth="0">Loading…
-</iframe> -->
+</iframe>
 
 <script>
     var counter = 0;
@@ -384,16 +398,18 @@ Omanshu Mahawar: +91 82091 04660
 
         });
     
-        // if (navigator.mediaDevices.getUserMedia) {
-        //     navigator.mediaDevices.getUserMedia({ video: true })
-        //         .then(function (stream) {
-                    
-        //         })
-        //         .catch(function (err0r) {
-        //             alert("Please give camera access");
-        //             location.reload();
-        //         });
-        //     }
+        var video = document.querySelector("#videoElement");
+    
+        if (navigator.mediaDevices.getUserMedia) {
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then(function (stream) {
+                    video.srcObject = stream;
+                })
+                .catch(function (err0r) {
+                    alert("Please give camera access");
+                    location.reload();
+                });
+            }
         
     
 
