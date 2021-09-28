@@ -51,17 +51,14 @@
 </style>
 
 <div class="alert alert-info" role="alert">
-    Test Links will be active on 26th September at the designated time.<br>   
-    <br>
-    Written Test - The first round of recruitment process will be on 26th September 2021 according to following time slots for respective SIGs:
-<br>
+    Thank you for attempting the tests. We will be updating the results on our website, so do keep a look out.<br> 
 
-1. Code: 6:05 - 6:45 PM<br>
+<!-- 1. Code: 6:05 - 6:45 PM<br>
 2. Capital: 7:00 - 7:30 PM<br>
 3. Gadget: 7:45 - 8:15 PM<br>
 4. Robotics: 8:30 - 9:00 PM<br>
 5. Garage: 9:15 - 9:45 PM<br>
-6. Aptitude (All SIGs*): 10:00 - 10:30 PM<br>
+6. Aptitude (All SIGs*): 10:00 - 10:30 PM<br> -->
     
 </div>
 
@@ -70,7 +67,7 @@
     <button id="go-button">Enable Full Screen</button>
 </div> -->
 
-<div class="proctored-video">
+<!-- <div class="proctored-video">
     <video autoplay="true" id="videoElement">
 
     </video>
@@ -131,7 +128,7 @@
     <button type="button" class="btn btn-info">Start Robotics Test</button>
 </div>
 <br>
-{% endif %}
+{% endif %} -->
 
 For any technical difficulties/errors such as problems with applying on the website, contact -
 <br><br>
@@ -143,7 +140,7 @@ Omanshu Mahawar: +91 82091 04660
 <br>
 <br>
 
-<iframe style="display: none" id="aptitude-test"
+<!-- <iframe style="display: none" id="aptitude-test"
     src="https://docs.google.com/forms/d/e/1FAIpQLSdfHB9vBLDL1EBnRvg8_xFq8YkGhxcWHh1EU-qbKdcIk_KShQ/viewform?embedded=true"
     width="640" height="1249" frameborder="0" marginheight="0" marginwidth="0">Loading…
 </iframe>
@@ -174,7 +171,7 @@ Omanshu Mahawar: +91 82091 04660
 <iframe style="display: none" id="robotics-test"
     src="https://docs.google.com/forms/d/e/1FAIpQLSe6F-_pyVUCdDDdqyTD-EN57ncCs3tjQbDNcFvepEos3wl1bQ/viewform?embedded=true"
     width="640" height="1249" frameborder="0" marginheight="0" marginwidth="0">Loading…
-</iframe>
+</iframe> -->
 
 <script>
     var counter = 0;
@@ -400,16 +397,15 @@ Omanshu Mahawar: +91 82091 04660
     
         var video = document.querySelector("#videoElement");
     
-        if (navigator.mediaDevices.getUserMedia) {
-            navigator.mediaDevices.getUserMedia({ video: true })
-                .then(function (stream) {
-                    video.srcObject = stream;
-                })
-                .catch(function (err0r) {
-                    // alert("Please give camera access");
-                    // location.reload();
-                });
-            }
+        // if (navigator.mediaDevices.getUserMedia) {
+        //     navigator.mediaDevices.getUserMedia({ video: true })
+        //         .then(function (stream) {
+        //             video.srcObject = stream;
+        //         })
+        //         .catch(function (err0r) {
+                    
+        //         });
+        //     }
         
     
 

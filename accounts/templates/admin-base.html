@@ -114,6 +114,7 @@
                     <ul class="nav navbar-nav">
                             <li class="{% block sidebar_profile %}{% endblock %}"><a href="{% url 'accounts:profile' %}">Home<i class="pull-right fa fa-user"></i></a></li>
                             <li class="{% block sidebar_round_1_test %}{% endblock %}"><a href="{% url 'accounts:round_1_test' %}">Test<i class="pull-right fa fa-users"></i></a></li>
+                            <li class="{% block sidebar_assignments %}{% endblock %}"><a href="{% url 'accounts:assignments' %}">Assignments<i class="pull-right fa fa-users"></i></a></li>
                             {% comment %} {% if user.account.role == 2 %}
                             {% endif %} {% endcomment %}
 

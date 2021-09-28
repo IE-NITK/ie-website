@@ -24,6 +24,7 @@ urlpatterns = [
     # path('scriptroundone/', views_profile.scriptroundone, name='scriptroundone' ),
     # path('scriptroundone/submission_scriptroundone/',views_profile.submission_scriptroundone,name="submission_scriptroundone"),
     path('profile/test/round-1', views_profile.test_round_1, name='round_1_test'),
+    path('profile/assignments', views_profile.assignments, name='assignments'),
     path('profile/test/admin', views_profile.admin_test, name='admin_test'),
     path('profile/update_counter/', views_profile.update_esc_counter,
          name='update_esc_counter'),

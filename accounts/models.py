@@ -105,11 +105,13 @@ class Status(models.Model):
     STATUS_TYPES = (
         ("RE", "Application Accepted"),
         ("WR", "Written Round"),
+        ("AS", "Assignment"),
         ("TE", "Technical"),
         ("HR", "HR"),
         ("H2", "HR2"),
         ("SL", "Selected"),
-        ("RJ", "Rejected")
+        ("RJ", "Rejected"),
+        ("NS", "Not Selected")
     )
     SIG_TYPES_MAIN = (("", "None"), ("CO", "Code"),
                       ("GD", "Gadget"),
