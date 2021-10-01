@@ -333,6 +333,41 @@ def update_status(request):
     return HttpResponseRedirect('/profile')
 
 
+def download_selected_candidates(request):
+    # Authentication check
+    authentication_result = views.authentication_check(
+        request, [Account.ACCOUNT_ADMIN])
+    if authentication_result is not None:
+        return authentication_result
+    
+    all_status = Status.objects.filter(status="TE")
+
+    SIGs = { "CO": 3, "GD": 4, "GR": 5, "CA": 6, "RO": 7, "SR": 8, "TE": 9}
+
+    candidates = {}
+    
+    for entry in all_status:
+        candidates[f"{entry.user.roll_no}"] = [f"{entry.user.profile.firstname}", f"{entry.user.profile.lastname}", f"{entry.user.profile.phone}", 0, 0, 0, 0, 0, 0, 0]
+    
+    for entry in all_status:
+        candidates[f"{entry.user.roll_no}"][SIGs[entry.SIG]] = 1
+    
+    response = HttpResponse(
+        content_type='text/csv',
+    )
+
+    response['Content-Disposition'] = 'attachment; filename="selectedcandidates.csv"'
+    
+    writer = csv.writer(response)
+
+    writer.writerow(["First Name", "Last Name", "Roll No.", "Mobile Number", "Code", "Gadget", "Garage", "Capital", "Robotics", "Script", "Tectonic"])
+
+    for key in candidates:
+        writer.writerow([candidates[key][0], candidates[key][1], key, candidates[key][2], candidates[key][3], candidates[key][4], candidates[key][5], candidates[key][6], candidates[key][7], candidates[key][8], candidates[key][9]])
+
+    return response
+
+
 def executeCommand(cmd, output):
     p = subprocess.Popen(cmd, stdout=subprocess.PIPE,
                          stderr=subprocess.PIPE)

@@ -20,6 +20,7 @@ urlpatterns = [
     path('not_applied_candidates/', views.not_applied_candidate_view, name='not_applied_candidates'),
     path('download_responses_csv/', views.download_basic_responses_csv, name = 'download_responses_csv'),
     path('download_esc_count_csv/', views.download_esc_count_csv, name = 'download_esc_count_csv'),
+    path('download_selected_candidates/', views.download_selected_candidates, name = 'download_selected_candidates'),
     path('update_status/', views.update_status, name = 'update_status'),
     path('deploy_website/', views.deploy_website, name='deploy')
 ]
