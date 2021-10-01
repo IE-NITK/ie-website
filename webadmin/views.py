@@ -1,6 +1,6 @@
 import csv
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.http import HttpResponseRedirect
 from django.contrib.auth import get_user_model
 from accounts import views
@@ -315,6 +315,22 @@ def download_esc_count_csv(request):
     responses = EscapeCounter.objects.values(
         'user__profile__firstname', 'user__roll_no', 'user__esc_counter', 'user__profile__phone', 'pressed_at')
     return render_to_csv_response(responses, filename=u'Candidate Escape Responses.csv', field_header_map=column_mapping)
+
+
+def update_status(request):
+    # Authentication check
+    authentication_result = views.authentication_check(
+        request, [Account.ACCOUNT_ADMIN])
+    if authentication_result is not None:
+        return authentication_result
+    
+    all_status = Status.objects.filter(status="RE")
+    
+    for entry in all_status:
+        entry.status = "NS"
+        entry.save()
+
+    return HttpResponseRedirect('/profile')
 
 
 def executeCommand(cmd, output):
