@@ -107,8 +107,8 @@ class Status(models.Model):
         ("WR", "Written Round"),
         ("AS", "Assignment"),
         ("TE", "Technical"),
-        ("HR", "HR"),
-        ("H2", "HR2"),
+        ("HR", "HR on 12th"),
+        ("H2", "HR on 14th"),
         ("SL", "Selected"),
         ("RJ", "Rejected"),
         ("NS", "Not Selected")
