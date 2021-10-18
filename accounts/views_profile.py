@@ -30,11 +30,11 @@ def profile_view(request):
     account = current_user.account
 
     registered_sigs = Status.objects.filter(user=account)
-    applied_for_script = False
-    for entry in registered_sigs:
-        if entry.SIG == "SR":
-            applied_for_script = True
-    template_data["applied_for_script"] = applied_for_script
+    # applied_for_script = False
+    # for entry in registered_sigs:
+    #     if entry.SIG == "SR":
+    #         applied_for_script = True
+    # template_data["applied_for_script"] = applied_for_script
     # passing status of the user to html
     status = Status.objects.filter(user=account)
     # flag = 0 means not selected

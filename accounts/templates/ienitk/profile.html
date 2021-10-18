@@ -9,34 +9,26 @@
 {% block body %}
 <p>
     Hi, there!<br><br>
-<div class="alert alert-info" role="alert">
-    Applying for SIGs is mandatory to appear for the tests. Deadline of applying for SIGs is 24th September 11:59 PM.<br><br>
-    Test Links will be active on 26th September at the designated time.<br>   
-    <br>
-    Written Test - The first round of recruitment process will be on 26th September 2021 according to following time slots for respective SIGs:
-<br>
-1. Code: 6:05 - 6:45 PM<br>
-2. Capital: 7:00 - 7:30 PM<br>
-3. Gadget: 7:45 - 8:15 PM<br>
-4. Robotics: 8:30 - 9:00 PM<br>
-5. Garage: 9:15 - 9:45 PM<br>
-6. Aptitude (All SIGs*): 10:00 - 10:30 PM<br>
-    
-</div>
-
-We know that these challenging times can often make us feel very distant to you. Worry not, we are only a call away,
-fellow IE enthusiast!
-<br><br>
-For all questions regarding the recruitment process, contact -
-<br><br>
-Prakriti Goyal: +91 90361 50451<br>
-Atreya Majumdar: +91 90084 30111
-<br><br>
-For any technical difficulties/errors such as problems with applying on the website, contact -
-<br><br>
-Omanshu Mahawar: +91 82091 04660
 </p>
-<br>
-<br>
+{% if selected %}
+<p>
+    Congratulations! You are now officially a part of the IE family!<br><br>
+    <img src="{% static 'img/congratulations.gif' %}" class="img-rounded img-fluid"
+                        style="width: 80%;"><br>
+    <br>
+    We will be adding you to the club groups shortly, and keep an eye out for announcements, there might be a special
+    something in there just for you ;)
+</p>
 
+
+
+{% else %}
+<p>
+    This year, we had an exceptional roster of candidates to choose from, each with their own strengths and areas of
+    expertise. We have tried our best in order to align the needs of the club with the needs and strengths of the
+    candidates.<br>
+    We highly encourage you to apply again next year.<br>
+    Best of luck, hope to see you again :)
+</p>
+{% endif %}
 {% endblock %}
