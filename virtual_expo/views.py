@@ -103,10 +103,6 @@ def opec(request):
     return render(request, 'opec.html')
 
 
-def portfolio_management(request):
-    return render(request, 'portfolio-management.html')
-
-
 def risk_assesment(request):
     return render(request, 'risk-assesment.html')
 
