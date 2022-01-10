@@ -1,6 +1,6 @@
 import csv
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.http import HttpResponseRedirect
 from django.contrib.auth import get_user_model
 from accounts import views
@@ -245,6 +245,40 @@ def candidates_view(request):
     return render(request, 'ienitk/admin/candidates.html', template_data)
 
 
+def not_applied_candidate_view(request):
+    authentication_result = views.authentication_check(
+        request, [Account.ACCOUNT_ADMIN, Account.ACCOUNT_MEMBER, Account.ACCOUNT_AUX_ADMIN])
+    if authentication_result is not None:
+        return authentication_result
+    # Get the template data from the session
+    template_data = views.parse_session(request)
+
+    current_user = request.user
+
+    if current_user.account.role != 1:
+        return
+
+    all_candidates = Account.objects.filter(role=3)
+    applied_candidates = BasicResponses.objects.all()
+
+    not_applied_candidates = []
+
+    for candidate in all_candidates:
+        flag = True
+        for applied_candidate in applied_candidates:
+            if(candidate == applied_candidate.user):
+                flag = False
+                break
+        
+        if(flag):
+            not_applied_candidates.append(candidate)
+    
+    template_data['query'] = not_applied_candidates
+
+    template_data['logged_in_user'] = current_user
+    return render(request, 'ienitk/admin/not_applied_candidates.html', template_data)
+
+
 def download_basic_responses_csv(request):
     authentication_result = views.authentication_check(
         request, [Account.ACCOUNT_ADMIN, Account.ACCOUNT_MEMBER, Account.ACCOUNT_AUX_ADMIN])
@@ -281,6 +315,57 @@ def download_esc_count_csv(request):
     responses = EscapeCounter.objects.values(
         'user__profile__firstname', 'user__roll_no', 'user__esc_counter', 'user__profile__phone', 'pressed_at')
     return render_to_csv_response(responses, filename=u'Candidate Escape Responses.csv', field_header_map=column_mapping)
+
+
+def update_status(request):
+    # Authentication check
+    authentication_result = views.authentication_check(
+        request, [Account.ACCOUNT_ADMIN])
+    if authentication_result is not None:
+        return authentication_result
+    
+    all_status = Status.objects.filter(status="RE")
+    
+    for entry in all_status:
+        entry.status = "NS"
+        entry.save()
+
+    return HttpResponseRedirect('/profile')
+
+
+def download_selected_candidates(request):
+    # Authentication check
+    authentication_result = views.authentication_check(
+        request, [Account.ACCOUNT_ADMIN])
+    if authentication_result is not None:
+        return authentication_result
+    
+    all_status = Status.objects.filter(status="TE")
+
+    SIGs = { "CO": 3, "GD": 4, "GR": 5, "CA": 6, "RO": 7, "SR": 8, "TE": 9}
+
+    candidates = {}
+    
+    for entry in all_status:
+        candidates[f"{entry.user.roll_no}"] = [f"{entry.user.profile.firstname}", f"{entry.user.profile.lastname}", f"{entry.user.profile.phone}", 0, 0, 0, 0, 0, 0, 0]
+    
+    for entry in all_status:
+        candidates[f"{entry.user.roll_no}"][SIGs[entry.SIG]] = 1
+    
+    response = HttpResponse(
+        content_type='text/csv',
+    )
+
+    response['Content-Disposition'] = 'attachment; filename="selectedcandidates.csv"'
+    
+    writer = csv.writer(response)
+
+    writer.writerow(["First Name", "Last Name", "Roll No.", "Mobile Number", "Code", "Gadget", "Garage", "Capital", "Robotics", "Script", "Tectonic"])
+
+    for key in candidates:
+        writer.writerow([candidates[key][0], candidates[key][1], key, candidates[key][2], candidates[key][3], candidates[key][4], candidates[key][5], candidates[key][6], candidates[key][7], candidates[key][8], candidates[key][9]])
+
+    return response
 
 
 def executeCommand(cmd, output):

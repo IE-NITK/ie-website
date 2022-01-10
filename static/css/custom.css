@@ -3,3 +3,88 @@
   height: 400px;
   font-size: 1.2em;
 }
+
+.quote {
+  position: relative;
+}
+
+.quote blockquote {
+  padding: 0px;
+  border: 0;
+  margin: 0;
+  font-size: 16px;
+  font-style: italic;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  border-radius: 8px;
+}
+
+.quote blockquote p {
+  color: #fff;
+  padding-top: 25px;
+  padding-bottom: 45px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.quote blockquote:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 90px;
+  width: 0;
+  height: 0;
+  border-top: 0.83333em solid #ccc;
+  border-right: 0.86667em solid transparent;
+}
+
+.quote.green blockquote {
+  background-color: #32c5d2;
+}
+
+.quote.green blockquote:before {
+  border-top-color: #32c5d2;
+}
+
+.quote.dark blockquote {
+  background-color: #555;
+}
+
+.quote.dark blockquote:before {
+  border-top-color: #555;
+}
+
+.quote-footer {
+  margin: 10px 0;
+}
+
+.quote-footer .quote-author-img img {
+  float: left;
+  max-width: 90px;
+  width: 90px;
+  height: 90px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  margin-left: -5px;
+  margin-top: -40px;
+  position: relative;
+  z-index: 1;
+  padding: 5px;
+  background-color: #fff;
+}
+
+.quote-footer h3 {
+  font-size: 20px;
+  margin-bottom: 1px;
+  color: #ffffff;
+}
+
+.quote-footer p {
+  color: white;
+  /* font-weight: 400; */
+  font-style: italic;
+  font-size: 14px;
+}

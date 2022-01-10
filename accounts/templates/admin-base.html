@@ -114,6 +114,7 @@
                     <ul class="nav navbar-nav">
                             <li class="{% block sidebar_profile %}{% endblock %}"><a href="{% url 'accounts:profile' %}">Home<i class="pull-right fa fa-user"></i></a></li>
                             <li class="{% block sidebar_round_1_test %}{% endblock %}"><a href="{% url 'accounts:round_1_test' %}">Test<i class="pull-right fa fa-users"></i></a></li>
+                            <li class="{% block sidebar_assignments %}{% endblock %}"><a href="{% url 'accounts:assignments' %}">Assignments<i class="pull-right fa fa-users"></i></a></li>
                             {% comment %} {% if user.account.role == 2 %}
                             {% endif %} {% endcomment %}
 
@@ -123,8 +124,10 @@
                                 {% endif %}
 
                             {% if user.account.role == 1 %}
+                            <li class="{% block sidebar_admin_test %}{% endblock %}"><a href="{% url 'accounts:admin_test' %}">Admin Test<i class="pull-right fa fa-users"></i></a></li>
                                 <li class="{% block sidebar_admin_users %}{% endblock %}"><a href="{% url 'webadmin:admin/users' %}">Manage IE Members<i class="pull-right fa fa-users"></i></a></li>
                                 <li class="{% block sidebar_all_candidates %}{% endblock %}"><a href="{% url 'webadmin:all_candidates' %}">All Candidates<i class="pull-right fa fa-users"></i></a></li>
+                                <li class="{% block sidebar_not_applied_candidates %}{% endblock %}"><a href="{% url 'webadmin:not_applied_candidates' %}">Not Applied Candidates<i class="pull-right fa fa-users"></i></a></li>
                                 <li class="{% block sidebar_download_responses %}{% endblock %}"><a href="{% url 'webadmin:download_responses_csv'%}">Download Candidates Responses<i class="pull-right fa fa-users"></i></a></li>
                                 <li class="{% block sidebar_download_esc_count_responses %}{% endblock %}"><a href="{% url 'webadmin:download_esc_count_csv'%}">Download Candidates Escape Responses<i class="pull-right fa fa-users"></i></a></li>
                                 

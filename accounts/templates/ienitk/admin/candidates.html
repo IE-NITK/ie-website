@@ -38,16 +38,19 @@ Candidates
                         <option value="WR" {% if candidate.status == "WR" %}selected="selected" {% endif %}>Written
                             Round
                         </option>
+                        <option value="AS" {% if candidate.status == "AS" %}selected="selected" {% endif %}>
+                            Assignment
+                        </option>
                         <option value="TE" {% if candidate.status == "TE" %}selected="selected" {% endif %}>
                             Technical
                         </option>
-                        <option value="HR" {% if candidate.status == "HR" %}selected="selected" {% endif %}>HR
+                        <option value="HR" {% if candidate.status == "HR" %}selected="selected" {% endif %}>HR on 12th
                         </option>
-                        <option value="H2" {% if candidate.status == "H2" %}selected="selected" {% endif %}>HR2
+                        <option value="H2" {% if candidate.status == "H2" %}selected="selected" {% endif %}>HR on 14th
                         </option>l̥
                         <option value="SL" {% if candidate.status == "SL" %}selected="selected" {% endif %}>Selected
                         </option>
-                        <option value="RJ" {% if candidate.status == "RJ" %}selected="selected" {% endif %}>Rejected
+                        <option value="NS" {% if candidate.status == "NS" %}selected="selected" {% endif %}>Not Selected
                         </option>
                     </select>
                     <input class="btn btn-primary" type="submit" value="Save" />

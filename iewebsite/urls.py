@@ -24,6 +24,7 @@ from django.contrib.auth import views as auth_views
 urlpatterns = [
                   path('admin/', admin.site.urls),
                   path('', TemplateView.as_view(template_name='index.html'), name='home'),
+                  path('ie-stories/', TemplateView.as_view(template_name='ie-stories.html'), name='ie-stories'),
                   path('workshop/', TemplateView.as_view(template_name='sixth-sense-workshop.html'), name='workshop'),
                   path('flappy/', TemplateView.as_view(template_name='flappy.html'), name='flappy'),
                   path('enigma/', TemplateView.as_view(template_name='enigma.html'), name="enigma"),

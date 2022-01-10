@@ -7,7 +7,7 @@ class ActivationRecord(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     firstname = models.CharField(blank=True, max_length=50)
     lastname = models.CharField(blank=True, max_length=50)
-    phone = models.CharField(blank=True, max_length=10)
+    phone = models.CharField(blank=True, max_length=15)
     roll_no = models.CharField(null=True, max_length=10)
 
 
@@ -27,7 +27,7 @@ class Profile(models.Model):
     firstname = models.CharField(blank=True, max_length=50)
     lastname = models.CharField(blank=True, max_length=50)
     sex = models.CharField(blank=True, max_length=1, choices=GENDER)
-    phone = models.CharField(blank=True, max_length=10)
+    phone = models.CharField(blank=True, max_length=15)
 
     def get_populated_fields(self):
         """
@@ -105,11 +105,13 @@ class Status(models.Model):
     STATUS_TYPES = (
         ("RE", "Application Accepted"),
         ("WR", "Written Round"),
+        ("AS", "Assignment"),
         ("TE", "Technical"),
-        ("HR", "HR"),
-        ("H2", "HR2"),
+        ("HR", "HR on 12th"),
+        ("H2", "HR on 14th"),
         ("SL", "Selected"),
-        ("RJ", "Rejected")
+        ("RJ", "Rejected"),
+        ("NS", "Not Selected")
     )
     SIG_TYPES_MAIN = (("", "None"), ("CO", "Code"),
                       ("GD", "Gadget"),
