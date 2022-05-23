@@ -14,5 +14,8 @@ def smp2020(request):
 def smp2021(request):
     return render(request, 'smp2021.html')
 
+def smp2022(request):
+    return render(request, 'smp2022.html')
+
 def hackverse(request):
     return render(request, 'hackverse.html')

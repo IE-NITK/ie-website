@@ -13,5 +13,6 @@ urlpatterns = [
     path('smp2019/', views.smp2019, name='smp2019'),
     path('smp2020/', views.smp2020, name='smp2020'),
     path('smp2021/', views.smp2021, name='smp2021'),
+    path('smp2022/', views.smp2022, name='smp2022'),
     path('hackverse/', views.hackverse, name='hackverse'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
