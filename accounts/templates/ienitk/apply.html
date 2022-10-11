@@ -2,15 +2,15 @@
 {% load app_filters %}
 {% block sidebar_apply %}active{% endblock %}
 {% block body %}
-<div class="alert alert-info text-center" role="alert">
+<!-- <div class="alert alert-info text-center" role="alert">
     Sorry, Application form is closed
-  </div>
-<!-- <div style="padding-right: 7.5%;padding-left: 7.5%;">
+  </div> -->
+<div style="padding-right: 7.5%;padding-left: 7.5%;">
     <p style="align-content: center;" class="lead">Select at least one Core SIG. Once you submit, your choices cannot be
         changed.</p>
     <p class="lead">Visit <a href="{% url 'sig:sig' %}">our website </a>to learn more about our Special Interest Groups!
     </p>
     {% include "singleform.html" %}
-</div> -->
+</div>
 
 {% endblock %}
