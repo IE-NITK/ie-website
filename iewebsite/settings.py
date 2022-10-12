@@ -90,10 +90,10 @@ DATABASES = {
          'HOST': 'localhost',
         'PORT': '',
      }
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    # }
 }
 
 # Password validation
@@ -149,7 +149,7 @@ STATICFILES_FINDERS = (
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
+EMAIL_PORT = 25
 EMAIL_HOST_USER = constants.EMAIL
 EMAIL_HOST_PASSWORD = constants.PASSWORD
 SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']
