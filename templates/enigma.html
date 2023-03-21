@@ -3,184 +3,189 @@
 {% block enigma %}active{% endblock %}
 {% block main %}
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <style type="text/css">
-        @media only screen and (min-width: 0px) {
-            body {
-                font-family: 'Raleway', sans-serif;
-                margin: 0px;
-                padding: 0px;
-            }
-
-            a, a:hover, a:focus, a:active {
-                text-decoration: none;
-                color: inherit;
-            }
-
-            .enigma-container {
-                color: white;
-                background-color: #55C1AB;
-                padding-top: 50px;
-                padding-bottom: 100px;
-            }
-
-            .enigma-img {
-                width: 100%;
-                height: auto;
-                margin-bottom: 50px;
-            }
-
-            .card-img {
-                width: 100%;
-                height: auto;
-            }
-
-            .g-form-link {
-                width: 100%;
-                height: 80px;
-                font-size: 24px;
-            }
-
-            .card-container {
-                padding: 15px;
-            }
- 
-            .card {
-                box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-                transition:.3s ease;
-            }
-
-            .card:hover {
-                transform: scale(0.97);
-            }
-
-            .card-footer {
-                text-align: center;
-                padding: 15px;
-                font-size: 20px;
-                background-color: #313131;
-                transition:.3s ease;
-            }
-
-            .card-footer:hover {
-                background-color: #55C1AB;
-            }
-
-            .heading-2 {
-                color: white;
-                font-weight: 800;
-            }
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<style type="text/css">
+    @media only screen and (min-width: 0px) {
+        body {
+            font-family: 'Raleway', sans-serif;
+            margin: 0px;
+            padding: 0px;
         }
-    </style>
 
-    <div class="enigma-container">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-md-6 py-5 col-md-offset-3 text-center">
-                    <img class="enigma-img" src="{% static 'img/enigma_logo.png' %}" alt="Spark">
+        a,
+        a:hover,
+        a:focus,
+        a:active {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .enigma-container {
+            color: white;
+            background-color: #55C1AB;
+            padding-top: 50px;
+            padding-bottom: 100px;
+        }
+
+        .enigma-img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 50px;
+        }
+
+        .card-img {
+            width: 100%;
+            height: auto;
+        }
+
+        .g-form-link {
+            width: 100%;
+            height: 80px;
+            font-size: 24px;
+        }
+
+        .card-container {
+            padding: 15px;
+        }
+
+        .card {
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            transition: .3s ease;
+        }
+
+        .card:hover {
+            transform: scale(0.97);
+        }
+
+        .card-footer {
+            text-align: center;
+            padding: 15px;
+            font-size: 20px;
+            background-color: #313131;
+            transition: .3s ease;
+        }
+
+        .card-footer:hover {
+            background-color: #55C1AB;
+        }
+
+        .heading-2 {
+            color: white;
+            font-weight: 800;
+        }
+    }
+</style>
+
+<div class="enigma-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6 py-5 col-md-offset-3 text-center">
+                <img class="enigma-img" src="{% static 'img/enigma_logo.png' %}" alt="Spark">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-8 col-md-offset-2 text-center">
+                <p>IE's flagship event where Freshers get to experiment in different fields of engineering and arts. A
+                    very diverse event where each SIG conducts stimulating competitions ranging from coding challenges
+                    to implementing marketing strategies.</p>
+                <h2 class="heading-2">Exclusively for First Years!</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="card-container col-12 col-md-4">
+                <div class="card">
+                    <div>
+                        <img class="card-img" src="{% static 'img/enigma2023/Code.jpeg' %}" alt="RTFM-2023">
+                    </div>
+                    <a href="https://forms.gle/tXoWGjTZ1htMhciD8" target=”_blank”>
+                        <div class="card-footer">
+                            Register
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="card-container col-12 col-md-4">
+                <div class="card">
+                    <div>
+                        <img class="card-img" src="{% static 'img/enigma2023/Gadget.jpeg' %}" alt="RTFM-2022">
+                    </div>
+                    <a href="https://forms.gle/j55zJS1p3Tcm6cpe9" target=”_blank”>
+                        <div class="card-footer">
+                            Register
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="card-container col-12 col-md-4">
+                <div class="card">
+                    <div>
+                        <img class="card-img" src="{% static 'img/enigma2023/Garage.jpeg' %}" alt="RTFM-2022">
+                    </div>
+                    <a href="https://forms.gle/hsvXyAm5z1E41fN8A" target=”_blank”>
+                        <div class="card-footer">
+                            Register
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="card-container col-12 col-md-4">
+                <div class="card">
+                    <div>
+                        <img class="card-img" src="{% static 'img/enigma2023/Capital.jpeg' %}" alt="RTFM-2022">
+                    </div>
+                    <a href="https://forms.gle/gWxkM4wBi7sseyHo9" target=”_blank”>
+                        <div class="card-footer">
+                            Register
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="card-container col-12 col-md-4">
+                <div class="card">
+                    <div>
+                        <img class="card-img" src="{% static 'img/enigma2023/Robotics.jpeg' %}" alt="RTFM-2022">
+                    </div>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfOq" target=”_blank”>
+                        <div class="card-footer">
+                            Register
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="card-container col-12 col-md-4">
+                <div class="card">
+                    <div>
+                        <img class="card-img" src="{% static 'img/enigma2023/Script.jpeg' %}" alt="RTFM-2022">
+                    </div>
+                    <a href="https://bit.ly/ie-script-cicada" target=”_blank”>
+                        <div class="card-footer">
+                            Register
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="card-container col-12 col-md-4">
+                <div class="card">
+                    <div>
+                        <img class="card-img" src="{% static 'img/enigma2023/Tectonic.jpeg' %}" alt="RTFM-2022">
+                    </div>
+                    <a href="https://forms.gle/QbkVuvcWJuzBctBVA" target=”_blank”>
+                        <div class="card-footer">
+                            Register
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-md-8 col-md-offset-2 text-center">
-                    <p>IE's flagship event where Freshers get to experiment in different fields of engineering and arts. A very diverse event where each SIG conducts stimulating competitions ranging from coding challenges to implementing marketing strategies.</p>
-                    <h2 class="heading-2">Exclusively for First Years!</h2>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="row">
-                <div class="card-container col-12 col-md-4">
-                    <div class="card">
-                        <div>
-                            <img class="card-img" src="{% static 'img/RTFM-2022.png' %}" alt="RTFM-2022">
-                        </div>
-                        <a href="https://forms.gle/CUWcP4ddVh6hSuDD7" target=”_blank”>
-                            <div class="card-footer">
-                                Register
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="card-container col-12 col-md-4">
-                    <div class="card">
-                        <div>
-                            <img class="card-img" src="{% static 'img/Squid-Tronics-2022.jpeg' %}" alt="RTFM-2022">
-                        </div>
-                        <a href="https://forms.gle/bch5YoMAPMPHfpMg8" target=”_blank”>
-                            <div class="card-footer">
-                                Register
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="card-container col-12 col-md-4">
-                    <div class="card">
-                        <div>
-                            <img class="card-img" src="{% static 'img/Sync-2022.png' %}" alt="RTFM-2022">
-                        </div>
-                        <a href="https://forms.gle/EFJeHsQHddLSKfwJ9" target=”_blank”>
-                            <div class="card-footer">
-                                Register
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="card-container col-12 col-md-4">
-                    <div class="card">
-                        <div>
-                            <img class="card-img" src="{% static 'img/Casomania-2022.jpeg' %}" alt="RTFM-2022">
-                        </div>
-                        <a href="https://forms.gle/awwTX53zehKTjG6M8" target=”_blank”>
-                            <div class="card-footer">
-                                Register
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="card-container col-12 col-md-4">
-                    <div class="card">
-                        <div>
-                            <img class="card-img" src="{% static 'img/Robogo-2022.png' %}" alt="RTFM-2022">
-                        </div>
-                        <a href="https://forms.gle/tmhV2DBerpUqxcjH7" target=”_blank”>
-                            <div class="card-footer">
-                                Register
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="card-container col-12 col-md-4">
-                    <div class="card">
-                        <div>
-                            <img class="card-img" src="{% static 'img/Entziffern-2022.png' %}" alt="RTFM-2022">
-                        </div>
-                        <a href="https://forms.gle/vqU2EkJG1eoVgEtt5" target=”_blank”>
-                            <div class="card-footer">
-                                Register
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="card-container col-12 col-md-4 col-md-offset-4">
-                    <div class="card">
-                        <div>
-                            <img class="card-img" src="{% static 'img/Auxesis-2022.png' %}" alt="RTFM-2022">
-                        </div>
-                        <a href="https://forms.gle/eF2ifnrGpnmoNsfR9" target=”_blank”>
-                            <div class="card-footer">
-                                Register
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+    </div>
 
 
-        <!-- <h1 class="py-4">Attempt 1st Round</h2>
+    <!-- <h1 class="py-4">Attempt 1st Round</h2>
 
         <div class="container">
             <div class="row justify-content-center">
@@ -190,47 +195,48 @@
             </div>
         </div> -->
 
-        <div style="display: none" id="rtfm-test">
-            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                Do not exit full screen
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <div style="display: none" id="rtfm-test">
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            Do not exit full screen
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <iframe 
-                src="https://docs.google.com/forms/d/e/1FAIpQLSd1OXCzr7SbOPJyPPkYmakqC-T3mU4Jn8jMaNelD27tY2avSQ/viewform?embedded=true"
-                width="640" height="1249" frameborder="0" marginheight="0" marginwidth="0">Loading…
-            </iframe>
+            </button>
         </div>
+        <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSd1OXCzr7SbOPJyPPkYmakqC-T3mU4Jn8jMaNelD27tY2avSQ/viewform?embedded=true"
+            width="640" height="1249" frameborder="0" marginheight="0" marginwidth="0">Loading…
+        </iframe>
+    </div>
 
-        <div style="display: none" id="sync-test">
-            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                Do not exit full screen
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <div style="display: none" id="sync-test">
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            Do not exit full screen
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <iframe
-                src="https://docs.google.com/forms/d/e/1FAIpQLSenQXkDIIqv8O_IafpukldytkizL1384gJLVdZ3xg_bHgk3rA/viewform?embedded=true"
-                width="640" height="1249" frameborder="0" marginheight="0" marginwidth="0">Loading…
-            </iframe>
+            </button>
         </div>
+        <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSenQXkDIIqv8O_IafpukldytkizL1384gJLVdZ3xg_bHgk3rA/viewform?embedded=true"
+            width="640" height="1249" frameborder="0" marginheight="0" marginwidth="0">Loading…
+        </iframe>
+    </div>
 
-        <div style="display: none" id="laatraco-test">
-            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                Do not exit full screen
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <div style="display: none" id="laatraco-test">
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            Do not exit full screen
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <iframe
-                src="https://docs.google.com/forms/d/e/1FAIpQLSenQXkDIIqv8O_IafpukldytkizL1384gJLVdZ3xg_bHgk3rA/viewform?embedded=true"
-                width="640" height="1249" frameborder="0" marginheight="0" marginwidth="0">Loading…
-            </iframe>
+            </button>
         </div>
+        <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSenQXkDIIqv8O_IafpukldytkizL1384gJLVdZ3xg_bHgk3rA/viewform?embedded=true"
+            width="640" height="1249" frameborder="0" marginheight="0" marginwidth="0">Loading…
+        </iframe>
+    </div>
 
-        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog" role="document">
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-body text-dark">
                     <div id="warning-message">
@@ -242,116 +248,114 @@
                     <button type="button" class="btn btn-primary" onclick="resumeTest()">Resume Test</button>
                 </div>
             </div>
-            </div>
         </div>
-
     </div>
 
-    <script>
-        var counter = 0;
-        var isRTFMActive = false;
-        var isLaAtracoActive = false;
-        var isSyncActive = false;
-        var isRobogoActive = false;
-        var isCasomaniaActive = false;
-        var isEntziffernActive = false;
+</div>
 
-        var exitCount = 0;
-        
-            /* Get into full screen */
-        function GoInFullscreen(element) {
-            if (element.requestFullscreen)
-                element.requestFullscreen();
-            else if (element.mozRequestFullScreen)
-                element.mozRequestFullScreen();
-            else if (element.webkitRequestFullscreen)
-                element.webkitRequestFullscreen();
-            else if (element.msRequestFullscreen)
-                element.msRequestFullscreen();
-        }
+<script>
+    var counter = 0;
+    var isRTFMActive = false;
+    var isLaAtracoActive = false;
+    var isSyncActive = false;
+    var isRobogoActive = false;
+    var isCasomaniaActive = false;
+    var isEntziffernActive = false;
 
+    var exitCount = 0;
 
-        function resetTest() {
-            isRTFMActive = false;
-            isLaAtracoActive = false;
-            isSyncActive = false;
-            isRobogoActive = false;
-            isCasomaniaActive = false;
-            isEntziffernActive = false;
-        }
+    /* Get into full screen */
+    function GoInFullscreen(element) {
+        if (element.requestFullscreen)
+            element.requestFullscreen();
+        else if (element.mozRequestFullScreen)
+            element.mozRequestFullScreen();
+        else if (element.webkitRequestFullscreen)
+            element.webkitRequestFullscreen();
+        else if (element.msRequestFullscreen)
+            element.msRequestFullscreen();
+    }
 
 
-        function startRTFM() {
+    function resetTest() {
+        isRTFMActive = false;
+        isLaAtracoActive = false;
+        isSyncActive = false;
+        isRobogoActive = false;
+        isCasomaniaActive = false;
+        isEntziffernActive = false;
+    }
+
+
+    function startRTFM() {
+        elem = document.getElementById("rtfm-test");
+        elem.style.setProperty("display", "block");
+        resetTest();
+        isRTFMActive = true;
+        GoInFullscreen(elem);
+    }
+
+
+    function startSync() {
+        elem = document.getElementById("sync-test");
+        elem.style.setProperty("display", "block");
+        resetTest();
+        isSyncActive = true;
+        GoInFullscreen(elem);
+    }
+
+
+    function startLaAtraco() {
+        elem = document.getElementById("laatraco-test");
+        elem.style.setProperty("display", "block");
+        resetTest();
+        isLaAtracoActive = true;
+        GoInFullscreen(elem);
+    }
+
+
+    function resumeTest() {
+        if (isRTFMActive) {
             elem = document.getElementById("rtfm-test");
             elem.style.setProperty("display", "block");
-            resetTest();
-            isRTFMActive = true;
             GoInFullscreen(elem);
         }
-
-
-        function startSync() {
+        else if (isSyncActive) {
             elem = document.getElementById("sync-test");
             elem.style.setProperty("display", "block");
-            resetTest();
-            isSyncActive = true;
             GoInFullscreen(elem);
         }
-
-
-        function startLaAtraco() {
+        else if (isLaAtracoActive) {
             elem = document.getElementById("laatraco-test");
             elem.style.setProperty("display", "block");
-            resetTest();
-            isLaAtracoActive = true;
             GoInFullscreen(elem);
         }
+    }
 
 
-        function resumeTest() {
-            if(isRTFMActive) {
-                elem = document.getElementById("rtfm-test");
-                elem.style.setProperty("display", "block");
-                GoInFullscreen(elem);
-            }
-            else if(isSyncActive) {
-                elem = document.getElementById("sync-test");
-                elem.style.setProperty("display", "block");
-                GoInFullscreen(elem);
-            }
-            else if(isLaAtracoActive) {
-                elem = document.getElementById("laatraco-test");
-                elem.style.setProperty("display", "block");
-                GoInFullscreen(elem);
-            }
+    $(document).on('fullscreenchange mozfullscreenchange webkitfullscreenchange msfullscreenchange', function () {
+        if (document.fullScreen || document.mozFullScreen || document.webkitIsFullScreen || document.msFullscreenElement) {
+
         }
-
-
-        $(document).on('fullscreenchange mozfullscreenchange webkitfullscreenchange msfullscreenchange', function() {
-            if (document.fullScreen || document.mozFullScreen || document.webkitIsFullScreen || document.msFullscreenElement)
-            {
-
+        else {
+            if (isRTFMActive) {
+                elem = document.getElementById("rtfm-test");
+                elem.style.setProperty("display", "none");
             }
-            else
-            {
-                if(isRTFMActive) {
-                    elem = document.getElementById("rtfm-test");
-                    elem.style.setProperty("display", "none");
-                }
-                else if(isSyncActive) {
-                    elem = document.getElementById("sync-test");
-                    elem.style.setProperty("display", "none");
-                }
-                else if(isLaAtracoActive) {
-                    elem = document.getElementById("laatraco-test");
-                    elem.style.setProperty("display", "none");
-                }
-                exitCount++;
-                document.getElementById("warning-message").innerHTML = "You have gone out of full screen. This activity will be reported to us. Do not do it again. No of times you exited fullscreen : " + exitCount;
-                $('#exampleModalCenter').modal('show');
+            else if (isSyncActive) {
+                elem = document.getElementById("sync-test");
+                elem.style.setProperty("display", "none");
             }
-        });
+            else if (isLaAtracoActive) {
+                elem = document.getElementById("laatraco-test");
+                elem.style.setProperty("display", "none");
+            }
+            exitCount++;
+            document.getElementById("warning-message").innerHTML = "You have gone out of full screen. This activity will be reported to us. Do not do it again. No of times you exited fullscreen : " + exitCount;
+            $('#exampleModalCenter').modal('show');
+        }
+    });
 
-    </script>
- <!-- END wrapper -->
- {% endblock %}
+</script>
+<!-- END wrapper -->
+{% endblock %}
