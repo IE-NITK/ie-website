@@ -1,0 +1,725 @@
+{% extends "base.html" %}
+{% block smp %}active{% endblock %}
+{% block main %}
+{% load static %}
+
+
+<section class="probootstrap-section probootstrap-section-colored">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-left section-heading probootstrap-animate">
+                <h1>Summer Mentorship Programme 2023</h1>
+                <!-- <p>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfTTi8gRz22ls6MPyiG3qVczV09MaEMQHajrx8WDY_e7_DZ4A/viewform?embedded=true"
+                           class="btn btn-primary" target="_blank">Register Now!</a>
+                    </p> -->
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="probootstrap-section probootstrap-section-sm">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row probootstrap-gutter0">
+                    <div class="col-md-4" id="probootstrap-sidebar">
+                        <div class="probootstrap-sidebar-inner probootstrap-overlap probootstrap-animate">
+                            <h3></h3>
+                            <ul class="probootstrap-side-menu">
+                                <li class="tablinks active core"><a onclick="navigate('smp-home')">Home</a>
+                                </li>
+                                <li class="tablinks code"><a onclick="navigate('code')">Code</a></li>
+                                <li class="tablinks gadget"><a onclick="navigate('gadget')">Gadget</a></li>
+                                <li class="tablinks garage"><a onclick="navigate('garage')">Garage</a></li>
+                                <li class="tablinks robotics"><a onclick="navigate('robotics')">Robotics</a>
+                                <li class="tablinks capital"><a onclick="navigate('capital')">Capital</a>
+                                <li class="tablinks script"><a onclick="navigate('script')">Script</a>
+                                <li class="tablinks tectonic"><a onclick="navigate('tectonic')">Tectonic</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-7 col-md-push-1 probootstrap-animate teams" id="smp-home">
+                        <section class="probootstrap-section">
+                            <div class="container" style="width: 100%;">
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 220px">
+                                        <div class="text" style="word-wrap: break-word;">
+                                            <h6 class="text-center"><b>“Engineering” means “making things
+                                                    happen”.<br><br>
+                                                    <i>Wander into the exciting vicinity of state-of-the art technology,
+                                                        industrial and <br>
+                                                        academic paradigms ranging from Web Development, Robotics and
+                                                        AutoCAD to <br>
+                                                        Corporate Finance, Eloquence and much more!
+                                                    </i>
+                                            </h6>
+                                            <p>
+                                                <a class="typeform-share button"
+                                                    href="https://docs.google.com/forms/d/e/1FAIpQLScG-RiBbKoSarG6-Hli4ay-eODcMnSkI8lDiP6shCjB-wXYqQ/viewform?usp=sf_link"
+                                                    style="display:inline-block;text-decoration:none;background-color:#57C0AB;color:white;cursor:pointer;font-family:Helvetica,Arial,sans-serif;font-size:20px;line-height:50px;text-align:center;margin:0;height:50px;padding:0px 33px;border-radius:25px;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:bold;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;"
+                                                    target="_blank">Register here </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="col-md-7 col-md-push-1 probootstrap-animate teams" id="code">
+                        <h2>Code</h2>
+                        <section class="probootstrap">
+                            <div class="container" style="width: 100%;">
+
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px; border-radius: 10px;">
+                                        <img src="{% static 'img/smp2023/code/chat-app.webp' %}"
+                                            style="max-width: 100%">
+                                        <div class="text" style="word-wrap: break-word;">
+                                            <h3><b>Chat App using ReactJS and Firebase</b></h3>
+                                            <p></p>
+                                            <p>Build a private chat app that enables users to
+                                                communicate with each other in real-time using text,
+                                                audio, or video messages, while keeping their
+                                                conversations private and secure
+                                            </p>
+
+                                            <a href="https://docs.google.com/document/d/1saBjmYIWpgfbEheQ5F7Ac4EFS2yxEdwtZks_KWuoeqM/edit?usp=share_link"
+                                                target="_blank">
+                                                <button class="btn btn-primary">Detailed Course Plan</button>
+                                            </a>
+                                            <p><b>Contact:</b> Subhojit Karmakar: 8709825232
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px; border-radius: 10px;">
+                                        <img src="{% static 'img/smp2023/code/code-craft.jpg' %}"
+                                            style="max-width: 100%">
+                                        <div class="text" style="word-wrap: break-word;">
+                                            <h3><b>Code Craft</b></h3>
+                                            <p></p>
+                                            <p>Code Craft is designed to help you sharpen your data
+                                                structures and algorithms skills and prepare you for
+                                                competitive programming.
+                                            </p>
+
+                                            <a href="https://docs.google.com/document/d/1rIZrAq2kyjT70xFHQuUEd7mPOsRIREag/edit?usp=share_link&ouid=102306550715420332229&rtpof=true&sd=true"
+                                                target="_blank">
+                                                <button class="btn btn-primary">Detailed Course Plan</button>
+                                            </a>
+                                            <p><b>Contact:</b> Sangram Shintre: 7798757454
+
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px; border-radius: 10px;">
+                                        <img src="{% static 'img/smp2023/code/Intro to CP.jpg' %}"
+                                            style="max-width: 100%">
+                                        <div class="text" style="word-wrap: break-word;">
+                                            <h3><b>Intro to CP</b></h3>
+                                            <p></p>
+                                            <p>You develop the skills necessary to solve complex
+                                                programming problems under time pressure, through
+                                                personalized mentorship, curated curriculum, and
+                                                practice problems.
+                                            </p>
+
+                                            <a href="https://docs.google.com/document/d/1bsLz6v0Hw4OXCoABmMJLoXkOvHKBnAoJag10bBpBsyE/edit?usp=share_link"
+                                                target="_blank">
+                                                <button class="btn btn-primary">Detailed Course Plan</button>
+                                            </a>
+                                            <p><b>Contact:</b> Aditya Harish: 8104944156 </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px; border-radius: 10px;">
+                                        <img src="{% static 'img/smp2023/code/web-dev.jpg' %}"
+                                            style="max-width: 100%">
+                                        <div class="text" style="word-wrap: break-word;">
+                                            <h3><b>Interactive Website using HTML, CSS & JS</b></h3>
+                                            <p></p>
+                                            <p>Design and develop a responsive website from
+                                                scratch, gain experience working on a real-world
+                                                project and be well-prepared to pursue further
+                                                education or a career in web development.
+                                            </p>
+
+                                            <a href="https://docs.google.com/document/d/1vcJ1wXO58j9SAh6mr5xl78ZFi6gl4R6j/edit?usp=share_link&ouid=102306550715420332229&rtpof=true&sd=true"
+                                                target="_blank">
+                                                <button class="btn btn-primary">Detailed Course Plan</button>
+                                            </a>
+                                            <p><b>Contact:</b> Vandana S: 9972175837</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px; border-radius: 10px;" >
+                                        <img src="{% static 'img/smp2023/code/image-classification.jpg' %}" style="max-width: 100%">
+                                        <div class="text" style="word-wrap: break-word;">
+                                            <h3><b>Image classification using CNN</b></h3>
+                                            <p></p>
+                                            <p>You will develop an image classification system using
+                                                CNN to accurately categorize images into predefined
+                                                classes, optimizing for high precision and recall rates.
+                                            </p>
+    
+                                            <a href="https://docs.google.com/document/d/1yAHYIcxdQfIqCi__wdQhFyHO_x5ZEXpWIpam_9Mgd1w/edit?usp=share_link"
+                                                target="_blank">
+                                                <button class="btn btn-primary">Detailed Course Plan</button>
+                                            </a>
+                                            <p><b>Contact:</b> Darshan R K: 7892606306 </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px; border-radius: 10px;" >
+                                        <img src="{% static 'img/smp2023/code/machine-learning.jpg' %}" style="max-width: 100%">
+                                        <div class="text" style="word-wrap: break-word;">
+                                            <h3><b>Intro to Machine Learning</b></h3>
+                                            <p></p>
+                                            <p>You develop the skills necessary to succeed in the
+                                                rapidly growing field of machine learning, with a wide
+                                                variety of applications, from image and speech
+                                                recognition to predictive analytics and NLP.
+                                            </p>
+    
+                                            <a href="https://docs.google.com/document/d/1l8LU-IMcMUojrUtZolPaDGC5Tz9IZwP8/edit?usp=share_link&ouid=102306550715420332229&rtpof=true&sd=true"
+                                                target="_blank">
+                                                <button class="btn btn-primary">Detailed Course Plan</button>
+                                            </a>
+                                            <p><b>Contact:</b> Prathipati Jayanth: 9866201657 </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </section>
+                    </div>
+                    <div class="col-md-7 col-md-push-1 probootstrap-animate teams" id="gadget">
+                        <h2>Gadget</h2>
+                        <section class="probootstrap-section">
+                            <div class="container" style="width: 100%;">
+
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px; border-radius: 10px;" >
+                                        <img src="{% static 'img/smp2023/gadget/digital-electronics.jpg' %}" style="max-width: 100%">
+                                        <div class="text" style="word-wrap: break-word;">
+                                            <h3><b>Digital Electronics</b></h3>
+                                            <p></p>
+                                            <p>Get exposure to the basics of digital electronic
+                                                circuits and get an idea of their applications. Design,
+                                                analyze, and implement digital circuits that can
+                                                process and store information.
+                                            </p>
+    
+                                            <a href="https://docs.google.com/document/d/1cBPhcTEn7VuFLiwNLgOa0VK6lp6AN5xiHWAJQ4SKwNQ/edit?usp=share_link"
+                                                target="_blank">
+                                                <button class="btn btn-primary">Detailed Course Plan</button>
+                                            </a>
+                                            <p><b>Contact:</b> Sneha sri Dulam: 6304973659 </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px; border-radius: 10px;" >
+                                        <img src="{% static 'img/smp2023/gadget/self-balancing-robot.jpg' %}" style="max-width: 100%">
+                                        <div class="text" style="word-wrap: break-word;">
+                                            <h3><b>Self-Balancing Robot</b></h3>
+                                            <p></p>
+                                            <p>Delve into the intricacies of robotics, sensor
+                                                integration, and control systems by designing and
+                                                building a self-balancing robot
+                                            </p>
+    
+                                            <a href="https://drive.google.com/file/d/1WDLsuQdVdzKDvkcDbnR5Sl1MLhFLzj7w/view?usp=share_link"
+                                                target="_blank">
+                                                <button class="btn btn-primary">Detailed Course Plan</button>
+                                            </a>
+                                            <p><b>Contact:</b> Sai Aswin Madhavan: 9345294170 </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px; border-radius: 10px;" >
+                                        <img src="{% static 'img/smp2023/gadget/machine-learning-gadget.jpg' %}" style="max-width: 100%">
+                                        <div class="text" style="word-wrap: break-word;">
+                                            <h3><b>Intro to Machine Learning</b></h3>
+                                            <p></p>
+                                            <p>You develop the knowledge and skills required to
+                                                develop predictive models and algorithms using
+                                                statistical, computational, and artificial intelligence
+                                                techniques which can be used to solve complex
+                                                problems in various domains
+                                            </p>
+    
+                                            <a href="https://drive.google.com/file/d/1uAiO44SqviIbFfW6KFM_m6RF2llahfgt/view?usp=share_link"
+                                                target="_blank">
+                                                <button class="btn btn-primary">Detailed Course Plan</button>
+                                            </a>
+                                            <p><b>Contact:</b> Shubham Gupta: 9305398652 </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="col-md-7 col-md-push-1 probootstrap-animate teams" id="garage">
+                        <h2>Garage</h2>
+                        <section class="probootstrap-section">
+                            <div class="container" style="width: 100%;">
+
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px; border-radius: 10px;" >
+                                        <img src="{% static 'img/smp2023/garage/autocad.jpg' %}" style="max-width: 100%">
+                                        <div class="text" style="word-wrap: break-word;">
+                                            <h3><b>AutoCAD 101: The foundations</b></h3>
+                                            <p></p>
+                                            <p>Acquire the skills and knowledge required to
+                                                create accurate and detailed 2D and 3D technical
+                                                drawings to effectively communicate design ideas
+                                                and meet industry standards and requirements.
+                                            </p>
+    
+                                            <a href="https://drive.google.com/file/d/1nfV0_PMeW305egiVSP5Qthd6IVftl41N/view?usp=share_link"
+                                                target="_blank">
+                                                <button class="btn btn-primary">Detailed Course Plan</button>
+                                            </a>
+                                            <p><b>Contact:</b> Tanushka Garg: 7062094396 </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px; border-radius: 10px;" >
+                                        <img src="{% static 'img/smp2023/garage/robotic-arm.jpg' %}" style="max-width: 100%">
+                                        <div class="text" style="word-wrap: break-word;">
+                                            <h3><b>Modeling and Controlling a Simple Robotic Arm</b></h3>
+                                            <p></p>
+                                            <p>Attain a comprehensive understanding of the process
+                                                involved in modelling, controlling, and visualizing a
+                                                robotic arm using Fusion 360 and Simulink.
+                                            </p>
+    
+                                            <a href="https://drive.google.com/file/d/15peu2Xd4rEAWO1tenyDSbMUNzVIs4bIQ/view?usp=share_link"
+                                                target="_blank">
+                                                <button class="btn btn-primary">Detailed Course Plan</button>
+                                            </a>
+                                            <p><b>Contact:</b> Pratham Kiran K: 6363620408 </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px; border-radius: 10px;" >
+                                        <img src="{% static 'img/smp2023/garage/matlab.jpg' %}" style="max-width: 100%">
+                                        <div class="text" style="word-wrap: break-word;">
+                                            <h3><b>MATLAB for NOOBS</b></h3>
+                                            <p></p>
+                                            <p>Beyond just learning MATLAB, learn the applications
+                                                of math in engineering using the MATLAB tool.
+                                            </p>
+    
+                                            <a href="https://drive.google.com/file/d/1DFlkfjnGRj_ljDOKPd4wfv9cqjiD4XLd/view?usp=share_link"
+                                                target="_blank">
+                                                <button class="btn btn-primary">Detailed Course Plan</button>
+                                            </a>
+                                            <p><b>Contact:</b> Sanskar Gaonkar: 9284551831 </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </section>
+                    </div>
+                    <div class="col-md-7 col-md-push-1 probootstrap-animate teams" id="robotics">
+                        <h2>Robotics</h2>
+                        <section class="probootstrap-section">
+
+                            <div class="container" style="width: 100%;">
+
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px; border-radius: 10px;" >
+                                        <img src="{% static 'img/smp2023/robotics/locomotion-in-robots.png' %}" style="max-width: 100%">
+                                        <div class="text" style="word-wrap: break-word;">
+                                            <h3><b>Locomotion in Robots</b></h3>
+                                            <p></p>
+                                            <p>To develop an understanding of how robots move
+                                                using legs, tracks, and wheels along with their
+                                                properties and applications.
+                                            </p>
+    
+                                            <a href="https://docs.google.com/document/d/1XBnJ8gRruZxxesrwwfS3TKyqnw94SB1bXngVc7ndYuw/edit?usp=share_link"
+                                                target="_blank">
+                                                <button class="btn btn-primary">Detailed Course Plan</button>
+                                            </a>
+                                            <p><b>Contact:</b> Navaneet Yakkali: 9886838143 </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px; border-radius: 10px;" >
+                                        <img src="{% static 'img/smp2023/robotics/ros.png' %}" style="max-width: 100%">
+                                        <div class="text" style="word-wrap: break-word;">
+                                            <h3><b>ROS - Robot Operating System</b></h3>
+                                            <p></p>
+                                            <p>Equip yourself with practical skills and knowledge
+                                                in ROS, fostering skill development, promoting
+                                                innovation, and facilitating career readiness in the
+                                                field of robotics.
+                                            </p>
+    
+                                            <a href="https://drive.google.com/file/d/1eEXv4rD6dDlQZHxwysJF8oK5xhSJ7bwY/view?usp=share_link"
+                                                target="_blank">
+                                                <button class="btn btn-primary">Detailed Course Plan</button>
+                                            </a>
+                                            <p><b>Contact:</b> Anuhya Murki: 8660053996 </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px; border-radius: 10px;" >
+                                        <img src="{% static 'img/smp2023/robotics/arduino.jpg' %}" style="max-width: 100%">
+                                        <div class="text" style="word-wrap: break-word;">
+                                            <h3><b>Arduino and Proteus: Building Interactive Electronics</b></h3>
+                                            <p></p>
+                                            <p>Develop a comprehensive understanding of
+                                                Arduino programming and circuit design using
+                                                Proteus. You can also create your own interactive
+                                                projects using the Arduino platform.
+                                            </p>
+    
+                                            <a href="https://drive.google.com/file/d/1xxa-xph2lFHEQA3AahUs-DuGITZ6yDNg/view?usp=share_link"
+                                                target="_blank">
+                                                <button class="btn btn-primary">Detailed Course Plan</button>
+                                            </a>
+                                            <p><b>Contact:</b> G.Nithin Kumar Reddy: 8106328286. </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </section>
+                    </div>
+
+                    <!-- <div class="col-md-7 col-md-push-1 probootstrap-animate teams" id="media">
+                            <h2>Media</h2>
+                            <section class="probootstrap-section">
+                                <div class="container" style="width: 100%;">
+                                    <div class="col-sm-12">
+                                        <div class="probootstrap-teacher text-center probootstrap-animate"
+                                             style="min-height: 170px">
+                                            <div class="text" style="word-wrap: break-word;">
+                                                <h3>Basic Photoshop and Premiere pro</h3>
+                                                <p>Photoshop is the biggest name in image editing and so is premiere pro
+                                                    in video editing, but it has a reputation as a complicated and
+                                                    difficult app to use. While it’s certainly feature packed, it’s
+                                                    nowhere near as difficult to get the hang of as it first appears.
+                                                    Let’s look at how to learn Photoshop and Premiere pro this
+                                                    summer.</p>
+                                                <p><b>Detailed Course Plan:</b><a
+                                                        href="https://drive.google.com/open?id=1ifnI3F9Z69BsRDV7p9ikmVTzMgp-kY5I"
+                                                        target="_blank">
+                                                    Course Plan</a></p>
+                                                <p><b>Contact:</b> Aditya S G : 8826950512 / adityasg3@gmail.com
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div> -->
+
+                    <div class="col-md-7 col-md-push-1 probootstrap-animate teams" id="capital">
+                        <h2>Capital</h2>
+                        <section class="probootstrap-section">
+                            <div class="container" style="width: 100%;">
+
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px; border-radius: 10px;">
+                                        <img src="{% static 'img/smp2023/capital/corporate-finance.jpg' %}"
+                                            style="max-width: 100%">
+                                        <div class="text" style="word-wrap: break-word;">
+                                            <h3><b>Introduction to Corporate Finance</b></h3>
+                                            <p></p>
+                                            <p>Find out what goes on behind the scenes of complex
+                                                financial planning and decisions of major
+                                                corporations. Learn to manage the financial
+                                                resources of a company, including investment
+                                                decisions, financing decisions, and dividend
+                                                decisions.
+                                            </p>
+
+                                            <a href="https://drive.google.com/file/d/1fW1up2rhNMLhbdh8LUN3XyEeVVYWiVEW/view?usp=share_link"
+                                                target="_blank">
+                                                <button class="btn btn-primary">Detailed Course Plan</button>
+                                            </a>
+                                            <p><b>Contact:</b> Navaneet Y V N: 9886838143 </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px; border-radius: 10px;">
+                                        <img src="{% static 'img/smp2023/capital/entrepreneurship.jpg' %}"
+                                            style="max-width: 100%">
+                                        <div class="text" style="word-wrap: break-word;">
+                                            <h3><b>Entrepreneurship</b></h3>
+                                            <p>EDelve into the world of entrepreneurship while
+                                                working on an existing start-up idea. After this
+                                                SMP, you will be left with enough knowledge to
+                                                be able to launch your own start-up.</p>
+                                            <a href="https://drive.google.com/file/d/19eHnKznujZBDLmgs2CIddjLKG1jMfXvP/view?usp=share_link"
+                                                target="_blank">
+                                                <button class="btn btn-primary">Detailed Course Plan</button>
+                                            </a>
+                                            <p><b>Contact:</b> Aryan Raul: 7709892835
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px; border-radius: 10px;">
+                                        <img src="{% static 'img/smp2023/capital/case-study.jpg' %}"
+                                            style="max-width: 100%">
+                                        <div class="text" style="word-wrap: break-word;">
+                                            <h3><b>Case Questions And Guesstimates</b></h3>
+                                            <p></p>
+                                            <p>Learn to use the basic structures that you can use
+                                                to answer guesstimates and case questions and
+                                                the appropriate use cases of these structures via
+                                                multiple mock interviews.
+                                            </p>
+
+                                            <a href="https://drive.google.com/file/d/1fW1up2rhNMLhbdh8LUN3XyEeVVYWiVEW/view?usp=share_link"
+                                                target="_blank">
+                                                <button class="btn btn-primary">Detailed Course Plan</button>
+                                            </a>
+                                            <p><b>Contact:</b> Abhi Krishna: 80881 47221 </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px; border-radius: 10px;">
+                                        <img src="{% static 'img/smp2023/capital/financial-modelling.jpg' %}"
+                                            style="max-width: 100%">
+                                        <div class="text" style="word-wrap: break-word;">
+                                            <h3><b>Financial Modeling with Excel</b></h3>
+                                            <p></p>
+                                            <p>Equip yourself with the skills and knowledge
+                                                required to create and analyze financial models,
+                                                make informed business decisions, and prepare for
+                                                careers in finance and accounting using Microsoft
+                                                Excel.
+                                            </p>
+
+                                            <a href="https://drive.google.com/file/d/1uP3ELAzlemafxAUjn_rXn40uWEOEnrn_/view?usp=share_link"
+                                                target="_blank">
+                                                <button class="btn btn-primary">Detailed Course Plan</button>
+                                            </a>
+                                            <p><b>Contact:</b> Srishti Madhusudhan: 8310455013 </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </section>
+                    </div>
+                    <div class="col-md-7 col-md-push-1 probootstrap-animate teams" id="script">
+                        <h2>Script</h2>
+                        <section class="probootstrap-section">
+                            <div class="container" style="width: 100%;">
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px; border-radius: 10px;" >
+                                        <img src="{% static 'img/smp2023/script/meme-mania.jpg' %}" style="max-width: 100%">
+                                        <div class="text" style="word-wrap: break-word;">
+                                            <h3><b>Meme Mania</b></h3>
+                                            <p></p>
+                                            <p>Meme Mania is like a crash course in meme-making,
+                                                but with a lot more laughs and a lot less actual
+                                                crashing. It's a chance for students to flex their
+                                                creative muscles and showcase their wit, all while
+                                                learning the ins and outs of meme creation.
+                                            </p>
+    
+                                            <a href="https://drive.google.com/file/d/1NrYlbburtbSynr1W-hnG_iS1tBd67NiN/view?usp=share_link"
+                                                target="_blank">
+                                                <button class="btn btn-primary">Detailed Course Plan</button>
+                                            </a>
+                                            <p><b>Contact:</b> Subhojit Karmakar: 8709825232 </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px; border-radius: 10px;" >
+                                        <img src="{% static 'img/smp2023/script/pen-to-pixels.jpg' %}" style="max-width: 100%">
+                                        <div class="text" style="word-wrap: break-word;">
+                                            <h3><b>Pen To Pixels</b></h3>
+                                            <p></p>
+                                            <p>Understand and embrace the evolution of script
+                                                writing in the digital age, empower individuals to
+                                                effectively express emotions through words, and
+                                                cultivate writing skills through a spontaneous writing
+                                                contests.
+                                            </p>
+    
+                                            <a href="https://drive.google.com/file/d/1SNSBSmgVLIjOujymc45H6UCjL4KNckBS/view?usp=share_link"
+                                                target="_blank">
+                                                <button class="btn btn-primary">Detailed Course Plan</button>
+                                            </a>
+                                            <p><b>Contact:</b> Aparna Singh: 9113492554 </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </section>
+                    </div>
+                    <div class="col-md-7 col-md-push-1 probootstrap-animate teams" id="tectonic">
+                        <h2>Tectonic</h2>
+                        <section class="probootstrap-section">
+                            <div class="container" style="width: 100%;">
+
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px; border-radius: 10px;" >
+                                        <img src="{% static 'img/smp2023/tectonic/concrete.jpg' %}" style="max-width: 100%">
+                                        <div class="text" style="word-wrap: break-word;">
+                                            <h3><b>Surface crack on concrete image detection</b></h3>
+                                            <p></p>
+                                            <p>Use Convolutional Neural Networks(CNN) for image
+                                                processing with it’s implementation on Surface crack
+                                                on concrete image detection
+                                            </p>
+    
+                                            <a href="https://drive.google.com/file/d/1-M6D60VZwVkOYxuNW9f6yvN1ZFF3moHZ/view?usp=share_link"
+                                                target="_blank">
+                                                <button class="btn btn-primary">Detailed Course Plan</button>
+                                            </a>
+                                            <p><b>Contact:</b> Kiran Shripad Hegde: 8884238851 </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px; border-radius: 10px;" >
+                                        <img src="{% static 'img/smp2023/tectonic/etabs.webp' %}" style="max-width: 100%">
+                                        <div class="text" style="word-wrap: break-word;">
+                                            <h3><b>ETABS</b></h3>
+                                            <p></p>
+                                            <p>To look into how the structure would behave under
+                                                various loads or combinations of loads like gravity,
+                                                seismic, wind and thermal forces using computer
+                                                simulation
+                                            </p>
+    
+                                            <a href="https://drive.google.com/file/d/19vTpRhtF9xIz5NLI2ir0BT9Aa5iZ04xZ/view?usp=share_link"
+                                                target="_blank">
+                                                <button class="btn btn-primary">Detailed Course Plan</button>
+                                            </a>
+                                            <p><b>Contact:</b> Ananya M: 9353689527 </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12">
+                                    <div class="probootstrap-teacher text-center probootstrap-animate"
+                                        style="min-height: 170px; border-radius: 10px;" >
+                                        <img src="{% static 'img/smp2023/tectonic/traffic-control-systems.jpg' %}" style="max-width: 100%">
+                                        <div class="text" style="word-wrap: break-word;">
+                                            <h3><b>Optimization and Development of a Traffic Control System</b></h3>
+                                            <p></p>
+                                            <p>Understand how DSA techniques can be applied
+                                                to solve real-world problems in civil engineering
+                                                through real world traffic problems.
+                                            </p>
+    
+                                            <a href="https://drive.google.com/file/d/1zM-QdLK8TAW3-BqWJMpY-9To-ocamOwc/view?usp=share_link"
+                                                target="_blank">
+                                                <button class="btn btn-primary">Detailed Course Plan</button>
+                                            </a>
+                                            <p><b>Contact:</b> Aditi Kumar: 8149167442 </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script type="text/javascript">
+    $(".team").addClass("active");
+    var tabcontent = document.getElementsByClassName('teams');
+    for (i = 1; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    function navigate(signame) {
+        var tabcontent = document.getElementsByClassName('teams');
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(signame).style.display = "block";
+        $("." + signame).addClass("active");
+    }
+</script>
+{% endblock %}
