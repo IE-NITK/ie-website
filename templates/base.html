@@ -22,7 +22,7 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700|Open+Sans" rel="stylesheet" />
   <link rel="stylesheet" href="{% static 'css/styles-merged.css' %}" />
   <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-  <link rel="stylesheet" href="{% static 'css/style-dark.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
   <link rel="stylesheet" href="{% static 'css/custom.css' %}" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
     integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous" />
@@ -110,14 +110,14 @@
       </div>
     </div>
 
-    <marquee>
+    <!-- <marquee>
       <strong>Deadline of Registrations for Enigma 2023 is 23rd March 4 PM. Register <a
           href="{% url 'enigma' %}">here</a></strong>
-    </marquee>
+    </marquee> -->
 
-    <!-- <marquee>
- <strong>Deadline for SMP 2022 registration is 26th May 6PM. Register <a href="{% url 'events:smp2022' %}">here</a></strong>
-      </marquee>  -->
+    <marquee>
+ <strong>Summer Mentorship 2023 registrations have started! Deadline for SMP 2023 registration is 24th May 6PM. Register <a href="{% url 'events:smp2023' %}">here!</a></strong>
+      </marquee> 
 
     <!-- <marquee>
       <strong>Register <a target="_blank"
@@ -142,6 +142,10 @@
           <ul class="nav navbar-nav navbar-right">
             <li class="{% block index %}{% endblock %}">
               <a href="{% url 'home' %}">Home</a>
+
+                          <li class="{% block ie-smp-2023 %}{% endblock %}">
+              <a href="{% url 'events:smp2023' %}"><strong>SMP 2023</strong></a>
+            </li>
             </li>
             <li class="{% block sig %}{% endblock %}">
               <a href="{% url 'sig:sig' %}">SIG</a>
