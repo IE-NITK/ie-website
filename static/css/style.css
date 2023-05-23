@@ -974,8 +974,8 @@ only screen and (min-resolution: 2dppx) {
 }
 
 .btn.btn-primary {
-  border: 1px solid #49D292;
-  background: #49D292;
+  border: 1px solid #57C0AB;
+  background: #57C0AB;
   color: #ffffff;
 }
 
@@ -1399,7 +1399,7 @@ only screen and (min-resolution: 2dppx) {
 }
 
 .probootstrap-teacher .text p {
-  margin-bottom: 10px;
+  margin-bottom: 0px !important;
 }
 
 .probootstrap-teacher .probootstrap-footer-social li a {
